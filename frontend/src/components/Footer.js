@@ -1,36 +1,37 @@
 import { ArrowUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const footerLinks = {
   Services: [
-    "Artificial Intelligence",
-    "Generative AI",
-    "Custom Software",
-    "Mobile Apps",
-    "AI Agents",
-    "LLM Development",
-    "DevOps",
-    "Data Engineering",
+    { label: "Artificial Intelligence", href: "/services/artificial-intelligence" },
+    { label: "Generative AI", href: "/services/generative-ai" },
+    { label: "Custom Software", href: "/services/custom-software" },
+    { label: "Mobile Apps", href: "/services/mobile-apps" },
+    { label: "AI Agents", href: "/services/ai-agents" },
+    { label: "LLM Development", href: "/services/llm-development" },
+    { label: "DevOps", href: "/services/devops" },
+    { label: "Data Engineering", href: "/services/data-engineering" },
   ],
   Solutions: [
-    "DataBrain AI",
-    "MediMind AI",
-    "Talentify AI",
-    "QuikBiz AI",
-    "IntelliBot AI",
+    { label: "DataBrain AI", href: "/solutions/databrain-ai" },
+    { label: "MediMind AI", href: "/solutions/medimind-ai" },
+    { label: "Talentify AI", href: "/solutions/talentify-ai" },
+    { label: "QuikBiz AI", href: "/solutions/quikbiz-ai" },
+    { label: "IntelliBot AI", href: "/solutions/intellibot-ai" },
   ],
   Company: [
-    "About Us",
-    "Case Studies",
-    "Careers",
-    "Blog",
-    "Contact",
+    { label: "About Us", href: "/about" },
+    { label: "Case Studies", href: "/case-studies" },
+    { label: "Careers", href: "/careers" },
+    { label: "Blog", href: "/blog" },
+    { label: "Industries", href: "/industries" },
   ],
   Industries: [
-    "Healthcare",
-    "Fintech",
-    "Retail",
-    "Education",
-    "Real Estate",
+    { label: "Healthcare", href: "/industries/healthcare" },
+    { label: "Fintech", href: "/industries/fintech" },
+    { label: "Retail", href: "/industries/retail" },
+    { label: "Education", href: "/industries/education" },
+    { label: "Real Estate", href: "/industries/real-estate" },
   ],
 };
 
@@ -61,10 +62,10 @@ export default function Footer() {
               </h4>
               <ul className="space-y-3">
                 {links.map((link) => (
-                  <li key={link}>
-                    <span className="text-sm text-slate-500 hover:text-white cursor-pointer transition-colors">
-                      {link}
-                    </span>
+                  <li key={link.label}>
+                    <Link to={link.href} className="text-sm text-slate-500 hover:text-white cursor-pointer transition-colors">
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>

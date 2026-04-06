@@ -1,21 +1,25 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const articles = [
   {
     category: "AI Tools",
     title: "Augment Code vs Cursor: Best AI Tool for Developers?",
+    slug: "augment-code-vs-cursor",
     desc: "Pick the one that matches your criteria, repository size, and workflow preferences for maximum productivity.",
     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
   },
   {
     category: "AI Comparison",
     title: "Claude vs ChatGPT for Coding: Features & Use Cases",
+    slug: "claude-vs-chatgpt-coding",
     desc: "A deep comparison of the leading AI assistants for software development and code generation tasks.",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
   },
   {
     category: "Development",
     title: "Top 10 Vibe Coding Tools for Faster AI App Development",
+    slug: "top-vibe-coding-tools",
     desc: "The way developers build software is changing, and these tools are responsible for the transformation.",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop",
   },
@@ -42,7 +46,8 @@ export default function BlogResources() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {articles.map((a, i) => (
-            <article
+            <Link
+              to={`/blog/${a.slug}`}
               key={i}
               data-testid={`blog-card-${i}`}
               className="group bg-white border border-slate-200 rounded-sm overflow-hidden hover:-translate-y-1 transition-all duration-300 cursor-pointer"
@@ -69,7 +74,7 @@ export default function BlogResources() {
                   Read More <ArrowRight size={14} />
                 </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

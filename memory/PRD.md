@@ -45,7 +45,6 @@ Create a corporate website for NeuralTrix AI (AI consulting & software developme
 ## Prioritized Backlog
 - P1: SEO meta tags per page, Open Graph tags
 - P1: Blog CMS / admin panel for managing articles
-- P2: Animated counters on stats section
-- P2: Image gallery for case studies
-- P3: Newsletter subscription functionality
+- P2: Newsletter subscription functionality
+- P2: Pricing/cost estimation section on service pages
 - P3: Search functionality across all pages

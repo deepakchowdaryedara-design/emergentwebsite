@@ -10,6 +10,7 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import RelatedBlog from "../components/RelatedBlog";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import industries from "../data/industries";
+import services from "../data/services";
 
 export default function IndustryDetail() {
   const { slug } = useParams();
@@ -97,6 +98,68 @@ export default function IndustryDetail() {
 
       {/* Related Case Studies */}
       <RelatedCaseStudies industryFilter={industry.title} title={`AI Success Stories in ${industry.title}`} />
+
+      {/* Services We Offer for this Industry */}
+      <section data-testid="industry-services-section" className="py-20 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+          <AnimatedSection>
+            <div className="max-w-2xl mb-12">
+              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Our Services</p>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+                How We Help {industry.title} Companies
+              </h2>
+            </div>
+          </AnimatedSection>
+          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.slice(0, 8).map((s) => (
+              <StaggerItem key={s.slug}>
+                <a href={`/services/${s.slug}`} className="group border border-slate-200 rounded-sm p-6 bg-white hover:bg-[#0B1B3D] transition-all duration-300 block h-full">
+                  <s.icon size={24} className="text-[#2563EB] group-hover:text-white transition-colors mb-4" />
+                  <h3 className="text-sm font-bold text-[#0B1B3D] group-hover:text-white transition-colors mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{s.title}</h3>
+                  <p className="text-xs text-slate-500 group-hover:text-slate-300 transition-colors leading-relaxed">{s.shortDesc}</p>
+                </a>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+        </div>
+      </section>
+
+      {/* Tech Stack for Industry */}
+      <section data-testid="industry-tech-stack" className="py-20 sm:py-24" style={{ backgroundColor: "#0B1B3D" }}>
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+          <AnimatedSection>
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Tech Stack</p>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+                Technologies for {industry.title}
+              </h2>
+              <p className="text-base text-slate-400">Enterprise-grade tools powering our {industry.title.toLowerCase()} solutions.</p>
+            </div>
+          </AnimatedSection>
+          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { cat: "AI & ML", techs: ["GPT-4o", "TensorFlow", "PyTorch", "Scikit-learn", "LangChain", "RAG"] },
+              { cat: "Backend", techs: ["Python", "Node.js", "Java", "Go", "GraphQL", "REST APIs"] },
+              { cat: "Data", techs: ["Snowflake", "PostgreSQL", "MongoDB", "Redis", "Kafka", "Airflow"] },
+              { cat: "Cloud & DevOps", techs: ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "Terraform"] },
+            ].map((c) => (
+              <StaggerItem key={c.cat}>
+                <div className="border border-white/10 rounded-sm p-6 hover:border-[#2563EB]/40 transition-colors">
+                  <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-5">{c.cat}</h3>
+                  <div className="space-y-3">
+                    {c.techs.map((t) => (
+                      <div key={t} className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-[#2563EB] rounded-full" />
+                        <span className="text-sm text-slate-400">{t}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+        </div>
+      </section>
 
       {/* Testimonials */}
       <TestimonialsSection title={`What ${industry.title} Leaders Say About Us`} />

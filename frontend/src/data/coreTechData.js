@@ -1,0 +1,66 @@
+const coreTechData = {
+  "artificial-intelligence": [
+    { name: "Text Models", description: "Train chatbots for advanced functionalities using NLP-based text generation models and generate high-quality content.", techs: [{ name: "OpenAI GPT-4o" }, { name: "Claude 3.5" }, { name: "Gemini Pro" }, { name: "Llama 3" }, { name: "Mistral" }, { name: "Cohere" }] },
+    { name: "Image & Video", description: "Benefit from advanced AI algorithms to enhance images, transcribe videos in real-time, and improve accuracy.", techs: [{ name: "DALL-E 3" }, { name: "Stable Diffusion" }, { name: "Midjourney" }, { name: "RunwayML" }] },
+    { name: "ML Frameworks", description: "Give your AI models human-like intelligence by building multiple levels of neural networks using advanced algorithms.", techs: [{ name: "TensorFlow" }, { name: "PyTorch" }, { name: "Scikit-learn" }, { name: "XGBoost" }, { name: "JAX" }, { name: "Keras" }] },
+    { name: "MLOps & Monitoring", description: "Ensure models perform consistently at scale through comprehensive lifecycle management and governance.", techs: [{ name: "MLflow" }, { name: "Kubeflow" }, { name: "Prometheus" }, { name: "Grafana" }, { name: "Weights & Biases" }] },
+    { name: "Data & ETL", description: "Effectively extract data from various sources and convert it into useful resources for AI training.", techs: [{ name: "Apache Airflow" }, { name: "Spark" }, { name: "Fivetran" }, { name: "dbt" }, { name: "Snowflake" }] },
+    { name: "Cloud & Deploy", description: "Deliver scalable, secure AI infrastructures with cloud platforms and automated deployment pipelines.", techs: [{ name: "AWS SageMaker" }, { name: "Azure ML" }, { name: "GCP Vertex AI" }, { name: "Docker" }, { name: "Kubernetes" }] },
+  ],
+  "generative-ai": [
+    { name: "Foundation Models", description: "Access the frontier of AI with elite proprietary and open-source models to fuel smarter applications.", techs: [{ name: "GPT-4o" }, { name: "Claude 3.5" }, { name: "Gemini Pro" }, { name: "Llama 3" }, { name: "Mistral" }, { name: "Phi-3" }] },
+    { name: "RAG Frameworks", description: "Implement continual LLM model improvement with RAG to generate relevant and accurate outputs.", techs: [{ name: "LangChain" }, { name: "LlamaIndex" }, { name: "Haystack" }, { name: "Semantic Kernel" }, { name: "DSPy" }] },
+    { name: "Vector Databases", description: "Utilize similarity metrics to help the system get context-based understanding for faster data retrieval.", techs: [{ name: "Pinecone" }, { name: "Weaviate" }, { name: "Milvus" }, { name: "Qdrant" }, { name: "Chroma" }, { name: "Redis" }] },
+    { name: "Embeddings", description: "Capture essential information by converting complex datasets into numerical representations for LLM training.", techs: [{ name: "OpenAI Ada" }, { name: "Cohere Embed" }, { name: "Google PaLM" }, { name: "Sentence Transformers" }, { name: "BGE" }] },
+    { name: "Agent Frameworks", description: "Coordinate autonomous reasoning engines that plan, execute, and adapt across complex operations.", techs: [{ name: "LangGraph" }, { name: "AutoGen" }, { name: "CrewAI" }, { name: "Phidata" }, { name: "Temporal" }] },
+    { name: "Deployment", description: "Production-ready serving infrastructure for large language models at scale.", techs: [{ name: "vLLM" }, { name: "TGI" }, { name: "Triton" }, { name: "Ollama" }, { name: "AWS Bedrock" }, { name: "Azure OpenAI" }] },
+  ],
+  "custom-software": [
+    { name: "Backend", description: "Our backend foundation supports robust logic execution, seamless integration, and enterprise-grade scalability.", techs: [{ name: "Python" }, { name: "Node.js" }, { name: ".NET" }, { name: "Java" }, { name: "Go" }, { name: "Express.js" }] },
+    { name: "Frontend", description: "Technologies that create immersive interfaces, accelerate launches, and sustain performance.", techs: [{ name: "React" }, { name: "Angular" }, { name: "Next.js" }, { name: "TypeScript" }, { name: "Vue.js" }, { name: "Svelte" }] },
+    { name: "Databases", description: "Design resilient databases that store, sync, and serve data flawlessly across every scale.", techs: [{ name: "PostgreSQL" }, { name: "MongoDB" }, { name: "MySQL" }, { name: "Redis" }, { name: "Cassandra" }, { name: "Firebase" }] },
+    { name: "Testing & QA", description: "Guarantee bug-free releases with automated testing that validates performance and user experience.", techs: [{ name: "Jest" }, { name: "Cypress" }, { name: "Selenium" }, { name: "PyTest" }, { name: "Playwright" }, { name: "Mocha" }] },
+    { name: "DevOps", description: "Build smooth, automated pipelines that integrate, test, and deliver code with dependable velocity.", techs: [{ name: "Docker" }, { name: "Kubernetes" }, { name: "GitHub Actions" }, { name: "Terraform" }, { name: "Jenkins" }, { name: "ArgoCD" }] },
+    { name: "Cloud", description: "Architect resilient infrastructures that keep applications running across markets and real-time decisions.", techs: [{ name: "AWS" }, { name: "Azure" }, { name: "GCP" }, { name: "Cloudflare" }, { name: "Vercel" }, { name: "Railway" }] },
+  ],
+  "mobile-apps": [
+    { name: "iOS", description: "Craft powerhouse iOS apps with seamless device integration and future-ready performance.", techs: [{ name: "Swift" }, { name: "SwiftUI" }, { name: "Xcode" }, { name: "Core ML" }, { name: "TestFlight" }, { name: "Combine" }] },
+    { name: "Android", description: "Build high-performance Android apps that thrill users across all devices.", techs: [{ name: "Kotlin" }, { name: "Jetpack Compose" }, { name: "Android Studio" }, { name: "ML Kit" }, { name: "Coroutines" }, { name: "Room" }] },
+    { name: "Cross-Platform", description: "Build unified apps from a single codebase that fly on Android, iOS, and web alike.", techs: [{ name: "Flutter" }, { name: "React Native" }, { name: "Dart" }, { name: "Expo" }, { name: "Capacitor" }] },
+    { name: "Backend & APIs", description: "Scalable mobile backends with real-time sync, push notifications, and analytics.", techs: [{ name: "Firebase" }, { name: "Supabase" }, { name: "Node.js" }, { name: "GraphQL" }, { name: "AWS Amplify" }] },
+    { name: "AI & ML", description: "On-device machine learning and AI integration for intelligent mobile experiences.", techs: [{ name: "TensorFlow Lite" }, { name: "Core ML" }, { name: "ML Kit" }, { name: "ONNX Runtime" }, { name: "PyTorch Mobile" }] },
+  ],
+  "ai-agents": [
+    { name: "Agent Frameworks", description: "Coordinate autonomous reasoning engines that plan, execute, and adapt across complex digital operations.", techs: [{ name: "LangGraph" }, { name: "AutoGen" }, { name: "CrewAI" }, { name: "Phidata" }, { name: "Temporal" }, { name: "Prefect" }] },
+    { name: "LLM Providers", description: "Access frontier models to power agent reasoning and decision-making capabilities.", techs: [{ name: "GPT-4o" }, { name: "Claude 3.5" }, { name: "Gemini Pro" }, { name: "Llama 3" }, { name: "Mistral" }, { name: "Cohere" }] },
+    { name: "Tool Integration", description: "Connect agents to your APIs, databases, CRMs, ERPs, and third-party services.", techs: [{ name: "REST APIs" }, { name: "GraphQL" }, { name: "Webhooks" }, { name: "Slack API" }, { name: "Salesforce" }, { name: "HubSpot" }] },
+    { name: "Memory & State", description: "Persistent memory and state management for long-running agent workflows.", techs: [{ name: "Redis" }, { name: "PostgreSQL" }, { name: "Pinecone" }, { name: "ChromaDB" }, { name: "Weaviate" }] },
+    { name: "Orchestration", description: "Workflow orchestration and scheduling for reliable multi-step agent execution.", techs: [{ name: "Temporal" }, { name: "Apache Airflow" }, { name: "Celery" }, { name: "Bull MQ" }, { name: "Prefect" }] },
+  ],
+  "llm-development": [
+    { name: "Foundation Models", description: "Elite proprietary and open-source models for building enterprise-grade LLM applications.", techs: [{ name: "GPT-4o" }, { name: "Claude 3.5" }, { name: "Gemini Pro" }, { name: "Llama 3" }, { name: "Mistral" }, { name: "Phi-3" }] },
+    { name: "Training & Fine-Tuning", description: "Tools and frameworks for adapting foundation models to your domain-specific needs.", techs: [{ name: "Hugging Face" }, { name: "DeepSpeed" }, { name: "LoRA/QLoRA" }, { name: "Axolotl" }, { name: "Unsloth" }, { name: "PyTorch" }] },
+    { name: "RAG Stack", description: "Build retrieval-augmented generation pipelines for knowledge-grounded responses.", techs: [{ name: "LangChain" }, { name: "LlamaIndex" }, { name: "Pinecone" }, { name: "Weaviate" }, { name: "Chroma" }, { name: "Elasticsearch" }] },
+    { name: "Inference & Serving", description: "Production-ready infrastructure for low-latency, cost-efficient LLM serving.", techs: [{ name: "vLLM" }, { name: "TGI" }, { name: "Triton" }, { name: "Ollama" }, { name: "OpenLLM" }] },
+    { name: "Evaluation", description: "Comprehensive testing frameworks to measure model quality, safety, and reliability.", techs: [{ name: "LangSmith" }, { name: "Ragas" }, { name: "DeepEval" }, { name: "Human Eval" }, { name: "HELM" }] },
+    { name: "Cloud MLOps", description: "Managed platforms for training, deploying, and monitoring LLMs at enterprise scale.", techs: [{ name: "AWS SageMaker" }, { name: "Azure ML" }, { name: "GCP Vertex AI" }, { name: "Weights & Biases" }, { name: "MLflow" }] },
+  ],
+  "devops": [
+    { name: "CI/CD", description: "Build smooth, automated pipelines that integrate, test, and deliver code with velocity.", techs: [{ name: "GitHub Actions" }, { name: "GitLab CI/CD" }, { name: "Jenkins" }, { name: "CircleCI" }, { name: "ArgoCD" }, { name: "Flux" }] },
+    { name: "Infrastructure as Code", description: "Automate infrastructure provisioning with code for consistency and reproducibility.", techs: [{ name: "Terraform" }, { name: "Ansible" }, { name: "Pulumi" }, { name: "CloudFormation" }, { name: "Chef" }, { name: "OpenTofu" }] },
+    { name: "Containers", description: "Package applications into portable containers and orchestrate them at scale.", techs: [{ name: "Docker" }, { name: "Kubernetes" }, { name: "Helm" }, { name: "Podman" }, { name: "ECS" }, { name: "Nomad" }] },
+    { name: "Monitoring", description: "Detect issues early through real-time metrics, tracing, and alerts for healthy systems.", techs: [{ name: "Prometheus" }, { name: "Grafana" }, { name: "Datadog" }, { name: "ELK Stack" }, { name: "OpenTelemetry" }, { name: "Splunk" }] },
+    { name: "Security", description: "DevSecOps practices with automated vulnerability scanning and compliance checks.", techs: [{ name: "SonarQube" }, { name: "Trivy" }, { name: "Snyk" }, { name: "HashiCorp Vault" }, { name: "Falco" }] },
+    { name: "Cloud", description: "Multi-cloud infrastructure management and optimization for enterprise workloads.", techs: [{ name: "AWS" }, { name: "Azure" }, { name: "GCP" }, { name: "Cloudflare" }, { name: "DigitalOcean" }] },
+  ],
+  "data-engineering": [
+    { name: "Data Pipelines", description: "Move, shape, and activate data at machine speed with pipelines designed for scale and accuracy.", techs: [{ name: "Apache Airflow" }, { name: "dbt" }, { name: "Fivetran" }, { name: "AWS Glue" }, { name: "Spark" }, { name: "Kafka" }] },
+    { name: "Data Warehouses", description: "Centralize, scale, and analyze massive data with enterprise-grade warehouse platforms.", techs: [{ name: "Snowflake" }, { name: "BigQuery" }, { name: "Redshift" }, { name: "Databricks" }, { name: "Synapse" }, { name: "Teradata" }] },
+    { name: "Stream Processing", description: "Process live data streams instantly, turning events into actionable intelligence.", techs: [{ name: "Apache Kafka" }, { name: "Apache Flink" }, { name: "Spark Streaming" }, { name: "Kinesis" }, { name: "Confluent" }, { name: "Pulsar" }] },
+    { name: "Data Storage", description: "Secure, scalable data lakes for analytics, governance, and long-term intelligence.", techs: [{ name: "AWS S3" }, { name: "Delta Lake" }, { name: "Google Cloud Storage" }, { name: "HDFS" }, { name: "MinIO" }] },
+    { name: "Visualization", description: "Turn raw data into compelling visual stories that drive executive decisions.", techs: [{ name: "Tableau" }, { name: "Power BI" }, { name: "Looker" }, { name: "Grafana" }, { name: "Plotly" }, { name: "Metabase" }] },
+    { name: "Data Quality", description: "Ensure data reliability with automated quality checks and governance frameworks.", techs: [{ name: "Great Expectations" }, { name: "Monte Carlo" }, { name: "Soda" }, { name: "dbt Tests" }, { name: "Apache Griffin" }] },
+  ],
+};
+
+export default coreTechData;

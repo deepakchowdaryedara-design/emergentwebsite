@@ -6,12 +6,15 @@ import CTASection from "../components/CTASection";
 import FAQSection from "../components/FAQSection";
 import PageContactForm from "../components/PageContactForm";
 import ImpactStats from "../components/ImpactStats";
-import RelatedCaseStudies from "../components/RelatedCaseStudies";
+import ServiceCaseStudies from "../components/ServiceCaseStudies";
 import TestimonialsSection from "../components/TestimonialsSection";
 import IndustriesServed from "../components/IndustriesServed";
 import RelatedBlog from "../components/RelatedBlog";
+import CoreTechnologies from "../components/CoreTechnologies";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import services from "../data/services";
+import serviceCaseStudies from "../data/serviceCaseStudies";
+import coreTechData from "../data/coreTechData";
 
 function SubserviceCard({ sub, index, isOpen, onToggle }) {
   return (
@@ -156,7 +159,16 @@ export default function ServiceDetail() {
       {/* 7. Mid-page CTA */}
       <CTASection title="Ready to Get Started?" description={`Let's discuss how our ${service.title} services can transform your business operations and deliver measurable ROI.`} />
 
-      {/* 8. Why Choose Us + Stats */}
+      {/* 8. Core Technologies (Tabbed) */}
+      {coreTechData[service.slug] && (
+        <CoreTechnologies
+          categories={coreTechData[service.slug]}
+          title={`Technologies Powering Our ${service.title} Solutions`}
+          description="We deploy proven, enterprise-grade technologies to build AI that surpasses expectations."
+        />
+      )}
+
+      {/* 9. Why Choose Us + Stats */}
       <section className="py-20 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -188,10 +200,10 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      {/* 9. Related Case Studies */}
-      <RelatedCaseStudies industryFilter={service.title} title="Our Proven AI Success Stories" />
+      {/* 10. Service-Specific Case Studies */}
+      <ServiceCaseStudies cases={serviceCaseStudies[service.slug]} title={`Our ${service.title} Success Stories`} />
 
-      {/* 10. Industries Served */}
+      {/* 11. Industries Served */}
       <IndustriesServed title="Tailored Solutions for Your Industry" />
 
       {/* 11. Testimonials */}

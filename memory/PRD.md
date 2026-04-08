@@ -15,11 +15,11 @@ Create a corporate website for NeuralTrix AI (AI consulting & software developme
 ### Homepage (14 sections)
 - Sticky header with navigation, Hero section, CEO Letter, Services grid, Solutions list, Case Studies, Tech Stack, Stats, Industries, Why Choose Us (accordion), Testimonials (carousel), Blog Resources, Contact Form (DB connected), Footer
 
-### Subpages (30+ routes)
-- **/services** - Listing page + 8 individual service pages (AI, GenAI, Custom Software, Mobile, AI Agents, LLM, DevOps, Data Engineering)
-- **/solutions** - Listing page + 5 individual solution pages (DataBrain, MediMind, Talentify, QuikBiz, IntelliBot)
-- **/case-studies** - Listing page + 4 individual case study pages
-- **/industries** - Listing page + 7 individual industry pages (Retail, Healthcare, Fintech, Education, BFSI, Sports, Real Estate)
+### Subpages (30+ routes) — Updated April 6
+- **/services** - Listing page + 8 individual service pages with: hero + image, 8 expandable subservice cards (each with 4 sub-items), tech stack section (4 categories), process roadmap (6 steps), why choose us + stats grid, FAQ accordion, contact form
+- **/solutions** - Listing page + 5 individual solution pages with hero images
+- **/case-studies** - Listing page + 4 individual case study pages with hero images
+- **/industries** - Listing page + 7 individual industry pages with: hero + image, 6 AI capabilities, process roadmap, stats bar, FAQ, contact form
 - **/blog** - Listing page + 3 individual article pages with full content
 - **/about** - Company timeline, leadership team, mission/vision, office locations
 - **/careers** - Job listings with expand/collapse, department filters

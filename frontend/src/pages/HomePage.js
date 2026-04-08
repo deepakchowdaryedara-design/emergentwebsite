@@ -10,21 +10,22 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import Testimonials from "../components/Testimonials";
 import BlogResources from "../components/BlogResources";
 import ContactForm from "../components/ContactForm";
+import AnimatedSection from "../components/AnimatedSection";
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <CEOLetter />
-      <ServicesSection />
-      <SolutionsSection />
+      <AnimatedSection><CEOLetter /></AnimatedSection>
+      <AnimatedSection><ServicesSection /></AnimatedSection>
+      <AnimatedSection><SolutionsSection /></AnimatedSection>
       <CaseStudies />
       <TechStack />
-      <StatsSection />
-      <Industries />
-      <WhyChooseUs />
-      <Testimonials />
-      <BlogResources />
+      <AnimatedSection><StatsSection /></AnimatedSection>
+      <AnimatedSection><Industries /></AnimatedSection>
+      <AnimatedSection><WhyChooseUs /></AnimatedSection>
+      <AnimatedSection><Testimonials /></AnimatedSection>
+      <AnimatedSection><BlogResources /></AnimatedSection>
       <ContactForm />
     </>
   );

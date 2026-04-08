@@ -5,6 +5,12 @@ import PageHero from "../components/PageHero";
 import CTASection from "../components/CTASection";
 import FAQSection from "../components/FAQSection";
 import PageContactForm from "../components/PageContactForm";
+import ImpactStats from "../components/ImpactStats";
+import RelatedCaseStudies from "../components/RelatedCaseStudies";
+import TestimonialsSection from "../components/TestimonialsSection";
+import IndustriesServed from "../components/IndustriesServed";
+import RelatedBlog from "../components/RelatedBlog";
+import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import services from "../data/services";
 
 function SubserviceCard({ sub, index, isOpen, onToggle }) {
@@ -12,9 +18,7 @@ function SubserviceCard({ sub, index, isOpen, onToggle }) {
     <div data-testid={`subservice-${index}`} className="border border-slate-200 rounded-sm overflow-hidden bg-white">
       <button onClick={onToggle} className="w-full text-left p-6 sm:p-8 flex items-start justify-between gap-4 hover:bg-[#F8FAFC] transition-colors">
         <div>
-          <span className="text-xs font-medium text-[#2563EB]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-            {String(index + 1).padStart(2, "0")}
-          </span>
+          <span className="text-xs font-medium text-[#2563EB]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{String(index + 1).padStart(2, "0")}</span>
           <h3 className="text-lg font-bold text-[#0B1B3D] mt-1" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{sub.title}</h3>
           <p className="text-sm text-slate-500 leading-relaxed mt-2">{sub.desc}</p>
         </div>
@@ -42,65 +46,71 @@ export default function ServiceDetail() {
   const [openSub, setOpenSub] = useState(0);
 
   if (!service) {
-    return (<div className="min-h-screen flex items-center justify-center"><h1 className="text-2xl font-bold text-[#0B1B3D] mb-4">Service Not Found</h1><Link to="/services" className="text-[#2563EB]">Back to Services</Link></div>);
+    return (<div className="min-h-screen flex items-center justify-center"><h1 className="text-2xl font-bold text-[#0B1B3D]">Service Not Found</h1><Link to="/services" className="text-[#2563EB] ml-4">Back to Services</Link></div>);
   }
 
   return (
     <div>
-      {/* Hero with Image */}
-      <PageHero label="Services" title={service.heroTitle} description={service.heroDesc} primaryCTA={{ text: "Get Started", href: "#page-contact" }} secondaryCTA={{ text: "View All Services", href: "/services" }} image={service.heroImage} />
+      {/* 1. Hero with Image */}
+      <PageHero label="Services" title={service.heroTitle} description={service.heroDesc} primaryCTA={{ text: "Speak To Our Experts", href: "#page-contact" }} secondaryCTA={{ text: "View All Services", href: "/services" }} image={service.heroImage} />
 
       {/* Breadcrumb */}
       <div className="bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-4">
-          <Link to="/services" data-testid="back-to-services" className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#2563EB] transition-colors">
-            <ArrowLeft size={14} /> Back to All Services
-          </Link>
+          <Link to="/services" data-testid="back-to-services" className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#2563EB] transition-colors"><ArrowLeft size={14} /> Back to All Services</Link>
         </div>
       </div>
 
-      {/* Overview */}
+      {/* 2. Impact Stats */}
+      <ImpactStats title={`Impact of Enterprise AI`} />
+
+      {/* 3. Overview */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
-          <div className="max-w-3xl">
-            <p className="text-base text-slate-600 leading-relaxed">{service.overview}</p>
-          </div>
+          <AnimatedSection>
+            <div className="max-w-3xl">
+              <p className="text-base text-slate-600 leading-relaxed text-lg">{service.overview}</p>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
-      {/* Subservices */}
+      {/* 4. Subservices (expandable cards) */}
       <section data-testid="subservices-section" className="py-20 sm:py-24 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
-          <div className="max-w-2xl mb-12">
-            <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">What We Deliver</p>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-              Our {service.title} Services
-            </h2>
-            <p className="text-base text-slate-600 leading-relaxed">
-              Comprehensive capabilities designed to deliver measurable business impact across your organization.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <AnimatedSection>
+            <div className="max-w-2xl mb-12">
+              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">What We Deliver</p>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+                Our {service.title} Services
+              </h2>
+              <p className="text-base text-slate-600">Comprehensive capabilities designed to deliver measurable business impact.</p>
+            </div>
+          </AnimatedSection>
+          <StaggerChildren className="grid grid-cols-1 lg:grid-cols-2 gap-4" stagger={0.06}>
             {service.subservices.map((sub, i) => (
-              <SubserviceCard key={i} sub={sub} index={i} isOpen={openSub === i} onToggle={() => setOpenSub(openSub === i ? -1 : i)} />
+              <StaggerItem key={i}>
+                <SubserviceCard sub={sub} index={i} isOpen={openSub === i} onToggle={() => setOpenSub(openSub === i ? -1 : i)} />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 
-      {/* Tech Stack */}
-      {service.techStack && (
-        <section data-testid="tech-stack-section" className="py-20 sm:py-24" style={{ backgroundColor: "#0B1B3D" }}>
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+      {/* 5. Tech Stack */}
+      <section data-testid="service-tech-stack" className="py-20 sm:py-24" style={{ backgroundColor: "#0B1B3D" }}>
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+          <AnimatedSection>
             <div className="text-center max-w-2xl mx-auto mb-12">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Tech Stack</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                Enterprise-Grade Tools That Power Results
-              </h2>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Enterprise-Grade Tools That Power Results</h2>
+              <p className="text-base text-slate-400">We deploy what works — proven technologies for AI that surpasses expectations.</p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {service.techStack.map((cat) => (
-                <div key={cat.category} className="border border-white/10 rounded-sm p-6">
+          </AnimatedSection>
+          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {service.techStack.map((cat) => (
+              <StaggerItem key={cat.category}>
+                <div className="border border-white/10 rounded-sm p-6 hover:border-[#2563EB]/40 transition-colors">
                   <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-5">{cat.category}</h3>
                   <div className="space-y-3">
                     {cat.techs.map((t) => (
@@ -111,49 +121,49 @@ export default function ServiceDetail() {
                     ))}
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Process */}
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
-          <div className="max-w-2xl mb-12">
-            <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Our Process</p>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-              From Vision to Victory
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {service.process.map((p, i) => (
-              <div key={i} data-testid={`process-step-${i}`} className="relative border border-slate-200 rounded-sm p-8 bg-white">
-                <span className="text-5xl font-extrabold text-slate-100 absolute top-4 right-4" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div className="relative z-10">
-                  <h3 className="text-base font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{p.step}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">{p.desc}</p>
-                </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 
-      <CTASection title="Ready to Get Started?" description={`Let's discuss how our ${service.title} services can transform your business.`} />
+      {/* 6. Process Roadmap */}
+      <section className="py-20 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+          <AnimatedSection>
+            <div className="max-w-2xl mb-12">
+              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Our Process</p>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>From Vision to Victory</h2>
+              <p className="text-base text-slate-600 mt-4">Our battle-tested roadmap designed to reduce risk, validate impact early, and scale with confidence.</p>
+            </div>
+          </AnimatedSection>
+          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {service.process.map((p, i) => (
+              <StaggerItem key={i}>
+                <div data-testid={`process-step-${i}`} className="relative border border-slate-200 rounded-sm p-8 bg-white hover:-translate-y-1 transition-all duration-300">
+                  <span className="text-5xl font-extrabold text-slate-100 absolute top-4 right-4" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{String(i + 1).padStart(2, "0")}</span>
+                  <div className="relative z-10">
+                    <h3 className="text-base font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{p.step}</h3>
+                    <p className="text-sm text-slate-500 leading-relaxed">{p.desc}</p>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+        </div>
+      </section>
 
-      {/* Why Choose Us */}
-      {service.whyChooseUs && (
-        <section className="py-20 sm:py-24 bg-[#F8FAFC]">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      {/* 7. Mid-page CTA */}
+      <CTASection title="Ready to Get Started?" description={`Let's discuss how our ${service.title} services can transform your business operations and deliver measurable ROI.`} />
+
+      {/* 8. Why Choose Us + Stats */}
+      <section className="py-20 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <AnimatedSection>
               <div>
                 <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Why NeuralTrix AI?</p>
-                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-8" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                  Why Leaders Choose Us
-                </h2>
+                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-8" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Why Leaders Choose Us</h2>
                 <div className="space-y-8">
                   {service.whyChooseUs.map((w, i) => (
                     <div key={i} className="border-l-2 border-[#2563EB] pl-6">
@@ -163,27 +173,37 @@ export default function ServiceDetail() {
                   ))}
                 </div>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 content-start">
-                {[
-                  { value: "15+", label: "Years of Innovation" },
-                  { value: "1000+", label: "Global Success Stories" },
-                  { value: "400+", label: "AI Experts" },
-                  { value: "1500+", label: "Projects Delivered" },
-                  { value: "95%", label: "Client Retention" },
-                  { value: "20%", label: "Faster to Market" },
-                ].map((m) => (
-                  <div key={m.label} className="border border-slate-200 rounded-sm p-4 bg-white text-center">
+            </AnimatedSection>
+            <AnimatedSection delay={0.2}>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 content-start">
+                {[{ value: "15+", label: "Years of Innovation" }, { value: "1000+", label: "Global Success Stories" }, { value: "400+", label: "AI Experts" }, { value: "1500+", label: "Projects Delivered" }, { value: "95%", label: "Client Retention" }, { value: "20%", label: "Faster to Market" }].map((m) => (
+                  <div key={m.label} className="border border-slate-200 rounded-sm p-4 bg-[#F8FAFC] text-center">
                     <span className="text-2xl font-extrabold text-[#0B1B3D] block" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{m.value}</span>
                     <span className="text-xs text-slate-500 mt-1 block">{m.label}</span>
                   </div>
                 ))}
               </div>
-            </div>
+            </AnimatedSection>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
+      {/* 9. Related Case Studies */}
+      <RelatedCaseStudies industryFilter={service.title} title="Our Proven AI Success Stories" />
+
+      {/* 10. Industries Served */}
+      <IndustriesServed title="Tailored Solutions for Your Industry" />
+
+      {/* 11. Testimonials */}
+      <TestimonialsSection title="Here's What Our Clients Say About Us" />
+
+      {/* 12. Blog / Resources */}
+      <RelatedBlog title="Stay Ahead with AI Intelligence" />
+
+      {/* 13. FAQ */}
       <FAQSection faqs={service.faqs} />
+
+      {/* 14. Contact Form */}
       <PageContactForm context={service.title} />
     </div>
   );

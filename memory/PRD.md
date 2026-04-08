@@ -16,13 +16,20 @@ Create a corporate website for NeuralTrix AI (AI consulting & software developme
 - Sticky header with navigation, Hero section, CEO Letter, Services grid, Solutions list, Case Studies, Tech Stack, Stats, Industries, Why Choose Us (accordion), Testimonials (carousel), Blog Resources, Contact Form (DB connected), Footer
 
 ### Subpages (30+ routes) — Updated April 6
-- **/services** - Listing page + 8 individual service pages with: hero + image, 8 expandable subservice cards (each with 4 sub-items), tech stack section (4 categories), process roadmap (6 steps), why choose us + stats grid, FAQ accordion, contact form
-- **/solutions** - Listing page + 5 individual solution pages with hero images
-- **/case-studies** - Listing page + 4 individual case study pages with hero images
-- **/industries** - Listing page + 7 individual industry pages with: hero + image, 6 AI capabilities, process roadmap, stats bar, FAQ, contact form
-- **/blog** - Listing page + 3 individual article pages with full content
-- **/about** - Company timeline, leadership team, mission/vision, office locations
-- **/careers** - Job listings with expand/collapse, department filters
+- **/services** - Listing page + 8 individual service pages with 14 sections each:
+  1. Hero with image 2. Impact Stats (5 metrics with sources) 3. Overview 4. Subservices (8 expandable cards, 4 sub-items each) 5. Tech Stack (4 categories) 6. Process Roadmap (6 steps) 7. Mid-page CTA 8. Why Choose Us + Stats Grid 9. Related Case Studies 10. Industries Served (tabbed) 11. Testimonials Carousel 12. Blog Resources 13. FAQ Accordion 14. Contact Form
+- **/solutions** - Listing + 5 detail pages with hero images, overview, features, CTA, testimonials, blog, FAQ, contact
+- **/case-studies** - Listing + 4 detail pages with hero images, results metrics, challenge/solution, testimonials, blog, FAQ, contact
+- **/industries** - Listing + 7 detail pages with 12 sections: hero image, overview, capabilities, impact stats, CTA, process, case studies, testimonials, blog, FAQ, contact
+- **/blog** - Listing + 3 full articles with related articles
+- **/about** - Timeline, team, mission/vision, offices, CTA, contact
+- **/careers** - Job listings, department filters, culture section, contact
+
+### Animations & UX
+- Scroll-in animations on all sections (framer-motion useInView)
+- Staggered card animations on grids
+- Hover effects on all interactive elements
+- Smooth page transitions with ScrollToTop
 
 ### Every Subpage Includes
 - Hero section with CTAs

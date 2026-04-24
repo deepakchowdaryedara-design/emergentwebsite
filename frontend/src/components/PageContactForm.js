@@ -41,7 +41,7 @@ export default function PageContactForm({ context }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-sm border border-slate-200">
           <div className="p-10 sm:p-14" style={{ backgroundColor: "#0B1B3D" }}>
             <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Get in Touch</p>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-6" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-6" >
               Let's Discuss Your Project
             </h2>
             <p className="text-base text-slate-400 leading-relaxed mb-10">
@@ -66,7 +66,7 @@ export default function PageContactForm({ context }) {
             {submitted ? (
               <div data-testid="page-contact-success" className="flex flex-col items-center justify-center h-full text-center">
                 <CheckCircle2 size={48} className="text-green-500 mb-4" />
-                <h3 className="text-xl font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Thank you!</h3>
+                <h3 className="text-xl font-bold text-[#0B1B3D] mb-2" >Thank you!</h3>
                 <p className="text-sm text-slate-600">We've received your message and will get back to you shortly.</p>
                 <Button data-testid="page-contact-send-another" onClick={() => setSubmitted(false)} className="mt-6 bg-[#0B1B3D] text-white hover:bg-[#0B1B3D]/90 rounded-sm">Send Another Message</Button>
               </div>
@@ -106,3 +106,4 @@ export default function PageContactForm({ context }) {
     </section>
   );
 }
+

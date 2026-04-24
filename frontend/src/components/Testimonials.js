@@ -37,18 +37,18 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section data-testid="testimonials-section" className="py-20 sm:py-24 md:py-32 corp-pat-diag-dash">
+    <section data-testid="testimonials-section" className="py-12 sm:py-16 md:py-20 corp-pat-diag-dash">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">
+        <div className="text-left max-w-2xl mb-10">
+          <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">
             Testimonials
           </p>
           <h2
             data-testid="testimonials-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B1B3D] mb-4"
-            style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+            className="text-4xl sm:text-5xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-4"
+            
           >
-            Powering Digital Success
+            Powering <span className="text-[#0B1B3D]/30">Digital Success</span>
           </h2>
           <p className="text-base text-slate-600 leading-relaxed">
             Real stories of how intelligent engineering transformed complex challenges into operational success.
@@ -77,7 +77,7 @@ export default function Testimonials() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex justify-center gap-4 mt-8">
+          <div className="flex justify-start gap-4 mt-8">
             <CarouselPrevious
               data-testid="testimonial-prev"
               className="static translate-y-0 bg-white border border-slate-200 hover:bg-[#0B1B3D] hover:text-white rounded-sm"
@@ -92,3 +92,4 @@ export default function Testimonials() {
     </section>
   );
 }
+

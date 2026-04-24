@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Button } from "../components/ui/button";
 import { ArrowRight } from "lucide-react";
 import HeroAnimatedBackdrop from "./HeroAnimatedBackdrop";
@@ -14,29 +15,59 @@ export default function PageHero({ label, title, description, primaryCTA, second
       <div className="relative isolate flex min-h-[min(75vh,820px)] flex-col justify-center">
         <HeroAnimatedBackdrop image={resolvedImage} bgDark={bgDark} />
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-20 sm:py-28">
-          <div className="max-w-3xl space-y-6 drop-shadow-sm">
-            {label && (
-              <p className="text-xs font-semibold uppercase tracking-widest mb-2 text-[#2563EB]">{label}</p>
-            )}
-            <h1
+          <div className="max-w-3xl">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-[10px] font-black uppercase tracking-[0.3em] mb-4 text-[#2563EB]"
+            >
+              {label}
+            </motion.p>
+            <motion.h1
               data-testid="page-hero-title"
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08]"
-              style={{ fontFamily: "'Cabinet Grotesk', sans-serif", letterSpacing: "-0.04em" }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tighter mb-6"
+              style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
             >
               {title}
-            </h1>
-            <p className={`text-base sm:text-lg leading-relaxed max-w-2xl ${bgDark ? "text-slate-200" : "text-slate-600"}`}>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className={`text-base sm:text-lg leading-relaxed max-w-xl mb-10 font-medium ${bgDark ? "text-slate-200/90" : "text-slate-600"}`}
+            >
               {description}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
               {primaryCTA && (
                 <Button
                   data-testid="page-hero-primary-cta"
                   asChild
-                  className="bg-[#2563EB] text-white hover:bg-[#2563EB]/90 rounded-sm px-6 py-3 font-semibold text-sm shadow-lg shadow-black/15"
+                  className="bg-[#2563EB] text-white hover:bg-[#2563EB]/90 rounded-sm px-8 py-4 font-bold text-sm shadow-xl shadow-blue-500/10 h-14 cursor-pointer"
                 >
-                  <a href={primaryCTA.href}>
-                    {primaryCTA.text} <ArrowRight size={16} className="ml-2" />
+                  <a 
+                    href={primaryCTA.href}
+                    onClick={(e) => {
+                      if (primaryCTA.href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(primaryCTA.href);
+                        if (target) {
+                          const top = target.getBoundingClientRect().top + window.pageYOffset - 100;
+                          window.scrollTo({ top, behavior: 'smooth' });
+                        }
+                      }
+                    }}
+                  >
+                    {primaryCTA.text} <ArrowRight size={18} className="ml-2" />
                   </a>
                 </Button>
               )}
@@ -45,16 +76,29 @@ export default function PageHero({ label, title, description, primaryCTA, second
                   data-testid="page-hero-secondary-cta"
                   asChild
                   variant="outline"
-                  className={`rounded-sm px-6 py-3 font-semibold text-sm ${
-                    bgDark
-                      ? "bg-white/5 text-white border-white/35 hover:bg-white/10 backdrop-blur-sm"
-                      : "bg-white/80 text-[#0B1B3D] border-[#0B1B3D]/25 hover:bg-white"
-                  }`}
+                  className={`rounded-sm px-8 py-4 font-bold text-sm h-14 transition-all duration-300 cursor-pointer ${bgDark
+                    ? "bg-white/5 text-white border-white/20 hover:bg-white/10 backdrop-blur-md"
+                    : "bg-white/80 text-[#0B1B3D] border-[#0B1B3D]/15 hover:bg-white"
+                    }`}
                 >
-                  <a href={secondaryCTA.href}>{secondaryCTA.text}</a>
+                  <a 
+                    href={secondaryCTA.href}
+                    onClick={(e) => {
+                      if (secondaryCTA.href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(secondaryCTA.href);
+                        if (target) {
+                          const top = target.getBoundingClientRect().top + window.pageYOffset - 100;
+                          window.scrollTo({ top, behavior: 'smooth' });
+                        }
+                      }
+                    }}
+                  >
+                    {secondaryCTA.text}
+                  </a>
                 </Button>
               )}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

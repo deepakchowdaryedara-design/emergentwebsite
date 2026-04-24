@@ -9,6 +9,12 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!process.env.REACT_APP_BACKEND_URL) {
+      setLoading(false);
+      setUser(false);
+      return;
+    }
+
     axios.get(`${API}/auth/me`, { withCredentials: true })
       .then(res => setUser(res.data))
       .catch(() => setUser(false))

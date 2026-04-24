@@ -35,8 +35,8 @@ export const SOLUTION_HERO_IMAGES = {
   "databrain-ai": hq("photo-1551288049-bebda4e38f71"),
   "medimind-ai": hq("photo-1576091160399-112ba8d25d1d"),
   "talentify-ai": hq("photo-1522071820081-4ef5e1c0b612"),
-  "quikbiz-ai": hq("photo-1531746790095-e5995bdb47f0"),
-  "intellibot-ai": hq("photo-1555949963-aa79dcee981c"),
+  "quikbiz-ai": hq("photo-1556740738-b6a63e27c4df"),
+  "intellibot-ai": hq("photo-1531482615713-2afd69097998"),
 };
 
 /**

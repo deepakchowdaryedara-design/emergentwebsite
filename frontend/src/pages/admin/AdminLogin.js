@@ -48,7 +48,7 @@ export default function AdminLogin() {
           <div className="w-12 h-12 bg-white/10 border border-white/20 rounded-sm flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
             <Lock size={20} className="text-white" />
           </div>
-          <h1 className="text-2xl font-bold text-white" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Admin Login</h1>
+          <h1 className="text-2xl font-bold text-white" >Admin Login</h1>
           <p className="text-sm text-slate-300 mt-1">NeuralTrix AI Content Management</p>
         </div>
         <form onSubmit={handleSubmit} className="bg-white border border-slate-200/80 rounded-sm p-8 space-y-4 shadow-xl shadow-black/20">
@@ -69,3 +69,4 @@ export default function AdminLogin() {
     </div>
   );
 }
+

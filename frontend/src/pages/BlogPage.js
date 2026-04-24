@@ -30,7 +30,7 @@ export default function BlogPage() {
                     <span className="text-xs font-semibold text-[#2563EB] uppercase tracking-wider">{a.category}</span>
                     <span className="text-xs text-slate-400 flex items-center gap-1"><Clock size={10} /> {a.readTime}</span>
                   </div>
-                  <h3 className="text-base font-bold text-[#0B1B3D] mb-3 group-hover:text-[#2563EB] transition-colors" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{a.title}</h3>
+                  <h3 className="text-base font-bold text-[#0B1B3D] mb-3 group-hover:text-[#2563EB] transition-colors" >{a.title}</h3>
                   <p className="text-sm text-slate-500 leading-relaxed mb-4">{a.excerpt}</p>
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#0B1B3D] group-hover:text-[#2563EB] transition-colors">Read Article <ArrowRight size={14} /></span>
                 </div>
@@ -44,7 +44,7 @@ export default function BlogPage() {
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Editorial Tracks</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-5" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-5" >
                 Read by Decision Context, Not Just Topic
               </h2>
             </div>
@@ -58,7 +58,7 @@ export default function BlogPage() {
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
+                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
@@ -71,7 +71,7 @@ export default function BlogPage() {
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Featured Insight</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-5" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-5" >
                 Featured Analysis from Recent Client Patterns
               </h2>
             </div>
@@ -84,7 +84,7 @@ export default function BlogPage() {
                 </div>
                 <div className="p-8 lg:p-10">
                   <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-wider mb-3">{blogArticles[0].category}</p>
-                  <h3 className="text-2xl font-bold text-[#0B1B3D] mb-4 group-hover:text-[#2563EB] transition-colors" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{blogArticles[0].title}</h3>
+                  <h3 className="text-2xl font-bold text-[#0B1B3D] mb-4 group-hover:text-[#2563EB] transition-colors" >{blogArticles[0].title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed mb-5">{blogArticles[0].excerpt}</p>
                   <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#0B1B3D] group-hover:text-[#2563EB] transition-colors">
                     Read Featured Article <ArrowRight size={14} />
@@ -100,7 +100,7 @@ export default function BlogPage() {
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Learning Paths</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-5" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-5" >
                 Curated Reading Tracks by Role
               </h2>
             </div>
@@ -122,7 +122,7 @@ export default function BlogPage() {
             ].map((path) => (
               <StaggerItem key={path.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{path.title}</h3>
+                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-4" >{path.title}</h3>
                   <ul className="space-y-2">
                     {path.points.map((p) => (
                       <li key={p} className="text-sm text-slate-600 leading-relaxed">- {p}</li>
@@ -139,7 +139,7 @@ export default function BlogPage() {
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Methodology</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" >
                 Methodology for Turning Insights into Delivery
               </h2>
             </div>
@@ -153,7 +153,7 @@ export default function BlogPage() {
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-[#F8FAFC] p-6">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
+                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
@@ -166,7 +166,7 @@ export default function BlogPage() {
           <AnimatedSection>
             <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">
               <p className="text-xs font-semibold text-blue-200 uppercase tracking-widest mb-4">Next Step</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4" >
                 Apply These Insights to Your Current Priorities
               </h2>
               <p className="text-base text-blue-100/90 leading-relaxed max-w-3xl">
@@ -180,3 +180,4 @@ export default function BlogPage() {
     </div>
   );
 }
+

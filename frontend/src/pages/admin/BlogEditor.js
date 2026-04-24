@@ -80,7 +80,7 @@ export default function BlogEditor() {
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h1 data-testid="blog-editor-title" className="text-2xl font-bold text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{isNew ? "New Article" : "Edit Article"}</h1>
+        <h1 data-testid="blog-editor-title" className="text-2xl font-bold text-[#0B1B3D]" >{isNew ? "New Article" : "Edit Article"}</h1>
         <div className="flex gap-3">
           <Button variant="outline" onClick={() => navigate("/admin/blog")} className="rounded-sm text-sm">Cancel</Button>
           <Button data-testid="save-article-btn" onClick={save} disabled={saving} className="bg-[#0B1B3D] text-white hover:bg-[#0B1B3D]/90 rounded-sm text-sm">
@@ -179,3 +179,4 @@ export default function BlogEditor() {
     </div>
   );
 }
+

@@ -107,16 +107,16 @@ export default function TechStack() {
   const loop = [...ribbonItems, ...ribbonItems];
 
   return (
-    <section id="tech-stack" data-testid="tech-stack-section" className="bg-[#F8FAFC] py-20 sm:py-24 md:py-32">
+    <section id="tech-stack" data-testid="tech-stack-section" className="bg-[#F8FAFC] py-12 sm:py-16 md:py-20">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-        <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#2563EB]">Platforms & Partners</p>
+        <div className="mb-6 max-w-4xl text-left sm:mb-8">
+          <p className="mb-4 text-[10px] font-black uppercase tracking-[0.4em] text-blue-500">Platforms & Partners</p>
           <h2
             data-testid="tech-stack-heading"
-            className="mb-4 text-3xl font-bold tracking-tight text-[#0B1B3D] sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+            className="mb-4 text-4xl font-black tracking-tighter text-[#0B1B3D] sm:text-5xl lg:text-5xl"
+            
           >
-            Leveraging Best-in-Class Tech Foundations
+            Leveraging Best-in-Class <span className="text-[#0B1B3D]/30">Tech Foundations</span>
           </h2>
           <p className="text-base leading-relaxed text-slate-600">
             We leverage best-in-class technologies and strategic platform partnerships to deliver scalable, secure, and production-ready systems.
@@ -147,3 +147,4 @@ export default function TechStack() {
     </section>
   );
 }
+

@@ -40,7 +40,7 @@ export default function PrivacyPolicyPage() {
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Assurance</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" >
                 Privacy Principles that Guide Data Handling
               </h2>
             </div>
@@ -54,7 +54,7 @@ export default function PrivacyPolicyPage() {
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-[#F8FAFC] p-6">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
+                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
@@ -70,7 +70,7 @@ export default function PrivacyPolicyPage() {
               <div className="space-y-10">
                 {sections.map((section) => (
                   <div key={section.title}>
-                    <h2 className="text-2xl font-bold text-[#0B1B3D] mb-3" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+                    <h2 className="text-2xl font-bold text-[#0B1B3D] mb-3" >
                       {section.title}
                     </h2>
                     <p className="text-base text-slate-600 leading-relaxed">{section.text}</p>
@@ -86,7 +86,7 @@ export default function PrivacyPolicyPage() {
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Methodology</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
                 Methodology for Privacy Request Resolution
               </h2>
             </div>
@@ -102,7 +102,7 @@ export default function PrivacyPolicyPage() {
                   <span className="inline-flex items-center rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 px-2.5 py-1 text-[11px] font-semibold tracking-wider text-[#2563EB] mb-4" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                     STEP {item.step}
                   </span>
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
+                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
@@ -113,3 +113,4 @@ export default function PrivacyPolicyPage() {
     </div>
   );
 }
+

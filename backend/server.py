@@ -819,30 +819,40 @@ CREATE INDEX IF NOT EXISTS idx_jobs_status ON jobs (status);
 async def startup():
     global pool
     logger = logging.getLogger(__name__)
-    pool = await asyncpg.create_pool(DATABASE_URL, min_size=1, max_size=10)
-    async with pool.acquire() as conn:
-        await conn.execute(DDL)
+    try:
+        pool = await asyncpg.create_pool(DATABASE_URL, min_size=1, max_size=10)
+        async with pool.acquire() as conn:
+            await conn.execute(DDL)
+    except Exception as e:
+        logger.error(f"Failed to connect to database: {e}")
+        logger.warning("Running without database pool.")
+        pool = None
+
     admin_email = os.environ.get("ADMIN_EMAIL", "admin@neuraltrix.ai")
     admin_password = os.environ.get("ADMIN_PASSWORD", "NeuralAdmin2025!")
-    assert pool is not None
-    async with pool.acquire() as conn:
-        row = await conn.fetchrow("SELECT id, password_hash FROM users WHERE email = $1", admin_email)
-        if row is None:
-            await conn.execute(
-                "INSERT INTO users (email, password_hash, name, role) VALUES ($1, $2, $3, $4)",
-                admin_email,
-                hash_password(admin_password),
-                "Admin",
-                "admin",
-            )
-            logger.info("Admin user seeded: %s", admin_email)
-        elif not verify_password(admin_password, row["password_hash"] or ""):
-            await conn.execute(
-                "UPDATE users SET password_hash = $1 WHERE email = $2",
-                hash_password(admin_password),
-                admin_email,
-            )
-            logger.info("Admin password updated")
+    if pool is not None:
+        try:
+            async with pool.acquire() as conn:
+                row = await conn.fetchrow("SELECT id, password_hash FROM users WHERE email = $1", admin_email)
+                if row is None:
+                    await conn.execute(
+                        "INSERT INTO users (email, password_hash, name, role) VALUES ($1, $2, $3, $4)",
+                        admin_email,
+                        hash_password(admin_password),
+                        "Admin",
+                        "admin",
+                    )
+                    logger.info("Admin user seeded: %s", admin_email)
+                elif not verify_password(admin_password, row["password_hash"] or ""):
+                    await conn.execute(
+                        "UPDATE users SET password_hash = $1 WHERE email = $2",
+                        hash_password(admin_password),
+                        admin_email,
+                    )
+                    logger.info("Admin password updated")
+        except Exception as e:
+            logger.error(f"Failed to seed admin user: {e}")
+
     creds_dir = ROOT_DIR.parent / "memory"
     creds_dir.mkdir(parents=True, exist_ok=True)
     creds_path = creds_dir / "test_credentials.md"

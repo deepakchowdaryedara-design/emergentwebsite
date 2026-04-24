@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { Brain, Bot, Code2, Smartphone, Users, Database, GitBranch, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SERVICES_HERO_IMAGES } from "../lib/heroImageThemes";
@@ -61,68 +63,112 @@ const services = [
   },
 ];
 
+// 4-column grid: columns 0,1 → fly in from LEFT | columns 2,3 → fly in from RIGHT
+function getSlideDirection(index) {
+  const col = index % 4;
+  if (col === 0) return -120; // far left
+  if (col === 1) return -60;  // near left
+  if (col === 2) return 60;   // near right
+  return 120;                 // far right
+}
+
+// Stagger: each card in a row appears 0.1s after the previous
+function getDelay(index) {
+  return (index % 4) * 0.1;
+}
+
 export default function ServicesSection() {
+  const sectionRef = useRef(null);
+
+  // Trigger when the section enters viewport
+  const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
+
   return (
-    <section id="services" data-testid="services-section" className="py-20 sm:py-24 md:py-32 corp-pat-dots">
+    <section
+      id="services"
+      data-testid="services-section"
+      ref={sectionRef}
+      className="py-12 sm:py-16 md:py-20 corp-pat-dots overflow-hidden"
+    >
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-        <div className="max-w-2xl mb-16">
-          <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">
+
+        {/* Heading */}
+        <motion.div
+          className="max-w-2xl mb-10"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">
             Services
           </p>
           <h2
             data-testid="services-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B1B3D] mb-4"
-            style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+            className="text-4xl sm:text-5xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-4"
+
           >
-            AI Development Services for Real-World Impact
+            AI Development <span className="text-[#0B1B3D]/30">Real-World Impact</span>
           </h2>
           <p className="text-base text-slate-600 leading-relaxed">
             Navigate through the current tech-driven landscape and foster long-term growth with custom AI solutions.
           </p>
-        </div>
+        </motion.div>
+
+        {/* Card grid — 4 columns on desktop */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((s) => (
-            <Link
-              to={`/services/${s.slug}`}
-              key={s.title}
-              data-testid={`service-card-${s.title.toLowerCase().replace(/\s/g, "-")}`}
-              className="group relative isolate min-h-[300px] sm:min-h-[320px] overflow-hidden rounded-sm border border-slate-200/80 shadow-sm hover:border-slate-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 cursor-pointer flex flex-col"
-            >
-              <img
-                src={s.image}
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                loading="lazy"
-              />
-              {/* Neutral darkening only — keeps photos vivid, text readable at bottom */}
-              <div
-                className="absolute inset-0 bg-gradient-to-t from-black/[0.92] via-black/50 to-black/15"
-                aria-hidden
-              />
-              <div
-                className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"
-                aria-hidden
-              />
-              <div className="relative z-10 flex min-h-[300px] sm:min-h-[320px] flex-col justify-between p-8">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-white/30 bg-black/25 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] backdrop-blur-md transition-all duration-300 group-hover:border-white/45 group-hover:bg-black/35">
-                  <s.icon size={26} className="text-white drop-shadow-sm" strokeWidth={1.75} />
-                </div>
-                <div className="pt-8">
-                  <h3
-                    className="text-lg font-bold text-white mb-3 tracking-tight drop-shadow-md"
-                    style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-                  >
-                    {s.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-white/95 [text-shadow:0_2px_20px_rgba(0,0,0,0.75),0_1px_3px_rgba(0,0,0,0.9)]">
-                    {s.desc}
-                  </p>
-                </div>
-              </div>
-            </Link>
-          ))}
+          {services.map((s, i) => {
+            const xFrom = getSlideDirection(i);
+            const delay = getDelay(i);
+            const Icon = s.icon;
+
+            return (
+              <motion.div
+                key={s.slug}
+                initial={{ opacity: 0, x: xFrom, y: 24 }}
+                animate={
+                  isInView
+                    ? { opacity: 1, x: 0, y: 0 }
+                    : { opacity: 0, x: xFrom, y: 24 }
+                }
+                transition={{
+                  duration: 0.65,
+                  delay,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                whileHover={{ y: -10 }}
+              >
+                <Link
+                  to={`/services/${s.slug}`}
+                  data-testid={`service-card-${s.title.toLowerCase().replace(/\s/g, "-")}`}
+                  className="svc-card group block"
+                >
+                  {/* Background image */}
+                  <img src={s.image} alt="" className="svc-card__img" loading="lazy" />
+
+                  {/* Gradient overlay */}
+                  <div className="svc-card__overlay" aria-hidden />
+
+                  {/* Grid texture */}
+                  <div className="svc-card__grid" aria-hidden />
+
+                  {/* Content */}
+                  <div className="svc-card__body">
+                    <div className="svc-card__icon-wrap">
+                      <Icon size={24} strokeWidth={1.75} className="svc-card__icon" />
+                    </div>
+                    <div className="svc-card__text">
+                      <h3 className="svc-card__title">{s.title}</h3>
+                      <p className="svc-card__desc">{s.desc}</p>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
+
       </div>
     </section>
   );
 }
+

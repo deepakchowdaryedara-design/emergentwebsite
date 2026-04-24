@@ -87,7 +87,7 @@ export default function ListingImageCard({
         <div className="pt-8">
           <h3
             className={styles.title}
-            style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+
           >
             {title}
           </h3>
@@ -102,3 +102,4 @@ export default function ListingImageCard({
     </Link>
   );
 }
+

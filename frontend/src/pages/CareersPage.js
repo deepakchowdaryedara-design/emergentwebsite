@@ -16,7 +16,7 @@ function JobCard({ job }) {
     <div data-testid={`job-card-${job.id}`} className="bg-white border border-slate-200 rounded-sm overflow-hidden">
       <button onClick={() => setOpen(!open)} className="w-full text-left p-6 sm:p-8 flex items-start justify-between gap-4 hover:bg-[#F8FAFC] transition-colors">
         <div>
-          <h3 className="text-lg font-bold text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{job.title}</h3>
+          <h3 className="text-lg font-bold text-[#0B1B3D]" >{job.title}</h3>
           <p className="text-sm text-slate-500 mt-1">{job.department}</p>
           <div className="flex flex-wrap gap-4 mt-3">
             <span className="text-xs text-slate-500 flex items-center gap-1"><MapPin size={12} /> {job.location}</span>
@@ -80,14 +80,17 @@ export default function CareersPage() {
       <section className="py-20 sm:py-24 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Why Professionals Build Here</h2>
+            <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Culture</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-12" >
+              Why Professionals <span className="text-[#0B1B3D]/30">Build Here</span>
+            </h2>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {perks.map((p) => (
               <StaggerItem key={p.title}>
                 <div className="border border-slate-200 rounded-sm p-8 h-full">
                   <p.icon size={24} className="text-[#2563EB] mb-4" />
-                  <h3 className="text-base font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{p.title}</h3>
+                  <h3 className="text-base font-bold text-[#0B1B3D] mb-2" >{p.title}</h3>
                   <p className="text-sm text-slate-500 leading-relaxed">{p.desc}</p>
                 </div>
               </StaggerItem>
@@ -100,7 +103,10 @@ export default function CareersPage() {
       <section className="py-20 sm:py-24 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Our Hiring Process</h2>
+            <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">The Journey</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-12" >
+              Our Hiring <span className="text-[#0B1B3D]/30">Workflow</span>
+            </h2>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {hiringProcess.map((h, i) => (
@@ -123,8 +129,11 @@ export default function CareersPage() {
       <section id="positions" className="py-20 sm:py-24 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Open Positions</h2>
-            <p className="text-base text-slate-600 mb-8">{careers.length} open roles across {departments.length} departments</p>
+            <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Current Roles</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
+              Open <span className="text-[#0B1B3D]/30">Positions</span>
+            </h2>
+            <p className="text-base text-slate-600 mb-8 font-medium">{careers.length} open roles across {departments.length} departments</p>
           </AnimatedSection>
           <div className="flex flex-wrap gap-2 mb-8">
             <button data-testid="filter-all" onClick={() => setFilter("All")} className={`text-sm px-4 py-2 rounded-sm font-medium transition-colors ${filter === "All" ? "bg-[#0B1B3D] text-white" : "bg-[#F8FAFC] border border-slate-200 text-slate-600 hover:border-[#0B1B3D]"}`}>All</button>
@@ -137,7 +146,12 @@ export default function CareersPage() {
       {/* 7. Locations */}
       <section className="py-20 sm:py-24 corp-pat-diag-dash">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-          <AnimatedSection><h2 className="text-3xl font-bold text-[#0B1B3D] mb-12" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Our Locations</h2></AnimatedSection>
+          <AnimatedSection>
+            <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Global Reach</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-12" >
+              Our <span className="text-[#0B1B3D]/30">Locations</span>
+            </h2>
+          </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { city: "San Francisco", country: "HQ, USA" },
@@ -162,9 +176,9 @@ export default function CareersPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Methodology</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                Methodology for Career Growth and Advancement
+              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Pathways</p>
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
+                Growth <span className="text-[#0B1B3D]/30">Methodology</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -176,7 +190,7 @@ export default function CareersPage() {
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-[#F8FAFC] p-6">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-3" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
+                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-3" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
@@ -185,14 +199,14 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* 7.6 Work Culture Commitments */}
+      {/* 7.6 Commitments */}
       <section className="py-20 sm:py-24 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Assurance</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                Assurance Through Culture and Team Standards
+            <div className="max-w-3xl mb-12">
+              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Commitments</p>
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
+                Engineering <span className="text-[#0B1B3D]/30">Frontier</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -204,7 +218,7 @@ export default function CareersPage() {
               "Respectful feedback and transparent communication",
             ].map((item) => (
               <StaggerItem key={item}>
-                <div className="h-full rounded-sm border border-slate-200 bg-white p-6 text-sm text-slate-600 leading-relaxed">
+                <div className="h-full rounded-sm border border-slate-200 bg-white p-6 text-sm text-slate-600 leading-relaxed font-medium">
                   {item}
                 </div>
               </StaggerItem>
@@ -221,9 +235,9 @@ export default function CareersPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">
-              <p className="text-xs font-semibold text-blue-200 uppercase tracking-widest mb-4">Next Step</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                Find the Role That Matches Your Growth Direction
+              <p className="text-[10px] font-black text-blue-200 uppercase tracking-[0.4em] mb-4">Next Step</p>
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-white mb-4" >
+                Find Your <span className="text-white/30">Growth Direction</span>
               </h2>
               <p className="text-base text-blue-100/90 leading-relaxed max-w-3xl">
                 This next step maps your expertise and goals to opportunities aligned with your growth path.
@@ -238,3 +252,4 @@ export default function CareersPage() {
     </div>
   );
 }
+

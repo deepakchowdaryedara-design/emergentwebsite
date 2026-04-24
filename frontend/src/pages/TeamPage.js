@@ -28,7 +28,7 @@ export default function TeamPage() {
           <AnimatedSection>
             <div className="max-w-3xl mb-12">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Leadership</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
                 The Team Behind High-Performance Delivery
               </h2>
             </div>
@@ -40,7 +40,7 @@ export default function TeamPage() {
                   <div className="w-14 h-14 bg-[#0B1B3D] rounded-sm flex items-center justify-center mb-5">
                     <Users size={22} className="text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{m.name}</h3>
+                  <h3 className="text-lg font-bold text-[#0B1B3D]" >{m.name}</h3>
                   <p className="text-sm text-[#2563EB] font-medium mb-3">{m.role}</p>
                   <p className="text-sm text-slate-600 leading-relaxed mb-4">{m.bio}</p>
                   <div className="flex gap-3">
@@ -58,7 +58,7 @@ export default function TeamPage() {
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Methodology</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" >
                 Methodology for Cross-Functional Team Delivery
               </h2>
               <p className="text-base text-slate-600 leading-relaxed">
@@ -75,7 +75,7 @@ export default function TeamPage() {
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
+                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
@@ -88,7 +88,7 @@ export default function TeamPage() {
           <AnimatedSection>
             <div className="max-w-2xl mb-12">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Assurance</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
                 Assurance Through Team Collaboration Standards
               </h2>
             </div>
@@ -101,7 +101,7 @@ export default function TeamPage() {
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-3" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
+                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-3" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
@@ -113,3 +113,4 @@ export default function TeamPage() {
     </div>
   );
 }
+

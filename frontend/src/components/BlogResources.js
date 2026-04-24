@@ -27,18 +27,18 @@ const articles = [
 
 export default function BlogResources() {
   return (
-    <section id="blog" data-testid="blog-section" className="py-20 sm:py-24 md:py-32 bg-white">
+    <section id="blog" data-testid="blog-section" className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-        <div className="max-w-2xl mb-16">
-          <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">
+        <div className="max-w-2xl mb-10">
+          <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">
             Resources
           </p>
           <h2
             data-testid="blog-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B1B3D] mb-4"
-            style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+            className="text-4xl sm:text-5xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-4"
+            
           >
-            Insights & Trends
+            Insights & <span className="text-[#0B1B3D]/30">Trends</span>
           </h2>
           <p className="text-base text-slate-600 leading-relaxed">
             From emerging technologies to real-world solutions, track what's shaping the AI landscape.
@@ -65,7 +65,7 @@ export default function BlogResources() {
                 </span>
                 <h3
                   className="text-base font-bold text-[#0B1B3D] mt-2 mb-3 group-hover:text-[#2563EB] transition-colors"
-                  style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+                  
                 >
                   {a.title}
                 </h3>
@@ -81,3 +81,4 @@ export default function BlogResources() {
     </section>
   );
 }
+

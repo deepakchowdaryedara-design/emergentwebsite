@@ -29,7 +29,7 @@ export default function TestimonialsPage() {
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Methodology</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" >
                 Experience Principles Behind Client Trust
               </h2>
             </div>
@@ -42,7 +42,7 @@ export default function TestimonialsPage() {
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-[#F8FAFC] p-6">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-3" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
+                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-3" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
@@ -55,7 +55,7 @@ export default function TestimonialsPage() {
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Outcomes</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
                 Outcomes Across Long-Term Client Engagements
               </h2>
             </div>
@@ -69,7 +69,7 @@ export default function TestimonialsPage() {
             ].map((item) => (
               <StaggerItem key={item.label}>
                 <div className="rounded-sm border border-slate-200 bg-white p-6 h-full">
-                  <p className="text-3xl font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.value}</p>
+                  <p className="text-3xl font-bold text-[#0B1B3D] mb-2" >{item.value}</p>
                   <p className="text-sm text-slate-600">{item.label}</p>
                 </div>
               </StaggerItem>
@@ -82,3 +82,4 @@ export default function TestimonialsPage() {
     </div>
   );
 }
+

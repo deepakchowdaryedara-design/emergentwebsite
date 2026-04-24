@@ -49,12 +49,18 @@ export default function CaseStudyDetail() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <AnimatedSection>
-              <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-6" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>The Challenge</h2>
-              <p className="text-base text-slate-600 leading-relaxed">{cs.challenge}</p>
+              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Context</p>
+              <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-6" >
+                The <span className="text-[#0B1B3D]/30">Challenge</span>
+              </h2>
+              <p className="text-base text-slate-600 leading-relaxed font-medium">{cs.challenge}</p>
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
-              <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-6" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Our Solution</h2>
-              <p className="text-base text-slate-600 leading-relaxed">{cs.solution}</p>
+              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Delivery</p>
+              <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-6" >
+                Our <span className="text-[#0B1B3D]/30">Solution</span>
+              </h2>
+              <p className="text-base text-slate-600 leading-relaxed font-medium">{cs.solution}</p>
             </AnimatedSection>
           </div>
         </div>
@@ -65,13 +71,13 @@ export default function CaseStudyDetail() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <AnimatedSection>
-              <h2 className="text-2xl font-bold tracking-tight text-[#0B1B3D] mb-6" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Key Features Delivered</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-[#0B1B3D] mb-6" >Key Features Delivered</h2>
               <ul className="space-y-3">
                 {cs.features.map((f, i) => (<li key={i} className="text-sm text-slate-600 flex items-start gap-3"><span className="w-1.5 h-1.5 bg-[#2563EB] rounded-full mt-2 flex-shrink-0" />{f}</li>))}
               </ul>
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
-              <h2 className="text-2xl font-bold tracking-tight text-[#0B1B3D] mb-6" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Technology Stack</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-[#0B1B3D] mb-6" >Technology Stack</h2>
               <div className="flex flex-wrap gap-3 mb-8">
                 {cs.techStack.map((t) => (<span key={t} className="text-sm px-4 py-2 bg-white border border-slate-200 text-slate-600 rounded-sm font-medium">{t}</span>))}
               </div>
@@ -95,3 +101,4 @@ export default function CaseStudyDetail() {
     </div>
   );
 }
+

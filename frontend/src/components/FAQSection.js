@@ -8,13 +8,14 @@ import {
 export default function FAQSection({ faqs, title }) {
   if (!faqs || faqs.length === 0) return null;
   return (
-    <section data-testid="faq-section" className="py-20 sm:py-24 bg-white">
+    <section data-testid="faq-section" className="py-12 sm:py-16 bg-white">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl">
+          <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Support</p>
           <h2
             data-testid="faq-title"
-            className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-10 text-center"
-            style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+            className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-10 text-left"
+            
           >
             {title || "Frequently Asked Questions"}
           </h2>
@@ -38,3 +39,4 @@ export default function FAQSection({ faqs, title }) {
     </section>
   );
 }
+

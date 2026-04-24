@@ -30,7 +30,7 @@ export function TestimonialManager() {
 
   return (
     <div>
-      <h1 data-testid="testimonials-title" className="text-2xl font-bold text-[#0B1B3D] mb-6" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Testimonials</h1>
+      <h1 data-testid="testimonials-title" className="text-2xl font-bold text-[#0B1B3D] mb-6" >Testimonials</h1>
       <div className="bg-white border border-slate-200 rounded-sm p-6 mb-6">
         <h3 className="text-sm font-semibold text-[#0B1B3D] mb-4">{editing ? "Edit Testimonial" : "Add New Testimonial"}</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
@@ -83,7 +83,7 @@ export function JobManager() {
 
   return (
     <div>
-      <h1 data-testid="jobs-title" className="text-2xl font-bold text-[#0B1B3D] mb-6" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Job Listings</h1>
+      <h1 data-testid="jobs-title" className="text-2xl font-bold text-[#0B1B3D] mb-6" >Job Listings</h1>
       <div className="bg-white border border-slate-200 rounded-sm p-6 mb-6">
         <h3 className="text-sm font-semibold text-[#0B1B3D] mb-4">{editing ? "Edit Job" : "Add New Job"}</h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
@@ -130,7 +130,7 @@ export function ContactsList() {
 
   return (
     <div>
-      <h1 data-testid="contacts-title" className="text-2xl font-bold text-[#0B1B3D] mb-6" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Contact Submissions</h1>
+      <h1 data-testid="contacts-title" className="text-2xl font-bold text-[#0B1B3D] mb-6" >Contact Submissions</h1>
       <div className="bg-white border border-slate-200 rounded-sm overflow-hidden">
         <table className="w-full">
           <thead><tr className="border-b border-slate-200 bg-[#F8FAFC]">
@@ -164,7 +164,7 @@ export function CaseStudyManager() {
 
   return (
     <div>
-      <h1 data-testid="case-studies-admin-title" className="text-2xl font-bold text-[#0B1B3D] mb-6" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Case Studies</h1>
+      <h1 data-testid="case-studies-admin-title" className="text-2xl font-bold text-[#0B1B3D] mb-6" >Case Studies</h1>
       <p className="text-sm text-slate-500 mb-6">Manage your case studies. Currently displaying {items.length} case studies from the database.</p>
       <div className="space-y-3">
         {items.map(cs => (
@@ -178,3 +178,4 @@ export function CaseStudyManager() {
     </div>
   );
 }
+

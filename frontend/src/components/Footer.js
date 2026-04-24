@@ -50,7 +50,7 @@ export default function Footer() {
           <div className="col-span-2 sm:col-span-4 lg:col-span-1">
             <span
               className="text-2xl font-extrabold text-white tracking-tighter block mb-4"
-              style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+              
             >
               NeuralTrix AI
             </span>
@@ -99,3 +99,4 @@ export default function Footer() {
     </footer>
   );
 }
+

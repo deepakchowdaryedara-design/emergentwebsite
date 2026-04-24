@@ -25,7 +25,7 @@ export default function AdminDashboard() {
 
   return (
     <div>
-      <h1 data-testid="admin-dashboard-title" className="text-2xl font-bold text-[#0B1B3D] mb-8" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Dashboard</h1>
+      <h1 data-testid="admin-dashboard-title" className="text-2xl font-bold text-[#0B1B3D] mb-8" >Dashboard</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
         {cards.map(c => (
           <Link key={c.label} to={c.href} data-testid={`dashboard-card-${c.label.toLowerCase().replace(/\s/g, "-")}`} className="bg-white border border-slate-200 rounded-sm p-6 hover:border-[#2563EB]/40 transition-colors">
@@ -42,7 +42,7 @@ export default function AdminDashboard() {
       </div>
       {topArticles.length > 0 && (
         <div className="bg-white border border-slate-200 rounded-sm p-6">
-          <h2 className="text-lg font-bold text-[#0B1B3D] mb-4 flex items-center gap-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+          <h2 className="text-lg font-bold text-[#0B1B3D] mb-4 flex items-center gap-2" >
             <TrendingUp size={18} className="text-[#2563EB]" /> Top Articles by Views
           </h2>
           <div className="space-y-3">
@@ -62,3 +62,4 @@ export default function AdminDashboard() {
     </div>
   );
 }
+

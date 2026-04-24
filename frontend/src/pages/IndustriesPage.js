@@ -2,196 +2,199 @@ import PageHero from "../components/PageHero";
 import PageContactForm from "../components/PageContactForm";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import ListingImageCard from "../components/ListingImageCard";
+import CTASection from "../components/CTASection";
+import { useEffect } from "react";
 import industries from "../data/industries";
 import { LISTING_PAGE_HERO_IMAGES } from "../lib/heroImageThemes";
 
 export default function IndustriesPage() {
+  useEffect(() => {
+    document.documentElement.style.scrollBehavior = 'smooth';
+    return () => {
+      document.documentElement.style.scrollBehavior = 'auto';
+    };
+  }, []);
+
   return (
-    <div>
-      <PageHero
-        label="Industries"
-        title="Industry-Specific AI Programs for Complex Environments"
-        description="Each industry track addresses domain constraints, compliance expectations, and process maturity to ensure adoption without operational disruption."
-        primaryCTA={{ text: "Book a Consultation", href: "#page-contact" }}
-        image={LISTING_PAGE_HERO_IMAGES.industries}
-      />
-      <section className="py-20 sm:py-24 corp-pat-diag-dash">
-        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {industries.map((ind) => (
-              <StaggerItem key={ind.slug}>
-                <ListingImageCard
-                  to={`/industries/${ind.slug}`}
-                  data-testid={`industry-link-${ind.slug}`}
-                  image={ind.heroImage}
-                  title={ind.title}
-                  description={ind.shortDesc}
-                  icon={ind.icon}
-                  ctaText="Explore"
-                  variant="industry"
-                />
-              </StaggerItem>
-            ))}
-          </StaggerChildren>
-        </div>
-      </section>
-      <section className="py-20 sm:py-24 bg-white border-y border-slate-200/70">
-        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-          <AnimatedSection>
-            <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">
-                Industry Outcomes
-              </p>
-              <h2
-                className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-5"
-                style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-              >
-                Performance Gains Mapped to Sector Priorities
-              </h2>
-              <p className="text-base text-slate-600 leading-relaxed">
-                We align each rollout to the KPIs that matter in that domain, including turnaround time, control quality, and service consistency.
-              </p>
-            </div>
-          </AnimatedSection>
-          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { value: "30-60%", label: "Process automation improvement" },
-              { value: "2-4x", label: "Faster operational insights" },
-              { value: "40%+", label: "Reduction in response/handling time" },
-              { value: "Audit-ready", label: "Governed and traceable workflows" },
-            ].map((item) => (
-              <StaggerItem key={item.label}>
-                <div className="h-full rounded-sm border border-slate-200 p-6 bg-[#F8FAFC]">
-                  <p
-                    className="text-3xl font-bold text-[#0B1B3D] mb-2"
-                    style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-                  >
-                    {item.value}
-                  </p>
-                  <p className="text-sm text-slate-600 leading-relaxed">{item.label}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerChildren>
-        </div>
-      </section>
-      <section className="py-20 sm:py-24 corp-pat-cross-dash">
-        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-          <AnimatedSection>
-            <div className="max-w-2xl mb-12">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">
-                Implementation Framework
-              </p>
-              <h2
-                className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]"
-                style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-              >
-                Structured Rollout for Domain Risk and Compliance Needs
-              </h2>
-            </div>
-          </AnimatedSection>
-          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { step: "01", title: "Assess Constraints", desc: "Map regulatory, data, and integration constraints by business unit." },
-              { step: "02", title: "Design Blueprint", desc: "Define secure architecture, controls, and measurable implementation milestones." },
-              { step: "03", title: "Pilot + Validate", desc: "Deploy in a focused workflow with KPI tracking and risk controls." },
-              { step: "04", title: "Scale + Govern", desc: "Extend across teams with monitoring, auditability, and optimization loops." },
-            ].map((item) => (
-              <StaggerItem key={item.step}>
-                <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
-                  <span
-                    className="inline-flex items-center rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 px-2.5 py-1 text-[11px] font-semibold tracking-wider text-[#2563EB] mb-4"
-                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                  >
-                    STEP {item.step}
-                  </span>
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerChildren>
-        </div>
-      </section>
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-          <AnimatedSection>
-            <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">
-                Capability Matrix
-              </p>
-              <h2
-                className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-5"
-                style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-              >
-                Core Capabilities Available Across Industries
-              </h2>
-            </div>
-          </AnimatedSection>
-          <div className="rounded-sm border border-slate-200 overflow-hidden">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 bg-[#F8FAFC] border-b border-slate-200">
-              {["Capability", "Healthcare", "Finance", "Retail", "Education", "Real Estate"].map((h) => (
-                <div key={h} className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-600">{h}</div>
+    <div className="bg-[#0B1B3D]">
+      {/* 1. Hero with Sticky Behavior */}
+      <div className="sticky top-0 z-0 h-[min(70vh,750px)] overflow-hidden">
+        <PageHero
+          label="Industries"
+          title="Industry-Specific AI Programs for Complex Environments"
+          description="Each industry track addresses domain constraints, compliance expectations, and process maturity to ensure adoption without operational disruption."
+          primaryCTA={{ text: "Talk to Our Experts", href: "#page-contact" }}
+          secondaryCTA={{ text: "Explore Verticals", href: "#verticals" }}
+          image={LISTING_PAGE_HERO_IMAGES.industries}
+        />
+      </div>
+
+      {/* 2. Main Industry Listing (Surface Layer) */}
+      <div className="relative z-10 bg-white shadow-[0_-10px_50px_rgba(0,0,0,0.05)]">
+        <section id="verticals" className="py-24 sm:py-32 corp-pat-dots">
+          <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
+            <AnimatedSection>
+              <div className="max-w-3xl mb-16 lg:mb-24">
+                <span className="premium-label" style={{ marginBottom: '1.5rem' }}>Sector Expertise</span>
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-[#0B1B3D] mb-6">
+                  Select Your <span className="text-slate-300">Industry Vertical</span>
+                </h2>
+                <p className="text-lg text-slate-600 leading-relaxed font-bold">Domain-optimized models and deployment architectures tailored to specific regulatory and operational constraints.</p>
+              </div>
+            </AnimatedSection>
+            
+            <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {industries.map((ind) => (
+                <StaggerItem key={ind.slug}>
+                  <ListingImageCard
+                    to={`/industries/${ind.slug}`}
+                    data-testid={`industry-link-${ind.slug}`}
+                    image={ind.heroImage}
+                    title={ind.title}
+                    description={ind.shortDesc}
+                    icon={ind.icon}
+                    ctaText="Technical Overview"
+                    variant="industry"
+                  />
+                </StaggerItem>
               ))}
-            </div>
-            {[
-              ["Automation Workflows", "Yes", "Yes", "Yes", "Yes", "Yes"],
-              ["Predictive Intelligence", "Yes", "Yes", "Yes", "Partial", "Yes"],
-              ["Compliance Reporting", "Yes", "Yes", "Partial", "Partial", "Partial"],
-            ].map((row) => (
-              <div key={row[0]} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 border-b last:border-b-0 border-slate-200">
-                {row.map((cell, idx) => (
-                  <div key={`${row[0]}-${idx}`} className="px-4 py-3 text-sm text-slate-600">
-                    {idx === 0 ? <span className="font-semibold text-[#0B1B3D]">{cell}</span> : cell}
+            </StaggerChildren>
+          </div>
+        </section>
+
+        {/* 3. Industry Outcomes Grid */}
+        <section className="py-24 sm:py-32 bg-slate-50/50 border-y border-slate-100">
+          <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+              <div className="lg:col-span-5">
+                <AnimatedSection>
+                  <span className="premium-label" style={{ marginBottom: '1.5rem' }}>Sector Performance</span>
+                  <h2 className="text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-8 leading-[0.95]">
+                    Outcome-Focused AI <br/><span className="text-slate-300">Benchmarks</span>
+                  </h2>
+                  <p className="text-base text-slate-500 leading-relaxed font-medium mb-10 max-w-sm">
+                    We align each rollout to the KPIs that matter in your domain, focusing on auditability and throughput.
+                  </p>
+                  <div className="flex items-center gap-4 py-8 border-t border-slate-200">
+                    <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white font-black">AI</div>
+                    <div>
+                      <p className="text-sm font-black text-[#0B1B3D]">Sector Validated</p>
+                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Enterprise Ready</p>
+                    </div>
                   </div>
+                </AnimatedSection>
+              </div>
+
+              <div className="lg:col-span-7">
+                <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    { value: "30-60%", label: "Process automation improvement" },
+                    { value: "2-4x", label: "Faster operational insights" },
+                    { value: "40%+", label: "Reduction in handling time" },
+                    { value: "SLA-Driven", label: "Governed and traceable workflows" },
+                  ].map((item, i) => (
+                    <StaggerItem key={item.label}>
+                      <div className="group h-full bg-white border border-slate-100 p-8 hover:border-blue-500/30 transition-all duration-300 relative overflow-hidden">
+                        <div className="absolute -bottom-4 -right-2 text-6xl font-black text-slate-50 group-hover:text-blue-500/5 transition-colors pointer-events-none">0{i+1}</div>
+                        <p className="text-4xl font-black text-[#0B1B3D] mb-3 tracking-tighter group-hover:text-blue-600 transition-colors">{item.value}</p>
+                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-relaxed group-hover:text-slate-600 transition-colors">{item.label}</p>
+                      </div>
+                    </StaggerItem>
+                  ))}
+                </StaggerChildren>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* 4. Implementation Framework (Pinned) */}
+      <div className="sticky top-0 z-0 h-[min(80vh,800px)] flex flex-col justify-center bg-[#070e1a] overflow-hidden">
+        {/* Cinematic High-Tech Pattern */}
+        <div className="absolute inset-0 opacity-[0.1] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #3b82f6 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        
+        <CTASection 
+          compact
+          title="Structured Rollout for Domain Risk" 
+          description="This workflow maps your regulatory, operational, and data constraints into a practical AI rollout strategy."
+          buttonText="Begin Technical Scoping"
+        />
+      </div>
+
+      {/* 5. Final Layers (Surface) */}
+      <div className="relative z-30 bg-white shadow-[0_-40px_100px_rgba(0,0,0,0.2)]">
+        {/* Capability Matrix */}
+        <section className="py-24 sm:py-32">
+          <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
+            <AnimatedSection>
+              <div className="max-w-3xl mb-16">
+                <span className="premium-label" style={{ marginBottom: '1.5rem' }}>Capability Matrix</span>
+                <h2 className="text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-6">
+                  Cross-Vertical <span className="text-slate-300">Feature Parity</span>
+                </h2>
+              </div>
+            </AnimatedSection>
+            
+            <div className="border border-slate-100 overflow-hidden">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 bg-slate-50 border-b border-slate-100">
+                {["Capability", "Healthcare", "Finance", "Retail", "Education", "Real Estate"].map((h) => (
+                  <div key={h} className="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-[#0B1B3D] border-r border-slate-100 last:border-r-0">{h}</div>
                 ))}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="py-20 sm:py-24 bg-[#F8FAFC] border-y border-slate-200/70">
-        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-          <AnimatedSection>
-            <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Methodology</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                Methodology for Industry-Focused Program Delivery
-              </h2>
-            </div>
-          </AnimatedSection>
-          <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { title: "Advisory + Blueprint", desc: "Define priority use-cases and implementation architecture for your industry context." },
-              { title: "Pilot Deployment", desc: "Launch one high-value workflow with KPI tracking and governance controls." },
-              { title: "Scaled Rollout", desc: "Expand across business units with operating standards and optimization loops." },
-            ].map((item) => (
-              <StaggerItem key={item.title}>
-                <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-3" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+              {[
+                ["Automation Workflows", "Yes", "Yes", "Yes", "Yes", "Yes"],
+                ["Predictive Intelligence", "Yes", "Yes", "Yes", "Partial", "Yes"],
+                ["Compliance Reporting", "Yes", "Yes", "Partial", "Partial", "Partial"],
+                ["Model Governance", "Yes", "Yes", "Yes", "Yes", "Yes"],
+              ].map((row) => (
+                <div key={row[0]} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 border-b last:border-b-0 border-slate-100 group">
+                  {row.map((cell, idx) => (
+                    <div key={`${row[0]}-${idx}`} className={`px-6 py-4 text-xs group-hover:bg-blue-50/30 transition-colors border-r border-slate-100 last:border-r-0 ${idx === 0 ? 'font-bold text-[#0B1B3D]' : 'text-slate-500'}`}>
+                      {cell}
+                    </div>
+                  ))}
                 </div>
-              </StaggerItem>
-            ))}
-          </StaggerChildren>
-        </div>
-      </section>
-      <section className="py-16 sm:py-20 bg-[#0B1B3D]">
-        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-          <AnimatedSection>
-            <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">
-              <p className="text-xs font-semibold text-blue-200 uppercase tracking-widest mb-4">Next Step</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                Plan an Industry Rollout with Lower Execution Risk
-              </h2>
-              <p className="text-base text-blue-100/90 leading-relaxed max-w-3xl">
-                This next step maps your regulatory, operational, and data constraints into a practical AI rollout strategy.
-              </p>
+              ))}
             </div>
-          </AnimatedSection>
+          </div>
+        </section>
+
+        <section className="py-24 sm:py-32 bg-[#F8FAFC] border-y border-slate-100">
+          <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
+            <AnimatedSection>
+              <div className="max-w-3xl mb-16">
+                <span className="premium-label" style={{ marginBottom: '1.5rem' }}>Methodology</span>
+                <h2 className="text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-4">
+                  Program Delivery Workflow
+                </h2>
+              </div>
+            </AnimatedSection>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-l border-slate-100">
+              {[
+                { title: "Advisory + Blueprint", desc: "Define priority use-cases and implementation architecture for your industry context." },
+                { title: "Pilot Deployment", desc: "Launch one high-value workflow with KPI tracking and governance controls." },
+                { title: "Scaled Rollout", desc: "Expand across business units with operating standards and optimization loops." },
+              ].map((item, i) => (
+                <StaggerItem key={item.title}>
+                  <div className="group h-full bg-white border-r border-b border-slate-100 p-10 hover:bg-slate-50/50 transition-all duration-300 relative overflow-hidden">
+                    <span className="text-[10px] font-black text-blue-500 mb-6 block" style={{ fontFamily: "'JetBrains Mono', monospace" }}>PHASE :: 0{i+1}</span>
+                    <h3 className="text-2xl font-black text-[#0B1B3D] mb-4 tracking-tighter uppercase leading-none">{item.title}</h3>
+                    <p className="text-[13px] text-slate-500 leading-relaxed font-medium">{item.desc}</p>
+                    <div className="w-8 h-0.5 bg-blue-500/20 group-hover:w-full transition-all duration-500 mt-8" />
+                  </div>
+                </StaggerItem>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <div id="page-contact">
+          <PageContactForm context="Industries Page" />
         </div>
-      </section>
-      <PageContactForm context="Industries Page" />
+      </div>
     </div>
   );
 }
+
+

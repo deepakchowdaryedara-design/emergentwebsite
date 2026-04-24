@@ -21,7 +21,7 @@ export default function RelatedCaseStudies({ industryFilter, limit = 4, title })
           <div className="flex items-end justify-between mb-12">
             <div>
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Case Studies</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
                 {title || "Real Stories of AI Wins That Deliver Impact"}
               </h2>
             </div>
@@ -37,7 +37,7 @@ export default function RelatedCaseStudies({ industryFilter, limit = 4, title })
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <span className="text-xs font-medium text-[#2563EB] uppercase tracking-wider">{cs.industry}</span>
-                    <h3 className="text-lg font-bold text-[#0B1B3D] mt-2 group-hover:text-[#2563EB] transition-colors" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{cs.title}</h3>
+                    <h3 className="text-lg font-bold text-[#0B1B3D] mt-2 group-hover:text-[#2563EB] transition-colors" >{cs.title}</h3>
                     <p className="text-sm text-slate-500 mt-1">{cs.client}</p>
                   </div>
                   <ArrowUpRight size={18} className="text-slate-300 group-hover:text-[#2563EB] transition-colors flex-shrink-0" />
@@ -56,3 +56,4 @@ export default function RelatedCaseStudies({ industryFilter, limit = 4, title })
     </section>
   );
 }
+

@@ -25,7 +25,7 @@ export default function BlogList() {
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h1 data-testid="blog-list-title" className="text-2xl font-bold text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Blog Articles</h1>
+        <h1 data-testid="blog-list-title" className="text-2xl font-bold text-[#0B1B3D]" >Blog Articles</h1>
         <Button data-testid="create-article-btn" asChild className="bg-[#0B1B3D] text-white hover:bg-[#0B1B3D]/90 rounded-sm">
           <Link to="/admin/blog/new"><Plus size={16} className="mr-2" /> New Article</Link>
         </Button>
@@ -74,3 +74,4 @@ export default function BlogList() {
     </div>
   );
 }
+

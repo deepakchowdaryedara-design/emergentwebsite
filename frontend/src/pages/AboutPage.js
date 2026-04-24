@@ -56,14 +56,14 @@ export default function AboutPage() {
             <StaggerItem>
               <div className="border border-slate-200 rounded-sm p-10">
                 <Target size={28} className="text-[#2563EB] mb-5" />
-                <h2 className="text-2xl font-bold text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Our Mission</h2>
+                <h2 className="text-2xl font-bold text-[#0B1B3D] mb-4" >Our Mission</h2>
                 <p className="text-base text-slate-600 leading-relaxed">To democratize enterprise AI by building production-ready, compliant, and measurably impactful AI solutions that help businesses of all sizes compete in the AI-first economy.</p>
               </div>
             </StaggerItem>
             <StaggerItem>
               <div className="border border-slate-200 rounded-sm p-10">
                 <Eye size={28} className="text-[#2563EB] mb-5" />
-                <h2 className="text-2xl font-bold text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Our Vision</h2>
+                <h2 className="text-2xl font-bold text-[#0B1B3D] mb-4" >Our Vision</h2>
                 <p className="text-base text-slate-600 leading-relaxed">To be the world's most trusted AI engineering partner—known for technical excellence, ethical AI practices, and measurable business outcomes across every industry.</p>
               </div>
             </StaggerItem>
@@ -84,14 +84,14 @@ export default function AboutPage() {
       <section className="py-20 sm:py-24 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Our Core Values</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" >Our Core Values</h2>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v) => (
               <StaggerItem key={v.title}>
                 <div className="bg-white border border-slate-200 rounded-sm p-8 h-full">
                   <v.icon size={24} className="text-[#2563EB] mb-4" />
-                  <h3 className="text-base font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{v.title}</h3>
+                  <h3 className="text-base font-bold text-[#0B1B3D] mb-2" >{v.title}</h3>
                   <p className="text-sm text-slate-500 leading-relaxed">{v.desc}</p>
                 </div>
               </StaggerItem>
@@ -104,7 +104,7 @@ export default function AboutPage() {
       <section className="py-20 sm:py-24 corp-pat-diag-dash">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Our Journey</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" >Our Journey</h2>
           </AnimatedSection>
           <div className="relative max-w-6xl mx-auto">
             <div className="absolute top-0 bottom-0 left-[148px] md:left-[188px] w-1.5 bg-[#FFC200]" />
@@ -134,7 +134,7 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <div className="pt-1 md:pt-0.5">
-                      <h3 className="text-xl sm:text-2xl font-bold text-[#0B1B3D] inline mr-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+                      <h3 className="text-xl sm:text-2xl font-bold text-[#0B1B3D] inline mr-2" >
                         {t.title}
                       </h3>
                       <p className="text-base sm:text-lg leading-relaxed inline text-slate-600">
@@ -156,10 +156,10 @@ export default function AboutPage() {
       <section className="py-20 sm:py-24 bg-white border-y border-slate-200/70">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Assurance</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                Assurance for Enterprise-Grade Delivery Quality
+            <div className="max-w-3xl mb-10 text-left">
+              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Assurance</p>
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
+                Assurance for <span className="text-[#0B1B3D]/30">Quality Delivery</span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed">
                 This assurance model combines architecture reviews, milestone controls, and measurable outcome tracking.
@@ -175,7 +175,7 @@ export default function AboutPage() {
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-[#F8FAFC] p-6">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
+                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
@@ -188,15 +188,18 @@ export default function AboutPage() {
       <section className="py-20 sm:py-24 corp-pat-cross-dash">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Leadership Team</h2>
-            <p className="text-base text-slate-600 mb-12 max-w-2xl">Meet the people accountable for strategy, engineering quality, and client outcomes.</p>
+            <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">The Experts</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
+              Leadership <span className="text-[#0B1B3D]/30">Team</span>
+            </h2>
+            <p className="text-base text-slate-600 mb-12 max-w-2xl font-medium">Meet the people accountable for strategy, engineering quality, and client outcomes.</p>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {team.map((m) => (
               <StaggerItem key={m.name}>
                 <div data-testid={`team-member-${m.name.toLowerCase().replace(/\s/g, "-")}`} className="border border-slate-200 rounded-sm p-8">
                   <div className="w-16 h-16 bg-[#0B1B3D] rounded-sm flex items-center justify-center mb-5"><Users size={24} className="text-white" /></div>
-                  <h3 className="text-base font-bold text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{m.name}</h3>
+                  <h3 className="text-base font-bold text-[#0B1B3D]" >{m.name}</h3>
                   <p className="text-sm text-[#2563EB] font-medium mb-3">{m.role}</p>
                   <p className="text-sm text-slate-500 leading-relaxed mb-4">{m.bio}</p>
                   <div className="flex gap-3"><Linkedin size={16} className="text-slate-400 hover:text-[#2563EB] cursor-pointer transition-colors" /><Twitter size={16} className="text-slate-400 hover:text-[#2563EB] cursor-pointer transition-colors" /></div>
@@ -211,8 +214,8 @@ export default function AboutPage() {
       <section className="py-16 bg-[#F8FAFC] border-y border-slate-200">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-6 text-center">Technology Partners</p>
-            <div className="flex flex-wrap justify-center items-center gap-8">
+            <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-6 text-left">Technology Partners</p>
+            <div className="flex flex-wrap justify-start items-center gap-8">
               {partners.map((p) => (<span key={p} className="text-sm font-semibold text-slate-400 tracking-wide">{p}</span>))}
             </div>
           </AnimatedSection>
@@ -223,7 +226,9 @@ export default function AboutPage() {
       <section className="py-20 sm:py-24 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Our Offices</h2>
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-12" >
+              Our <span className="text-[#0B1B3D]/30">Offices</span>
+            </h2>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {offices.map((o) => (
@@ -246,9 +251,9 @@ export default function AboutPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">
-              <p className="text-xs font-semibold text-blue-200 uppercase tracking-widest mb-4">Next Step</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                Start with a Conversation About Your Delivery Context
+              <p className="text-[10px] font-black text-blue-200 uppercase tracking-[0.4em] mb-4">Next Step</p>
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-white mb-4" >
+                Start with <span className="text-white/30">a Conversation</span>
               </h2>
               <p className="text-base text-blue-100/90 leading-relaxed max-w-3xl">
                 This next step helps define the most practical path whether you are evaluating use-cases or scaling production systems.
@@ -263,3 +268,4 @@ export default function AboutPage() {
     </div>
   );
 }
+

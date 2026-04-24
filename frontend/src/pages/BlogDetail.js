@@ -76,7 +76,7 @@ export default function BlogDetail() {
                   {article.content.map((block, i) => {
                     const headingIndex = headings.indexOf(block);
                     if (block.type === "heading") {
-                      return <h2 key={i} id={`heading-${headingIndex}`} className="text-2xl font-bold tracking-tight text-[#0B1B3D] mt-10 mb-4 scroll-mt-24" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{block.text}</h2>;
+                      return <h2 key={i} id={`heading-${headingIndex}`} className="text-2xl font-bold tracking-tight text-[#0B1B3D] mt-10 mb-4 scroll-mt-24" >{block.text}</h2>;
                     }
                     return <p key={i} className="text-base text-slate-600 leading-relaxed mb-6">{block.text}</p>;
                   })}
@@ -109,7 +109,7 @@ export default function BlogDetail() {
       <section className="py-20 sm:py-24 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <h2 className="text-2xl font-bold text-[#0B1B3D] mb-8" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>More Articles</h2>
+            <h2 className="text-2xl font-bold text-[#0B1B3D] mb-8" >More Articles</h2>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {blogArticles.filter((a) => a.slug !== slug).map((a) => (
@@ -117,7 +117,7 @@ export default function BlogDetail() {
                 <div className="overflow-hidden h-40"><img src={a.image} alt={a.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
                 <div className="p-6">
                   <span className="text-xs font-semibold text-[#2563EB] uppercase tracking-wider">{a.category}</span>
-                  <h3 className="text-sm font-bold text-[#0B1B3D] mt-2 group-hover:text-[#2563EB] transition-colors" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{a.title}</h3>
+                  <h3 className="text-sm font-bold text-[#0B1B3D] mt-2 group-hover:text-[#2563EB] transition-colors" >{a.title}</h3>
                 </div>
               </Link>
             ))}
@@ -130,3 +130,4 @@ export default function BlogDetail() {
     </div>
   );
 }
+

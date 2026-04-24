@@ -18,10 +18,10 @@ export default function PartnersPage() {
       <section className="py-20 sm:py-24 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <div className="max-w-3xl mb-12">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Partner Network</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                Platforms We Leverage for Reliable Enterprise Outcomes
+            <div className="max-w-3xl mb-12 text-left">
+              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Partner Network</p>
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D]" >
+                Platforms We <span className="text-[#0B1B3D]/30">Leverage</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -39,10 +39,10 @@ export default function PartnersPage() {
       <section className="py-20 sm:py-24 bg-[#F8FAFC] border-y border-slate-200/70">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Methodology</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                How We Select and Apply Partner Capabilities
+            <div className="max-w-3xl mb-10 text-left">
+              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Methodology</p>
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
+                Partner <span className="text-[#0B1B3D]/30">Capabilities</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -55,7 +55,7 @@ export default function PartnersPage() {
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
+                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
@@ -66,10 +66,10 @@ export default function PartnersPage() {
       <section className="py-20 sm:py-24 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Outcomes</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                Outcomes of Our Partner-Backed Delivery Approach
+            <div className="max-w-3xl mb-10 text-left">
+              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Outcomes</p>
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D]" >
+                Partner-Backed <span className="text-[#0B1B3D]/30">Delivery</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -81,7 +81,7 @@ export default function PartnersPage() {
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-3" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
+                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-3" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
@@ -93,3 +93,4 @@ export default function PartnersPage() {
     </div>
   );
 }
+

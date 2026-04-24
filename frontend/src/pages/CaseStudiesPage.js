@@ -38,7 +38,7 @@ export default function CaseStudiesPage() {
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <div className="min-w-0">
                       <span className="text-xs font-medium text-[#2563EB] uppercase tracking-wider">{cs.industry}</span>
-                      <h3 className="text-xl font-bold text-[#0B1B3D] mt-2 group-hover:text-[#2563EB] transition-colors" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{cs.title}</h3>
+                      <h3 className="text-xl font-bold text-[#0B1B3D] mt-2 group-hover:text-[#2563EB] transition-colors" >{cs.title}</h3>
                       <p className="text-sm text-slate-500 mt-1">{cs.client}</p>
                     </div>
                     <ArrowUpRight size={20} className="text-slate-300 group-hover:text-[#2563EB] transition-colors flex-shrink-0" />
@@ -56,10 +56,10 @@ export default function CaseStudiesPage() {
       <section className="py-20 sm:py-24 bg-white border-y border-slate-200/70">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Results Snapshot</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-5" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                Cross-Project Results Snapshot
+            <div className="max-w-3xl mb-10 text-left">
+              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Results Snapshot</p>
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-5" >
+                Program <span className="text-[#0B1B3D]/30">Outcomes</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -72,7 +72,7 @@ export default function CaseStudiesPage() {
             ].map((item) => (
               <StaggerItem key={item.label}>
                 <div className="rounded-sm border border-slate-200 p-6 bg-[#F8FAFC] h-full">
-                  <p className="text-3xl font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.value}</p>
+                  <p className="text-3xl font-bold text-[#0B1B3D] mb-2" >{item.value}</p>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.label}</p>
                 </div>
               </StaggerItem>
@@ -83,10 +83,10 @@ export default function CaseStudiesPage() {
       <section className="py-20 sm:py-24 corp-pat-cross-dash">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <div className="max-w-3xl mb-10">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Discovery Channels</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-5" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                Explore Case Studies by Objective
+            <div className="max-w-3xl mb-10 text-left">
+              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Discovery Channels</p>
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-5" >
+                Explore by <span className="text-[#0B1B3D]/30">Objective</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -99,7 +99,7 @@ export default function CaseStudiesPage() {
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <div className="rounded-sm border border-slate-200 bg-white p-6 h-full">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
+                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
@@ -110,10 +110,10 @@ export default function CaseStudiesPage() {
       <section className="py-20 sm:py-24 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <div className="max-w-2xl mb-12">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Delivery Methodology</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                Common Execution Pattern Behind Successful Outcomes
+            <div className="max-w-2xl mb-12 text-left">
+              <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">Delivery Methodology</p>
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D]" >
+                Execution <span className="text-[#0B1B3D]/30">Pattern</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -129,7 +129,7 @@ export default function CaseStudiesPage() {
                   <span className="inline-flex items-center rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 px-2.5 py-1 text-[11px] font-semibold tracking-wider text-[#2563EB] mb-4" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                     STEP {item.step}
                   </span>
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{item.title}</h3>
+                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
@@ -141,3 +141,4 @@ export default function CaseStudiesPage() {
     </div>
   );
 }
+

@@ -36,19 +36,19 @@ const metrics = [
 
 export default function WhyChooseUs() {
   return (
-    <section data-testid="why-choose-us-section" className="py-20 sm:py-24 md:py-32 bg-white">
+    <section data-testid="why-choose-us-section" className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">
+            <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.4em] mb-4">
               Why NeuralTrix AI?
             </p>
             <h2
               data-testid="why-choose-heading"
-              className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-6"
-              style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+              className="text-4xl sm:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-6"
+              
             >
-              Your Trusted AI Engineering Partner
+              Your Trusted <span className="text-[#0B1B3D]/30">AI Engineering Partner</span>
             </h2>
             <p className="text-base text-slate-600 leading-relaxed mb-8">
               NeuralTrix AI brings experienced engineering talent to turn ambitious ideas into
@@ -68,7 +68,7 @@ export default function WhyChooseUs() {
               ))}
             </div>
           </div>
-          <div>
+          <div className="flex flex-col justify-end">
             <Accordion type="single" collapsible className="w-full">
               {points.map((p, i) => (
                 <AccordionItem key={p.title} value={`item-${i}`} className="border-b border-slate-200">
@@ -93,3 +93,4 @@ export default function WhyChooseUs() {
     </section>
   );
 }
+

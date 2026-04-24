@@ -1,96 +1,104 @@
 import { ArrowUpRight } from "lucide-react";
+import { CASE_STUDY_HERO_IMAGES } from "../lib/heroImageThemes";
 
 const caseStudies = [
   {
-    title: "AI Video Creation Platform",
+    title: "AI Video Creator",
     client: "YOU B2C",
-    industry: "Media & Content",
-    desc: "Human-like avatars, voice cloning, and multilingual script-to-video conversion for professional content at scale.",
-    tech: ["NextJS", "Python", "Azure", "HeyGen", "RAG"],
-    highlight: "2x content output",
+    industry: "Media",
+    desc: "multilingual script-to-video conversion at scale.",
+    highlight: "2x Output",
+    image: `https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=800`,
   },
   {
-    title: "Smart Teaching Platform",
-    client: "Teach Better AI",
+    title: "Smart Teaching",
+    client: "Better AI",
     industry: "Education",
-    desc: "Nine AI-powered tools for lesson planning, quiz generation, and personalized learning experiences.",
-    tech: ["ReactJS", "Python", "GPT-4o", "LangChain"],
-    highlight: "45% efficiency gain",
+    desc: "AI-powered tools for lesson planning & learning.",
+    highlight: "45% Gain",
+    image: CASE_STUDY_HERO_IMAGES[1],
   },
   {
-    title: "AI Astrology App",
+    title: "AI Astrology",
     client: "Fortuna",
-    industry: "Consumer Tech",
-    desc: "AI-based horoscope analysis with personalized forecasts, DALL-E visuals, and social sharing features.",
-    tech: ["Flutter", "Django", "GPT-4", "DALL-E 3"],
-    highlight: "500K+ users",
+    industry: "Consumer",
+    desc: "Personalized forecasts & DALL-E visuals.",
+    highlight: "500K+ Users",
+    image: CASE_STUDY_HERO_IMAGES[2],
   },
   {
-    title: "AI Trip Planner",
+    title: "Trip Planner",
     client: "TravelAI",
     industry: "Travel",
-    desc: "Personalized itineraries from user preferences with real-time APIs and smart navigation.",
-    tech: ["Flutter", "Node.js", "GPT-4o", "Gemini API"],
-    highlight: "3x engagement",
+    desc: "AI itineraries with real-time API navigation.",
+    highlight: "3x Engage",
+    image: CASE_STUDY_HERO_IMAGES[3],
   },
 ];
 
 export default function CaseStudies() {
   return (
-    <section id="case-studies" data-testid="case-studies-section" className="py-20 sm:py-24 md:py-32 bg-[#0B1B3D]">
-      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-        <div className="max-w-2xl mb-16">
-          <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">
-            Case Studies
-          </p>
-          <h2
-            data-testid="case-studies-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4"
-            style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-          >
-            Architecting Competitive Advantage with AI
-          </h2>
-          <p className="text-base text-slate-400 leading-relaxed">
-            From initial strategy to global deployment, see how we translate high-level innovation into high-impact reality.
+    <section id="case-studies" className="py-12 bg-[#020617]">
+      <div className="w-full px-6 lg:px-24">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-8">
+          <div className="max-w-2xl">
+            <p className="text-[10px] font-bold text-blue-500 uppercase tracking-[0.4em] mb-4">
+              Proven Outcomes
+            </p>
+            <h2
+              className="text-4xl lg:text-5xl font-black tracking-tighter text-white"
+              
+            >
+              Engineering <span className="text-white/40">Advantage</span>
+            </h2>
+          </div>
+          <div className="h-px flex-1 bg-white/5 mx-12 hidden lg:block" />
+          <p className="text-slate-500 text-[11px] uppercase tracking-widest font-bold">
+            04 Integrated Case Studies
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {caseStudies.map((cs) => (
             <div
               key={cs.title}
-              data-testid={`case-study-${cs.client.toLowerCase().replace(/\s/g, "-")}`}
-              className="group border border-white/10 rounded-sm p-8 hover:border-[#2563EB]/40 transition-all duration-300"
+              className="group relative flex flex-col bg-white/[0.03] border border-white/5 rounded-lg overflow-hidden transition-all duration-500 hover:bg-white/[0.06] hover:border-blue-500/30"
             >
-              <div className="flex items-start justify-between mb-6">
-                <div>
-                  <span className="text-xs font-medium text-[#2563EB] uppercase tracking-wider">
+              <div className="relative aspect-[16/8] overflow-hidden">
+                <img 
+                  src={cs.image} 
+                  alt="" 
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-blue-600/10 group-hover:bg-transparent transition-colors" />
+              </div>
+
+              <div className="p-5 flex flex-col flex-1">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-[8px] font-bold text-blue-400 uppercase tracking-widest px-1.5 py-0.5 bg-blue-400/10 rounded">
                     {cs.industry}
                   </span>
-                  <h3
-                    className="text-xl font-bold text-white mt-2"
-                    style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-                  >
-                    {cs.title}
-                  </h3>
-                  <p className="text-sm text-slate-400 mt-1">{cs.client}</p>
                 </div>
-                <ArrowUpRight size={20} className="text-white/30 group-hover:text-[#2563EB] transition-colors" />
-              </div>
-              <p className="text-sm text-slate-400 leading-relaxed mb-6">{cs.desc}</p>
-              <div className="flex items-center justify-between">
-                <div className="flex flex-wrap gap-2">
-                  {cs.tech.slice(0, 3).map((t) => (
-                    <span key={t} className="text-xs px-2 py-1 border border-white/10 text-white/60 rounded-sm">
-                      {t}
-                    </span>
-                  ))}
+                
+                <h3 className="text-lg font-bold text-white mb-2 leading-tight" >
+                  {cs.title}
+                </h3>
+                
+                <p className="text-[10px] text-slate-400 leading-relaxed line-clamp-2 mb-4">
+                  {cs.desc}
+                </p>
+
+                <div className="mt-auto pt-4 border-t border-white/5 flex items-end justify-between">
+                  <div className="text-left">
+                    <p className="text-[7px] font-bold text-slate-500 uppercase tracking-widest mb-1">Impact</p>
+                    <p className="text-sm font-black text-white" >
+                      {cs.highlight}
+                    </p>
+                  </div>
+                  <div className="w-7 h-7 rounded-full border border-white/10 flex items-center justify-center text-white/40 group-hover:border-blue-600 group-hover:text-blue-400 transition-all">
+                    <ArrowUpRight size={12} />
+                  </div>
                 </div>
-                <span
-                  className="text-sm font-bold text-[#2563EB]"
-                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                >
-                  {cs.highlight}
-                </span>
               </div>
             </div>
           ))}
@@ -99,3 +107,4 @@ export default function CaseStudies() {
     </section>
   );
 }
+

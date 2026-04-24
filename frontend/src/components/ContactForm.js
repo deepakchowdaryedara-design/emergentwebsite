@@ -44,7 +44,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" data-testid="contact-section" className="py-20 sm:py-24 md:py-32 bg-[#F8FAFC]">
+    <section id="contact" data-testid="contact-section" className="py-12 sm:py-16 md:py-20 bg-[#F8FAFC]">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-sm border border-slate-200">
           {/* Left side - Info */}
@@ -55,7 +55,7 @@ export default function ContactForm() {
             <h2
               data-testid="contact-heading"
               className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-6"
-              style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+              
             >
               Ready to move forward?
             </h2>
@@ -98,7 +98,7 @@ export default function ContactForm() {
             {submitted ? (
               <div data-testid="contact-success" className="flex flex-col items-center justify-center h-full text-center">
                 <CheckCircle2 size={48} className="text-green-500 mb-4" />
-                <h3 className="text-xl font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+                <h3 className="text-xl font-bold text-[#0B1B3D] mb-2" >
                   Thank you!
                 </h3>
                 <p className="text-sm text-slate-600">We've received your message and will get back to you shortly.</p>
@@ -202,3 +202,4 @@ export default function ContactForm() {
     </section>
   );
 }
+

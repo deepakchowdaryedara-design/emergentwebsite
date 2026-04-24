@@ -25,7 +25,7 @@ export default function AdminLayout() {
       {/* Sidebar */}
       <aside className={`fixed inset-y-0 left-0 z-40 w-64 bg-[#0B1B3D] transform transition-transform lg:translate-x-0 lg:static ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
         <div className="p-6 border-b border-white/10">
-          <Link to="/" className="text-lg font-extrabold text-white tracking-tighter" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>NeuralTrix AI</Link>
+          <Link to="/" className="text-lg font-extrabold text-white tracking-tighter" >NeuralTrix AI</Link>
           <p className="text-xs text-slate-500 mt-1">Content Management</p>
         </div>
         <nav className="p-4 space-y-1">
@@ -62,3 +62,4 @@ export default function AdminLayout() {
     </div>
   );
 }
+

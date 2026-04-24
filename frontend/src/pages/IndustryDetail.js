@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Brain, Database, Bot, Code2, Smartphone, Users, GitBranch, BarChart3, Zap, Share2, ShieldCheck } from "lucide-react";
+import { useEffect } from "react";
 import PageHero from "../components/PageHero";
 import CTASection from "../components/CTASection";
 import FAQSection from "../components/FAQSection";
@@ -16,46 +17,133 @@ export default function IndustryDetail() {
   const { slug } = useParams();
   const industry = industries.find((i) => i.slug === slug);
 
+  useEffect(() => {
+    document.documentElement.style.scrollBehavior = 'smooth';
+    return () => {
+      document.documentElement.style.scrollBehavior = 'auto';
+    };
+  }, []);
+
   if (!industry) {
     return (<div className="min-h-screen flex items-center justify-center"><h1 className="text-2xl font-bold text-[#0B1B3D]">Industry Not Found</h1><Link to="/industries" className="text-[#2563EB] ml-4">Back</Link></div>);
   }
 
   return (
-    <div>
-      <PageHero label="Industries" title={industry.heroTitle} description={industry.heroDesc} primaryCTA={{ text: "Get Industry Assessment", href: "#page-contact" }} secondaryCTA={{ text: "All Industries", href: "/industries" }} image={industry.heroImage} />
-
-      <div className="bg-white border-b border-slate-200">
-        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-4">
-          <Link to="/industries" data-testid="back-to-industries" className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#2563EB]"><ArrowLeft size={14} /> All Industries</Link>
-        </div>
+    <div className="bg-[#0B1B3D]">
+      {/* 1. Hero with Sticky Behavior */}
+      <div className="sticky top-0 z-0 h-[min(75vh,800px)] overflow-hidden">
+        <PageHero 
+          label="Industries" 
+          title={industry.heroTitle} 
+          description={industry.heroDesc} 
+          primaryCTA={{ text: "Get Industry Assessment", href: "#page-contact" }} 
+          secondaryCTA={{ text: "View Capabilities", href: "#capabilities" }} 
+          image={industry.heroImage} 
+        />
       </div>
 
-      {/* Overview */}
-      <section className="py-16 sm:py-20 bg-white">
+      {/* 2. Page Content - Scrolling Over Hero */}
+      <div className="relative z-10 bg-white shadow-[0_-10px_50px_rgba(0,0,0,0.05)]">
+        {/* Breadcrumb */}
+        <div className="bg-white border-b border-slate-200">
+          <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-4">
+            <Link to="/industries" data-testid="back-to-industries" className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#2563EB]"><ArrowLeft size={14} /> All Industries</Link>
+          </div>
+        </div>
+
+      {/* 2. Overview Section (Split Layout) */}
+      <section className="py-24 lg:py-32 bg-white border-b border-slate-100">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-          <AnimatedSection><p className="text-base text-slate-600 leading-relaxed max-w-3xl text-lg">{industry.overview}</p></AnimatedSection>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+            {/* Left: Strategic Content */}
+            <div className="lg:col-span-6 xl:col-span-5">
+              <AnimatedSection>
+                <div className="max-w-2xl">
+                  <span className="premium-label" style={{ marginBottom: '1.5rem' }}>Strategic Thesis</span>
+                  <h2 className="text-4xl lg:text-5xl font-black text-[#0B1B3D] tracking-tighter mb-8 leading-[0.95]">
+                    Sector <span className="text-slate-300">Transformation</span> <br /> Architecture
+                  </h2>
+                  <div className="h-px w-20 bg-blue-500 mb-8" />
+                  <p className="text-lg lg:text-xl text-slate-600 leading-relaxed font-bold mb-8">
+                    {industry.overview}
+                  </p>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 border-t border-slate-100">
+                    <div>
+                      <h4 className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-2">Priority Focus</h4>
+                      <p className="text-xs font-bold text-[#0B1B3D]">Operational Accuracy & Throughput</p>
+                    </div>
+                    <div>
+                      <h4 className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-2">Deployment Path</h4>
+                      <p className="text-xs font-bold text-[#0B1B3D]">Hardened Enterprise Infrastructure</p>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedSection>
+            </div>
+
+            {/* Right: Technical Diagram Mockup */}
+            <div className="lg:col-span-6 xl:col-span-7">
+              <AnimatedSection delay={0.2}>
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-blue-500/5 blur-3xl rounded-full scale-75 group-hover:bg-blue-500/10 transition-all duration-700" />
+                  <div className="relative border border-slate-100 rounded-2xl overflow-hidden shadow-2xl">
+                    <img 
+                      src="/technical_industry_overview_diagram_1777016738237.png" 
+                      alt="Technical Industry Architecture"
+                      className="w-full h-auto aspect-[16/10] object-cover"
+                    />
+                    {/* Architectural Overlay */}
+                    <div className="absolute inset-0 border-[20px] border-white/40 pointer-events-none" />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-[#0B1B3D] text-white text-[8px] font-black px-2 py-1 rounded-sm uppercase tracking-widest">System Overview // Validated</span>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* AI Capabilities */}
-      <section className="py-20 sm:py-24 corp-pat-dots">
+      <section id="capabilities" className="py-20 sm:py-24 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-2xl mb-12">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Capabilities</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>AI Solutions for {industry.title}</h2>
+              <span className="premium-label">Capabilities</span>
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D]">AI Solutions for {industry.title}</h2>
             </div>
           </AnimatedSection>
-          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-slate-100">
             {industry.features.map((f, i) => (
               <StaggerItem key={i}>
-                <div className="bg-white border border-slate-200 rounded-sm p-8 hover:-translate-y-1 transition-all duration-300 h-full">
-                  <CheckCircle2 size={20} className="text-[#2563EB] mb-4" />
-                  <h3 className="text-base font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{f.title}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">{f.desc}</p>
+                <div className="group h-full bg-white border-r border-b border-slate-100 p-8 sm:p-10 hover:bg-slate-50/50 transition-all duration-300 relative overflow-hidden">
+                  {/* Performance Marker */}
+                  <div className="flex items-center gap-3 mb-8">
+                    <span className="text-[10px] font-black text-blue-500 px-2 py-1 bg-blue-50 rounded-sm" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                      UNIT_MOD_0{i + 1}
+                    </span>
+                    <div className="h-px flex-1 bg-slate-100" />
+                  </div>
+
+                  <div className="relative z-10">
+                    <h3 className="text-xl lg:text-2xl font-black text-[#0B1B3D] mb-4 tracking-tighter uppercase leading-none">
+                      {f.title}
+                    </h3>
+                    <p className="text-[12px] lg:text-[13px] text-slate-500 leading-relaxed font-medium max-w-sm mb-8">
+                      {f.desc}
+                    </p>
+                    
+                    {/* Kinetic Indicator */}
+                    <div className="flex items-center gap-2 group/btn cursor-default">
+                      <div className="w-8 h-0.5 bg-blue-500/20 group-hover:w-16 group-hover:bg-blue-600 transition-all duration-500" />
+                      <span className="text-[9px] font-black text-slate-300 group-hover:text-blue-600 uppercase tracking-widest transition-colors">Strategic</span>
+                    </div>
+                  </div>
                 </div>
               </StaggerItem>
-            ))}
+            )) }
           </StaggerChildren>
         </div>
       </section>
@@ -69,109 +157,247 @@ export default function IndustryDetail() {
         { value: "2x", label: "Revenue growth acceleration" },
       ]} />
 
-      <CTASection title={`Plan a Practical ${industry.title} Rollout`} description="Schedule a consultation to align use cases, controls, and execution milestones for your operating context." />
+      {/* 3. Industry Implementation Workflow - Linear Technical Model */}
+      <section className="py-24 sm:py-32 bg-white relative overflow-hidden border-y border-slate-100">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
+          <div className="max-w-2xl mb-16 lg:mb-24">
+            <AnimatedSection>
+              <span className="premium-label mb-6">Execution Methodology</span>
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-8 leading-none">
+                Implementation <br/><span className="text-blue-600">Model</span>
+              </h2>
+            </AnimatedSection>
+          </div>
 
-      {/* Process Roadmap */}
-      <section className="py-20 sm:py-24 corp-pat-cross-dash">
-        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-          <AnimatedSection>
-            <div className="max-w-2xl mb-12">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Our Process</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Industry Implementation Sequence</h2>
-            </div>
-          </AnimatedSection>
-          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {industry.process.map((p, i) => (
-              <StaggerItem key={i}>
-                <div className="relative border border-slate-200 rounded-sm p-8 bg-white hover:-translate-y-1 transition-all duration-300">
-                  <span className="text-5xl font-extrabold text-slate-100 absolute top-4 right-4" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{String(i + 1).padStart(2, "0")}</span>
-                  <div className="relative z-10">
-                    <h3 className="text-base font-bold text-[#0B1B3D] mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{p.step}</h3>
-                    <p className="text-sm text-slate-500 leading-relaxed">{p.desc}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-0 border-t border-l border-slate-100">
+            {[
+              { icon: Database, label: "Data Discovery" },
+              { icon: GitBranch, label: "System Mapping" },
+              { icon: Brain, label: "Model Selection" },
+              { icon: Code2, label: "Logic Staging" },
+              { icon: Zap, label: "Pilot Deployment" },
+              { icon: BarChart3, label: "Scale & Optimize" },
+            ].map((step, i) => (
+              <div key={i} className="group relative bg-white border-r border-b border-slate-100 p-8 hover:bg-blue-50/30 transition-all duration-300 min-h-[300px] flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-8">
+                    <div className="w-10 h-10 rounded-sm bg-[#0B1B3D] text-white flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+                      <step.icon size={20} />
+                    </div>
+                    <span className="text-[10px] font-black text-slate-300" style={{ fontFamily: "'JetBrains Mono', monospace" }}>0{i+1}</span>
                   </div>
+                  
+                  <h3 className="text-xl font-black text-[#0B1B3D] mb-4 tracking-tighter uppercase leading-none">
+                    {industry.process[i]?.step || step.label}
+                  </h3>
+                  <p className="text-[11px] text-slate-500 leading-relaxed font-medium">
+                    {industry.process[i]?.desc || "Standardizing data inputs and mapping legacy infrastructure for AI compatibility."}
+                  </p>
                 </div>
-              </StaggerItem>
+
+                <div className="flex items-center gap-2 mt-8">
+                  <div className="w-2 h-2 rounded-full bg-blue-500" />
+                  <div className="h-px flex-1 bg-slate-100 group-hover:bg-blue-200 transition-all" />
+                </div>
+              </div>
             ))}
-          </StaggerChildren>
+          </div>
         </div>
       </section>
 
       {/* Related Case Studies */}
       <RelatedCaseStudies industryFilter={industry.title} title={`AI Success Stories in ${industry.title}`} />
 
-      {/* Services We Offer for this Industry */}
-      <section data-testid="industry-services-section" className="py-20 sm:py-24 bg-white">
-        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-          <AnimatedSection>
-            <div className="max-w-2xl mb-12">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Our Services</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                How We Help {industry.title} Companies
-              </h2>
+      {/* 4. Strategic Modules - Condensed Capability Matrix */}
+      <section data-testid="industry-services-section" className="py-16 sm:py-20 bg-[#F8FAFC] border-y border-slate-100">
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+            {/* Left Column - Tighter summary */}
+            <div className="lg:col-span-3 lg:sticky lg:top-24 h-fit">
+              <AnimatedSection>
+                <span className="text-[10px] font-black text-blue-600 uppercase tracking-widest mb-4 block">Strategic Modules</span>
+                <h2 className="text-3xl lg:text-4xl font-black tracking-tighter text-[#0B1B3D] mb-6 leading-tight">
+                  {industry.title} <br/>Operational <span className="text-blue-600">Fit</span>
+                </h2>
+                
+                {/* Compact Stats */}
+                <div className="p-5 bg-white border border-slate-200 rounded-2xl shadow-sm">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-[9px] font-black text-[#0B1B3D] uppercase tracking-widest">Readiness</span>
+                    <span className="text-blue-600 text-xs font-black">94.8%</span>
+                  </div>
+                  <div className="h-1 w-full bg-slate-100 rounded-full">
+                    <div className="h-full bg-blue-600 w-[94.8%]" />
+                  </div>
+                </div>
+              </AnimatedSection>
             </div>
-          </AnimatedSection>
-          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.slice(0, 8).map((s) => (
-              <StaggerItem key={s.slug}>
-                <a href={`/services/${s.slug}`} className="group border border-slate-200 rounded-sm p-6 bg-white hover:bg-[#0B1B3D] transition-all duration-300 block h-full">
-                  <s.icon size={24} className="text-[#2563EB] group-hover:text-white transition-colors mb-4" />
-                  <h3 className="text-sm font-bold text-[#0B1B3D] group-hover:text-white transition-colors mb-2" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>{s.title}</h3>
-                  <p className="text-xs text-slate-500 group-hover:text-slate-300 transition-colors leading-relaxed">{s.shortDesc}</p>
-                </a>
-              </StaggerItem>
-            ))}
-          </StaggerChildren>
+
+            {/* Right Column - High-density 3-column grid */}
+            <div className="lg:col-span-9">
+              <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                {services.slice(0, 9).map((s, i) => (
+                  <StaggerItem key={s.slug}>
+                    <a 
+                      href={`/services/${s.slug}`}
+                      className="group block p-6 bg-white border border-slate-100 rounded-xl hover:shadow-xl hover:border-blue-500/20 transition-all duration-300 relative overflow-hidden"
+                    >
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="w-1 h-1 rounded-full bg-blue-500" />
+                        <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest" style={{ fontFamily: "'JetBrains Mono', monospace" }}>MOD_0{i+1}</span>
+                      </div>
+                      
+                      <h3 className="text-base font-black text-[#0B1B3D] mb-2 tracking-tighter uppercase leading-none group-hover:text-blue-600 transition-colors">
+                        {s.title}
+                      </h3>
+                      <p className="text-[11px] text-slate-500 leading-snug font-medium line-clamp-2 mb-4">
+                        {s.shortDesc}
+                      </p>
+                      
+                      <div className="flex items-center justify-between pt-4 border-t border-slate-50">
+                        <span className="text-[9px] font-black text-slate-300 group-hover:text-blue-600 transition-colors uppercase tracking-widest">Detail View</span>
+                        <ArrowRight size={12} className="text-blue-600 opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0" />
+                      </div>
+                    </a>
+                  </StaggerItem>
+                ))}
+              </StaggerChildren>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance & Security Section (Domain Requirement) */}
+      <section className="py-24 sm:py-32 bg-[#0B1B3D] text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div className="lg:col-span-5">
+              <AnimatedSection>
+                <span className="premium-label !border-white/20 !text-blue-300" style={{ marginBottom: '1.5rem' }}>Security Protocol</span>
+                <h2 className="text-4xl lg:text-6xl font-black tracking-tighter mb-8 leading-none">
+                  Hardened <br/><span className="text-blue-400">Security Layers</span>
+                </h2>
+                <div className="space-y-6">
+                  {[
+                    "Zero-trust data access protocols",
+                    "PII/PHI localized masking engines",
+                    "SOC2 & HIPAA compliant staging",
+                    "Immutable audit logging systems"
+                  ].map(protocol => (
+                    <div key={protocol} className="flex items-center gap-4 group">
+                      <div className="w-2 h-2 rounded-full bg-blue-500 group-hover:scale-150 transition-transform" />
+                      <span className="text-sm font-bold text-slate-300 uppercase tracking-widest">{protocol}</span>
+                    </div>
+                  ))}
+                </div>
+              </AnimatedSection>
+            </div>
+            <div className="lg:col-span-7">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { title: "Data Residency", val: "LOCAL_EDGE", desc: "Keep data in-region to meet sovereignty requirements." },
+                  { title: "Inference Safety", desc: "Advanced guardrails to prevent hallucination in critical contexts." },
+                  { title: "Auditability", desc: "Every model decision is traceable back to training inputs." },
+                  { title: "Redundancy", val: "99.99% UP", desc: "High-availability clusters for mission-critical industrial use." },
+                ].map((item, i) => (
+                  <div key={i} className="p-8 border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] transition-colors rounded-none">
+                    <span className="text-[10px] font-black text-blue-400 mb-4 block" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{item.val || `SEC_MOD_0${i+1}`}</span>
+                    <h3 className="text-xl font-black mb-3 tracking-tighter uppercase">{item.title}</h3>
+                    <p className="text-[12px] text-slate-400 leading-relaxed font-medium">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Tech Stack for Industry */}
-      <section data-testid="industry-tech-stack" className="py-20 sm:py-24 bg-[#0B1B3D]">
+      <section data-testid="industry-tech-stack" className="py-20 sm:py-24 bg-white relative">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Tech Stack</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+            <div className="max-w-2xl mb-12">
+              <span className="premium-label">Tech Foundation</span>
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4">
                 Technologies for {industry.title}
               </h2>
-              <p className="text-base text-slate-400">Reference stack combinations commonly used to meet domain reliability and compliance requirements.</p>
+              <p className="text-base text-slate-500 max-w-2xl">Reference stack combinations commonly used to meet domain reliability and compliance requirements.</p>
             </div>
           </AnimatedSection>
-          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <div className="space-y-12 lg:space-y-24 relative">
             {[
-              { cat: "AI & ML", techs: ["GPT-4o", "TensorFlow", "PyTorch", "Scikit-learn", "LangChain", "RAG"] },
-              { cat: "Backend", techs: ["Python", "Node.js", "Java", "Go", "GraphQL", "REST APIs"] },
-              { cat: "Data", techs: ["Snowflake", "PostgreSQL", "MongoDB", "Redis", "Kafka", "Airflow"] },
-              { cat: "Cloud & DevOps", techs: ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "Terraform"] },
-            ].map((c) => (
-              <StaggerItem key={c.cat}>
-                <div className="border border-white/10 rounded-sm p-6 hover:border-[#2563EB]/40 transition-colors">
-                  <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-5">{c.cat}</h3>
-                  <div className="space-y-3">
-                    {c.techs.map((t) => (
-                      <div key={t} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-[#2563EB] rounded-full" />
-                        <span className="text-sm text-slate-400">{t}</span>
-                      </div>
-                    ))}
+              { cat: "AI & ML MODELS", desc: "Core intelligence layers focused on inference quality and prompt performance.", techs: ["GPT-4o", "Claude 3.5", "TensorFlow", "PyTorch", "LangChain", "Vector DBs"] },
+              { cat: "LANGUAGE & FRAMEWORKS", desc: "Stable application foundations for high-concurrency enterprise workloads.", techs: ["Python / FastAPI", "Node.js", "Java Spring", "Go-Micro", "GraphQL", "REST"] },
+              { cat: "DATA & PIPELINES", desc: "Robust data orchestration and warehousing for real-time AI context.", techs: ["Snowflake", "PostgreSQL", "MongoDB", "Redis", "Kafka", "Apache Airflow"] },
+              { cat: "CLOUD & DEPLOYMENT", desc: "Scalable infrastructure with hardened security and compliance wrappers.", techs: ["AWS / Azure", "Docker", "Kubernetes", "Terraform", "CI/CD Labs", "Serverless"] },
+            ].map((c, i) => (
+              <div
+                key={c.cat}
+                className="sticky top-[100px] border border-white/5 rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 bg-[#0B1B3D]"
+                style={{
+                  marginTop: i === 0 ? 0 : `${i * 32}px`,
+                  zIndex: i + 1
+                }}
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[350px]">
+                  {/* Left: Category Label */}
+                  <div className="lg:col-span-5 p-8 lg:p-12 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/5 bg-white/[0.02]">
+                    <span className="text-[10px] font-black text-blue-400 uppercase tracking-[0.2em] mb-6">Module 0{i + 1}</span>
+                    <h3 className="text-2xl lg:text-3xl font-bold text-white mb-6" >{c.cat}</h3>
+                    <p className="text-sm text-blue-100/40 leading-relaxed font-medium">{c.desc}</p>
+                  </div>
+
+                  {/* Right: Tech List */}
+                  <div className="lg:col-span-7 p-8 lg:p-14 flex flex-col justify-center">
+                    <div className="grid grid-cols-2 gap-y-4 gap-x-8">
+                      {c.techs.map((t) => (
+                        <div key={t} className="flex items-center gap-3 group">
+                          <div className="w-1.5 h-1.5 bg-blue-500 rounded-full group-hover:scale-150 transition-transform duration-300" />
+                          <span className="text-sm text-slate-300 font-medium group-hover:text-white transition-colors">{t}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </StaggerItem>
+              </div>
             ))}
-          </StaggerChildren>
+          </div>
         </div>
       </section>
+    </div>
 
-      {/* Testimonials */}
-      <TestimonialsSection title={`What ${industry.title} Leaders Say About Us`} />
+      {/* 4. Strategic CTA (Pinned Layer) */}
+      <div className="sticky top-0 z-0 h-[min(80vh,800px)] flex flex-col justify-center bg-[#070e1a] overflow-hidden">
+        {/* Cinematic High-Tech Pattern */}
+        <div className="absolute inset-0 opacity-[0.1] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #3b82f6 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent)]" />
+        
+        <CTASection 
+          compact
+          title={`Plan a Practical ${industry.title} Rollout`} 
+          description={`Schedule a consultation to align use cases, controls, and execution milestones for your operating context.`} 
+        />
+      </div>
 
-      {/* Blog */}
-      <RelatedBlog title={`${industry.title} AI Insights`} />
+      {/* 5. Surface Layer 2 */}
+      <div className="relative z-30 bg-white shadow-[0_-40px_100px_rgba(0,0,0,0.2)]">
+        {/* Testimonials */}
+        <TestimonialsSection title={`What ${industry.title} Leaders Say About Us`} />
 
-      {/* FAQ */}
-      <FAQSection faqs={industry.faqs} />
+        {/* Blog */}
+        <RelatedBlog title={`${industry.title} AI Insights`} />
 
-      {/* Contact */}
-      <PageContactForm context={`Industry: ${industry.title}`} />
+        {/* FAQ */}
+        <FAQSection faqs={industry.faqs} />
+
+        {/* Contact */}
+        <div id="page-contact" className="bg-white">
+          <PageContactForm context={`Industry: ${industry.title}`} />
+        </div>
+      </div>
     </div>
   );
 }
+

@@ -33,7 +33,7 @@ export default function CaseStudies() {
   }, [api]);
 
   return (
-    <section id="case-studies" data-testid="case-studies-section" className="bg-white py-10 sm:py-12 md:py-14">
+    <section id="case-studies" data-testid="case-studies-section" className="bg-white py-6 sm:py-8 md:py-10">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="mb-8 grid grid-cols-1 gap-8 lg:mb-10 lg:grid-cols-2 lg:items-end lg:gap-10 xl:gap-14">
           <div className="max-w-xl lg:max-w-none">
@@ -111,11 +111,10 @@ export default function CaseStudies() {
                 type="button"
                 aria-label={`Go to ${cs.title}`}
                 onClick={() => api?.scrollTo(index)}
-                className={`rounded-full border-2 border-[#2563eb] transition-all duration-300 ${
-                  current === index
-                    ? "h-2.5 w-8 border-[#2563eb] bg-[#2563eb]"
-                    : "h-2.5 w-2.5 bg-transparent hover:bg-blue-100"
-                }`}
+                className={`rounded-full border-2 border-[#2563eb] transition-all duration-300 ${current === index
+                  ? "h-2.5 w-8 border-[#2563eb] bg-[#2563eb]"
+                  : "h-2.5 w-2.5 bg-transparent hover:bg-blue-100"
+                  }`}
               />
             ))}
           </div>

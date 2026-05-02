@@ -29,8 +29,7 @@ export default function PageHero({ label, title, description, primaryCTA, second
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tighter mb-6"
-              style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+              className="mb-6"
             >
               {title}
             </motion.h1>
@@ -54,7 +53,7 @@ export default function PageHero({ label, title, description, primaryCTA, second
                   asChild
                   className="bg-[#2563EB] text-white hover:bg-[#2563EB]/90 rounded-sm px-8 py-4 font-bold text-sm shadow-xl shadow-blue-500/10 h-14 cursor-pointer"
                 >
-                  <a 
+                  <a
                     href={primaryCTA.href}
                     onClick={(e) => {
                       if (primaryCTA.href.startsWith('#')) {
@@ -81,7 +80,7 @@ export default function PageHero({ label, title, description, primaryCTA, second
                     : "bg-white/80 text-[#0B1B3D] border-[#0B1B3D]/15 hover:bg-white"
                     }`}
                 >
-                  <a 
+                  <a
                     href={secondaryCTA.href}
                     onClick={(e) => {
                       if (secondaryCTA.href.startsWith('#')) {

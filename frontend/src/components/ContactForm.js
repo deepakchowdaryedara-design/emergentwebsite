@@ -47,7 +47,7 @@ export default function ContactForm() {
     <section
       id="page-contact"
       data-testid="contact-section"
-      className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC] scroll-mt-[88px]"
+      className="py-6 sm:py-8 md:py-10 bg-[#F8FAFC] scroll-mt-[88px]"
     >
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-sm border border-slate-200">
@@ -59,7 +59,7 @@ export default function ContactForm() {
             <h2
               data-testid="contact-heading"
               className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-6"
-              
+
             >
               Ready to move forward?
             </h2>

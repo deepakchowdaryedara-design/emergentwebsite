@@ -5,7 +5,7 @@ export default function ServiceCaseStudies({ cases, title }) {
   if (!cases || cases.length === 0) return null;
 
   return (
-    <section data-testid="service-case-studies" className="bg-white py-10 sm:py-12 md:py-14">
+    <section data-testid="service-case-studies" className="bg-white py-6 sm:py-8 md:py-10">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <AnimatedSection>
           <div className="mb-8 max-w-2xl">

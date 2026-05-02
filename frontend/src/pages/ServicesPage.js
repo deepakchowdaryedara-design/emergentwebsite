@@ -44,7 +44,7 @@ export default function ServicesPage() {
       </div>
 
       <div className="relative z-10 bg-white shadow-[0_-10px_50px_rgba(0,0,0,0.05)]">
-        <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
+        <section className="py-6 sm:py-8 md:py-10 corp-pat-dots">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <ServicesShowcaseTabs
               services={services}
@@ -53,12 +53,12 @@ export default function ServicesPage() {
             />
           </div>
         </section>
-        <section className="py-10 sm:py-12 md:py-14 bg-white border-y border-slate-200/70">
+        <section className="py-6 sm:py-8 md:py-10 bg-[#F8FAFC]">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="max-w-2xl mb-8">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Operating model</p>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-4">
+                <h2 className="mb-4">
                   Operational Reality
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed">
@@ -88,12 +88,12 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section className="py-10 sm:py-12 md:py-14 corp-pat-cross-dash">
+        <section className="py-6 sm:py-8 md:py-10 corp-pat-cross-dash">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="max-w-2xl mb-8">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-4">
+                <h2 className="mb-4">
                   Strategy to Scaled Ops
                 </h2>
               </div>
@@ -114,7 +114,7 @@ export default function ServicesPage() {
                       STEP {item.step}
                     </span>
                     <h3
-                      className="text-lg font-bold text-[#0B1B3D] mb-2 tracking-tight"
+                      className="mb-2"
 
                     >
                       {item.title}
@@ -126,12 +126,12 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section className="py-10 sm:py-12 md:py-14 bg-white">
+        <section className="py-6 sm:py-8 md:py-10 bg-white">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="max-w-3xl mb-8">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-5">
+                <h2 className="mb-5">
                   Delivery Models
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed">
@@ -157,7 +157,7 @@ export default function ServicesPage() {
                 <StaggerItem key={item.title}>
                   <div className="h-full rounded-sm border border-slate-200 p-6 bg-[#F8FAFC]">
                     <h3
-                      className="text-lg font-bold text-[#0B1B3D] mb-3"
+                      className="mb-3"
 
                     >
                       {item.title}
@@ -169,12 +169,12 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section className="py-10 sm:py-12 md:py-14 corp-pat-diag-dash">
+        <section className="py-6 sm:py-8 md:py-10 corp-pat-diag-dash">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="max-w-3xl mb-8">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-5">
+                <h2 className="mb-5">
                   Services Adapted to Real Industry Constraints
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed">
@@ -198,7 +198,7 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section data-testid="technology-coverage-section" className="py-10 sm:py-12 md:py-14 bg-white relative">
+        <section data-testid="technology-coverage-section" className="py-6 sm:py-8 md:py-10 bg-white relative">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="max-w-3xl mb-8">
@@ -206,7 +206,7 @@ export default function ServicesPage() {
                   Coverage
                 </p>
                 <h2
-                  className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-[#0B1B3D] mb-6"
+                  className="mb-6"
 
                 >
                   Platforms and Capabilities <br />Across the AI Stack
@@ -259,7 +259,7 @@ export default function ServicesPage() {
                   <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[350px]">
                     <div className={`lg:col-span-4 p-8 lg:p-12 flex flex-col justify-center ${item.color} text-white`}>
                       <span className="text-[10px] font-black uppercase tracking-[0.3em] mb-4 opacity-70">Capability Layer // 0{i + 1}</span>
-                      <h3 className="text-2xl lg:text-3xl font-black mb-6" >{item.title}</h3>
+                      <h3 className="mb-6" >{item.title}</h3>
                       <div className="w-12 h-1 bg-white/20 rounded-full" />
                     </div>
                     <div className="lg:col-span-8 p-8 lg:p-14 flex flex-col justify-center bg-white">
@@ -279,12 +279,12 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
-        <section className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC]">
+        <section className="py-6 sm:py-8 md:py-10 bg-[#F8FAFC]">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="max-w-3xl mb-8">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-5">
+                <h2 className="mb-5">
                   Governance, Security, and Quality Built Into Delivery
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed">
@@ -306,7 +306,7 @@ export default function ServicesPage() {
                 <StaggerItem key={item.title}>
                   <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
                     <h3
-                      className="text-lg font-bold text-[#0B1B3D] mb-4"
+                      className="mb-4"
 
                     >
                       {item.title}
@@ -324,12 +324,12 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section className="py-10 sm:py-12 md:py-14 bg-white border-y border-slate-200/70">
+        <section className="py-6 sm:py-8 md:py-10 bg-white border-y border-slate-200/70">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="max-w-3xl mb-8">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-5">
+                <h2 className="mb-5">
                   What Teams Typically Improve After Engagement
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed">
@@ -376,12 +376,12 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
+        <section className="py-6 sm:py-8 md:py-10 corp-pat-dots">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="max-w-3xl mb-8">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-5">
+                <h2 className="mb-5">
                   Execution Rhythm Options
                 </h2>
               </div>
@@ -407,7 +407,7 @@ export default function ServicesPage() {
                 <StaggerItem key={item.title}>
                   <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
                     <h3
-                      className="text-lg font-bold text-[#0B1B3D] mb-2"
+                      className="mb-2"
 
                     >
                       {item.title}
@@ -420,20 +420,20 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-    </div>
+      </div>
 
-    {/* CTA Layer - Pinned */}
-    <div className="sticky top-0 z-0 h-[min(70vh,750px)] flex flex-col justify-center bg-[#0B1B3D] overflow-hidden">
-      <CTASection 
-        title="Convert Priorities into an Executable Delivery Plan" 
-        description="Share your current priorities and constraints. We will map service fit, delivery sequence, and expected business impact in a focused consultation."
-        buttonText="Schedule Consultation"
-      />
-    </div>
+      {/* CTA Layer - Pinned */}
+      <div className="sticky top-0 z-0 h-[min(70vh,750px)] flex flex-col justify-center bg-[#0B1B3D] overflow-hidden">
+        <CTASection
+          title="Convert Priorities into an Executable Delivery Plan"
+          description="Share your current priorities and constraints. We will map service fit, delivery sequence, and expected business impact in a focused consultation."
+          buttonText="Schedule Consultation"
+        />
+      </div>
 
-    {/* Surface Layer 2 */}
-    <div className="relative z-10 bg-white shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
-      <section className="py-10 sm:py-12 md:py-14 bg-white border-y border-slate-200/70">
+      {/* Surface Layer 2 */}
+      <div className="relative z-10 bg-white shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
+        <section className="py-6 sm:py-8 md:py-10 bg-white border-y border-slate-200/70">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="text-left mb-8">

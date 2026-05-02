@@ -26,16 +26,16 @@ export default function HomePage() {
       <AnimatedSection><WhyChooseUs /></AnimatedSection>
       <AnimatedSection><Testimonials /></AnimatedSection>
       <AnimatedSection><BlogResources /></AnimatedSection>
-      <section className="py-10 sm:py-12 md:py-14 bg-white border-y border-slate-100 overflow-hidden">
+      <section className="py-6 sm:py-8 md:py-10 bg-white border-y border-slate-100 overflow-hidden">
         <div className="w-full px-6 lg:px-24">
           <AnimatedSection>
             <div className="max-w-3xl mb-8">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</span>
               </div>
-              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
+              <h2 className="mb-4" >
                 Our Enterprise <br />
-                <span className="text-[#0B1B3D]/40">Delivery Approach</span>
+                <span className="opacity-40">Delivery Approach</span>
               </h2>
               <p className="text-base sm:text-lg text-slate-500 leading-relaxed max-w-2xl">
                 This architecture combines engineering rigor, advisory, and governance into a singular, high-velocity delivery model.
@@ -120,7 +120,7 @@ export default function HomePage() {
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.2 }}
                   >
-                    <h3 className="text-xl font-black text-[#0B1B3D] mb-4 tracking-tight" >
+                    <h3 className="mb-4 tracking-tight" >
                       {item.title}
                     </h3>
                     <p className="text-sm text-slate-500 leading-relaxed max-w-[260px]">
@@ -133,13 +133,13 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
+      <section className="py-6 sm:py-8 md:py-10 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-8">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
-              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
-                Teams We <span className="text-[#0B1B3D]/30">Commonly Support</span>
+              <h2 className="mb-4" >
+                Teams We <span className="opacity-30">Commonly Support</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -151,7 +151,7 @@ export default function HomePage() {
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-3" >{item.title}</h3>
+                  <h3 className="mb-3" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>

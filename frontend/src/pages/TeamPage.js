@@ -23,7 +23,7 @@ export default function TeamPage() {
         primaryCTA={{ text: "Join Our Team", href: "/careers" }}
         image={ABOUT_HERO_IMAGE}
       />
-      <section className="py-10 sm:py-12 md:py-14 bg-white">
+      <section className="py-6 sm:py-8 md:py-10 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-12">
@@ -54,7 +54,7 @@ export default function TeamPage() {
         </div>
       </section>
       {/* 2. Methodology Section - ENHANCED DESIGN */}
-      <section className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC] border-y border-slate-200/60">
+      <section className="py-6 sm:py-8 md:py-10 bg-[#F8FAFC] border-y border-slate-200/60">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
@@ -67,7 +67,7 @@ export default function TeamPage() {
               </p>
             </div>
           </AnimatedSection>
-          
+
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { id: "01", title: "Strategy Leadership", desc: "Roadmap alignment, value definition, and stakeholder governance." },
@@ -95,7 +95,7 @@ export default function TeamPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
+      <section className="py-6 sm:py-8 md:py-10 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-2xl mb-12">

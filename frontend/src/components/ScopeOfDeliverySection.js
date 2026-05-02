@@ -260,7 +260,7 @@ export default function ScopeOfDeliverySection({ service }) {
   return (
     <section
       data-testid="subservices-section"
-      className="corp-pat-dots border-b border-slate-100 bg-[#fafbfc] pb-8 pt-10 sm:pb-10 sm:pt-12 md:pb-11 md:pt-14"
+      className="corp-pat-dots border-b border-slate-100 bg-[#fafbfc] pb-6 pt-8 sm:pb-8 sm:pt-10 md:pb-9 md:pt-12"
     >
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <AnimatedSection>
@@ -278,7 +278,7 @@ export default function ScopeOfDeliverySection({ service }) {
           </div>
         </AnimatedSection>
 
-        <div className="flex min-h-0 flex-col gap-4 lg:flex-row lg:items-stretch lg:gap-5">
+        <div className="flex min-h-0 flex-col gap-4 lg:flex-row lg:items-start lg:gap-5">
           {/* Left: nav panel grows when column stretches to match detail column */}
           <div className="flex w-full shrink-0 flex-col lg:h-full lg:min-h-0 lg:w-[min(100%,300px)] lg:gap-3 xl:w-[320px]">
             <div className="corp-scope-panel flex min-h-0 flex-col overflow-hidden rounded-md border border-slate-200 bg-white shadow-[0_1px_3px_rgba(15,23,42,0.06)] lg:min-h-0 lg:flex-1">
@@ -295,11 +295,10 @@ export default function ScopeOfDeliverySection({ service }) {
                       type="button"
                       data-testid={`scope-delivery-nav-${i}`}
                       onClick={() => setActive(i)}
-                      className={`flex w-full items-center gap-3 border-b border-slate-100 px-3 py-3 text-left transition-colors last:border-b-0 sm:px-4 ${
-                        isActive
+                      className={`flex w-full items-center gap-3 border-b border-slate-100 px-3 py-3 text-left transition-colors last:border-b-0 sm:px-4 ${isActive
                           ? "border-l-[3px] border-l-[#0B1B3D] bg-slate-50 pl-[13px]"
                           : "border-l-[3px] border-l-transparent hover:bg-slate-50/80"
-                      }`}
+                        }`}
                     >
                       <ItemIcon
                         className={`h-4 w-4 shrink-0 ${isActive ? "text-[#0B1B3D]" : "text-slate-400"}`}
@@ -307,9 +306,8 @@ export default function ScopeOfDeliverySection({ service }) {
                         aria-hidden
                       />
                       <span
-                        className={`flex-1 text-sm font-medium leading-snug ${
-                          isActive ? "text-[#0B1B3D]" : "text-slate-600"
-                        }`}
+                        className={`flex-1 text-sm font-medium leading-snug ${isActive ? "text-[#0B1B3D]" : "text-slate-600"
+                          }`}
                       >
                         {s.title}
                       </span>
@@ -347,7 +345,7 @@ export default function ScopeOfDeliverySection({ service }) {
           {/* Right: grows with content at zoom; scrolls only if needed (zoom-safe vs fixed vh + overflow clip) */}
           <div
             data-testid={`subservice-${active}`}
-            className="corp-scope-detail flex min-h-0 min-w-0 flex-1 flex-col overflow-y-auto overflow-x-hidden rounded-md border border-slate-200 border-t-[3px] border-t-[#0B1B3D] bg-white shadow-[0_2px_8px_rgba(15,23,42,0.06)] lg:min-h-0 lg:self-stretch"
+            className="corp-scope-detail flex min-h-0 min-w-0 flex-1 flex-col overflow-y-auto overflow-x-hidden rounded-md border border-slate-200 border-t-[3px] border-t-[#0B1B3D] bg-white shadow-[0_2px_8px_rgba(15,23,42,0.06)] lg:min-h-0"
           >
             <div className="shrink-0 border-b border-slate-100 px-5 pb-4 pt-5 sm:px-6 sm:pb-5 sm:pt-6">
               <h3 className="mb-2 text-xl font-semibold tracking-tight text-[#0B1B3D] sm:text-2xl">

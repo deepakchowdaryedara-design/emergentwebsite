@@ -39,7 +39,7 @@ function SolutionCard({ solution }) {
       <div className="grid min-h-0 flex-1 grid-cols-1 gap-0 lg:grid-cols-2 lg:gap-0">
         <div className="flex min-h-0 flex-col justify-between p-8 sm:p-10 lg:p-12 lg:pr-10">
           <div className="min-h-0 flex-1 overflow-y-auto lg:overflow-visible">
-            <h3 className="mb-4 text-2xl font-bold tracking-tight text-white sm:text-3xl">{solution.title}</h3>
+            <h3 className="mb-4">{solution.title}</h3>
             <p className="mb-6 text-sm leading-snug text-slate-400 sm:text-base">{solution.shortDesc}</p>
             <ul className="space-y-3">
               {bullets.map((line) => (
@@ -62,9 +62,8 @@ function SolutionCard({ solution }) {
                   role="tab"
                   aria-selected={tab === idx}
                   onClick={() => setTab(idx)}
-                  className={`rounded-sm px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-colors sm:text-[13px] ${
-                    tab === idx ? "bg-white text-[#050816]" : "text-slate-400 hover:bg-white/5 hover:text-white"
-                  }`}
+                  className={`rounded-sm px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-colors sm:text-[13px] ${tab === idx ? "bg-white text-[#050816]" : "text-slate-400 hover:bg-white/5 hover:text-white"
+                    }`}
                 >
                   {label}
                 </button>
@@ -150,13 +149,12 @@ export default function SolutionsSection() {
   };
 
   return (
-    <section id="solutions" data-testid="solutions-section" className="overflow-hidden bg-[#050816] py-10 sm:py-12 md:py-14">
+    <section id="solutions" data-testid="solutions-section" className="overflow-hidden bg-[#050816] py-6 sm:py-8 md:py-10">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <header className="mb-8 max-w-3xl text-left sm:mb-10">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">Solutions</p>
           <h2
-            className="text-3xl font-black tracking-tighter text-white sm:text-4xl lg:text-[2.5rem] lg:leading-[1.15]"
-            style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+            className="mb-8"
           >
             Accelerators Built for Business Challenges
           </h2>
@@ -218,9 +216,8 @@ export default function SolutionsSection() {
                   aria-label={`Show ${s.title}`}
                   aria-current={active === i}
                   onClick={() => setActive(i)}
-                  className={`h-2.5 rounded-full transition-all duration-300 ${
-                    active === i ? "w-8 bg-blue-400" : "w-2.5 bg-white/25 hover:bg-white/40"
-                  }`}
+                  className={`h-2.5 rounded-full transition-all duration-300 ${active === i ? "w-8 bg-blue-400" : "w-2.5 bg-white/25 hover:bg-white/40"
+                    }`}
                 />
               ))}
             </div>

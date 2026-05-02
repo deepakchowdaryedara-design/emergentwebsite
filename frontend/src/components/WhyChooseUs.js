@@ -36,7 +36,7 @@ const metrics = [
 
 export default function WhyChooseUs() {
   return (
-    <section data-testid="why-choose-us-section" className="py-10 sm:py-12 md:py-14 bg-white">
+    <section data-testid="why-choose-us-section" className="py-6 sm:py-8 md:py-10 bg-white">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
@@ -45,10 +45,9 @@ export default function WhyChooseUs() {
             </p>
             <h2
               data-testid="why-choose-heading"
-              className="text-4xl sm:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-6"
-              
+              className="mb-6"
             >
-              Your Trusted <span className="text-[#0B1B3D]/30">AI Engineering Partner</span>
+              Your Trusted <span className="opacity-30">AI Engineering Partner</span>
             </h2>
             <p className="text-base text-slate-600 leading-relaxed mb-8">
               NeuralTrix AI brings experienced engineering talent to turn ambitious ideas into

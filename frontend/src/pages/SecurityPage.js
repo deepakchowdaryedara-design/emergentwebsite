@@ -21,12 +21,12 @@ export default function SecurityPage() {
         primaryCTA={{ text: "Talk Security Requirements", href: "#page-contact" }}
         image={LISTING_PAGE_HERO_IMAGES.industries}
       />
-      <section className="py-10 sm:py-12 md:py-14 bg-white">
+      <section className="py-6 sm:py-8 md:py-10 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-12">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
+              <h2 className="" >
                 Controls Designed for Production Environments
               </h2>
             </div>
@@ -36,7 +36,7 @@ export default function SecurityPage() {
               <StaggerItem key={p.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-[#F8FAFC] p-6">
                   <p.icon size={22} className="text-[#2563EB] mb-4" />
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" >{p.title}</h3>
+                  <h3 className="mb-2" >{p.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{p.desc}</p>
                 </div>
               </StaggerItem>
@@ -44,12 +44,12 @@ export default function SecurityPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC] border-y border-slate-200/70">
+      <section className="py-6 sm:py-8 md:py-10 bg-[#F8FAFC] border-y border-slate-200/70">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
               <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Methodology</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" >
+              <h2 className="mb-4" >
                 Security Lifecycle from Assessment to Monitoring
               </h2>
             </div>
@@ -66,7 +66,7 @@ export default function SecurityPage() {
                   <span className="inline-flex items-center rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 px-2.5 py-1 text-[11px] font-semibold tracking-wider text-[#2563EB] mb-4" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                     STEP {item.step}
                   </span>
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" >{item.title}</h3>
+                  <h3 className="mb-2" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
@@ -74,12 +74,12 @@ export default function SecurityPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
+      <section className="py-6 sm:py-8 md:py-10 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
+              <h2 className="" >
                 Assurance Through Operational Security Safeguards
               </h2>
             </div>
@@ -97,7 +97,7 @@ export default function SecurityPage() {
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-4" >{item.title}</h3>
+                  <h3 className="mb-4" >{item.title}</h3>
                   <ul className="space-y-2">
                     {item.points.map((point) => (
                       <li key={point} className="text-sm text-slate-600 leading-relaxed">- {point}</li>

@@ -15,7 +15,7 @@ export default function RelatedCaseStudies({ industryFilter, limit = 4, title })
   const display = filtered.slice(0, limit);
 
   return (
-    <section data-testid="related-case-studies" className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC]">
+    <section data-testid="related-case-studies" className="py-6 sm:py-8 md:py-10 bg-[#F8FAFC]">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <AnimatedSection>
           <div className="flex items-end justify-between mb-8">

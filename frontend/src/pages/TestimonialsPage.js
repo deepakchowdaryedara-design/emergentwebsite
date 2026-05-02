@@ -24,7 +24,7 @@ export default function TestimonialsPage() {
           { value: "400+", label: "AI specialists" },
         ]}
       />
-      <section className="py-10 sm:py-12 md:py-14 bg-white border-y border-slate-200/70">
+      <section className="py-6 sm:py-8 md:py-10 bg-white border-y border-slate-200/70">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
@@ -50,7 +50,7 @@ export default function TestimonialsPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
+      <section className="py-6 sm:py-8 md:py-10 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">

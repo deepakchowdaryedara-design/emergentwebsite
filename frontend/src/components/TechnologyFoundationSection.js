@@ -80,7 +80,7 @@ export default function TechnologyFoundationSection({
   return (
     <section
       data-testid={dataTestId}
-      className={cn("border-y border-slate-100 bg-white py-10 sm:py-12 md:py-14", className)}
+      className={cn("border-y border-slate-100 bg-white py-6 sm:py-8 md:py-10", className)}
     >
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-12">

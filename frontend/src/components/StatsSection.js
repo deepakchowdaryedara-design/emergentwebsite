@@ -2,50 +2,50 @@ import React from 'react';
 import { ArrowUpRight, Zap, Target, Shield, Cpu, Activity, TrendingUp } from 'lucide-react';
 
 const stats = [
-  { 
-    value: "2x", 
-    label: "Velocity", 
-    desc: "AI reviews and intelligent testing doubles engineering speed.", 
+  {
+    value: "2x",
+    label: "Velocity",
+    desc: "AI reviews and intelligent testing doubles engineering speed.",
     icon: Zap,
     gridClass: "lg:col-span-8 lg:row-span-2",
     theme: "blue"
   },
-  { 
-    value: "10x", 
-    label: "Faster Deployments", 
-    desc: "Automated CI/CD pipelines accelerate cycles.", 
+  {
+    value: "10x",
+    label: "Faster Deployments",
+    desc: "Automated CI/CD pipelines accelerate cycles.",
     icon: Activity,
     gridClass: "lg:col-span-4 lg:row-span-1",
     theme: "indigo"
   },
-  { 
-    value: "99.9%", 
-    label: "Uptime", 
-    desc: "Predictive maintenance guarantees stability.", 
+  {
+    value: "99.9%",
+    label: "Uptime",
+    desc: "Predictive maintenance guarantees stability.",
     icon: Shield,
     gridClass: "lg:col-span-4 lg:row-span-1",
     theme: "blue"
   },
-  { 
-    value: "150+", 
-    label: "Systems Deployed", 
-    desc: "Enterprise solutions engineered and scaled.", 
+  {
+    value: "150+",
+    label: "Systems Deployed",
+    desc: "Enterprise solutions engineered and scaled.",
     icon: Cpu,
     gridClass: "lg:col-span-6 lg:row-span-2",
     theme: "dark"
   },
-  { 
-    value: "55%", 
-    label: "Efficiency", 
-    desc: "Reduces manual testing overhead.", 
+  {
+    value: "55%",
+    label: "Efficiency",
+    desc: "Reduces manual testing overhead.",
     icon: Target,
     gridClass: "lg:col-span-3 lg:row-span-2",
     theme: "blue"
   },
-  { 
-    value: "60%", 
-    label: "Cost Reduction", 
-    desc: "AI agents refactor legacy code.", 
+  {
+    value: "60%",
+    label: "Cost Reduction",
+    desc: "AI agents refactor legacy code.",
     icon: TrendingUp,
     gridClass: "lg:col-span-3 lg:row-span-2",
     theme: "indigo"
@@ -54,7 +54,7 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="py-10 sm:py-12 md:py-14 bg-[#0B1B3D] relative overflow-hidden">
+    <section className="py-6 sm:py-8 md:py-10 bg-[#0B1B3D] relative overflow-hidden">
       {/* Background Ornaments */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[120px] -mr-96 -mt-96 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-600/5 rounded-full blur-[100px] -ml-48 -mb-48 pointer-events-none" />
@@ -92,11 +92,10 @@ export default function StatsSection() {
 
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="flex items-start justify-between mb-8">
-                    <div className={`p-3 rounded-sm ${
-                      s.theme === 'blue' ? 'bg-blue-500/10 text-blue-400' : 
-                      s.theme === 'indigo' ? 'bg-indigo-500/10 text-indigo-400' : 
-                      'bg-white/10 text-white/70'
-                    }`}>
+                    <div className={`p-3 rounded-sm ${s.theme === 'blue' ? 'bg-blue-500/10 text-blue-400' :
+                        s.theme === 'indigo' ? 'bg-indigo-500/10 text-indigo-400' :
+                          'bg-white/10 text-white/70'
+                      }`}>
                       <Icon size={24} strokeWidth={1.5} />
                     </div>
                     <ArrowUpRight className="text-white/20 group-hover:text-blue-400 transition-colors duration-500" size={20} />

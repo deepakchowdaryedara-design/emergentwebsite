@@ -27,7 +27,7 @@ const articles = [
 
 export default function BlogResources() {
   return (
-    <section id="blog" data-testid="blog-section" className="py-10 sm:py-12 md:py-14 bg-white">
+    <section id="blog" data-testid="blog-section" className="py-6 sm:py-8 md:py-10 bg-white">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="max-w-2xl mb-8">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">
@@ -36,7 +36,7 @@ export default function BlogResources() {
           <h2
             data-testid="blog-heading"
             className="text-4xl sm:text-5xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-4"
-            
+
           >
             Insights & <span className="text-[#0B1B3D]/30">Trends</span>
           </h2>
@@ -65,7 +65,7 @@ export default function BlogResources() {
                 </span>
                 <h3
                   className="text-base font-bold text-[#0B1B3D] mt-2 mb-3 group-hover:text-[#2563EB] transition-colors"
-                  
+
                 >
                   {a.title}
                 </h3>

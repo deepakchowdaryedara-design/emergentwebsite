@@ -10,19 +10,19 @@ export default function HeroSection() {
       <div className="relative isolate flex min-h-[88vh] flex-col items-start justify-center text-left">
         <HeroAnimatedBackdrop video="/hero/Untitled.mp4" bgDark />
 
-        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-10 sm:py-12 md:py-14">
+        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-6 sm:py-8 md:py-10">
           <div className="max-w-4xl flex flex-col items-start space-y-8">
             <div className="relative">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-[#93C5FD]">
                 Future-Scale Solution Engineering
               </p>
             </div>
-            
+
             <div className="space-y-5">
               <h1
                 data-testid="hero-heading"
                 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.05] tracking-tighter"
-                
+
               >
                 Engineering the
                 <br />

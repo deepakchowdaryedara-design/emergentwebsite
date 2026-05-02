@@ -9,10 +9,10 @@ export default function IndustriesServed({ title }) {
   const displayIndustries = industries.slice(0, 6);
 
   return (
-    <section data-testid="industries-served-section" className="relative overflow-hidden bg-[#F8FAFC]/50 py-10 sm:py-12 md:py-14">
+    <section data-testid="industries-served-section" className="relative overflow-hidden bg-[#F8FAFC]/50 py-6 sm:py-8 md:py-10">
       {/* Background Decorative Accents */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/10 rounded-full blur-[100px] -mr-64 -mt-64" />
-      
+
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
         <AnimatedSection>
           <div className="mb-8 max-w-3xl">
@@ -31,11 +31,10 @@ export default function IndustriesServed({ title }) {
                 key={ind.slug}
                 data-testid={`industry-tab-${ind.slug}`}
                 onClick={() => setActiveTab(i)}
-                className={`text-[11px] px-6 py-3 rounded-sm font-black uppercase tracking-[0.2em] transition-all duration-500 ${
-                  activeTab === i 
-                    ? "bg-[#0B1B3D] text-white shadow-xl shadow-[#0B1B3D]/20 scale-105" 
+                className={`text-[11px] px-6 py-3 rounded-sm font-black uppercase tracking-[0.2em] transition-all duration-500 ${activeTab === i
+                    ? "bg-[#0B1B3D] text-white shadow-xl shadow-[#0B1B3D]/20 scale-105"
                     : "bg-white border border-slate-200 text-slate-400 hover:border-[#0B1B3D] hover:text-[#0B1B3D] hover:shadow-md"
-                }`}
+                  }`}
               >
                 {ind.title}
               </button>
@@ -59,11 +58,11 @@ export default function IndustriesServed({ title }) {
                 {displayIndustries[activeTab].shortDesc}
               </p>
               <div className="mt-auto">
-                <Link 
-                  to={`/industries/${displayIndustries[activeTab].slug}`} 
+                <Link
+                  to={`/industries/${displayIndustries[activeTab].slug}`}
                   className="group inline-flex items-center gap-3 text-sm font-black text-[#2563EB] hover:text-[#0B1B3D] transition-colors"
                 >
-                  Explore Solutions 
+                  Explore Solutions
                   <span className="w-8 h-px bg-blue-200 group-hover:w-12 group-hover:bg-[#0B1B3D] transition-all" />
                   <span className="transition-transform group-hover:translate-x-1">→</span>
                 </Link>
@@ -73,8 +72,8 @@ export default function IndustriesServed({ title }) {
             {/* Sub-Capabilities Grid */}
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
               {(industryTabUseCases[displayIndustries[activeTab].title] || displayIndustries[activeTab].features.slice(0, 4).map(f => f.title)).map((uc, i) => (
-                <div 
-                  key={i} 
+                <div
+                  key={i}
                   className="bg-white border border-slate-100 rounded-sm p-8 flex flex-col justify-center min-h-[140px] hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-500 group"
                 >
                   <div className="flex items-center gap-5">

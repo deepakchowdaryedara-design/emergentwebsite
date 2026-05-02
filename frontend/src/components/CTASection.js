@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function CTASection({ title, description, buttonText, buttonHref, compact = false }) {
   return (
-    <section data-testid="cta-section" className={`${compact ? 'py-0' : 'py-10 sm:py-12 md:py-14'} bg-[#0B1B3D] relative overflow-hidden`}>
+    <section data-testid="cta-section" className={`${compact ? 'py-0' : 'py-6 sm:py-8 md:py-10'} bg-[#0B1B3D] relative overflow-hidden`}>
       {/* Premium Background Accent */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-600/5 -skew-x-12 translate-x-1/2 pointer-events-none" />
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'radial-gradient(white 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
@@ -14,8 +14,7 @@ export default function CTASection({ title, description, buttonText, buttonHref,
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-blue-300">Next Step</p>
             <h2
               data-testid="cta-title"
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-tight"
-              
+              className="mb-6"
             >
               {title || "Ready to Transform Your Business?"}
             </h2>
@@ -27,7 +26,7 @@ export default function CTASection({ title, description, buttonText, buttonHref,
               asChild
               className="bg-[#2563EB] text-white hover:bg-[#2563EB]/90 rounded-sm px-10 py-6 font-bold text-sm h-14 shadow-xl shadow-blue-500/20 cursor-pointer"
             >
-              <a 
+              <a
                 href={buttonHref || "#page-contact"}
                 onClick={(e) => {
                   const href = buttonHref || "#page-contact";
@@ -48,7 +47,7 @@ export default function CTASection({ title, description, buttonText, buttonHref,
 
           <div className="lg:col-span-5">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-              <h3 className="text-sm font-bold text-white mb-6 uppercase tracking-widest">What to Expect</h3>
+              <h3 className="mb-6 uppercase tracking-widest">What to Expect</h3>
               <ul className="space-y-4">
                 {[
                   "Consultation with a subject matter expert",

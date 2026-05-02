@@ -15,7 +15,7 @@ export default function PartnersPage() {
         primaryCTA={{ text: "Discuss Architecture", href: "#page-contact" }}
         image={LISTING_PAGE_HERO_IMAGES.solutions}
       />
-      <section className="py-10 sm:py-12 md:py-14 bg-white">
+      <section className="py-6 sm:py-8 md:py-10 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-8 text-left">
@@ -36,7 +36,7 @@ export default function PartnersPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC] border-y border-slate-200/70">
+      <section className="py-6 sm:py-8 md:py-10 bg-[#F8FAFC] border-y border-slate-200/70">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10 text-left">
@@ -63,7 +63,7 @@ export default function PartnersPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
+      <section className="py-6 sm:py-8 md:py-10 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10 text-left">

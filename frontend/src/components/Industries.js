@@ -11,7 +11,7 @@ export default function Industries() {
     <section
       id="industries"
       data-testid="industries-section"
-      className="arc-section relative overflow-hidden bg-[#F8FAFC]/50 py-10 sm:py-12 md:py-14"
+      className="arc-section relative overflow-hidden bg-[#F8FAFC]/50 py-6 sm:py-8 md:py-10"
     >
       <div
         className="pointer-events-none absolute -right-32 -top-32 h-[420px] w-[420px] rounded-full bg-blue-100/10 blur-[100px]"
@@ -26,10 +26,10 @@ export default function Industries() {
             </p>
             <h2
               data-testid="industries-heading"
-              className="mb-4 text-4xl font-black tracking-tighter text-[#0B1B3D] sm:text-5xl lg:text-5xl"
+              className="mb-4"
             >
               Purpose-built AI for{" "}
-              <span className="text-[#0B1B3D]/30">Industry Excellence</span>
+              <span className="opacity-30">Industry Excellence</span>
             </h2>
             <p className="max-w-2xl text-base leading-relaxed text-slate-500">
               We engineer industry-ready AI systems built for regulatory compliance,
@@ -54,11 +54,10 @@ export default function Industries() {
                 aria-controls="industries-tab-panel"
                 data-testid={`industry-tab-${ind.slug}`}
                 onClick={() => setActiveTab(i)}
-                className={`rounded-sm px-5 py-3 text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300 sm:px-6 ${
-                  activeTab === i
-                    ? "scale-[1.02] bg-[#0B1B3D] text-white shadow-xl shadow-[#0B1B3D]/20"
-                    : "border border-slate-200 bg-white text-slate-400 hover:border-[#0B1B3D] hover:text-[#0B1B3D] hover:shadow-md"
-                }`}
+                className={`rounded-sm px-5 py-3 text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300 sm:px-6 ${activeTab === i
+                  ? "scale-[1.02] bg-[#0B1B3D] text-white shadow-xl shadow-[#0B1B3D]/20"
+                  : "border border-slate-200 bg-white text-slate-400 hover:border-[#0B1B3D] hover:text-[#0B1B3D] hover:shadow-md"
+                  }`}
               >
                 {ind.title}
               </button>
@@ -81,7 +80,7 @@ export default function Industries() {
                     return <Icon size={32} strokeWidth={1.75} aria-hidden />;
                   })()}
                 </div>
-                <h3 className="text-3xl font-black tracking-tighter text-[#0B1B3D]">
+                <h3 className="">
                   {industries[activeTab].title}
                 </h3>
               </div>

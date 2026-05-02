@@ -47,9 +47,9 @@ export default function SolutionsPage() {
         image={LISTING_PAGE_HERO_IMAGES.solutions}
       />
 
-      <section 
-        id="solutions-list" 
-        className="py-10 sm:py-12 md:py-14"
+      <section
+        id="solutions-list"
+        className="py-6 sm:py-8 md:py-10"
       >
         <div className="w-full">
           <div className="relative">
@@ -71,10 +71,10 @@ export default function SolutionsPage() {
                     >
                       <div className="bg-white border border-slate-200 rounded-sm overflow-hidden flex flex-col h-full shadow-sm hover:shadow-2xl hover:border-blue-500/20 transition-all duration-700 group">
                         <div className="relative aspect-square overflow-hidden bg-slate-50">
-                          <img 
-                            src={s.heroImage} 
+                          <img
+                            src={s.heroImage}
                             alt={s.title}
-                            className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-1000 ease-out" 
+                            className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-1000 ease-out"
                           />
                           <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/5 transition-colors duration-700" />
                         </div>
@@ -82,7 +82,7 @@ export default function SolutionsPage() {
                           <div className="w-1 bg-[#2563EB] self-stretch rounded-full opacity-30 group-hover:opacity-100 transition-opacity" />
                           <div>
                             <p className="text-[9px] font-black text-blue-500 uppercase tracking-widest mb-2">Accelerator</p>
-                            <h3 className="text-lg font-black text-[#0B1B3D] tracking-tighter leading-tight group-hover:text-blue-600 transition-colors">
+                            <h3 className="group-hover:text-blue-600 transition-colors">
                               {s.title}
                             </h3>
                           </div>
@@ -102,9 +102,8 @@ export default function SolutionsPage() {
                     api?.scrollTo(index);
                   }}
                   aria-label={`Go to ${item.title}`}
-                  className={`h-2.5 rounded-full transition-all duration-300 ${
-                    current === index ? "w-7 bg-blue-500" : "w-2.5 bg-slate-300 hover:bg-slate-400"
-                  }`}
+                  className={`h-2.5 rounded-full transition-all duration-300 ${current === index ? "w-7 bg-blue-500" : "w-2.5 bg-slate-300 hover:bg-slate-400"
+                    }`}
                 />
               ))}
             </div>

@@ -32,12 +32,12 @@ const COLLAGE = [
 
 export default function CEOLetter() {
   return (
-    <section id="philosophy" data-testid="ceo-letter-section" className="relative overflow-hidden bg-white py-10 sm:py-12 md:py-14">
+    <section id="philosophy" data-testid="ceo-letter-section" className="relative overflow-hidden bg-white py-6 sm:py-8 md:py-10">
       <div className="relative w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-20">
           <AnimatedSection>
             <div className="max-w-xl lg:max-w-none">
-              <h2 className="mb-6 text-4xl font-black tracking-tighter text-[#0B1B3D] sm:text-5xl lg:text-[2.75rem] lg:leading-[1.12]">
+              <h2 className="mb-6">
                 About Our Company
               </h2>
               <p className="mb-8 text-base font-medium leading-relaxed text-slate-600">

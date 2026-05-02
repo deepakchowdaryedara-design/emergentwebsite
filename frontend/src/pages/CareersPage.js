@@ -16,7 +16,7 @@ function JobCard({ job }) {
     <div data-testid={`job-card-${job.id}`} className="bg-white border border-slate-200 rounded-sm overflow-hidden">
       <button onClick={() => setOpen(!open)} className="w-full text-left p-6 sm:p-8 flex items-start justify-between gap-4 hover:bg-[#F8FAFC] transition-colors">
         <div>
-          <h3 className="text-lg font-bold text-[#0B1B3D]" >{job.title}</h3>
+          <h3 className="" >{job.title}</h3>
           <p className="text-sm text-slate-500 mt-1">{job.department}</p>
           <div className="flex flex-wrap gap-4 mt-3">
             <span className="text-xs text-slate-500 flex items-center gap-1"><MapPin size={12} /> {job.location}</span>
@@ -29,9 +29,9 @@ function JobCard({ job }) {
       {open && (
         <div className="px-6 sm:px-8 pb-8 border-t border-slate-100 pt-6">
           <p className="text-sm text-slate-600 leading-relaxed mb-6">{job.description}</p>
-          <h4 className="text-sm font-semibold text-[#0B1B3D] uppercase tracking-wider mb-3">Responsibilities</h4>
+          <h4 className="uppercase tracking-wider mb-3">Responsibilities</h4>
           <ul className="space-y-2 mb-6">{job.responsibilities.map((r, i) => (<li key={i} className="text-sm text-slate-600 flex items-start gap-2"><span className="w-1.5 h-1.5 bg-[#2563EB] rounded-full mt-2 flex-shrink-0" />{r}</li>))}</ul>
-          <h4 className="text-sm font-semibold text-[#0B1B3D] uppercase tracking-wider mb-3">Requirements</h4>
+          <h4 className="uppercase tracking-wider mb-3">Requirements</h4>
           <ul className="space-y-2 mb-6">{job.requirements.map((r, i) => (<li key={i} className="text-sm text-slate-600 flex items-start gap-2"><span className="w-1.5 h-1.5 bg-slate-300 rounded-full mt-2 flex-shrink-0" />{r}</li>))}</ul>
           <Button data-testid={`apply-btn-${job.id}`} asChild className="bg-[#0B1B3D] text-white hover:bg-[#0B1B3D]/90 rounded-sm px-6 py-3 font-semibold text-sm"><a href="#page-contact">Apply for This Role</a></Button>
         </div>
@@ -77,12 +77,12 @@ export default function CareersPage() {
       ]} />
 
       {/* 3. Why Join Us */}
-      <section className="py-10 sm:py-12 md:py-14 bg-white">
+      <section className="py-6 sm:py-8 md:py-10 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-12" >
-              Why Professionals <span className="text-[#0B1B3D]/30">Build Here</span>
+            <h2 className="mb-12" >
+              Why Professionals <span className="opacity-30">Build Here</span>
             </h2>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -90,7 +90,7 @@ export default function CareersPage() {
               <StaggerItem key={p.title}>
                 <div className="border border-slate-200 rounded-sm p-8 h-full">
                   <p.icon size={24} className="text-[#2563EB] mb-4" />
-                  <h3 className="text-base font-bold text-[#0B1B3D] mb-2" >{p.title}</h3>
+                  <h3 className="mb-2" >{p.title}</h3>
                   <p className="text-sm text-slate-500 leading-relaxed">{p.desc}</p>
                 </div>
               </StaggerItem>
@@ -100,12 +100,12 @@ export default function CareersPage() {
       </section>
 
       {/* 4. Hiring Process */}
-      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
+      <section className="py-6 sm:py-8 md:py-10 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-8" >
-              Our Hiring <span className="text-[#0B1B3D]/30">Workflow</span>
+            <h2 className="mb-8" >
+              Our Hiring <span className="opacity-30">Workflow</span>
             </h2>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -113,7 +113,7 @@ export default function CareersPage() {
               <StaggerItem key={i}>
                 <div className="relative bg-white border border-slate-200 rounded-sm p-6">
                   <span className="text-3xl font-extrabold text-slate-100 absolute top-3 right-3" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="text-sm font-bold text-[#0B1B3D] mb-2 relative z-10">{h.step}</h3>
+                  <h3 className="mb-2 relative z-10">{h.step}</h3>
                   <p className="text-xs text-slate-500 leading-relaxed relative z-10">{h.desc}</p>
                 </div>
               </StaggerItem>
@@ -126,12 +126,12 @@ export default function CareersPage() {
       <CTASection title="Don't See Your Role?" description="We're always looking for talented people. Send us your resume and we'll reach out when there's a fit." />
 
       {/* 6. Open Positions */}
-      <section id="positions" className="py-10 sm:py-12 md:py-14 bg-white">
+      <section id="positions" className="py-6 sm:py-8 md:py-10 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
-              Open <span className="text-[#0B1B3D]/30">Positions</span>
+            <h2 className="mb-4" >
+              Open <span className="opacity-30">Positions</span>
             </h2>
             <p className="text-base text-slate-600 mb-8 font-medium">{careers.length} open roles across {departments.length} departments</p>
           </AnimatedSection>
@@ -144,12 +144,12 @@ export default function CareersPage() {
       </section>
 
       {/* 7. Locations */}
-      <section className="py-10 sm:py-12 md:py-14 corp-pat-diag-dash">
+      <section className="py-6 sm:py-8 md:py-10 corp-pat-diag-dash">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-12" >
-              Our <span className="text-[#0B1B3D]/30">Locations</span>
+            <h2 className="mb-12" >
+              Our <span className="opacity-30">Locations</span>
             </h2>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -172,13 +172,13 @@ export default function CareersPage() {
       </section>
 
       {/* 7.5 Career Growth Paths */}
-      <section className="py-10 sm:py-12 md:py-14 bg-white border-y border-slate-200/70">
+      <section className="py-6 sm:py-8 md:py-10 bg-white border-y border-slate-200/70">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
-              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
-                Growth <span className="text-[#0B1B3D]/30">Methodology</span>
+              <h2 className="mb-4" >
+                Growth <span className="opacity-30">Methodology</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -190,7 +190,7 @@ export default function CareersPage() {
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-[#F8FAFC] p-6">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-3" >{item.title}</h3>
+                  <h3 className="mb-3" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
@@ -200,13 +200,13 @@ export default function CareersPage() {
       </section>
 
       {/* 7.6 Commitments */}
-      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
+      <section className="py-6 sm:py-8 md:py-10 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-12">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
-              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
-                Engineering <span className="text-[#0B1B3D]/30">Frontier</span>
+              <h2 className="mb-4" >
+                Engineering <span className="opacity-30">Frontier</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -231,13 +231,13 @@ export default function CareersPage() {
       <TestimonialsSection title="Life at NeuralTrix AI" />
 
       {/* 9. Career CTA */}
-      <section className="py-10 sm:py-12 md:py-14 bg-[#0B1B3D]">
+      <section className="py-6 sm:py-8 md:py-10 bg-[#0B1B3D]">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-blue-200">Next Step</p>
-              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-white mb-4" >
-                Find Your <span className="text-white/30">Growth Direction</span>
+              <h2 className="mb-4" >
+                Find Your <span className="opacity-30">Growth Direction</span>
               </h2>
               <p className="text-base text-blue-100/90 leading-relaxed max-w-3xl">
                 This next step maps your expertise and goals to opportunities aligned with your growth path.

@@ -8,14 +8,13 @@ import {
 export default function FAQSection({ faqs, title }) {
   if (!faqs || faqs.length === 0) return null;
   return (
-    <section data-testid="faq-section" className="py-10 sm:py-12 md:py-14 bg-white">
+    <section data-testid="faq-section" className="py-6 sm:py-8 md:py-10 bg-white">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="max-w-4xl">
           <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">Support</p>
           <h2
             data-testid="faq-title"
-            className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-10 text-left"
-            
+            className="mb-10 text-left"
           >
             {title || "Frequently Asked Questions"}
           </h2>

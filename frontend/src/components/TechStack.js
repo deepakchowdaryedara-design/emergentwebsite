@@ -77,16 +77,16 @@ export default function TechStack() {
   const columns = [COLUMN_A, COLUMN_B, COLUMN_C];
 
   return (
-    <section id="tech-stack" data-testid="tech-stack-section" className="bg-white py-10 sm:py-12 md:py-14">
+    <section id="tech-stack" data-testid="tech-stack-section" className="bg-white py-6 sm:py-8 md:py-10">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
           <div className="max-w-xl lg:max-w-none lg:pt-4">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
             <h2
               data-testid="tech-stack-heading"
-              className="mb-5 text-4xl font-black tracking-tighter text-[#0B1B3D] sm:text-5xl lg:text-[2.75rem] lg:leading-[1.08] xl:text-5xl"
+              className="mb-5"
             >
-              Empowering Innovation <span className="text-[#0B1B3D]/35">Through Advanced Platforms</span>
+              Empowering Innovation <span className="opacity-35">Through Advanced Platforms</span>
             </h2>
             <p className="mb-8 text-base leading-relaxed text-slate-600">
               We align delivery with approved cloud foundations, model services, and integration surfaces—including AWS, Microsoft Azure, Google Cloud, and modern AI tooling—so implementations stay observable, governable, and cost-aware.

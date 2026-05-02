@@ -50,7 +50,7 @@ export default function AboutPage() {
       <PageHero label="About Us" title="The Team and Principles Behind Our AI Delivery" description="Learn how our leadership model, delivery culture, and governance standards help enterprises move from AI ambition to sustained operational value." primaryCTA={{ text: "Work With Us", href: "#page-contact" }} secondaryCTA={{ text: "Join Our Team", href: "/careers" }} image={ABOUT_HERO_IMAGE} />
 
       {/* 2. Mission & Vision - REFINED ARCHITECTURAL REDESIGN */}
-      <section className="py-10 sm:py-12 md:py-14 bg-white overflow-hidden">
+      <section className="py-6 sm:py-8 md:py-10 bg-white overflow-hidden">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="relative rounded-[2.5rem] bg-[#0B1B3D] p-10 lg:p-16 xl:p-20 overflow-hidden shadow-2xl">
             {/* Background Texture/Glow - Subtle */}
@@ -62,7 +62,7 @@ export default function AboutPage() {
               <div className="lg:col-span-5 border-b lg:border-b-0 lg:border-r border-white/5 pb-10 lg:pb-0 lg:pr-12">
                 <AnimatedSection>
                   <p className="text-[10px] font-black text-blue-400 uppercase tracking-[0.4em] mb-6">The NeuralTrix Blueprint</p>
-                  <h2 className="text-3xl lg:text-4xl xl:text-5xl font-black tracking-tighter text-white mb-6 leading-[1.1]">
+                  <h2 className="mb-6">
                     Engineering Trust in <br className="hidden xl:block" /> <span className="text-blue-500">Every Neuron.</span>
                   </h2>
                   <p className="text-base text-blue-100/60 leading-relaxed font-medium max-w-sm">
@@ -77,9 +77,9 @@ export default function AboutPage() {
                   <StaggerItem>
                     <div className="group flex items-start gap-6 sm:gap-8">
                       <div className="flex-shrink-0 pt-1">
-                         <div className="w-10 h-10 rounded-sm bg-blue-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform duration-500">
-                           <Target size={20} />
-                         </div>
+                        <div className="w-10 h-10 rounded-sm bg-blue-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform duration-500">
+                          <Target size={20} />
+                        </div>
                       </div>
                       <div>
                         <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.12em] text-blue-200">Our Mission</span>
@@ -93,9 +93,9 @@ export default function AboutPage() {
                   <StaggerItem>
                     <div className="group flex items-start gap-6 sm:gap-8">
                       <div className="flex-shrink-0 pt-1">
-                         <div className="w-10 h-10 rounded-sm bg-white/10 border border-white/10 flex items-center justify-center text-white/40 group-hover:scale-110 transition-transform duration-500">
-                           <Eye size={20} />
-                         </div>
+                        <div className="w-10 h-10 rounded-sm bg-white/10 border border-white/10 flex items-center justify-center text-white/40 group-hover:scale-110 transition-transform duration-500">
+                          <Eye size={20} />
+                        </div>
                       </div>
                       <div>
                         <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.12em] text-white/50">Our Vision</span>
@@ -122,17 +122,17 @@ export default function AboutPage() {
       ]} />
 
       {/* 4. Core Values */}
-      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
+      <section className="py-6 sm:py-8 md:py-10 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" >Our Core Values</h2>
+            <h2 className="mb-12" >Our Core Values</h2>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v) => (
               <StaggerItem key={v.title}>
                 <div className="bg-white border border-slate-200 rounded-sm p-8 h-full">
                   <v.icon size={24} className="text-[#2563EB] mb-4" />
-                  <h3 className="text-base font-bold text-[#0B1B3D] mb-2" >{v.title}</h3>
+                  <h3 className="mb-2" >{v.title}</h3>
                   <p className="text-sm text-slate-500 leading-relaxed">{v.desc}</p>
                 </div>
               </StaggerItem>
@@ -142,10 +142,10 @@ export default function AboutPage() {
       </section>
 
       {/* 5. Timeline */}
-      <section className="py-10 sm:py-12 md:py-14 corp-pat-diag-dash">
+      <section className="py-6 sm:py-8 md:py-10 corp-pat-diag-dash">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] mb-12" >Our Journey</h2>
+            <h2 className="mb-12" >Our Journey</h2>
           </AnimatedSection>
           <div className="relative max-w-6xl mx-auto">
             <div className="absolute top-0 bottom-0 left-[148px] md:left-[188px] w-1.5 bg-[#FFC200]" />
@@ -161,8 +161,8 @@ export default function AboutPage() {
                     <div className="relative z-10">
                       <div
                         className={`h-11 w-11 md:h-12 md:w-12 mx-auto rounded-full border-4 border-[#FFC200] flex items-center justify-center transition-all duration-300 ${idx === 0
-                            ? "bg-[#FFC200] shadow-[0_8px_24px_-10px_rgba(255,194,0,0.8)]"
-                            : "bg-white group-hover:bg-[#FFC200] group-hover:shadow-[0_8px_24px_-10px_rgba(255,194,0,0.8)]"
+                          ? "bg-[#FFC200] shadow-[0_8px_24px_-10px_rgba(255,194,0,0.8)]"
+                          : "bg-white group-hover:bg-[#FFC200] group-hover:shadow-[0_8px_24px_-10px_rgba(255,194,0,0.8)]"
                           }`}
                       >
                         <t.icon
@@ -173,7 +173,7 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <div className="pt-1 md:pt-0.5">
-                      <h3 className="text-xl sm:text-2xl font-bold text-[#0B1B3D] inline mr-2" >
+                      <h3 className="inline mr-2" >
                         {t.title}
                       </h3>
                       <p className="text-base sm:text-lg leading-relaxed inline text-slate-600">
@@ -192,13 +192,13 @@ export default function AboutPage() {
       <CTASection title="Want to Be Part of Our Story?" description="Join 400+ AI specialists who are shaping the future of enterprise AI." buttonText="View Open Positions" buttonHref="/careers" />
 
       {/* 6.5 Governance Model */}
-      <section className="py-10 sm:py-12 md:py-14 bg-white border-y border-slate-200/70">
+      <section className="py-6 sm:py-8 md:py-10 bg-white border-y border-slate-200/70">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10 text-left">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
-              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
-                Assurance for <span className="text-[#0B1B3D]/30">Quality Delivery</span>
+              <h2 className="mb-4" >
+                Assurance for <span className="opacity-30">Quality Delivery</span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed">
                 This assurance model combines architecture reviews, milestone controls, and measurable outcome tracking.
@@ -214,7 +214,7 @@ export default function AboutPage() {
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-[#F8FAFC] p-6">
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" >{item.title}</h3>
+                  <h3 className="mb-2" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
@@ -224,12 +224,12 @@ export default function AboutPage() {
       </section>
 
       {/* 7. Team */}
-      <section className="py-10 sm:py-12 md:py-14 corp-pat-cross-dash">
+      <section className="py-6 sm:py-8 md:py-10 corp-pat-cross-dash">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
-              Leadership <span className="text-[#0B1B3D]/30">Team</span>
+            <h2 className="mb-4" >
+              Leadership <span className="opacity-30">Team</span>
             </h2>
             <p className="text-base text-slate-600 mb-12 max-w-2xl font-medium">Meet the people accountable for strategy, engineering quality, and client outcomes.</p>
           </AnimatedSection>
@@ -238,7 +238,7 @@ export default function AboutPage() {
               <StaggerItem key={m.name}>
                 <div data-testid={`team-member-${m.name.toLowerCase().replace(/\s/g, "-")}`} className="border border-slate-200 rounded-sm p-8">
                   <div className="w-16 h-16 bg-[#0B1B3D] rounded-sm flex items-center justify-center mb-5"><Users size={24} className="text-white" /></div>
-                  <h3 className="text-base font-bold text-[#0B1B3D]" >{m.name}</h3>
+                  <h3 className="" >{m.name}</h3>
                   <p className="text-sm text-[#2563EB] font-medium mb-3">{m.role}</p>
                   <p className="text-sm text-slate-500 leading-relaxed mb-4">{m.bio}</p>
                   <div className="flex gap-3"><Linkedin size={16} className="text-slate-400 hover:text-[#2563EB] cursor-pointer transition-colors" /><Twitter size={16} className="text-slate-400 hover:text-[#2563EB] cursor-pointer transition-colors" /></div>
@@ -250,7 +250,7 @@ export default function AboutPage() {
       </section>
 
       {/* 8. Partners */}
-      <section className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC] border-y border-slate-200 overflow-hidden">
+      <section className="py-6 sm:py-8 md:py-10 bg-[#F8FAFC] border-y border-slate-200 overflow-hidden">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600 text-left">Coverage</p>
@@ -258,7 +258,7 @@ export default function AboutPage() {
               {/* Fade masks */}
               <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#F8FAFC] to-transparent z-10" />
               <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#F8FAFC] to-transparent z-10" />
-              
+
               <div className="flex animate-marquee whitespace-nowrap">
                 {/* First set */}
                 <div className="flex items-center gap-12 sm:gap-16 pr-12 sm:pr-16">
@@ -283,11 +283,11 @@ export default function AboutPage() {
       </section>
 
       {/* 9. Offices */}
-      <section className="py-10 sm:py-12 md:py-14 bg-white">
+      <section className="py-6 sm:py-8 md:py-10 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-12" >
-              Our <span className="text-[#0B1B3D]/30">Offices</span>
+            <h2 className="mb-12" >
+              Our <span className="opacity-30">Offices</span>
             </h2>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -307,13 +307,13 @@ export default function AboutPage() {
       <TestimonialsSection title="What Our Clients Say" />
 
       {/* 11. Strategic CTA */}
-      <section className="py-10 sm:py-12 md:py-14 bg-[#0B1B3D]">
+      <section className="py-6 sm:py-8 md:py-10 bg-[#0B1B3D]">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-blue-200">Next Step</p>
-              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-white mb-4" >
-                Start with <span className="text-white/30">a Conversation</span>
+              <h2 className="mb-4" >
+                Start with <span className="opacity-30">a Conversation</span>
               </h2>
               <p className="text-base text-blue-100/90 leading-relaxed max-w-3xl">
                 This next step helps define the most practical path whether you are evaluating use-cases or scaling production systems.

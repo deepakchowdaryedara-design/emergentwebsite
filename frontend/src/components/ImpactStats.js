@@ -45,7 +45,7 @@ export default function ImpactStats({
     return (
       <section
         data-testid="impact-stats-section"
-        className="border-y border-slate-200/80 bg-[#eef1f4] py-10 sm:py-12 md:py-14"
+        className="border-y border-slate-200/80 bg-[#eef1f4] py-6 sm:py-8 md:py-10"
       >
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-12">
@@ -83,9 +83,8 @@ export default function ImpactStats({
                 {splitImages.slice(0, 2).map((src, i) => (
                   <div
                     key={src}
-                    className={`overflow-hidden rounded-lg bg-slate-200 shadow-sm ${
-                      i === 1 ? "lg:mt-6" : ""
-                    }`}
+                    className={`overflow-hidden rounded-lg bg-slate-200 shadow-sm ${i === 1 ? "lg:mt-6" : ""
+                      }`}
                   >
                     <img
                       src={src}
@@ -106,7 +105,7 @@ export default function ImpactStats({
   return (
     <section
       data-testid="impact-stats-section"
-      className="relative overflow-hidden border-y border-slate-100 bg-white py-10 sm:py-12 md:py-14"
+      className="relative overflow-hidden border-y border-slate-100 bg-white py-6 sm:py-8 md:py-10"
     >
       <div className="pointer-events-none absolute left-0 top-0 h-32 w-full bg-gradient-to-b from-slate-50/50 to-transparent" />
 

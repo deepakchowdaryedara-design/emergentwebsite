@@ -16,7 +16,7 @@ export default function CaseStudiesPage() {
         primaryCTA={{ text: "Start Your Project", href: "#page-contact" }}
         image={LISTING_PAGE_HERO_IMAGES.caseStudies}
       />
-      <section className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC]">
+      <section className="py-6 sm:py-8 md:py-10 bg-[#F8FAFC]">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {caseStudies.map((cs) => (
@@ -53,7 +53,7 @@ export default function CaseStudiesPage() {
           </div>
         </div>
       </section>
-      <section className="py-10 sm:py-12 md:py-14 bg-white border-y border-slate-200/70">
+      <section className="py-6 sm:py-8 md:py-10 bg-white border-y border-slate-200/70">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10 text-left">
@@ -80,7 +80,7 @@ export default function CaseStudiesPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-10 sm:py-12 md:py-14 corp-pat-cross-dash">
+      <section className="py-6 sm:py-8 md:py-10 corp-pat-cross-dash">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-10 text-left">
@@ -107,7 +107,7 @@ export default function CaseStudiesPage() {
           </StaggerChildren>
         </div>
       </section>
-      <section className="py-10 sm:py-12 md:py-14 bg-white">
+      <section className="py-6 sm:py-8 md:py-10 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-2xl mb-12 text-left">

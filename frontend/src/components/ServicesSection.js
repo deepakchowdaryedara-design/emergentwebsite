@@ -6,7 +6,7 @@ export default function ServicesSection() {
     <section
       id="services"
       data-testid="services-section"
-      className="py-10 sm:py-12 md:py-14 corp-pat-dots overflow-hidden"
+      className="py-6 sm:py-8 md:py-10 corp-pat-dots overflow-hidden"
     >
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="max-w-2xl mb-8">
@@ -15,10 +15,9 @@ export default function ServicesSection() {
           </p>
           <h2
             data-testid="services-heading"
-            className="text-4xl sm:text-5xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-4"
-
+            className="mb-4"
           >
-            AI Development <span className="text-[#0B1B3D]/30">Real-World Impact</span>
+            AI Development <span className="opacity-30">Real-World Impact</span>
           </h2>
           <p className="text-base text-slate-600 leading-relaxed">
             Navigate through the current tech-driven landscape and foster long-term growth with custom AI solutions.
@@ -29,4 +28,3 @@ export default function ServicesSection() {
     </section>
   );
 }
-

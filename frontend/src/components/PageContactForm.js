@@ -36,7 +36,7 @@ export default function PageContactForm({ context }) {
   };
 
   return (
-    <section id="page-contact" data-testid="page-contact-form" className="bg-[#F8FAFC] py-10 sm:py-12 md:py-14">
+    <section id="page-contact" data-testid="page-contact-form" className="bg-[#F8FAFC] py-6 sm:py-8 md:py-10">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-sm border border-slate-200">
           <div className="p-10 sm:p-14" style={{ backgroundColor: "#0B1B3D" }}>

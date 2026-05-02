@@ -48,7 +48,7 @@ export default function ServiceDetail() {
       </div>
 
       {/* 3. Coverage: approved platforms & integration surfaces */}
-      <div className="sticky top-0 z-0 flex min-h-screen flex-col justify-center overflow-hidden bg-white lg:h-[800px]">
+      <div className="sticky top-0 z-0 flex min-h-[600px] flex-col justify-center overflow-hidden bg-white lg:h-[650px]">
         <TechnologyFoundationSection
           dataTestId="service-technology-foundation"
           label="Coverage"
@@ -62,12 +62,12 @@ export default function ServiceDetail() {
 
       {/* 4. Methodology: phased execution roadmap */}
       <div className="relative z-10 bg-white shadow-[0_-10px_50px_rgba(0,0,0,0.05)]">
-        <section className="border-y border-slate-100 py-10 sm:py-12 md:py-14">
+        <section className="border-y border-slate-100 py-6 sm:py-8 md:py-10">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="mb-8 max-w-2xl text-left sm:mb-10">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Methodology</p>
-                <h2 className="text-3xl font-bold tracking-tight text-[#0B1B3D] sm:text-4xl">
+                <h2 className="mb-8 max-w-2xl text-left sm:mb-10">
                   Execution Roadmap
                 </h2>
                 <p className="mt-3 text-sm leading-snug text-slate-600">
@@ -88,7 +88,7 @@ export default function ServiceDetail() {
                         </div>
                         <div className="h-px bg-slate-100 flex-1 ml-4 group-hover:bg-[#2563EB]/20 transition-colors" />
                       </div>
-                      <h3 className="text-lg font-bold text-[#0B1B3D] mb-3 tracking-tight" >{p.step}</h3>
+                      <h3 className="mb-3 tracking-tight" >{p.step}</h3>
                       <p className="text-[13px] text-slate-500 leading-relaxed font-medium">{p.desc}</p>
                       <div className="mt-6 pt-5 border-t border-slate-50 flex items-center gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-slate-200 group-hover:bg-[#2563EB] transition-colors" />
@@ -104,27 +104,27 @@ export default function ServiceDetail() {
       </div>
 
       {/* 5. Next step: conversation CTA */}
-      <div className="sticky top-0 z-0 h-[80vh] flex flex-col justify-center bg-[#0B1B3D] overflow-hidden">
+      <div className="sticky top-0 z-0 h-[60vh] flex flex-col justify-center bg-[#0B1B3D] overflow-hidden">
         <CTASection title="Discuss Delivery Fit" description={`We can map ${service.title} to your current systems, priorities, and timeline to define a practical starting scope.`} />
       </div>
 
       {/* 6. Assurance & outcomes: rationale + proof metrics */}
       <div className="relative z-10 bg-white shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
-        <section className="border-y border-slate-100 bg-white py-10 sm:py-12 md:py-14">
+        <section className="border-y border-slate-100 bg-white py-6 sm:py-8 md:py-10">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-16">
               <div className="lg:col-span-6 xl:col-span-5">
                 <AnimatedSection>
                   <div className="mb-6">
                     <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Assurance</p>
-                    <h2 className="text-2xl font-bold tracking-tight text-[#0B1B3D] sm:text-3xl">
+                    <h2 className="">
                       Why Teams Retain Us Across Phases
                     </h2>
                   </div>
                   <div className="space-y-6">
                     {service.whyChooseUs.map((w, i) => (
                       <div key={i} className="border-l-2 border-[#2563EB] pl-6">
-                        <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" >{w.title}</h3>
+                        <h3 className="mb-2" >{w.title}</h3>
                         <p className="text-sm text-slate-600 leading-relaxed">{w.desc}</p>
                       </div>
                     ))}

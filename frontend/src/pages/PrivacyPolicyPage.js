@@ -57,7 +57,7 @@ const sections = [
           ))}
         </ul>
         <p className="text-slate-600">We only use this information to send you updates that are relevant. You can stop getting emails at any time by clicking the link in the email. After you unsubscribe, we will delete your information from our system.</p>
-        
+
         <p className="text-sm font-black text-[#0B1B3D] uppercase tracking-wider mt-10 mb-4">Interacting with the Public</p>
         <p className="text-slate-600 mb-4">You might be able to leave comments or talk on our platform. Please be aware:</p>
         <ul className="space-y-3">
@@ -121,16 +121,16 @@ export default function PrivacyPolicyPage() {
         primaryCTA={{ text: "View Details", href: "#privacy-content" }}
         image={LISTING_PAGE_HERO_IMAGES.blog}
       />
-      
+
       {/* Privacy Content */}
-      <section id="privacy-content" className="py-10 sm:py-12 md:py-14 bg-white">
+      <section id="privacy-content" className="py-6 sm:py-8 md:py-10 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="max-w-4xl mx-auto">
             <AnimatedSection>
               <div className="mb-10">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
-                <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#0B1B3D]" >
-                  Data Privacy <span className="text-[#0B1B3D]/30">Architecture</span>
+                <h2 className="" >
+                  Data Privacy <span className="opacity-30">Architecture</span>
                 </h2>
               </div>
             </AnimatedSection>
@@ -140,7 +140,7 @@ export default function PrivacyPolicyPage() {
                 <AnimatedSection key={section.title}>
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
                     <div className="lg:col-span-4">
-                      <h3 className="text-2xl font-black tracking-tighter text-[#0B1B3D]">
+                      <h3 className="">
                         {section.title}
                       </h3>
                     </div>
@@ -158,13 +158,13 @@ export default function PrivacyPolicyPage() {
       </section>
 
       {/* Methodology Section */}
-      <section className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC] border-t border-slate-200">
+      <section className="py-6 sm:py-8 md:py-10 bg-[#F8FAFC] border-t border-slate-200">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="max-w-3xl mb-12">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
-              <h2 className="text-3xl sm:text-4xl font-black tracking-tighter text-[#0B1B3D]" >
-                Privacy Request <span className="text-[#0B1B3D]/30 text-nowrap">Resolution</span>
+              <h2 className="" >
+                Privacy Request <span className="opacity-30 text-nowrap">Resolution</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -179,7 +179,7 @@ export default function PrivacyPolicyPage() {
                   <div className="text-[10px] font-black text-blue-500/30 group-hover:text-blue-500 transition-colors duration-500 mb-6" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                     STEP {item.step}
                   </div>
-                  <h3 className="text-lg font-bold text-[#0B1B3D] mb-3 tracking-tight" >{item.title}</h3>
+                  <h3 className="mb-3 tracking-tight" >{item.title}</h3>
                   <p className="text-sm text-slate-500 leading-relaxed font-medium">{item.desc}</p>
                 </div>
               </StaggerItem>

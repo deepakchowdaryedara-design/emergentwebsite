@@ -28,7 +28,7 @@ export default function CaseStudyDetail() {
       </div>
 
       {/* Results */}
-      <section className="py-10 sm:py-12 md:py-14 bg-white border-b border-slate-200">
+      <section className="py-6 sm:py-8 md:py-10 bg-white border-b border-slate-200">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <StaggerChildren className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {cs.results.map((r, i) => (
@@ -45,20 +45,20 @@ export default function CaseStudyDetail() {
       </section>
 
       {/* Challenge & Solution */}
-      <section className="py-10 sm:py-12 md:py-14 bg-[#F8FAFC]">
+      <section className="py-6 sm:py-8 md:py-10 bg-[#F8FAFC]">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <AnimatedSection>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
-              <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-6" >
-                The <span className="text-[#0B1B3D]/30">Challenge</span>
+              <h2 className="mb-6" >
+                The <span className="opacity-30">Challenge</span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed font-medium">{cs.challenge}</p>
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
-              <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-6" >
-                Our <span className="text-[#0B1B3D]/30">Solution</span>
+              <h2 className="mb-6" >
+                Our <span className="opacity-30">Solution</span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed font-medium">{cs.solution}</p>
             </AnimatedSection>
@@ -67,17 +67,17 @@ export default function CaseStudyDetail() {
       </section>
 
       {/* Features & Tech */}
-      <section className="py-10 sm:py-12 md:py-14 corp-pat-dots">
+      <section className="py-6 sm:py-8 md:py-10 corp-pat-dots">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <AnimatedSection>
-              <h2 className="text-2xl font-bold tracking-tight text-[#0B1B3D] mb-6" >Key Features Delivered</h2>
+              <h2 className="mb-6" >Key Features Delivered</h2>
               <ul className="space-y-3">
                 {cs.features.map((f, i) => (<li key={i} className="text-sm text-slate-600 flex items-start gap-3"><span className="w-1.5 h-1.5 bg-[#2563EB] rounded-full mt-2 flex-shrink-0" />{f}</li>))}
               </ul>
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
-              <h2 className="text-2xl font-bold tracking-tight text-[#0B1B3D] mb-6" >Technology Stack</h2>
+              <h2 className="mb-6" >Technology Stack</h2>
               <div className="flex flex-wrap gap-3 mb-8">
                 {cs.techStack.map((t) => (<span key={t} className="text-sm px-4 py-2 bg-white border border-slate-200 text-slate-600 rounded-sm font-medium">{t}</span>))}
               </div>

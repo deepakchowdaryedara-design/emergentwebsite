@@ -1,7 +1,7 @@
 /**
  * Fixed top banner with horizontally scrolling notice text.
  */
-const MESSAGE = "This website is under development";
+const MESSAGE = "This website is currently under development. The content presented here is for reference purposes only and should not be considered final or legally valid.";
 
 function ScrollingTrack() {
   const chunk = (

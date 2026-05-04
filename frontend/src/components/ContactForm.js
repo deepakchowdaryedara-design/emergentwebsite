@@ -3,8 +3,7 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
-import axios from "axios";
-import { API_BASE } from "../apiConfig";
+import { openWhatsAppLead } from "../utils/whatsappLead";
 
 export default function ContactForm() {
   const [form, setForm] = useState({
@@ -31,11 +30,11 @@ export default function ContactForm() {
     }
     setLoading(true);
     try {
-      await axios.post(`${API_BASE}/contact`, form);
+      openWhatsAppLead(form);
       setSubmitted(true);
       setForm({ first_name: "", last_name: "", email: "", phone: "", description: "" });
-    } catch (err) {
-      setError("Something went wrong. Please try again.");
+    } catch {
+      setError("Could not open WhatsApp. Try again or contact us by phone.");
     } finally {
       setLoading(false);
     }

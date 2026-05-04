@@ -45,7 +45,7 @@ export default function BlogPage() {
             <div className="max-w-3xl mb-10">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="mb-5" >
-                Coverage Across <span className="opacity-40">decision contexts</span>
+                Coverage Across <span className="corp-heading-secondary">decision contexts</span>
               </h2>
               <p className="text-sm text-slate-600 max-w-2xl mb-6">Choose articles by the decisions you are facing, strategy, build, run, or govern, rather than browsing titles alone.</p>
             </div>
@@ -73,7 +73,7 @@ export default function BlogPage() {
             <div className="max-w-3xl mb-10">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="mb-5" >
-                Methodology for <span className="opacity-40">this month&apos;s deep dive</span>
+                Methodology for <span className="corp-heading-secondary">this month&apos;s deep dive</span>
               </h2>
               <p className="text-sm text-slate-600 max-w-2xl mb-6">A single featured piece, tools, models, or delivery practice, with enough depth to inform your next technical or vendor discussion.</p>
             </div>
@@ -102,7 +102,7 @@ export default function BlogPage() {
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
               <h2 className="mb-5" >
-                Coverage Across <span className="opacity-40">reading by role</span>
+                Coverage Across <span className="corp-heading-secondary">reading by role</span>
               </h2>
               <p className="text-sm text-slate-600 max-w-2xl mb-6">This coverage maps articles to the responsibilities you hold today, so navigation matches real meeting agendas, not generic categories.</p>
             </div>
@@ -142,7 +142,7 @@ export default function BlogPage() {
             <div className="max-w-3xl mb-10">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
               <h2 className="mb-4" >
-                Assurance for <span className="opacity-40">editorial standards</span>
+                Assurance for <span className="corp-heading-secondary">editorial standards</span>
               </h2>
               <p className="text-sm text-slate-600 max-w-2xl mb-8">This assurance model keeps content decision-useful, technically grounded, and free of vendor hype, aligned to how delivery teams actually work.</p>
             </div>
@@ -169,8 +169,8 @@ export default function BlogPage() {
           <AnimatedSection>
             <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-blue-200">Next Step</p>
-              <h2 className="mb-4" >
-                Next Step for <span className="opacity-40">your priorities</span>
+              <h2 className="mb-4 text-white" >
+                Next Step for <span className="corp-heading-secondary-on-dark">your priorities</span>
               </h2>
               <p className="text-base text-blue-100/90 leading-relaxed max-w-3xl">
                 Move from reading to action: share your stack and goals so we can suggest a proportionate pilot or proof path, not generic advice.

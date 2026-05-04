@@ -83,7 +83,7 @@ export default function CareersPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="mb-12" >
-              Assurance for <span className="opacity-30">your career here</span>
+              Assurance for <span className="corp-heading-secondary">your career here</span>
             </h2>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -106,7 +106,7 @@ export default function CareersPage() {
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
             <h2 className="mb-8" >
-              Our Hiring <span className="opacity-30">Workflow</span>
+              Our Hiring <span className="corp-heading-secondary">Workflow</span>
             </h2>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -131,7 +131,7 @@ export default function CareersPage() {
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
             <h2 className="mb-4" >
-              Open <span className="opacity-30">Positions</span>
+              Open <span className="corp-heading-secondary">Positions</span>
             </h2>
             <p className="text-base text-slate-600 mb-8 font-medium">{careers.length} open roles across {departments.length} departments</p>
           </AnimatedSection>
@@ -148,7 +148,7 @@ export default function CareersPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="mb-12" >
-              Coverage Across <span className="opacity-30">presence</span>
+              Coverage Across <span className="corp-heading-secondary">presence</span>
             </h2>
             <p className="text-sm text-slate-600 max-w-2xl mb-8">
               Remote-first delivery with anchor regions below; specific roles note location expectations in the listing.
@@ -179,7 +179,7 @@ export default function CareersPage() {
           <AnimatedSection>
             <div className="max-w-3xl mb-10">
               <h2 className="mb-4" >
-                Methodology for <span className="opacity-30">career growth paths</span>
+                Methodology for <span className="corp-heading-secondary">career growth paths</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -206,7 +206,7 @@ export default function CareersPage() {
           <AnimatedSection>
             <div className="max-w-3xl mb-12">
               <h2 className="mb-4" >
-                Assurance for <span className="opacity-30">culture</span>
+                Assurance for <span className="corp-heading-secondary">culture</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -233,8 +233,8 @@ export default function CareersPage() {
           <AnimatedSection>
             <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-blue-200">Next Step</p>
-              <h2 className="mb-4" >
-                Find Your <span className="opacity-30">Growth Direction</span>
+              <h2 className="mb-4 text-white" >
+                Find Your <span className="corp-heading-secondary-on-dark">Growth Direction</span>
               </h2>
               <p className="text-base text-blue-100/90 leading-relaxed max-w-3xl">
                 This next step maps your expertise and goals to opportunities aligned with your growth path.

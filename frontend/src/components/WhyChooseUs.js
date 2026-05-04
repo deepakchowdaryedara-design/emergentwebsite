@@ -50,7 +50,7 @@ export default function WhyChooseUs({ showLabel = true }) {
               data-testid="why-choose-heading"
               className="mb-6"
             >
-              Assurance for <span className="opacity-30">Delivery Discipline</span>
+              Assurance for <span className="corp-heading-secondary">Delivery Discipline</span>
             </h2>
             <p className="text-base text-slate-600 leading-relaxed mb-8">
               This assurance model reflects a lean operating structure (formed {COMPANY_FOUNDED_LABEL}) with emphasis on

@@ -30,7 +30,7 @@ export default function TestimonialsPage() {
             <div className="max-w-3xl mb-10">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D] mb-4" >
-                Assurance for <span className="opacity-40">professional delivery</span>
+                Assurance for <span className="corp-heading-secondary">professional delivery</span>
               </h2>
               <p className="text-sm text-slate-600 max-w-2xl">This assurance model states what you can expect in working sessions, documentation, and escalation paths before a contract is signed.</p>
             </div>
@@ -57,7 +57,7 @@ export default function TestimonialsPage() {
             <div className="max-w-3xl mb-10">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
-                Outcomes for <span className="opacity-40">structured pilots</span>
+                Outcomes for <span className="corp-heading-secondary">structured pilots</span>
               </h2>
               <p className="text-sm text-slate-600 max-w-2xl mt-4">This outcomes framing describes what we jointly optimize in early programs, speed to clarity, visible decisions, and accountable ownership, not vanity demos.</p>
             </div>

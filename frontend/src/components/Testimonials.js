@@ -21,7 +21,7 @@ export default function Testimonials({ showLabel = true }) {
             data-testid="testimonials-heading"
             className="text-4xl sm:text-5xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-4"
           >
-            Assurance for <span className="text-[#0B1B3D]/30">first engagements</span>
+            Assurance for <span className="corp-heading-secondary">first engagements</span>
           </h2>
           <p className="text-base text-slate-600 leading-relaxed">
             What we commit to when you evaluate NeuralTrix: pilots with clear scope, direct engineering access, and artifacts your security and delivery leads can review before expanding spend.

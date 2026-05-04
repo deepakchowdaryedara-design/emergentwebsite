@@ -87,6 +87,30 @@ h4 {
     color: transparent;
 }
 
+/* Split headings: secondary phrase readable on light cards / patterned sections */
+.corp-heading-secondary {
+    color: #334155;
+    font-weight: 600;
+}
+
+.corp-heading-gradient .corp-heading-secondary {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    -webkit-text-fill-color: #334155 !important;
+    color: #334155 !important;
+}
+
+/* Secondary phrase on navy / dark bands where global h1–h4 are forced light */
+.corp-heading-secondary-on-dark {
+    color: #cbd5e1;
+    font-weight: 600;
+    -webkit-text-fill-color: #cbd5e1;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+}
+
 /* Home hero headline: readable solid + accent on video */
 #hero h1 {
     background: none;

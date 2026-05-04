@@ -56,7 +56,7 @@ export default function TechnologyFoundationSection({
                 ) : (
                   <>
                     {titleLead}{" "}
-                    <span className="text-[#0B1B3D]/35">{titleMuted}</span>
+                    <span className="corp-heading-secondary">{titleMuted}</span>
                   </>
                 )}
               </h2>

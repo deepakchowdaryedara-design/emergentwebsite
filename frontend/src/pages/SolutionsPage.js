@@ -54,7 +54,7 @@ export default function SolutionsPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 mb-8 max-w-4xl">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0B1B3D] mb-3">
-            Coverage Across <span className="opacity-40">solution accelerators</span>
+            Coverage Across <span className="corp-heading-secondary">solution accelerators</span>
           </h2>
           <p className="text-sm text-slate-600 leading-relaxed">
             This coverage lists pre-architected modules you can brief against, each links to a full overview with scope boundaries and integration assumptions.

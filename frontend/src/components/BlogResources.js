@@ -40,7 +40,7 @@ export default function BlogResources({ showLabel = true }) {
             className="text-4xl sm:text-5xl lg:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-4"
 
           >
-            Coverage Across <span className="text-[#0B1B3D]/30">delivery topics</span>
+            Coverage Across <span className="corp-heading-secondary">delivery topics</span>
           </h2>
           <p className="text-base text-slate-600 leading-relaxed">
             Technical notes on tools, models, and delivery practices, for teams evaluating AI engineering partners or internal build-outs.

@@ -69,7 +69,7 @@ export default function StatsSection() {
             <div className="h-px w-24 bg-gradient-to-r from-blue-500/50 to-transparent" />
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-5xl font-black tracking-tighter text-white mb-6">
-            Outcomes Across <span className="text-white/40">delivery programs</span>
+            Outcomes Across <span className="corp-heading-secondary-on-dark">delivery programs</span>
           </h2>
           <p className="text-blue-100/60 text-lg max-w-2xl font-light leading-relaxed">
             This outcomes view highlights themes we track in scoped work; your baselines, controls, and acceptance tests still define success.

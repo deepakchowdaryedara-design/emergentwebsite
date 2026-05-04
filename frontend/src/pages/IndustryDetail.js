@@ -63,7 +63,7 @@ export default function IndustryDetail() {
                   <div className="max-w-2xl">
                     <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
                     <h2 className="mb-8">
-                      Coverage Across <span className="opacity-30">sector context</span>
+                      Coverage Across <span className="corp-heading-secondary">sector context</span>
                     </h2>
                     <div className="h-px w-20 bg-blue-500 mb-8" />
                     <p className="text-lg lg:text-xl text-slate-600 leading-relaxed font-bold mb-8">
@@ -160,7 +160,7 @@ export default function IndustryDetail() {
               <AnimatedSection>
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
                 <h2 className="mb-8">
-                  Methodology for <span className="opacity-30">{industry.title} delivery phases</span>
+                  Methodology for <span className="corp-heading-secondary">{industry.title} delivery phases</span>
                 </h2>
                 <p className="text-sm text-slate-600 max-w-xl">This methodology sequences discovery through scale so security and operational checkpoints occur before irreversible commitments.</p>
               </AnimatedSection>
@@ -212,7 +212,7 @@ export default function IndustryDetail() {
               <div className="lg:col-span-3 lg:sticky lg:top-24 h-fit">
                 <AnimatedSection>
                   <h2 className="mb-6">
-                    Coverage Across <span className="opacity-30">service fit</span> for {industry.title}
+                    Coverage Across <span className="corp-heading-secondary">service fit</span> for {industry.title}
                   </h2>
                   <p className="text-sm text-slate-600 leading-relaxed mb-6">
                     This coverage maps our service lines to the programs we usually run in this sector; exact scope is set after data and control review.
@@ -258,7 +258,7 @@ export default function IndustryDetail() {
                 <AnimatedSection>
                   <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-blue-300">Assurance</p>
                   <h2 className="mb-8">
-                    Assurance for <span className="opacity-40">security and compliance posture</span>
+                    Assurance for <span className="corp-heading-secondary">security and compliance posture</span>
                   </h2>
                   <p className="text-sm text-slate-300/90 max-w-md mb-6">This assurance model states control patterns we design toward; specific certifications and attestations are agreed per engagement.</p>
                   <div className="space-y-6">
@@ -305,7 +305,7 @@ export default function IndustryDetail() {
               <div className="mb-10 max-w-2xl">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Coverage</p>
                 <h2 className="mb-4 text-[#0B1B3D]">
-                  Reference <span className="opacity-40">technology stack</span> for {industry.title}
+                  Reference <span className="corp-heading-secondary">technology stack</span> for {industry.title}
                 </h2>
                 <p className="max-w-2xl text-base text-slate-600">
                   Category groupings and example tools for planning sessions. Selection depends on your constraints and procurement landscape.

@@ -59,7 +59,7 @@ export default function TechStack({ showLabel = true }) {
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
             )}
             <h2 data-testid="tech-stack-heading" className="mb-5">
-              Coverage Across <span className="opacity-35">Platforms</span>
+              Coverage Across <span className="corp-heading-secondary">Platforms</span>
             </h2>
             <p className="mb-8 text-base leading-relaxed text-slate-600">
               Delivery aligns with approved cloud foundations, model APIs, and integration surfaces, including AWS, Azure, Google Cloud, and common AI tooling, so implementations remain observable, governable, and cost-accountable.

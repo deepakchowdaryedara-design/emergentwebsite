@@ -52,7 +52,7 @@ export default function SolutionDetail() {
                   <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 lg:mb-12">
                     <div>
                       <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
-                      <h2 className="">Methodology for <span className="opacity-40">this solution</span></h2>
+                      <h2 className="">Methodology for <span className="corp-heading-secondary">this solution</span></h2>
                     </div>
                     <div className="flex items-center gap-4 border-l-2 border-blue-500 pl-6 py-1">
                       <span className="text-lg font-bold text-[#0B1B3D] tracking-tight leading-snug max-w-[14rem]">
@@ -141,7 +141,7 @@ export default function SolutionDetail() {
             <AnimatedSection>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="mb-10 sm:mb-14">
-                Functional <span className="opacity-30">Capabilities</span>
+                Functional <span className="corp-heading-secondary">Capabilities</span>
               </h2>
             </AnimatedSection>
 
@@ -187,7 +187,7 @@ export default function SolutionDetail() {
                 <AnimatedSection>
                   <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
                   <h2 className="mb-4">
-                    Adoption <span className="opacity-30">Path</span>
+                    Adoption <span className="corp-heading-secondary">Path</span>
                   </h2>
                   <p className="text-sm text-slate-500 leading-relaxed font-medium">
                     This adoption path sequences connectivity, configuration, validation, and rollout with explicit checkpoints.

@@ -21,7 +21,7 @@ export default function PartnersPage() {
             <div className="max-w-3xl mb-8 text-left">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D]" >
-                Coverage Across <span className="text-[#0B1B3D]/30">ecosystem platforms</span>
+                Coverage Across <span className="corp-heading-secondary">ecosystem platforms</span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed max-w-2xl mt-4">Vendors and clouds we integrate in live programs; final stack choices stay governed by your policies and data boundaries.</p>
             </div>
@@ -43,7 +43,7 @@ export default function PartnersPage() {
             <div className="max-w-3xl mb-10 text-left">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-4" >
-                Methodology for <span className="text-[#0B1B3D]/30">using partner ecosystems</span>
+                Methodology for <span className="corp-heading-secondary">using partner ecosystems</span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed max-w-2xl">This methodology groups how we apply cloud, model, data, and application partners so architecture reviews stay structured.</p>
             </div>
@@ -71,7 +71,7 @@ export default function PartnersPage() {
             <div className="max-w-3xl mb-10 text-left">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D]" >
-                Outcomes for <span className="text-[#0B1B3D]/30">ecosystem-backed delivery</span>
+                Outcomes for <span className="corp-heading-secondary">ecosystem-backed delivery</span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed max-w-2xl mt-4">Practical benefits we aim for when platforms are chosen for fit, not logo placement for its own sake.</p>
             </div>

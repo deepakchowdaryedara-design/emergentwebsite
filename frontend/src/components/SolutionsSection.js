@@ -39,8 +39,8 @@ function SolutionCard({ solution }) {
       <div className="grid min-h-0 flex-1 grid-cols-1 gap-0 lg:grid-cols-2 lg:gap-0">
         <div className="flex min-h-0 flex-col justify-between p-8 sm:p-10 lg:p-12 lg:pr-10">
           <div className="min-h-0 flex-1 overflow-y-auto lg:overflow-visible">
-            <h3 className="mb-4">{solution.title}</h3>
-            <p className="mb-6 text-sm leading-snug text-slate-400 sm:text-base">{solution.shortDesc}</p>
+            <h3 className="mb-4 text-white">{solution.title}</h3>
+            <p className="mb-6 text-sm leading-snug text-slate-300 sm:text-base">{solution.shortDesc}</p>
             <ul className="space-y-3">
               {bullets.map((line) => (
                 <li key={line} className="flex gap-3 text-sm text-slate-200">
@@ -153,14 +153,14 @@ export default function SolutionsSection({ showLabel = true }) {
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <header className="mb-8 max-w-3xl text-left sm:mb-10">
           {showLabel && (
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">Coverage</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-300">Coverage</p>
           )}
           <h2
-            className="mb-4"
+            className="mb-4 text-white"
           >
-            Coverage Across <span className="opacity-40">solution accelerators</span>
+            Coverage Across <span className="corp-heading-secondary-on-dark">solution accelerators</span>
           </h2>
-          <p className="mb-8 max-w-2xl text-sm leading-relaxed text-slate-400">
+          <p className="mb-8 max-w-2xl text-sm leading-relaxed text-slate-300">
             These accelerators package repeatable integration and governance patterns for prioritized domains; scope and roadmap align with each customer program.
           </p>
         </header>

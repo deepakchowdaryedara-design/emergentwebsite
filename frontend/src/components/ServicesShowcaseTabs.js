@@ -72,7 +72,7 @@ export default function ServicesShowcaseTabs({
                   aria-pressed={false}
                 >
                   <span
-                    className="text-[11px] font-medium tracking-tight text-slate-400 xl:text-[12px] font-display"
+                    className="text-[11px] font-medium tracking-tight text-slate-600 xl:text-[12px] font-display"
                     style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
                   >
                     {service.title}

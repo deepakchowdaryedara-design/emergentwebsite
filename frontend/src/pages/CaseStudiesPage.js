@@ -64,7 +64,7 @@ export default function CaseStudiesPage() {
             <div className="max-w-3xl mb-10 text-left">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-5" >
-                Methodology for <span className="text-[#0B1B3D]/30">using this library</span>
+                Methodology for <span className="corp-heading-secondary">using this library</span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
                 This methodology frames how to read each scenario: what is modeled, what is held constant, and what a real program would still need to validate in your environment.
@@ -94,7 +94,7 @@ export default function CaseStudiesPage() {
             <div className="max-w-3xl mb-10 text-left">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D] mb-5" >
-                Coverage Across <span className="text-[#0B1B3D]/30">ways to browse</span>
+                Coverage Across <span className="corp-heading-secondary">ways to browse</span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
                 This coverage lists filters we use in workshops, industry, use case, stack, and impact type, so you can route to the closest scenario quickly.
@@ -123,7 +123,7 @@ export default function CaseStudiesPage() {
           <AnimatedSection>
             <div className="max-w-2xl mb-12 text-left">
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D]" >
-                Methodology for <span className="text-[#0B1B3D]/30">phasing delivery</span>
+                Methodology for <span className="corp-heading-secondary">phasing delivery</span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed mt-4 max-w-xl">
                 This methodology mirrors how we structure live engagements, from context through pilot, so scenario pages read like an execution checklist, not marketing narrative.

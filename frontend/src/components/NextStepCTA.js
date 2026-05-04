@@ -27,7 +27,7 @@ export default function NextStepCTA() {
           </p>
           <h2 className="mb-6 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[2.65rem] lg:leading-[1.12]">
             <span className="text-white">Next Step for </span>
-            <span className="text-white/45">Your Initiative</span>
+            <span className="text-slate-200">Your Initiative</span>
           </h2>
           <p className="mb-10 max-w-2xl text-base leading-relaxed text-white sm:text-lg">
             This next step is a working discussion of objectives, constraints, timeline, and fit, so both sides can decide on a proportionate pilot or engagement model.

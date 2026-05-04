@@ -19,7 +19,7 @@ export default function ServicesSection({ showLabel = true }) {
             data-testid="services-heading"
             className="mb-4 corp-heading-gradient"
           >
-            Coverage Across <span className="opacity-40">Engineering Services</span>
+            Coverage Across <span className="corp-heading-secondary">Engineering Services</span>
           </h2>
           <p className="text-base text-slate-600 leading-relaxed">
             Strategy, implementation, and operations support across the AI and software lifecycle, scoped to your priorities, budget, and governance requirements.

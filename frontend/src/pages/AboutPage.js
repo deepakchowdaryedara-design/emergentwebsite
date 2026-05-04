@@ -54,8 +54,8 @@ export default function AboutPage() {
               {/* Left Column: Context & Branding */}
               <div className="lg:col-span-5 border-b lg:border-b-0 lg:border-r border-white/5 pb-10 lg:pb-0 lg:pr-12">
                 <AnimatedSection>
-                  <h2 className="mb-6">
-                    Assurance for <br className="hidden xl:block" /> <span className="text-blue-500">execution clarity</span>
+                  <h2 className="mb-6 text-white">
+                    Assurance for <br className="hidden xl:block" /> <span className="text-blue-400">execution clarity</span>
                   </h2>
                   <p className="text-base text-blue-100/60 leading-relaxed font-medium max-w-sm">
                     We operate as a focused engineering partner, not a broad legacy integrator, helping teams ship AI-enabled products with proportionate process and measurable checkpoints.
@@ -118,7 +118,7 @@ export default function AboutPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
-            <h2 className="mb-4" >Outcomes for <span className="opacity-30">operating priorities</span></h2>
+            <h2 className="mb-4" >Outcomes for <span className="corp-heading-secondary">operating priorities</span></h2>
             <p className="text-base text-slate-600 leading-relaxed max-w-2xl mb-12">This outcomes framing states the tradeoffs we hold in delivery, progress you can observe, accountability you can audit, and scope that stays proportionate to risk.</p>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -140,7 +140,7 @@ export default function AboutPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
-            <h2 className="mb-4" >Methodology for <span className="opacity-30">our operating timeline</span></h2>
+            <h2 className="mb-4" >Methodology for <span className="corp-heading-secondary">our operating timeline</span></h2>
             <p className="text-base text-slate-600 leading-relaxed max-w-2xl mb-12">This methodology sequences launch, early programs, and scale decisions against shipped evidence, not vanity milestones.</p>
           </AnimatedSection>
           <div className="relative max-w-6xl mx-auto">
@@ -194,7 +194,7 @@ export default function AboutPage() {
             <div className="max-w-3xl mb-10 text-left">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
               <h2 className="mb-4" >
-                Assurance for <span className="opacity-30">Quality Delivery</span>
+                Assurance for <span className="corp-heading-secondary">Quality Delivery</span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed">
                 This assurance model combines architecture reviews, milestone controls, and measurable outcome tracking.
@@ -225,7 +225,7 @@ export default function AboutPage() {
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
             <h2 className="mb-4" >
-              Coverage Across <span className="opacity-30">our core team</span>
+              Coverage Across <span className="corp-heading-secondary">our core team</span>
             </h2>
             <p className="text-base text-slate-600 mb-12 max-w-2xl font-medium">Small, senior group, accountable for what we sell and what we ship.</p>
           </AnimatedSection>
@@ -250,7 +250,7 @@ export default function AboutPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="mb-8 text-left max-w-3xl">
-              <h2 className="mb-2">Coverage Across <span className="opacity-30">ecosystem platforms</span></h2>
+              <h2 className="mb-2">Coverage Across <span className="corp-heading-secondary">ecosystem platforms</span></h2>
               <p className="text-sm text-slate-500">Reference vendors and clouds we integrate with in customer programs, not an exhaustive partnership list.</p>
             </div>
             <div className="relative">
@@ -286,7 +286,7 @@ export default function AboutPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <h2 className="mb-4" >
-              Coverage Across <span className="opacity-30">where we operate</span>
+              Coverage Across <span className="corp-heading-secondary">where we operate</span>
             </h2>
             <p className="text-base text-slate-600 leading-relaxed max-w-2xl mb-12">Remote-first delivery with in-person working sessions when milestones require it.</p>
           </AnimatedSection>
@@ -311,8 +311,8 @@ export default function AboutPage() {
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">
-              <h2 className="mb-4" >
-                Next Step for <span className="opacity-30">a conversation</span>
+              <h2 className="mb-4 text-white" >
+                Next Step for <span className="corp-heading-secondary-on-dark">a conversation</span>
               </h2>
               <p className="text-base text-blue-100/90 leading-relaxed max-w-3xl">
                 Tell us what you are building, if there is a fit, we will propose a lean pilot and a path to scale.

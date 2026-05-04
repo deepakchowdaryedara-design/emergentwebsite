@@ -66,13 +66,13 @@ export default function CaseStudyDetail() {
             <AnimatedSection>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="mb-6" >
-                The <span className="opacity-30">Challenge</span>
+                The <span className="corp-heading-secondary">Challenge</span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed font-medium">{cs.challenge}</p>
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
               <h2 className="mb-6" >
-                Delivery <span className="opacity-30">approach</span>
+                Delivery <span className="corp-heading-secondary">approach</span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed font-medium">{cs.solution}</p>
             </AnimatedSection>

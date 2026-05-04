@@ -29,7 +29,7 @@ export default function TeamPage() {
             <div className="max-w-3xl mb-12">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
-                Coverage Across <span className="opacity-40">who you work with</span>
+                Coverage Across <span className="corp-heading-secondary">who you work with</span>
               </h2>
               <p className="text-sm text-slate-600 mt-3 max-w-2xl">Roles typically engaged on delivery workstreams so conversations stay with people authorized to change scope and priorities.</p>
             </div>
@@ -61,7 +61,7 @@ export default function TeamPage() {
             <div className="max-w-3xl mb-10">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#0B1B3D] mb-6 leading-none">
-                Methodology for <span className="text-[#0B1B3D]/30 text-nowrap">Cross-Functional</span> Delivery
+                Methodology for <span className="corp-heading-secondary text-nowrap">Cross-Functional</span> Delivery
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed max-w-2xl font-medium">
                 This execution model aligns product, engineering, AI research, and client success under a single, high-performance framework.
@@ -102,7 +102,7 @@ export default function TeamPage() {
             <div className="max-w-2xl mb-12">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
               <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#0B1B3D]" >
-                Assurance Through <span className="text-[#0B1B3D]/30">Collaboration</span>
+                Assurance Through <span className="corp-heading-secondary">Collaboration</span>
               </h2>
             </div>
           </AnimatedSection>

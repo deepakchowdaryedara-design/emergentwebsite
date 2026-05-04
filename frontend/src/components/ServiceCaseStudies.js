@@ -42,7 +42,7 @@ export default function ServiceCaseStudies({ cases, title }) {
                     <span className="text-3xl lg:text-4xl font-bold tracking-tight block mb-2" >
                       {cs.highlight.split(' ')[0]}
                     </span>
-                    <span className={`text-xs font-bold uppercase tracking-widest ${i % 2 === 0 ? 'text-slate-400' : 'text-blue-100/40'}`}>
+                    <span className={`text-xs font-bold uppercase tracking-widest ${i % 2 === 0 ? 'text-slate-500' : 'text-slate-200'}`}>
                       {cs.highlight.split(' ').slice(1).join(' ')}
                     </span>
                   </div>
@@ -61,7 +61,7 @@ export default function ServiceCaseStudies({ cases, title }) {
                     <h3 className="text-2xl lg:text-3xl font-bold mb-6 leading-tight tracking-tight max-w-2xl" >
                       {cs.title}
                     </h3>
-                    <p className={`text-sm lg:text-base mb-10 leading-relaxed font-medium max-w-3xl ${i % 2 === 0 ? 'text-slate-600' : 'text-blue-100/70'}`}>
+                    <p className={`text-sm lg:text-base mb-10 leading-relaxed font-medium max-w-3xl ${i % 2 === 0 ? 'text-slate-600' : 'text-slate-200'}`}>
                       {cs.desc}
                     </p>
                     
@@ -72,7 +72,7 @@ export default function ServiceCaseStudies({ cases, title }) {
                           {["Measurable KPIs for the pilot window", "Documentation suitable for security review", "Handover paths for your teams"].map(outcome => (
                             <li key={outcome} className="flex items-center gap-3">
                               <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-                              <span className={`text-[13px] font-medium ${i % 2 === 0 ? 'text-slate-500' : 'text-blue-100/50'}`}>{outcome}</span>
+                              <span className={`text-[13px] font-medium ${i % 2 === 0 ? 'text-slate-600' : 'text-slate-300'}`}>{outcome}</span>
                             </li>
                           ))}
                         </ul>

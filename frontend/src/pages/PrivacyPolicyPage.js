@@ -130,7 +130,7 @@ export default function PrivacyPolicyPage() {
               <div className="mb-10">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
                 <h2 className="" >
-                  Data Privacy <span className="opacity-30">Architecture</span>
+                  Data Privacy <span className="corp-heading-secondary">Architecture</span>
                 </h2>
               </div>
             </AnimatedSection>
@@ -164,7 +164,7 @@ export default function PrivacyPolicyPage() {
             <div className="max-w-3xl mb-12">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
               <h2 className="" >
-                Methodology for <span className="opacity-30 text-nowrap">privacy request resolution</span>
+                Methodology for <span className="corp-heading-secondary text-nowrap">privacy request resolution</span>
               </h2>
             </div>
           </AnimatedSection>

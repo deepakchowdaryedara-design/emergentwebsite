@@ -32,7 +32,7 @@ export default function Industries({ showLabel = true }) {
               className="mb-4"
             >
               Industry programs with{" "}
-              <span className="opacity-30">governed delivery</span>
+              <span className="corp-heading-secondary">governed delivery</span>
             </h2>
             <p className="max-w-2xl text-base leading-relaxed text-slate-500">
               Solutions are shaped to sector controls, data handling requirements, and KPIs your leadership team can review.
@@ -58,7 +58,7 @@ export default function Industries({ showLabel = true }) {
                 onClick={() => setActiveTab(i)}
                 className={`rounded-sm px-5 py-3 text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300 sm:px-6 ${activeTab === i
                   ? "scale-[1.02] bg-[#0B1B3D] text-white shadow-xl shadow-[#0B1B3D]/20"
-                  : "border border-slate-200 bg-white text-slate-400 hover:border-[#0B1B3D] hover:text-[#0B1B3D] hover:shadow-md"
+                  : "border border-slate-200 bg-white text-slate-600 hover:border-[#0B1B3D] hover:text-[#0B1B3D] hover:shadow-md"
                   }`}
               >
                 {ind.title}

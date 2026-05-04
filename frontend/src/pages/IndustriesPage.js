@@ -37,7 +37,7 @@ export default function IndustriesPage() {
               <div className="max-w-3xl mb-10 lg:mb-12">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
                 <h2 className="mb-6">
-                  Coverage Across <span className="opacity-30">industry programs</span>
+                  Coverage Across <span className="corp-heading-secondary">industry programs</span>
                 </h2>
                 <p className="text-lg text-slate-600 leading-relaxed font-medium">
                   This coverage surfaces sectors where we scope pilots today, each overview ties constraints to delivery patterns and milestone checkpoints.
@@ -72,7 +72,7 @@ export default function IndustriesPage() {
                 <AnimatedSection>
                   <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
                   <h2 className="mb-8">
-                    Outcomes for <span className="opacity-30">domain programs</span>
+                    Outcomes for <span className="corp-heading-secondary">domain programs</span>
                   </h2>
                   <p className="text-base text-slate-500 leading-relaxed font-medium mb-10 max-w-sm">
                     This outcomes framing links sector pilots to the dimensions executives actually fund, automation depth, signal latency, handling effort, and traceability, not generic AI hype.
@@ -130,7 +130,7 @@ export default function IndustriesPage() {
             <AnimatedSection>
               <div className="max-w-3xl mb-10">
                 <h2 className="mb-6">
-                  Coverage Across <span className="opacity-30">capability by vertical</span>
+                  Coverage Across <span className="corp-heading-secondary">capability by vertical</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed max-w-2xl mb-6">
                   This coverage matrix compares how capabilities land across sectors, use it to steer discovery questions, not as a guarantee of off-the-shelf parity.
@@ -168,7 +168,7 @@ export default function IndustriesPage() {
               <div className="max-w-3xl mb-10">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
                 <h2 className="mb-4">
-                  Methodology for <span className="opacity-30">industry program phases</span>
+                  Methodology for <span className="corp-heading-secondary">industry program phases</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
                   This methodology moves from blueprint to pilot to expansion with explicit controls, so domain risk is addressed before throughput investments compound.

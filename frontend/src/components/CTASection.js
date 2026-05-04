@@ -29,7 +29,7 @@ export default function CTASection({
             )}
             <h2
               data-testid="cta-title"
-              className="mb-6"
+              className="mb-6 text-white"
             >
               {title || "Next Step for Your AI and Software Initiative"}
             </h2>
@@ -69,7 +69,7 @@ export default function CTASection({
 
           <div className="lg:col-span-5">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-              <h3 className="mb-6 uppercase tracking-widest">What to Expect</h3>
+              <h3 className="mb-6 text-white uppercase tracking-widest">What to Expect</h3>
               <ul className="space-y-4">
                 {[
                   "Discovery session with a delivery lead",

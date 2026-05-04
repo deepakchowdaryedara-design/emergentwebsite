@@ -36,7 +36,7 @@ export default function HomePage() {
               </div>
               <h2 className="mb-4" >
                 Methodology for <br />
-                <span className="opacity-40">Enterprise AI Delivery</span>
+                <span className="corp-heading-secondary">Enterprise AI Delivery</span>
               </h2>
               <p className="text-base sm:text-lg text-slate-500 leading-relaxed max-w-2xl">
                 This methodology keeps scope controlled, releases on a predictable cadence, and places decisions with the delivery team so working software is visible early.
@@ -140,7 +140,7 @@ export default function HomePage() {
             <div className="max-w-3xl mb-8">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
               <h2 className="mb-4" >
-                Coverage Across <span className="opacity-30">organizations we engage</span>
+                Coverage Across <span className="corp-heading-secondary">organizations we engage</span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed max-w-2xl mb-6">
                 This coverage clarifies stakeholder mixes where our delivery model fits today, product and engineering, leadership and operations, or innovation and IT, and how engagements are typically structured.

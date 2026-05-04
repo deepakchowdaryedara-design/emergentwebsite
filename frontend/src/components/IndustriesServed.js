@@ -34,7 +34,7 @@ export default function IndustriesServed({ title }) {
                 onClick={() => setActiveTab(i)}
                 className={`text-[11px] px-6 py-3 rounded-sm font-black uppercase tracking-[0.2em] transition-all duration-500 ${activeTab === i
                     ? "bg-[#0B1B3D] text-white shadow-xl shadow-[#0B1B3D]/20 scale-105"
-                    : "bg-white border border-slate-200 text-slate-400 hover:border-[#0B1B3D] hover:text-[#0B1B3D] hover:shadow-md"
+                    : "bg-white border border-slate-200 text-slate-600 hover:border-[#0B1B3D] hover:text-[#0B1B3D] hover:shadow-md"
                   }`}
               >
                 {ind.title}

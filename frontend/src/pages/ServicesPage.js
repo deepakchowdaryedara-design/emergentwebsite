@@ -59,7 +59,7 @@ export default function ServicesPage() {
               <div className="max-w-2xl mb-6">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
                 <h2 className="mb-4">
-                  Methodology for <span className="opacity-40">delivery cadence</span>
+                  Methodology for <span className="corp-heading-secondary">delivery cadence</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed">
                   This methodology sets discovery length, pilot windows, and operational commitments so scope stays proportionate to production risk.
@@ -93,7 +93,7 @@ export default function ServicesPage() {
             <AnimatedSection>
               <div className="max-w-2xl mb-6">
                 <h2 className="mb-4">
-                  Methodology for <span className="opacity-40">strategy through scaled operations</span>
+                  Methodology for <span className="corp-heading-secondary">strategy through scaled operations</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
                   This methodology sequences assessment, design, build, and scale so each gate has clear inputs and exit criteria.
@@ -128,7 +128,7 @@ export default function ServicesPage() {
               <div className="max-w-3xl mb-6">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
                 <h2 className="mb-5">
-                  Coverage Across <span className="opacity-40">collaboration models</span>
+                  Coverage Across <span className="corp-heading-secondary">collaboration models</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed">
                   This coverage compares ways to engage NeuralTrix, advisory, pilot-to-production, or managed delivery, mapped to your internal capacity.
@@ -170,7 +170,7 @@ export default function ServicesPage() {
             <AnimatedSection>
               <div className="max-w-3xl mb-6">
                 <h2 className="mb-5">
-                  Coverage Across <span className="opacity-40">industry constraints</span>
+                  Coverage Across <span className="corp-heading-secondary">industry constraints</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed">
                   This coverage highlights sectors where we routinely align controls, data practices, and throughput expectations before expanding scope.
@@ -201,7 +201,7 @@ export default function ServicesPage() {
                   className="mb-6"
 
                 >
-                  Coverage Across <span className="opacity-40">the AI stack</span>
+                  Coverage Across <span className="corp-heading-secondary">the AI stack</span>
                 </h2>
                 <p className="text-base text-slate-500 max-w-2xl font-medium">This coverage names stack layers and example concerns, so technical reviews start from shared vocabulary, not slide-level abstraction.</p>
               </div>
@@ -277,7 +277,7 @@ export default function ServicesPage() {
               <div className="max-w-3xl mb-6">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
                 <h2 className="mb-5">
-                  Assurance for <span className="opacity-40">governance and quality</span>
+                  Assurance for <span className="corp-heading-secondary">governance and quality</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed">
                   This assurance model embeds security, observability, and release discipline into delivery milestones, not a separate paperwork phase.
@@ -322,7 +322,7 @@ export default function ServicesPage() {
               <div className="max-w-3xl mb-6">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
                 <h2 className="mb-5">
-                  Outcomes for <span className="opacity-40">service engagements</span>
+                  Outcomes for <span className="corp-heading-secondary">service engagements</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed">
                   These outcomes are discussion ranges from comparable programs, your baselines and acceptance tests still define what counts as success.
@@ -373,7 +373,7 @@ export default function ServicesPage() {
             <AnimatedSection>
               <div className="max-w-3xl mb-6">
                 <h2 className="mb-5">
-                  Methodology for <span className="opacity-40">commercial engagement models</span>
+                  Methodology for <span className="corp-heading-secondary">commercial engagement models</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
                   This methodology matches funding and staffing reality, project, embedded pod, or multi-workstream program, with cadence and governance spelled out up front.
@@ -432,7 +432,7 @@ export default function ServicesPage() {
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="text-left mb-8">
-                <h2 className="text-xl font-bold text-[#0B1B3D] mb-2">Assurance for <span className="opacity-40">enterprise expectations</span></h2>
+                <h2 className="text-xl font-bold text-[#0B1B3D] mb-2">Assurance for <span className="corp-heading-secondary">enterprise expectations</span></h2>
                 <p className="text-sm text-slate-500">
                   This assurance summary lists practices buyers commonly verify during procurement, not claims of certification unless separately contracted.
                 </p>

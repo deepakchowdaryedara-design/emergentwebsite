@@ -52,7 +52,7 @@ export default function AboutPage() {
       {/* 2. Mission & Vision - REFINED ARCHITECTURAL REDESIGN */}
       <section className="py-6 sm:py-8 md:py-10 bg-white overflow-hidden">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-          <div className="relative rounded-[2.5rem] bg-[#0B1B3D] p-10 lg:p-16 xl:p-20 overflow-hidden shadow-2xl">
+          <div className="relative rounded-[2.5rem] bg-[#0B1B3D] text-white p-10 lg:p-16 xl:p-20 overflow-hidden shadow-2xl">
             {/* Background Texture/Glow - Subtle */}
             <div className="absolute top-0 right-0 w-[40%] h-full bg-gradient-to-l from-blue-600/10 to-transparent pointer-events-none" />
             <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
@@ -307,7 +307,7 @@ export default function AboutPage() {
       <TestimonialsSection title="What Our Clients Say" />
 
       {/* 11. Strategic CTA */}
-      <section className="py-6 sm:py-8 md:py-10 bg-[#0B1B3D]">
+      <section className="py-6 sm:py-8 md:py-10 bg-[#0B1B3D] text-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">

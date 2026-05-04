@@ -423,7 +423,7 @@ export default function ServicesPage() {
       </div>
 
       {/* CTA Layer - Pinned */}
-      <div className="sticky top-0 z-0 h-[min(70vh,750px)] flex flex-col justify-center bg-[#0B1B3D] overflow-hidden">
+      <div className="sticky top-0 z-0 h-[min(70vh,750px)] flex flex-col justify-center bg-[#0B1B3D] text-white overflow-hidden">
         <CTASection
           title="Convert Priorities into an Executable Delivery Plan"
           description="Share your current priorities and constraints. We will map service fit, delivery sequence, and expected business impact in a focused consultation."

@@ -37,7 +37,7 @@ export default function ServiceDetail() {
       </div>
 
       {/* 2. Surface: Approach → Scope of delivery (methodology & outcomes) */}
-      <div id="capabilities" className="relative z-10 bg-white shadow-[0_-10px_50px_rgba(0,0,0,0.05)]">
+      <div id="capabilities" className="relative z-10 bg-white text-[#0B1B3D] shadow-[0_-10px_50px_rgba(0,0,0,0.05)]">
         <div className="bg-white border-b border-slate-200">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-4">
             <Link to="/services" data-testid="back-to-services" className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#2563EB] transition-colors"><ArrowLeft size={14} /> Back to All Services</Link>
@@ -61,7 +61,7 @@ export default function ServiceDetail() {
       </div>
 
       {/* 4. Methodology: phased execution roadmap */}
-      <div className="relative z-10 bg-white shadow-[0_-10px_50px_rgba(0,0,0,0.05)]">
+      <div className="relative z-10 bg-white text-[#0B1B3D] shadow-[0_-10px_50px_rgba(0,0,0,0.05)]">
         <section className="border-y border-slate-100 py-4 sm:py-6 md:py-8">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
@@ -104,12 +104,12 @@ export default function ServiceDetail() {
       </div>
 
       {/* 5. Next step: conversation CTA */}
-      <div className="sticky top-0 z-0 h-[60vh] flex flex-col justify-center bg-[#0B1B3D] overflow-hidden">
+      <div className="sticky top-0 z-0 h-[60vh] flex flex-col justify-center bg-[#0B1B3D] text-white overflow-hidden">
         <CTASection title="Discuss Delivery Fit" description={`We can map ${service.title} to your current systems, priorities, and timeline to define a practical starting scope.`} />
       </div>
 
       {/* 6. Assurance & outcomes: rationale + proof metrics */}
-      <div className="relative z-10 bg-white shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
+      <div className="relative z-10 bg-white text-[#0B1B3D] shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
         <section className="border-y border-slate-100 bg-white py-4 sm:py-6 md:py-8">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-16">

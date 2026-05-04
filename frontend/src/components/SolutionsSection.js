@@ -35,7 +35,7 @@ function SolutionCard({ solution }) {
   const bullets = tabBullets(solution, tab);
 
   return (
-    <article className="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0c1224] shadow-[0_24px_80px_-32px_rgba(0,0,0,0.65)]">
+    <article className="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0c1224] text-white shadow-[0_24px_80px_-32px_rgba(0,0,0,0.65)]">
       <div className="grid min-h-0 flex-1 grid-cols-1 gap-0 lg:grid-cols-2 lg:gap-0">
         <div className="flex min-h-0 flex-col justify-between p-8 sm:p-10 lg:p-12 lg:pr-10">
           <div className="min-h-0 flex-1 overflow-y-auto lg:overflow-visible">
@@ -149,7 +149,7 @@ export default function SolutionsSection() {
   };
 
   return (
-    <section id="solutions" data-testid="solutions-section" className="overflow-hidden bg-[#050816] py-6 sm:py-8 md:py-10">
+    <section id="solutions" data-testid="solutions-section" className="overflow-hidden bg-[#050816] py-6 sm:py-8 md:py-10 text-white">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <header className="mb-8 max-w-3xl text-left sm:mb-10">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">Solutions</p>

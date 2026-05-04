@@ -49,7 +49,7 @@ export default function ContactForm() {
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-sm border border-slate-200">
           {/* Left side - Info */}
-          <div className="p-10 sm:p-14" style={{ backgroundColor: "#0B1B3D" }}>
+          <div className="p-10 sm:p-14 text-white" style={{ backgroundColor: "#0B1B3D" }}>
             <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">
               Get in Touch
             </p>

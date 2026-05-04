@@ -231,7 +231,7 @@ export default function CareersPage() {
       <TestimonialsSection title="Life at NeuralTrix AI" />
 
       {/* 9. Career CTA */}
-      <section className="py-6 sm:py-8 md:py-10 bg-[#0B1B3D]">
+      <section className="py-6 sm:py-8 md:py-10 bg-[#0B1B3D] text-white">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
           <AnimatedSection>
             <div className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:p-12">

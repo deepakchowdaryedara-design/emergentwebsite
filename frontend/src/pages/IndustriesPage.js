@@ -30,7 +30,7 @@ export default function IndustriesPage() {
       </div>
 
       {/* 2. Main Industry Listing (Surface Layer) */}
-      <div className="relative z-10 bg-white shadow-[0_-10px_50px_rgba(0,0,0,0.05)]">
+      <div className="relative z-10 bg-white text-[#0B1B3D] shadow-[0_-10px_50px_rgba(0,0,0,0.05)]">
         <section id="verticals" className="py-6 sm:py-8 md:py-10 corp-pat-dots">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
@@ -109,7 +109,7 @@ export default function IndustriesPage() {
       </div>
 
       {/* 4. Implementation Framework (Pinned) */}
-      <div className="sticky top-0 z-0 h-[min(80vh,800px)] flex flex-col justify-center bg-[#070e1a] overflow-hidden">
+      <div className="sticky top-0 z-0 h-[min(80vh,800px)] flex flex-col justify-center bg-[#070e1a] text-white overflow-hidden">
         {/* Cinematic High-Tech Pattern */}
         <div className="absolute inset-0 opacity-[0.1] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #3b82f6 1px, transparent 0)', backgroundSize: '40px 40px' }} />
 

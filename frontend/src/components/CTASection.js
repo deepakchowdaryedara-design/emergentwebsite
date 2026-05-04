@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function CTASection({ title, description, buttonText, buttonHref, compact = false }) {
   return (
-    <section data-testid="cta-section" className={`${compact ? 'py-0' : 'py-6 sm:py-8 md:py-10'} bg-[#0B1B3D] relative overflow-hidden`}>
+    <section data-testid="cta-section" className={`${compact ? 'py-0' : 'py-6 sm:py-8 md:py-10'} bg-[#0B1B3D] text-white relative overflow-hidden`}>
       {/* Premium Background Accent */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-600/5 -skew-x-12 translate-x-1/2 pointer-events-none" />
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'radial-gradient(white 1px, transparent 1px)', backgroundSize: '40px 40px' }} />

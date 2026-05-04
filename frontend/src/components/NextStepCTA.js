@@ -22,7 +22,7 @@ export default function NextStepCTA() {
   return (
     <section
       data-testid="next-step-cta"
-      className="relative overflow-hidden bg-[#0A1628] py-6 sm:py-8 md:py-10"
+      className="relative overflow-hidden bg-[#0A1628] py-6 sm:py-8 md:py-10 text-white"
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.04]"

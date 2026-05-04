@@ -33,7 +33,7 @@ export default function SolutionDetail() {
       </div>
 
       {/* 2. Page Content - Scrolling Over Hero */}
-      <div className="relative z-10 bg-white shadow-[0_-10px_50px_rgba(0,0,0,0.05)]">
+      <div className="relative z-10 bg-white text-[#0B1B3D] shadow-[0_-10px_50px_rgba(0,0,0,0.05)]">
 
         {/* 2. Breadcrumb */}
         <div className="bg-white border-b border-slate-200">
@@ -176,12 +176,12 @@ export default function SolutionDetail() {
       </div>
 
       {/* 6. Pinned CTA Layer */}
-      <div className="sticky top-0 z-0 h-[55vh] flex flex-col justify-center bg-[#0B1B3D] overflow-hidden">
+      <div className="sticky top-0 z-0 h-[55vh] flex flex-col justify-center bg-[#0B1B3D] text-white overflow-hidden">
         <CTASection title={`Evaluate ${solution.title} for Your Environment`} description="Assess integration effort, governance fit, and likely operational impact." />
       </div>
 
       {/* 7. Surface Layer 2 */}
-      <div className="relative z-10 bg-white shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
+      <div className="relative z-10 bg-white text-[#0B1B3D] shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
         {/* 7. How It Works - High-Density Compact Sequence */}
         <section className="py-6 sm:py-8 md:py-10 border-y border-slate-100 relative">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">

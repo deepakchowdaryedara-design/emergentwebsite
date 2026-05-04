@@ -54,7 +54,7 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="py-6 sm:py-8 md:py-10 bg-[#0B1B3D] relative overflow-hidden">
+    <section className="py-6 sm:py-8 md:py-10 bg-[#0B1B3D] text-white relative overflow-hidden">
       {/* Background Ornaments */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[120px] -mr-96 -mt-96 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-600/5 rounded-full blur-[100px] -ml-48 -mb-48 pointer-events-none" />

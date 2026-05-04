@@ -44,7 +44,7 @@ export default function IndustryDetail() {
       </div>
 
       {/* 2. Page Content - Scrolling Over Hero */}
-      <div className="relative z-10 bg-white shadow-[0_-10px_50px_rgba(0,0,0,0.05)]">
+      <div className="relative z-10 bg-white text-[#0B1B3D] shadow-[0_-10px_50px_rgba(0,0,0,0.05)]">
         {/* Breadcrumb */}
         <div className="bg-white border-b border-slate-200">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-4">
@@ -338,7 +338,7 @@ export default function IndustryDetail() {
               ].map((c, i) => (
                 <div
                   key={c.cat}
-                  className="sticky top-[100px] border border-white/5 rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 bg-[#0B1B3D]"
+                  className="sticky top-[100px] border border-white/5 rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 bg-[#0B1B3D] text-white"
                   style={{
                     marginTop: i === 0 ? 0 : `${i * 32}px`,
                     zIndex: i + 1
@@ -372,7 +372,7 @@ export default function IndustryDetail() {
       </div>
 
       {/* 4. Strategic CTA (Pinned Layer) */}
-      <div className="sticky top-0 z-0 h-[60vh] flex flex-col justify-center bg-[#070e1a] overflow-hidden">
+      <div className="sticky top-0 z-0 h-[60vh] flex flex-col justify-center bg-[#070e1a] text-white overflow-hidden">
         {/* Cinematic High-Tech Pattern */}
         <div className="absolute inset-0 opacity-[0.1] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #3b82f6 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent)]" />
@@ -385,7 +385,7 @@ export default function IndustryDetail() {
       </div>
 
       {/* 5. Surface Layer 2 */}
-      <div className="relative z-30 bg-white shadow-[0_-40px_100px_rgba(0,0,0,0.2)]">
+      <div className="relative z-30 bg-white text-[#0B1B3D] shadow-[0_-40px_100px_rgba(0,0,0,0.2)]">
         {/* Testimonials */}
         <TestimonialsSection title={`What ${industry.title} Leaders Say About Us`} />
 

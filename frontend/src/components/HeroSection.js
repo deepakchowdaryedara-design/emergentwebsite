@@ -5,7 +5,7 @@ import { HOME_HERO_IMAGE } from "../lib/heroImageThemes";
 
 export default function HeroSection() {
   return (
-    <section id="hero" data-testid="hero-section" className="relative overflow-hidden bg-[#0B1B3D]">
+    <section id="hero" data-testid="hero-section" className="relative overflow-hidden bg-[#0B1B3D] text-white">
       {/* Full-bleed hero: Refined centered design with high impact height */}
       <div className="relative isolate flex min-h-[88vh] flex-col items-start justify-center text-left">
         <HeroAnimatedBackdrop video="/hero/Untitled.mp4" bgDark />

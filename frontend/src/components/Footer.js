@@ -4,14 +4,14 @@ import { COMPANY_FOUNDED_LABEL } from "../lib/company";
 
 const footerLinks = {
   Services: [
-    { label: "Artificial Intelligence", href: "/services/artificial-intelligence" },
-    { label: "Generative AI", href: "/services/generative-ai" },
-    { label: "Custom Software", href: "/services/custom-software" },
-    { label: "Mobile Apps", href: "/services/mobile-apps" },
-    { label: "AI Agents", href: "/services/ai-agents" },
-    { label: "LLM Development", href: "/services/llm-development" },
-    { label: "DevOps", href: "/services/devops" },
-    { label: "Data Engineering", href: "/services/data-engineering" },
+    { label: "Applied AI & ML Engineering", href: "/services/artificial-intelligence" },
+    { label: "Generative AI & Enterprise Copilots", href: "/services/generative-ai" },
+    { label: "Custom Software & Platform Engineering", href: "/services/custom-software" },
+    { label: "Mobile Product Engineering", href: "/services/mobile-apps" },
+    { label: "Intelligent Agents & Workflow Automation", href: "/services/ai-agents" },
+    { label: "LLM Engineering & Model Lifecycle", href: "/services/llm-development" },
+    { label: "DevOps & Platform Reliability", href: "/services/devops" },
+    { label: "Data Engineering & Analytics Foundations", href: "/services/data-engineering" },
   ],
   Solutions: [
     { label: "DataBrain AI", href: "/solutions/databrain-ai" },

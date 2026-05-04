@@ -73,7 +73,7 @@ export default function PartnersPage() {
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#0B1B3D]" >
                 Outcomes for <span className="text-[#0B1B3D]/30">ecosystem-backed delivery</span>
               </h2>
-              <p className="text-base text-slate-600 leading-relaxed max-w-2xl mt-4">Practical benefits we aim for when platforms are chosen for fit—not logo placement for its own sake.</p>
+              <p className="text-base text-slate-600 leading-relaxed max-w-2xl mt-4">Practical benefits we aim for when platforms are chosen for fit, not logo placement for its own sake.</p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6">

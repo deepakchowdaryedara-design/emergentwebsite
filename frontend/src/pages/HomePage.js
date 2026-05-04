@@ -143,7 +143,7 @@ export default function HomePage() {
                 Coverage Across <span className="opacity-30">organizations we engage</span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed max-w-2xl mb-6">
-                This coverage clarifies stakeholder mixes where our delivery model fits today—product and engineering, leadership and operations, or innovation and IT—and how engagements are typically structured.
+                This coverage clarifies stakeholder mixes where our delivery model fits today, product and engineering, leadership and operations, or innovation and IT, and how engagements are typically structured.
               </p>
             </div>
           </AnimatedSection>

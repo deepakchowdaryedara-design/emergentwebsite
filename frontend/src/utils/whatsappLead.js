@@ -12,13 +12,15 @@ export const WHATSAPP_LEAD_NUMBER = normalizeLeadNumber(
 
 /**
  * Opens WhatsApp with a pre-filled lead message (no backend).
- * @param {{ first_name: string, last_name: string, email: string, phone?: string, description: string, context?: string }} payload
+ * @param {{ first_name: string, last_name: string, email: string, phone?: string, description: string, context?: string, leadIntent?: 'contact' | 'consultation' }} payload
  */
 export function getWhatsAppLeadUrl(payload) {
-  const { first_name, last_name, email, phone, description, context } = payload;
+  const { first_name, last_name, email, phone, description, context, leadIntent } = payload;
   const desc = context ? `[${context}] ${description}` : description;
+  const intentLabel =
+    leadIntent === "consultation" ? "Consultation request" : "General contact";
   const lines = [
-    "New lead — website contact form",
+    `New lead: website (${intentLabel})`,
     `Name: ${first_name} ${last_name}`.trim(),
     `Email: ${email}`,
     phone ? `Phone: ${phone}` : null,

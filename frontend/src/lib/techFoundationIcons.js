@@ -78,7 +78,9 @@ export function getTechFoundationIcon(name) {
   if (/swift/.test(n)) return SiSwift;
   if (/kotlin/.test(n)) return SiKotlin;
   if (/langchain|llamaindex|haystack|semantic kernel|dspy/.test(n)) return SiHuggingface;
-  if (/pinecone|weaviate|milvus|qdrant|chroma|vector/.test(n)) return Database;
+  if (/pinecone|weaviate|milvus|qdrant|chroma|vector db|vector/.test(n)) return Database;
+  if (/\brest\b/.test(n)) return Server;
+  if (/spring|fastapi|django/.test(n)) return Code2;
   if (/elastic|opensearch/.test(n)) return SiElasticsearch;
   if (/snowflake/.test(n)) return Database;
   if (/spark/.test(n)) return Cpu;

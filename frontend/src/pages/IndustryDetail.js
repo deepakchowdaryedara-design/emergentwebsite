@@ -9,6 +9,7 @@ import ImpactStats from "../components/ImpactStats";
 import RelatedCaseStudies from "../components/RelatedCaseStudies";
 import TestimonialsSection from "../components/TestimonialsSection";
 import RelatedBlog from "../components/RelatedBlog";
+import TechStackLogoGrid from "../components/TechStackLogoGrid";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import industries from "../data/industries";
 import services from "../data/services";
@@ -37,7 +38,7 @@ export default function IndustryDetail() {
           label="Industries"
           title={industry.heroTitle}
           description={industry.heroDesc}
-          primaryCTA={{ text: "Get Industry Assessment", href: "#page-contact" }}
+          primaryCTA={{ text: "Get Industry Assessment", href: "#page-contact", contactIntent: "consultation" }}
           secondaryCTA={{ text: "View Capabilities", href: "#capabilities" }}
           image={industry.heroImage}
         />
@@ -115,7 +116,7 @@ export default function IndustryDetail() {
             <AnimatedSection>
               <div className="max-w-2xl mb-8">
                 <h2 className="">Coverage Across AI capabilities for {industry.title}</h2>
-                <p className="text-sm text-slate-600 mt-3 max-w-xl">Typical capability bundles we scope with sector stakeholders—not a fixed bundle sold as a single SKU.</p>
+                <p className="text-sm text-slate-600 mt-3 max-w-xl">Typical capability bundles we scope with sector stakeholders, not a fixed bundle sold as a single SKU.</p>
               </div>
             </AnimatedSection>
             <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-slate-100">
@@ -298,51 +299,50 @@ export default function IndustryDetail() {
         </section>
 
         {/* Tech Stack for Industry */}
-        <section data-testid="industry-tech-stack" className="py-6 sm:py-8 md:py-10 bg-white relative">
+        <section data-testid="industry-tech-stack" className="relative bg-[#F8FAFC] py-6 sm:py-8 md:py-10">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-2xl mb-8">
-                <h2 className="mb-4">
-                  Coverage Across <span className="opacity-40">reference technologies</span> for {industry.title}
+              <div className="mb-10 max-w-2xl">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Coverage</p>
+                <h2 className="mb-4 text-[#0B1B3D]">
+                  Reference <span className="opacity-40">technology stack</span> for {industry.title}
                 </h2>
-                <p className="text-base text-slate-500 max-w-2xl">This coverage lists stack categories and examples for planning discussions—not a mandatory or exclusive technology list.</p>
+                <p className="max-w-2xl text-base text-slate-600">
+                  Category groupings and example tools for planning sessions. Selection depends on your constraints and procurement landscape.
+                </p>
               </div>
             </AnimatedSection>
 
-            <div className="space-y-8 lg:space-y-14 relative">
+            <div className="space-y-12">
               {[
-                { cat: "AI & ML MODELS", desc: "Core intelligence layers focused on inference quality and prompt performance.", techs: ["GPT-4o", "Claude 3.5", "TensorFlow", "PyTorch", "LangChain", "Vector DBs"] },
-                { cat: "LANGUAGE & FRAMEWORKS", desc: "Stable application foundations for high-concurrency enterprise workloads.", techs: ["Python / FastAPI", "Node.js", "Java Spring", "Go-Micro", "GraphQL", "REST"] },
-                { cat: "DATA & PIPELINES", desc: "Robust data orchestration and warehousing for real-time AI context.", techs: ["Snowflake", "PostgreSQL", "MongoDB", "Redis", "Kafka", "Apache Airflow"] },
-                { cat: "CLOUD & DEPLOYMENT", desc: "Scalable infrastructure with hardened security and compliance wrappers.", techs: ["AWS / Azure", "Docker", "Kubernetes", "Terraform", "CI/CD Labs", "Serverless"] },
-              ].map((c, i) => (
+                {
+                  cat: "AI & ML MODELS",
+                  desc: "Core intelligence layers focused on inference quality and prompt performance.",
+                  techs: ["GPT-4o", "Claude 3.5", "TensorFlow", "PyTorch", "LangChain", "Vector DBs"],
+                },
+                {
+                  cat: "LANGUAGE & FRAMEWORKS",
+                  desc: "Stable application foundations for high-concurrency enterprise workloads.",
+                  techs: ["Python / FastAPI", "Node.js", "Java Spring", "Go-Micro", "GraphQL", "REST"],
+                },
+                {
+                  cat: "DATA & PIPELINES",
+                  desc: "Robust data orchestration and warehousing for real-time AI context.",
+                  techs: ["Snowflake", "PostgreSQL", "MongoDB", "Redis", "Kafka", "Apache Airflow"],
+                },
+                {
+                  cat: "CLOUD & DEPLOYMENT",
+                  desc: "Scalable infrastructure with hardened security and compliance wrappers.",
+                  techs: ["AWS / Azure", "Docker", "Kubernetes", "Terraform", "CI/CD Labs", "Serverless"],
+                },
+              ].map((c) => (
                 <div
                   key={c.cat}
-                  className="sticky top-[100px] border border-white/5 rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 bg-[#0B1B3D] text-white"
-                  style={{
-                    marginTop: i === 0 ? 0 : `${i * 32}px`,
-                    zIndex: i + 1
-                  }}
+                  className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-[0_4px_12px_rgba(15,23,42,0.06)] sm:p-8"
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[350px]">
-                    {/* Left: Category Label */}
-                    <div className="lg:col-span-5 p-8 lg:p-12 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/5 bg-white/[0.02] text-white">
-                      <h3 className="mb-6 text-white font-black tracking-tight uppercase">{c.cat}</h3>
-                      <p className="text-sm text-blue-100/40 leading-relaxed font-medium">{c.desc}</p>
-                    </div>
-
-                    {/* Right: Tech List */}
-                    <div className="lg:col-span-7 p-8 lg:p-14 flex flex-col justify-center">
-                      <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                        {c.techs.map((t) => (
-                          <div key={t} className="flex items-center gap-3 group">
-                            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full group-hover:scale-150 transition-transform duration-300" />
-                            <span className="text-sm text-slate-300 font-medium group-hover:text-white transition-colors">{t}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+                  <h3 className="mb-2 text-sm font-bold uppercase tracking-wide text-[#0B1B3D]">{c.cat}</h3>
+                  <p className="mb-6 text-sm text-slate-600">{c.desc}</p>
+                  <TechStackLogoGrid items={c.techs} gridClassName="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4" />
                 </div>
               ))}
             </div>
@@ -375,7 +375,7 @@ export default function IndustryDetail() {
         <FAQSection faqs={industry.faqs} />
 
         {/* Contact */}
-        <div id="page-contact" className="bg-white">
+        <div className="bg-white">
           <PageContactForm context={`Industry: ${industry.title}`} />
         </div>
       </div>

@@ -25,26 +25,26 @@
 
 body {
     margin: 0;
-    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Source Sans 3', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Cabinet Grotesk for all headings; body copy uses Source Sans 3 (see tailwind font-sans) */
 h1,
 h2,
 h3,
 h4 {
-    font-family: 'Cabinet Grotesk', 'Satoshi', sans-serif;
+    font-family: 'Cabinet Grotesk', 'Inter', ui-sans-serif, sans-serif;
     line-height: 1.25;
 }
 
+/* Default heading scale ,  solid navy; use .corp-heading-gradient on light bands for multi-color */
 h1 {
     font-size: 32px;
     font-weight: 700;
     letter-spacing: 0.5px;
-    background: linear-gradient(135deg, currentColor 0%, rgba(currentColor, 0.7) 100%);
-    -webkit-background-clip: text;
-    /* transition for theme changes */
+    color: #0b1b3d;
     transition: color var(--section-transition);
 }
 
@@ -52,29 +52,59 @@ h2 {
     font-size: 26px;
     font-weight: 700;
     letter-spacing: 0.3px;
+    color: #0b1b3d;
 }
 
 h3 {
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 0.3px;
+    color: #0b1b3d;
 }
 
 h4 {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.3px;
+    color: #0b1b3d;
 }
 
-/* Home hero headline: solid color on video (global h1 gradient clip reduces contrast) */
+/* Multi-color heading on light backgrounds (add class next to h1–h4) */
+.corp-heading-gradient {
+    background: linear-gradient(135deg, #0b1b3d 0%, #2563eb 50%, #0d9488 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* Light-on-dark gradient headline (PageHero dark, hero strips) */
+.heading-on-dark {
+    background: linear-gradient(135deg, #ffffff 0%, #bae6fd 45%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* Home hero headline: readable solid + accent on video */
 #hero h1 {
     background: none;
     -webkit-background-clip: unset;
     background-clip: unset;
     -webkit-text-fill-color: currentColor;
-    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Cabinet Grotesk', 'Inter', ui-sans-serif, sans-serif;
     font-weight: 600;
     letter-spacing: -0.02em;
+    color: #ffffff;
+}
+
+#hero h1 .hero-heading-accent {
+    background: linear-gradient(135deg, #e0f2fe 0%, #38bdf8 55%, #7dd3fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 @media (min-width: 768px) {
@@ -233,7 +263,7 @@ html {
     }
 
     /**
-     * Section patterns — only three light styles (dots, orthogonal dashes, diagonal dashes).
+     * Section patterns ,  only three light styles (dots, orthogonal dashes, diagonal dashes).
      * Use on alternating bands; other sections stay solid (bg-white / bg-[#F8FAFC] / navy).
      * No ruled "notebook" lines.
      */
@@ -342,7 +372,7 @@ html {
     }
 
     /* ═══════════════════════════════════════════════════════
-       Premium SaaS Arc Carousel — Industries Section
+       Premium SaaS Arc Carousel ,  Industries Section
        ═══════════════════════════════════════════════════════ */
 
     @keyframes arc-float {
@@ -357,7 +387,7 @@ html {
         }
     }
 
-    /* Section wrapper — ambient glow behind cards */
+    /* Section wrapper ,  ambient glow behind cards */
     .arc-section {
         position: relative;
         overflow: hidden;
@@ -383,7 +413,7 @@ html {
     .arc-track {
         display: flex;
         align-items: flex-end;
-        /* bottom-align — arc rises in middle */
+        /* bottom-align ,  arc rises in middle */
         justify-content: center;
         gap: 14px;
         perspective: 1600px;
@@ -437,7 +467,7 @@ html {
         z-index: 3;
     }
 
-    /* CENTER card — largest, floating */
+    /* CENTER card ,  largest, floating */
     .arc-card[data-pos="0"] {
         transform: rotateY(0deg) scale(1.04) translateY(0px);
         opacity: 1;
@@ -464,7 +494,7 @@ html {
         z-index: 1;
     }
 
-    /* Hover — card snaps forward */
+    /* Hover ,  card snaps forward */
     .arc-card:hover {
         transform: rotateY(0deg) scale(1.08) translateY(-18px) !important;
         opacity: 1 !important;
@@ -473,7 +503,7 @@ html {
         animation: none !important;
     }
 
-    /* Mobile — disable 3D, flat horizontal scroll */
+    /* Mobile ,  disable 3D, flat horizontal scroll */
     @media (max-width: 767px) {
         .arc-track {
             justify-content: flex-start;
@@ -493,11 +523,11 @@ html {
     }
 
     /* ═══════════════════════════════════════════════════════
-       Services Section — Split-Reveal Scroll Animation
+       Services Section ,  Split-Reveal Scroll Animation
        ═══════════════════════════════════════════════════════ */
 
     /* Base card style */
-    /* svc-card: styling only — animation controlled by framer-motion wrapper */
+    /* svc-card: styling only ,  animation controlled by framer-motion wrapper */
     .svc-card {
         position: relative;
         display: flex;
@@ -630,7 +660,7 @@ html {
         text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
     }
 
-    /* Reduced motion — skip transform, keep fade */
+    /* Reduced motion ,  skip transform, keep fade */
     @media (prefers-reduced-motion: reduce) {
 
         .svc-card--from-left,
@@ -655,7 +685,7 @@ html {
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
-   Solutions Section — INDUSTRIAL GRID CAROUSEL (EXCLUSIVE)
+   Solutions Section ,  INDUSTRIAL GRID CAROUSEL (EXCLUSIVE)
    ────────────────────────────────────────────────────────────────────────── */
 
 .sol-card-accent-bar {

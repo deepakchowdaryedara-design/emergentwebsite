@@ -22,7 +22,7 @@ const DEFAULT_SPLIT_IMAGES = [
 ];
 
 /**
- * @param {"stats"|"split"} [variant="stats"] — "split" = two-column intro + 2×2 feature icons + dual images (see Service Detail).
+ * @param {"stats"|"split"} [variant="stats"]. `"split"` = two-column intro + 2×2 feature icons + dual images (see Service Detail).
  */
 export default function ImpactStats({
   title,

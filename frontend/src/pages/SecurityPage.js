@@ -18,7 +18,7 @@ export default function SecurityPage() {
         label="Security"
         title="Security Practices for Enterprise AI Environments"
         description="Our security model integrates technical controls, governance checkpoints, and operational safeguards across the full delivery lifecycle."
-        primaryCTA={{ text: "Discuss security requirements", href: "#page-contact" }}
+        primaryCTA={{ text: "Discuss security requirements", href: "#page-contact", contactIntent: "consultation" }}
         image={LISTING_PAGE_HERO_IMAGES.industries}
       />
       <section className="py-6 sm:py-8 md:py-10 bg-white">

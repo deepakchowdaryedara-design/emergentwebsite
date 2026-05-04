@@ -1,7 +1,20 @@
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
 
-export default function CTASection({ title, description, buttonText, buttonHref, compact = false, hideLabel = false }) {
+export default function CTASection({
+  title,
+  description,
+  buttonText,
+  buttonHref,
+  contactIntent = "contact",
+  compact = false,
+  hideLabel = false,
+}) {
+  const location = useLocation();
+  const topic =
+    contactIntent === "consultation" ? CONTACT_TOPIC.CONSULTATION : CONTACT_TOPIC.CONTACT;
   return (
     <section data-testid="cta-section" className={`${compact ? 'py-0' : 'py-6 sm:py-8 md:py-10'} bg-[#0B1B3D] text-white relative overflow-hidden`}>
       {/* Premium Background Accent */}
@@ -29,22 +42,28 @@ export default function CTASection({ title, description, buttonText, buttonHref,
               asChild
               className="bg-[#2563EB] text-white hover:bg-[#2563EB]/90 rounded-sm px-10 py-6 font-bold text-sm h-14 shadow-xl shadow-blue-500/20 cursor-pointer"
             >
-              <a
-                href={buttonHref || "#page-contact"}
-                onClick={(e) => {
-                  const href = buttonHref || "#page-contact";
-                  if (href.startsWith('#')) {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                      const top = target.getBoundingClientRect().top + window.pageYOffset - 100;
-                      window.scrollTo({ top, behavior: 'smooth' });
-                    }
-                  }
-                }}
-              >
-                {buttonText || "Contact us"} <ArrowRight size={18} className="ml-2" />
-              </a>
+              {(() => {
+                const href = buttonHref?.trim();
+                if (href?.startsWith("http") || href?.startsWith("mailto:")) {
+                  return (
+                    <a href={href}>
+                      {buttonText || "Contact us"} <ArrowRight size={18} className="ml-2" />
+                    </a>
+                  );
+                }
+                if (href && href !== "#page-contact") {
+                  return (
+                    <Link to={href}>
+                      {buttonText || "Contact us"} <ArrowRight size={18} className="ml-2" />
+                    </Link>
+                  );
+                }
+                return (
+                  <Link to={contactFormTo(location.pathname, topic)}>
+                    {buttonText || "Contact us"} <ArrowRight size={18} className="ml-2" />
+                  </Link>
+                );
+              })()}
             </Button>
           </div>
 

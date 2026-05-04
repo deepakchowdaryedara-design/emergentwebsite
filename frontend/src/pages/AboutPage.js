@@ -9,22 +9,22 @@ import { ABOUT_HERO_IMAGE } from "../lib/heroImageThemes";
 import { COMPANY_FOUNDED_LABEL } from "../lib/company";
 
 const timeline = [
-  { year: "2026", title: "NeuralTrix AI launches", desc: `Founded ${COMPANY_FOUNDED_LABEL} as an applied AI engineering firm—focused on shipped software alongside customer product and engineering leadership.`, icon: Target },
+  { year: "2026", title: "NeuralTrix AI launches", desc: `Founded ${COMPANY_FOUNDED_LABEL} as an applied AI engineering firm, focused on shipped software alongside customer product and engineering leadership.`, icon: Target },
   { year: "Now", title: "Design partners", desc: "Early customer programs with controlled scope, weekly releases, and shared channels for timely decisions.", icon: Shield },
-  { year: "Next", title: "Scale what works", desc: "Expand capacity and accelerators based on production usage, acceptance metrics, and repeatability—not roadmap projections alone.", icon: Zap },
+  { year: "Next", title: "Scale what works", desc: "Expand capacity and accelerators based on production usage, acceptance metrics, and repeatability, not roadmap projections alone.", icon: Zap },
 ];
 
 const team = [
   { name: "Arjun Mehta", role: "CEO & Co-founder", bio: "Product-minded operator focused on shipping AI systems customers actually run." },
-  { name: "Sarah Chen", role: "CTO & Co-founder", bio: "Hands-on ML lead—architecture through evaluation harnesses and production monitoring." },
+  { name: "Sarah Chen", role: "CTO & Co-founder", bio: "Hands-on ML lead, architecture through evaluation harnesses and production monitoring." },
   { name: "David Okafor", role: "Principal Engineer", bio: "Distributed systems and shipping discipline from high-growth platform teams." },
   { name: "Lisa Park", role: "Head of Product", bio: "Turns ambiguous AI ideas into scoped milestones teams can execute." },
-  { name: "Raj Patel", role: "Lead Applied Scientist", bio: "LLMs, retrieval, and evaluation—making models behave in the wild." },
+  { name: "Raj Patel", role: "Lead Applied Scientist", bio: "LLMs, retrieval, and evaluation, making models behave in the wild." },
   { name: "Maria Santos", role: "Customer Programs", bio: "Keeps pilots honest on outcomes, timelines, and handover clarity." },
 ];
 
 const offices = [
-  { city: "San Francisco Bay Area", country: "USA", type: "HQ (remote-first)", address: "Distributed team—meet where the work is" },
+  { city: "San Francisco Bay Area", country: "USA", type: "HQ (remote-first)", address: "Distributed team, meet where the work is" },
 ];
 
 const values = [
@@ -58,7 +58,7 @@ export default function AboutPage() {
                     Assurance for <br className="hidden xl:block" /> <span className="text-blue-500">execution clarity</span>
                   </h2>
                   <p className="text-base text-blue-100/60 leading-relaxed font-medium max-w-sm">
-                    We operate as a focused engineering partner—not a broad legacy integrator—helping teams ship AI-enabled products with proportionate process and measurable checkpoints.
+                    We operate as a focused engineering partner, not a broad legacy integrator, helping teams ship AI-enabled products with proportionate process and measurable checkpoints.
                   </p>
                 </AnimatedSection>
               </div>
@@ -92,7 +92,7 @@ export default function AboutPage() {
                       <div>
                         <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.12em] text-white/50">Our Vision</span>
                         <p className="text-xl sm:text-2xl font-bold text-white/70 tracking-tight leading-snug max-w-xl">
-                          A trusted partner for applied AI delivery—measured by shipped capability, governance fit, and durable client relationships.
+                          A trusted partner for applied AI delivery, measured by shipped capability, governance fit, and durable client relationships.
                         </p>
                       </div>
                     </div>
@@ -119,7 +119,7 @@ export default function AboutPage() {
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
             <h2 className="mb-4" >Outcomes for <span className="opacity-30">operating priorities</span></h2>
-            <p className="text-base text-slate-600 leading-relaxed max-w-2xl mb-12">This outcomes framing states the tradeoffs we hold in delivery—progress you can observe, accountability you can audit, and scope that stays proportionate to risk.</p>
+            <p className="text-base text-slate-600 leading-relaxed max-w-2xl mb-12">This outcomes framing states the tradeoffs we hold in delivery, progress you can observe, accountability you can audit, and scope that stays proportionate to risk.</p>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v) => (
@@ -141,7 +141,7 @@ export default function AboutPage() {
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
             <h2 className="mb-4" >Methodology for <span className="opacity-30">our operating timeline</span></h2>
-            <p className="text-base text-slate-600 leading-relaxed max-w-2xl mb-12">This methodology sequences launch, early programs, and scale decisions against shipped evidence—not vanity milestones.</p>
+            <p className="text-base text-slate-600 leading-relaxed max-w-2xl mb-12">This methodology sequences launch, early programs, and scale decisions against shipped evidence, not vanity milestones.</p>
           </AnimatedSection>
           <div className="relative max-w-6xl mx-auto">
             <div className="absolute top-0 bottom-0 left-[148px] md:left-[188px] w-1.5 bg-[#FFC200]" />
@@ -227,7 +227,7 @@ export default function AboutPage() {
             <h2 className="mb-4" >
               Coverage Across <span className="opacity-30">our core team</span>
             </h2>
-            <p className="text-base text-slate-600 mb-12 max-w-2xl font-medium">Small, senior group—accountable for what we sell and what we ship.</p>
+            <p className="text-base text-slate-600 mb-12 max-w-2xl font-medium">Small, senior group, accountable for what we sell and what we ship.</p>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {team.map((m) => (
@@ -251,7 +251,7 @@ export default function AboutPage() {
           <AnimatedSection>
             <div className="mb-8 text-left max-w-3xl">
               <h2 className="mb-2">Coverage Across <span className="opacity-30">ecosystem platforms</span></h2>
-              <p className="text-sm text-slate-500">Reference vendors and clouds we integrate with in customer programs—not an exhaustive partnership list.</p>
+              <p className="text-sm text-slate-500">Reference vendors and clouds we integrate with in customer programs, not an exhaustive partnership list.</p>
             </div>
             <div className="relative">
               {/* Fade masks */}
@@ -315,7 +315,7 @@ export default function AboutPage() {
                 Next Step for <span className="opacity-30">a conversation</span>
               </h2>
               <p className="text-base text-blue-100/90 leading-relaxed max-w-3xl">
-                Tell us what you are building—if there is a fit, we will propose a lean pilot and a path to scale.
+                Tell us what you are building, if there is a fit, we will propose a lean pilot and a path to scale.
               </p>
             </div>
           </AnimatedSection>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "./AnimatedSection";
 import caseStudies from "../data/caseStudies";
+import TechStackLogoGrid from "./TechStackLogoGrid";
 
 export default function RelatedCaseStudies({ industryFilter, limit = 4, title, showLabel = true }) {
   let filtered = caseStudies;
@@ -45,11 +46,12 @@ export default function RelatedCaseStudies({ industryFilter, limit = 4, title, s
                   <ArrowUpRight size={18} className="text-slate-300 group-hover:text-[#2563EB] transition-colors flex-shrink-0" />
                 </div>
                 <p className="text-sm text-slate-600 leading-relaxed mb-5">{cs.challenge.substring(0, 120)}...</p>
-                <div className="flex flex-wrap gap-2">
-                  {cs.techStack.slice(0, 4).map((t) => (
-                    <span key={t} className="text-xs px-2 py-1 border border-slate-200 text-slate-500 rounded-sm">{t}</span>
-                  ))}
-                </div>
+                <TechStackLogoGrid
+                  items={cs.techStack.slice(0, 4)}
+                  compact
+                  gridClassName="grid grid-cols-2 gap-2 sm:grid-cols-4"
+                  className="mt-1"
+                />
               </Link>
             </StaggerItem>
           ))}

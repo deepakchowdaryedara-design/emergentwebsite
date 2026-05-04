@@ -1,5 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "./AnimatedSection";
+import TechStackLogoGrid from "./TechStackLogoGrid";
+import { TRACEFOLD } from "../lib/tracefoldLabel";
 
 export default function ServiceCaseStudies({ cases, title }) {
   if (!cases || cases.length === 0) return null;
@@ -11,10 +13,10 @@ export default function ServiceCaseStudies({ cases, title }) {
           <div className="mb-8 max-w-2xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Coverage</p>
             <h2 className="text-2xl font-bold tracking-tight text-[#0B1B3D] sm:text-3xl lg:text-4xl">
-              {title || "Illustrative delivery patterns"}
+              {title || `${TRACEFOLD} delivery patterns`}
             </h2>
             <p className="mt-3 text-sm text-slate-600 max-w-2xl leading-relaxed">
-              Examples of problem classes and how we would structure an engagement—not references to specific completed client programs unless separately agreed.
+              Examples of problem classes and how we would structure an engagement, not references to specific completed client programs unless separately agreed.
             </p>
           </div>
         </AnimatedSection>
@@ -77,12 +79,13 @@ export default function ServiceCaseStudies({ cases, title }) {
                       </div>
                       <div>
                         <h4 className={`text-[11px] font-bold uppercase tracking-widest mb-4 ${i % 2 === 0 ? 'text-[#0B1B3D]' : 'text-white'}`}>Core Tech</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {cs.tech.map((t) => (
-                            <span key={t} className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 border rounded-sm ${i % 2 === 0 ? 'border-slate-200 text-slate-400' : 'border-white/10 text-blue-100/30'}`}>
-                              {t}
-                            </span>
-                          ))}
+                        <div className={i % 2 === 0 ? "" : "opacity-95"}>
+                          <TechStackLogoGrid
+                            items={cs.tech}
+                            compact
+                            gridClassName="grid grid-cols-2 gap-2 sm:grid-cols-2"
+                            className="max-w-md"
+                          />
                         </div>
                       </div>
                     </div>

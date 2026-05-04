@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
 import {
   AppWindow,
   ArrowRight,
@@ -226,12 +228,13 @@ function defaultOutcomesForModule(sub) {
 }
 
 /**
- * Scope-of-delivery explorer — left menu grid (standalone) + right detail grid (standalone).
+ * Scope-of-delivery explorer: left menu grid (standalone) + right detail grid (standalone).
  * Optional per subservice: `icon` (string key, see `SUBSERVICE_ICON_BY_KEY`).
  * Optional `delivery`: `{ icon?, title?, desc?, outcomes?: string[] }`
  * Optional `items`: `string[]` or `{ title: string, desc: string }[]` per capability card.
  */
 export default function ScopeOfDeliverySection({ service }) {
+  const location = useLocation();
   const subs = service.subservices || [];
   const [active, setActive] = useState(0);
 
@@ -332,13 +335,13 @@ export default function ScopeOfDeliverySection({ service }) {
               <p className="mb-4 text-sm leading-snug text-slate-600">
                 Discuss architecture, integration points, and delivery sequencing with our team.
               </p>
-              <a
-                href="#page-contact"
+              <Link
+                to={contactFormTo(location.pathname, CONTACT_TOPIC.CONTACT)}
                 className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-[#0B1B3D] transition-colors hover:border-slate-400 hover:bg-slate-50"
               >
                 Contact us
                 <ArrowRight className="h-4 w-4" aria-hidden />
-              </a>
+              </Link>
             </div>
           </div>
 

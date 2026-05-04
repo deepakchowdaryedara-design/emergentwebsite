@@ -11,7 +11,7 @@ export default function TestimonialsPage() {
       <PageHero
         label="Engagement"
         title="How We Work With Prospective Partners"
-        description="NeuralTrix is building its client base: this page explains what you can expect in discovery and pilot—transparency, engineering access, and explicit success measures—instead of third-party quotes."
+        description="NeuralTrix is building its client base: this page explains what you can expect in discovery and pilot, transparency, engineering access, and explicit success measures, instead of third-party quotes."
         primaryCTA={{ text: "Start a conversation", href: "#page-contact" }}
         image={LISTING_PAGE_HERO_IMAGES.caseStudies}
       />
@@ -59,7 +59,7 @@ export default function TestimonialsPage() {
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3D]" >
                 Outcomes for <span className="opacity-40">structured pilots</span>
               </h2>
-              <p className="text-sm text-slate-600 max-w-2xl mt-4">This outcomes framing describes what we jointly optimize in early programs—speed to clarity, visible decisions, and accountable ownership—not vanity demos.</p>
+              <p className="text-sm text-slate-600 max-w-2xl mt-4">This outcomes framing describes what we jointly optimize in early programs, speed to clarity, visible decisions, and accountable ownership, not vanity demos.</p>
             </div>
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

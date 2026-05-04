@@ -1,11 +1,26 @@
 import { motion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { ArrowRight } from "lucide-react";
 import HeroAnimatedBackdrop from "./HeroAnimatedBackdrop";
 import { DEFAULT_PAGE_HERO_IMAGE } from "../lib/heroImageThemes";
+import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
+
+function scrollToSelector(e, hashSelector) {
+  e.preventDefault();
+  const target = document.querySelector(hashSelector);
+  if (target) {
+    const top = target.getBoundingClientRect().top + window.pageYOffset - 100;
+    window.scrollTo({ top, behavior: "smooth" });
+  }
+}
 
 export default function PageHero({ label, title, description, primaryCTA, secondaryCTA, bgDark = true, image }) {
+  const location = useLocation();
   const resolvedImage = image ?? DEFAULT_PAGE_HERO_IMAGE;
+
+  const contactTopicFor = (cta) =>
+    cta?.contactIntent === "consultation" ? CONTACT_TOPIC.CONSULTATION : CONTACT_TOPIC.CONTACT;
 
   return (
     <section
@@ -29,7 +44,7 @@ export default function PageHero({ label, title, description, primaryCTA, second
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="mb-6"
+              className={`mb-6 ${bgDark ? "heading-on-dark" : "corp-heading-gradient"}`}
             >
               {title}
             </motion.h1>
@@ -53,21 +68,23 @@ export default function PageHero({ label, title, description, primaryCTA, second
                   asChild
                   className="bg-[#2563EB] text-white hover:bg-[#2563EB]/90 rounded-sm px-8 py-4 font-bold text-sm shadow-xl shadow-blue-500/10 h-14 cursor-pointer"
                 >
-                  <a
-                    href={primaryCTA.href}
-                    onClick={(e) => {
-                      if (primaryCTA.href.startsWith('#')) {
-                        e.preventDefault();
-                        const target = document.querySelector(primaryCTA.href);
-                        if (target) {
-                          const top = target.getBoundingClientRect().top + window.pageYOffset - 100;
-                          window.scrollTo({ top, behavior: 'smooth' });
-                        }
-                      }
-                    }}
-                  >
-                    {primaryCTA.text} <ArrowRight size={18} className="ml-2" />
-                  </a>
+                  {primaryCTA.href === "#page-contact" ? (
+                    <Link to={contactFormTo(location.pathname, contactTopicFor(primaryCTA))}>
+                      {primaryCTA.text} <ArrowRight size={18} className="ml-2" />
+                    </Link>
+                  ) : primaryCTA.href?.startsWith("#") ? (
+                    <a href={primaryCTA.href} onClick={(e) => scrollToSelector(e, primaryCTA.href)}>
+                      {primaryCTA.text} <ArrowRight size={18} className="ml-2" />
+                    </a>
+                  ) : primaryCTA.href?.startsWith("http") ? (
+                    <a href={primaryCTA.href} target="_blank" rel="noreferrer">
+                      {primaryCTA.text} <ArrowRight size={18} className="ml-2" />
+                    </a>
+                  ) : (
+                    <Link to={primaryCTA.href}>
+                      {primaryCTA.text} <ArrowRight size={18} className="ml-2" />
+                    </Link>
+                  )}
                 </Button>
               )}
               {secondaryCTA && (
@@ -80,21 +97,21 @@ export default function PageHero({ label, title, description, primaryCTA, second
                     : "bg-white/80 text-[#0B1B3D] border-[#0B1B3D]/15 hover:bg-white"
                     }`}
                 >
-                  <a
-                    href={secondaryCTA.href}
-                    onClick={(e) => {
-                      if (secondaryCTA.href.startsWith('#')) {
-                        e.preventDefault();
-                        const target = document.querySelector(secondaryCTA.href);
-                        if (target) {
-                          const top = target.getBoundingClientRect().top + window.pageYOffset - 100;
-                          window.scrollTo({ top, behavior: 'smooth' });
-                        }
-                      }
-                    }}
-                  >
-                    {secondaryCTA.text}
-                  </a>
+                  {secondaryCTA.href === "#page-contact" ? (
+                    <Link to={contactFormTo(location.pathname, contactTopicFor(secondaryCTA))}>
+                      {secondaryCTA.text}
+                    </Link>
+                  ) : secondaryCTA.href?.startsWith("#") ? (
+                    <a href={secondaryCTA.href} onClick={(e) => scrollToSelector(e, secondaryCTA.href)}>
+                      {secondaryCTA.text}
+                    </a>
+                  ) : secondaryCTA.href?.startsWith("http") ? (
+                    <a href={secondaryCTA.href} target="_blank" rel="noreferrer">
+                      {secondaryCTA.text}
+                    </a>
+                  ) : (
+                    <Link to={secondaryCTA.href}>{secondaryCTA.text}</Link>
+                  )}
                 </Button>
               )}
             </motion.div>

@@ -5,15 +5,17 @@ import PageContactForm from "../components/PageContactForm";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import caseStudies from "../data/caseStudies";
 import { LISTING_PAGE_HERO_IMAGES } from "../lib/heroImageThemes";
+import TechStackLogoGrid from "../components/TechStackLogoGrid";
+import { TRACEFOLD } from "../lib/tracefoldLabel";
 
 export default function CaseStudiesPage() {
   return (
     <div>
       <PageHero
         label="Delivery scenarios"
-        title="Illustrative Programs Aligned to Our Services"
-        description="These scenarios show how NeuralTrix approaches common AI and software problems—so you can judge fit before a pilot. They are not endorsements or guarantees from named customers."
-        primaryCTA={{ text: "Schedule a consultation", href: "#page-contact" }}
+        title={`${TRACEFOLD}-Indexed Programs Aligned to Our Services`}
+        description={`These ${TRACEFOLD} narratives show how NeuralTrix approaches common AI and software problems, so you can judge fit before a pilot. They are not endorsements or guarantees from named customers.`}
+        primaryCTA={{ text: "Schedule a consultation", href: "#page-contact", contactIntent: "consultation" }}
         image={LISTING_PAGE_HERO_IMAGES.caseStudies}
       />
       <section className="py-6 sm:py-8 md:py-10 bg-[#F8FAFC]">
@@ -44,9 +46,12 @@ export default function CaseStudiesPage() {
                     <ArrowUpRight size={20} className="text-slate-300 group-hover:text-[#2563EB] transition-colors flex-shrink-0" />
                   </div>
                   <p className="text-sm text-slate-600 leading-relaxed mb-6 flex-1">{cs.challenge.substring(0, 150)}...</p>
-                  <div className="flex flex-wrap gap-2">
-                    {cs.techStack.slice(0, 4).map((t) => (<span key={t} className="text-xs px-2 py-1 border border-slate-200 text-slate-500 rounded-sm">{t}</span>))}
-                  </div>
+                  <TechStackLogoGrid
+                    items={cs.techStack.slice(0, 4)}
+                    compact
+                    gridClassName="grid grid-cols-2 gap-2 sm:grid-cols-4"
+                    className="mt-auto"
+                  />
                 </div>
               </Link>
             ))}
@@ -92,7 +97,7 @@ export default function CaseStudiesPage() {
                 Coverage Across <span className="text-[#0B1B3D]/30">ways to browse</span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
-                This coverage lists filters we use in workshops—industry, use case, stack, and impact type—so you can route to the closest scenario quickly.
+                This coverage lists filters we use in workshops, industry, use case, stack, and impact type, so you can route to the closest scenario quickly.
               </p>
             </div>
           </AnimatedSection>
@@ -121,7 +126,7 @@ export default function CaseStudiesPage() {
                 Methodology for <span className="text-[#0B1B3D]/30">phasing delivery</span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed mt-4 max-w-xl">
-                This methodology mirrors how we structure live engagements—from context through pilot—so scenario pages read like an execution checklist, not marketing narrative.
+                This methodology mirrors how we structure live engagements, from context through pilot, so scenario pages read like an execution checklist, not marketing narrative.
               </p>
             </div>
           </AnimatedSection>

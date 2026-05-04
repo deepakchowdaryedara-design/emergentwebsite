@@ -9,6 +9,7 @@ import RelatedBlog from "../components/RelatedBlog";
 import ImpactStats from "../components/ImpactStats";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import solutions from "../data/solutions";
+import TechStackLogoGrid from "../components/TechStackLogoGrid";
 
 export default function SolutionDetail() {
   const { slug } = useParams();
@@ -26,7 +27,7 @@ export default function SolutionDetail() {
           label="Solutions"
           title={solution.heroTitle}
           description={solution.heroDesc}
-          primaryCTA={{ text: "Request a briefing", href: "#page-contact" }}
+          primaryCTA={{ text: "Request a briefing", href: "#page-contact", contactIntent: "consultation" }}
           secondaryCTA={{ text: "View capabilities", href: "#features" }}
           image={solution.heroImage}
         />
@@ -97,13 +98,12 @@ export default function SolutionDetail() {
                   <div className="bg-[#F1F5F9]/50 border border-slate-200 rounded-3xl p-8 sm:p-10 sticky top-24 shadow-sm">
                     <div className="mb-10">
                       <h3 className="uppercase tracking-[0.3em] mb-6">Technology Stack</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {solution.tech.map((t) => (
-                          <span key={t} className="text-[10px] px-3 py-1.5 bg-white border border-slate-200 text-[#0B1B3D] rounded-lg font-black shadow-sm group hover:border-[#2563EB] transition-colors cursor-default">
-                            {t}
-                          </span>
-                        ))}
-                      </div>
+                      <TechStackLogoGrid
+                        items={solution.tech}
+                        compact
+                        gridClassName="grid grid-cols-2 gap-2"
+                        className="w-full"
+                      />
                     </div>
 
                     <div>
@@ -232,7 +232,7 @@ export default function SolutionDetail() {
         <RelatedBlog />
 
         {/* 11. Contact */}
-        <div id="page-contact">
+        <div>
           <PageContactForm context={solution.title} />
         </div>
       </div>

@@ -1,22 +1,10 @@
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
-
-const HEADER_OFFSET = 88;
-
-function scrollToHash(e, hash) {
-  e.preventDefault();
-  const el = document.querySelector(hash);
-  if (el) {
-    const top =
-      el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
-    window.scrollTo({ top, behavior: "smooth" });
-    el.focus?.({ preventScroll: true });
-  }
-}
+import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
 
 /**
- * Homepage “Next Step” band — dark panel before the contact form.
- * Primary action scrolls to `#page-contact`; secondary routes to Services.
+ * Homepage “Next Step” band: dark panel before the contact form.
+ * Primary action opens the contact form in consultation mode; secondary routes to Services.
  */
 export default function NextStepCTA() {
   return (
@@ -42,7 +30,7 @@ export default function NextStepCTA() {
             <span className="text-white/45">Your Initiative</span>
           </h2>
           <p className="mb-10 max-w-2xl text-base leading-relaxed text-white sm:text-lg">
-            This next step is a working discussion of objectives, constraints, timeline, and fit—so both sides can decide on a proportionate pilot or engagement model.
+            This next step is a working discussion of objectives, constraints, timeline, and fit, so both sides can decide on a proportionate pilot or engagement model.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
             <Button
@@ -50,12 +38,9 @@ export default function NextStepCTA() {
               asChild
               className="h-12 rounded-sm border-0 bg-cyan-400 px-8 text-sm font-semibold text-[#0B1B3D] shadow-lg shadow-cyan-500/15 transition-colors hover:bg-cyan-300 focus-visible:ring-2 focus-visible:ring-cyan-300"
             >
-              <a
-                href="#page-contact"
-                onClick={(e) => scrollToHash(e, "#page-contact")}
-              >
+              <Link to={contactFormTo("/", CONTACT_TOPIC.CONSULTATION)}>
                 Schedule a call
-              </a>
+              </Link>
             </Button>
             <Button
               data-testid="next-step-cta-secondary"

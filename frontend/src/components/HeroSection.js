@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { ArrowRight } from "lucide-react";
 import HeroAnimatedBackdrop from "./HeroAnimatedBackdrop";
+import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
 
 export default function HeroSection() {
   return (
@@ -26,27 +28,27 @@ export default function HeroSection() {
             <div className="space-y-5">
               <h1
                 data-testid="hero-heading"
-                className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-[1.12] tracking-tight [text-shadow:0_2px_24px_rgba(0,0,0,0.55),0_1px_2px_rgba(0,0,0,0.9)]"
+                className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-[1.12] tracking-tight [text-shadow:0_2px_24px_rgba(0,0,0,0.55),0_1px_2px_rgba(0,0,0,0.9)]"
               >
-                Engineering the
+                Engineering The
                 <br />
-                <span className="font-semibold text-sky-200">AI-First</span> Enterprise
+                <span className="font-semibold hero-heading-accent">AI-First</span> Enterprise
               </h1>
               <p className="text-base sm:text-lg text-white/95 leading-relaxed max-w-xl font-normal [text-shadow:0_1px_12px_rgba(0,0,0,0.65)]">
                 If you are evaluating an AI copilot, a data-backed product, or a modernized platform, we scope <strong className="font-semibold text-white">structured pilots</strong> with
-                clear metrics, security boundaries, and a path to production—so your team can judge fit with limited commitment.
+                clear metrics, security boundaries, and a path to production, so your team can judge fit with limited commitment.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-start gap-5 pt-4">
+            <div className="flex flex-col sm:flex-row items-center justify-start gap-5 pt-4 flex-wrap">
               <Button
                 data-testid="hero-cta-primary"
                 asChild
                 className="bg-blue-600/80 hover:bg-blue-600 text-white backdrop-blur-sm rounded-full px-8 py-6 font-bold text-sm shadow-xl shadow-blue-500/10 transition-all hover:scale-105"
               >
-                <a href="#page-contact">
+                <Link to={contactFormTo("/", CONTACT_TOPIC.CONSULTATION)}>
                   Schedule a consultation <ArrowRight size={18} className="ml-2" />
-                </a>
+                </Link>
               </Button>
               <Button
                 data-testid="hero-cta-secondary"
@@ -54,8 +56,15 @@ export default function HeroSection() {
                 variant="outline"
                 className="bg-white/5 text-white/80 border-white/10 hover:bg-white/10 backdrop-blur-md rounded-full px-8 py-6 font-bold text-sm transition-all hover:scale-105"
               >
-                <a href="#solutions">Explore Solutions</a>
+                <Link to={contactFormTo("/", CONTACT_TOPIC.CONTACT)}>Contact us</Link>
               </Button>
+              <a
+                data-testid="hero-cta-explore"
+                href="#solutions"
+                className="text-sm font-semibold text-white/75 underline-offset-4 hover:text-white hover:underline sm:ml-1"
+              >
+                Explore solutions
+              </a>
             </div>
           </div>
         </div>

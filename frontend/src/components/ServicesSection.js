@@ -17,15 +17,15 @@ export default function ServicesSection({ showLabel = true }) {
           )}
           <h2
             data-testid="services-heading"
-            className="mb-4"
+            className="mb-4 corp-heading-gradient"
           >
-            Coverage Across <span className="opacity-30">Engineering Services</span>
+            Coverage Across <span className="opacity-40">Engineering Services</span>
           </h2>
           <p className="text-base text-slate-600 leading-relaxed">
             Strategy, implementation, and operations support across the AI and software lifecycle, scoped to your priorities, budget, and governance requirements.
           </p>
         </div>
-        <ServicesShowcaseTabs services={services.slice(0, 6)} />
+        <ServicesShowcaseTabs services={services} />
       </div>
     </section>
   );

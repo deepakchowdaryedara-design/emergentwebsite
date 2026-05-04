@@ -21,7 +21,7 @@ export default function TestimonialsSection({ title, showLabel = true }) {
               {title || "Assurance for early programs"}
             </h2>
             <p className="mt-4 text-sm text-slate-600 leading-relaxed max-w-2xl">
-              Operating commitments for discovery and pilots—use alongside your own diligence, security review, and procurement rules.
+              Operating commitments for discovery and pilots, use alongside your own diligence, security review, and procurement rules.
             </p>
           </div>
         </AnimatedSection>

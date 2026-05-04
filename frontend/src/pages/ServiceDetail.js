@@ -13,6 +13,7 @@ import ScopeOfDeliverySection from "../components/ScopeOfDeliverySection";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import services from "../data/services";
 import serviceCaseStudies from "../data/serviceCaseStudies";
+import { TRACEFOLD } from "../lib/tracefoldLabel";
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -149,11 +150,11 @@ export default function ServiceDetail() {
           </div>
         </section>
 
-        <ServiceCaseStudies cases={serviceCaseStudies[service.slug]} title={`Illustrative scenarios: ${service.title}`} />
+        <ServiceCaseStudies cases={serviceCaseStudies[service.slug]} title={`${TRACEFOLD} patterns: ${service.title}`} />
         <IndustriesServed title="Coverage across industries" />
         <TestimonialsSection title="How we engage new partners" />
         <RelatedBlog title="Related technical articles" />
-        <div id="page-contact">
+        <div>
           <PageContactForm context={service.title} />
         </div>
       </div>

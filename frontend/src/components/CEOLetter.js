@@ -42,7 +42,7 @@ export default function CEOLetter() {
                 Why we started
               </h2>
               <p className="mb-8 text-base font-medium leading-relaxed text-slate-600">
-                {COMPANY_STARTUP_PITCH} Operations began on {COMPANY_FOUNDED_LABEL}, with delivery priorities centered on ownership, release discipline, and solutions intended for live environments—not narrative collateral alone.
+                {COMPANY_STARTUP_PITCH} Operations began on {COMPANY_FOUNDED_LABEL}, with delivery priorities centered on ownership, release discipline, and solutions intended for live environments, not narrative collateral alone.
               </p>
 
               <p
@@ -74,7 +74,7 @@ export default function CEOLetter() {
                   </button>
                 </div>
                 <p className="max-w-[220px] text-sm font-bold leading-snug text-[#0B1B3D] sm:max-w-none">
-                  <span className="text-base sm:text-lg">Discovery and pilot</span> conversations—share your roadmap and constraints
+                  <span className="text-base sm:text-lg">Discovery and pilot</span> conversations, share your roadmap and constraints
                 </p>
               </div>
 

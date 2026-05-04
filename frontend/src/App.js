@@ -36,7 +36,7 @@ function PublicLayout({ children }) {
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#F8FAFC]">
+    <div className="min-h-screen bg-[#F8FAFC] font-sans antialiased">
       <BrowserRouter>
         <ScrollToTop />
         <Routes>

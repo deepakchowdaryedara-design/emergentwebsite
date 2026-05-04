@@ -6,6 +6,10 @@ module.exports = {
     "./public/index.html"
   ],
   theme: {
+  	fontFamily: {
+  		sans: ['"Source Sans 3"', 'Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+  		display: ['"Cabinet Grotesk"', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+  	},
   	extend: {
   		borderRadius: {
   			lg: 'var(--radius)',

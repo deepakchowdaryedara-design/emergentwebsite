@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function ServicesShowcaseTabs({
   services = [],
-  title = "Engineering services overview",
+  title = "Engineering Services Overview",
   description = "Explore delivery tracks tailored to real operational challenges and measurable business outcomes.",
 }) {
   const safeServices = useMemo(() => services.filter(Boolean), [services]);
@@ -19,7 +19,7 @@ export default function ServicesShowcaseTabs({
       <div className="px-6 sm:px-10 lg:px-14 pt-6 sm:pt-8 pb-4 border-b border-white/10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           <div className="lg:col-span-8">
-            <h3 className="text-3xl sm:text-4xl font-black tracking-tight max-w-2xl">{title}</h3>
+            <h3 className="font-display text-3xl sm:text-4xl font-black tracking-tight max-w-2xl bg-gradient-to-r from-white via-sky-100 to-blue-200 bg-clip-text text-transparent">{title}</h3>
           </div>
           <div className="lg:col-span-4">
             <p className="text-sm text-slate-300 leading-relaxed mb-3">{description}</p>
@@ -31,7 +31,7 @@ export default function ServicesShowcaseTabs({
         </div>
       </div>
 
-      {/* Desktop: true horizontal accordion — each item expands into image | copy or collapses to a vertical bar */}
+      {/* Desktop: true horizontal accordion; each item expands into image | copy or collapses to a vertical bar */}
       <div className="hidden lg:flex flex-row w-full bg-white text-[#0B1B3D] min-h-[420px]">
         {safeServices.map((service, index) => {
           const isActive = index === activeIndex;
@@ -40,7 +40,7 @@ export default function ServicesShowcaseTabs({
               key={service.slug}
               className={`relative flex min-h-[420px] flex-col overflow-hidden border-r border-slate-200 last:border-r-0
                 basis-0 transition-[flex-grow] duration-500 ease-out motion-reduce:transition-none
-                ${isActive ? "grow-[14] min-w-0 z-[1] shadow-[inset_0_0_0_1px_rgba(37,99,235,0.08)]" : "grow min-w-[44px]"}`}
+                ${isActive ? "grow-[14] min-w-0 z-[1] shadow-[inset_0_0_0_1px_rgba(37,99,235,0.08)]" : "grow min-w-[32px] max-w-[52px]"}`}
             >
               {isActive ? (
                 <div className="flex h-full min-h-[420px] w-full min-w-0 flex-row">
@@ -52,8 +52,8 @@ export default function ServicesShowcaseTabs({
                     />
                   </div>
                   <div className="flex w-1/2 min-w-0 flex-col justify-center bg-white p-8 xl:p-10">
-                    <h4 className="mb-4 text-[28px] font-semibold leading-[1.08] tracking-tight xl:text-[32px]">{service.title}</h4>
-                    <p className="mb-8 max-w-md text-sm leading-relaxed text-slate-600">{service.shortDesc}</p>
+                    <h4 className="font-display mb-4 text-[28px] font-semibold leading-[1.08] tracking-tight xl:text-[32px] bg-gradient-to-r from-[#0B1B3D] via-[#2563EB] to-teal-700 bg-clip-text text-transparent">{service.title}</h4>
+                    <p className="mb-8 max-w-md text-sm leading-relaxed text-slate-600 font-sans">{service.shortDesc}</p>
                     <Link
                       to={`/services/${service.slug}`}
                       className="mt-auto inline-flex w-fit items-center gap-2 border-b border-transparent text-sm font-semibold text-[#0B1B3D] decoration-[#0B1B3D] underline-offset-4 transition-colors hover:border-blue-600 hover:text-blue-600"
@@ -72,7 +72,7 @@ export default function ServicesShowcaseTabs({
                   aria-pressed={false}
                 >
                   <span
-                    className="text-[14px] font-normal tracking-tight text-slate-400 xl:text-[15px]"
+                    className="text-[11px] font-medium tracking-tight text-slate-400 xl:text-[12px] font-display"
                     style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
                   >
                     {service.title}
@@ -89,8 +89,8 @@ export default function ServicesShowcaseTabs({
           <img src={active.heroImage} alt={active.title} className="h-full w-full object-cover" />
         </div>
         <div className="border-b border-slate-200 p-6">
-          <h4 className="mb-3 text-2xl font-bold tracking-tight">{active.title}</h4>
-          <p className="mb-5 text-sm leading-relaxed text-slate-600">{active.shortDesc}</p>
+          <h4 className="font-display mb-3 text-2xl font-bold tracking-tight bg-gradient-to-r from-[#0B1B3D] via-[#2563EB] to-teal-700 bg-clip-text text-transparent">{active.title}</h4>
+          <p className="mb-5 text-sm leading-relaxed text-slate-600 font-sans">{active.shortDesc}</p>
           <Link to={`/services/${active.slug}`} className="inline-flex items-center gap-2 text-sm font-semibold text-[#0B1B3D]">
             View Details
             <ArrowRight size={14} />

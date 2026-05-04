@@ -9,24 +9,24 @@ export const hq = (photoPath) =>
 /** Architecture / diagram-style visual for industry overview panels (not hero duplicate). */
 export const INDUSTRY_ARCHITECTURE_IMAGE = hq("photo-1558494949-ef010cbdcc31");
 
-/** Homepage — flagship abstract AI / neural aesthetic */
+/** Homepage: flagship abstract AI / neural aesthetic */
 export const HOME_HERO_IMAGE = hq("photo-1677442136019-21780ecad995");
 
 /** Fallback when `PageHero` is used without an `image` prop */
 export const DEFAULT_PAGE_HERO_IMAGE = HOME_HERO_IMAGE;
 
-/** Services listing (`/services`) — engineering delivery & AI consulting */
+/** Services listing (`/services`): engineering delivery & AI consulting */
 export const SERVICES_LANDING_HERO_IMAGE = hq("photo-1518980120692-3cfe64c152d0");
 
 /** Listing pages */
 export const LISTING_PAGE_HERO_IMAGES = {
-  /** Solutions — data intelligence & product innovation */
+  /** Solutions: data intelligence & product innovation */
   solutions: hq("photo-1551288049-bebda4e38f71"),
-  /** Industries — global enterprise connectivity */
+  /** Industries: global enterprise connectivity */
   industries: hq("photo-1451187580459-43490279c0fa"),
-  /** Case studies — outcomes & analytics */
+  /** Case studies: outcomes & analytics */
   caseStudies: hq("photo-1460925895917-afdab827c52f"),
-  /** Blog — engineering insights & editorial */
+  /** Blog: engineering insights & editorial */
   blog: hq("photo-1517694712202-14dd9538aa97"),
 };
 
@@ -44,7 +44,7 @@ export const SOLUTION_HERO_IMAGES = {
 };
 
 /**
- * Industry verticals — indices referenced by `industries` data (not strictly display order)
+ * Industry verticals; indices referenced by `industries` data (not strictly display order)
  */
 export const INDUSTRY_HERO_IMAGES = [
   hq("photo-1556742049-0cfed4f6a45d"),
@@ -56,7 +56,7 @@ export const INDUSTRY_HERO_IMAGES = [
   hq("photo-1581091226825-a6a2a5aee158"),
 ];
 
-/** Case study detail — order matches `caseStudies` */
+/** Case study detail: order matches `caseStudies` */
 export const CASE_STUDY_HERO_IMAGES = [
   hq("photo-1536240478700-b869070f9279"),
   hq("photo-1503676260728-1c00da094a0b"),
@@ -72,8 +72,8 @@ export const BLOG_ARTICLE_HERO_IMAGES = {
 };
 
 /**
- * Services listing heroes — order matches `services` array:
- * AI, Generative AI, Custom software, Mobile, AI agents, LLM, DevOps, Data
+ * Services listing heroes; order matches `services` array:
+ * Applied AI, Generative AI, Custom software, Mobile, Agents, LLM, DevOps, Data
  *
  * Themes: neural/AI · generative robotics · IDE & code · mobile · automation/robotics ·
  * engineering workspace (LLM) · CI/CD & keyboards · analytics dashboards

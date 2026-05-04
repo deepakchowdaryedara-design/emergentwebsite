@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { MapPin, Clock, Briefcase, ChevronDown, ChevronUp, Users, Award, Coffee, BookOpen, Heart, Globe } from "lucide-react";
+import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
 import { Button } from "../components/ui/button";
 import PageHero from "../components/PageHero";
 import CTASection from "../components/CTASection";
@@ -10,6 +12,7 @@ import careers from "../data/careers";
 import { CAREERS_HERO_IMAGE } from "../lib/heroImageThemes";
 
 function JobCard({ job }) {
+  const location = useLocation();
   const [open, setOpen] = useState(false);
   return (
     <div data-testid={`job-card-${job.id}`} className="bg-white border border-slate-200 rounded-sm overflow-hidden">
@@ -32,7 +35,7 @@ function JobCard({ job }) {
           <ul className="space-y-2 mb-6">{job.responsibilities.map((r, i) => (<li key={i} className="text-sm text-slate-600 flex items-start gap-2"><span className="w-1.5 h-1.5 bg-[#2563EB] rounded-full mt-2 flex-shrink-0" />{r}</li>))}</ul>
           <h4 className="uppercase tracking-wider mb-3">Requirements</h4>
           <ul className="space-y-2 mb-6">{job.requirements.map((r, i) => (<li key={i} className="text-sm text-slate-600 flex items-start gap-2"><span className="w-1.5 h-1.5 bg-slate-300 rounded-full mt-2 flex-shrink-0" />{r}</li>))}</ul>
-          <Button data-testid={`apply-btn-${job.id}`} asChild className="bg-[#0B1B3D] text-white hover:bg-[#0B1B3D]/90 rounded-sm px-6 py-3 font-semibold text-sm"><a href="#page-contact">Apply for This Role</a></Button>
+          <Button data-testid={`apply-btn-${job.id}`} asChild className="bg-[#0B1B3D] text-white hover:bg-[#0B1B3D]/90 rounded-sm px-6 py-3 font-semibold text-sm"><Link to={contactFormTo(location.pathname, CONTACT_TOPIC.CONTACT)}>Apply for This Role</Link></Button>
         </div>
       )}
     </div>

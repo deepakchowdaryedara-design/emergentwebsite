@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
@@ -6,6 +7,34 @@ import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
 import { openWhatsAppLead } from "../utils/whatsappLead";
 
 export default function PageContactForm({ context }) {
+  const [searchParams] = useSearchParams();
+  const leadIntent =
+    searchParams.get("topic") === "consultation" ? "consultation" : "contact";
+  const copy = useMemo(() => {
+    if (leadIntent === "consultation") {
+      return {
+        leftEyebrow: "Next Step",
+        leftTitle: "Request a consultation",
+        leftBody:
+          "Outline goals, constraints, and timing. We align on scope, confirm fit, and schedule a working session with a delivery lead.",
+        messageLabel: "Agenda *",
+        messagePlaceholder:
+          "Summarize the initiative, success criteria, stakeholders, and preferred meeting window.",
+        submitLabel: "Request consultation",
+      };
+    }
+    return {
+      leftEyebrow: "Next Step",
+      leftTitle: "Contact our team",
+      leftBody:
+        "Send a message for general inquiries, vendor questions, or partnership discussions. We respond with clear ownership and follow-up expectations.",
+      messageLabel: "Message *",
+      messagePlaceholder:
+        "Describe your inquiry, organization context, and how you prefer we follow up.",
+      submitLabel: "Send message",
+    };
+  }, [leadIntent]);
+
   const [form, setForm] = useState({ first_name: "", last_name: "", email: "", phone: "", description: "" });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -24,6 +53,7 @@ export default function PageContactForm({ context }) {
     try {
       openWhatsAppLead({
         ...form,
+        leadIntent,
         description: context ? `[${context}] ${form.description}` : form.description,
       });
       setSubmitted(true);
@@ -40,12 +70,12 @@ export default function PageContactForm({ context }) {
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-sm border border-slate-200">
           <div className="p-10 sm:p-14 text-white" style={{ backgroundColor: "#0B1B3D" }}>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">Next Step</p>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">{copy.leftEyebrow}</p>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-6" >
-              Let's Discuss Your Project
+              {copy.leftTitle}
             </h2>
             <p className="text-base text-slate-400 leading-relaxed mb-10">
-              Share your requirements and our team will get back to you within 24 hours with a tailored solution proposal.
+              {copy.leftBody}
             </p>
             <div className="space-y-6">
               <div className="flex items-center gap-4">
@@ -91,12 +121,12 @@ export default function PageContactForm({ context }) {
                   <Input data-testid="page-contact-phone" name="phone" value={form.phone} onChange={handleChange} placeholder="+91 81424 38759" className="rounded-sm border-slate-200" />
                 </div>
                 <div>
-                  <label className="text-xs font-semibold text-slate-600 uppercase tracking-wider block mb-2">Project Description *</label>
-                  <Textarea data-testid="page-contact-description" name="description" value={form.description} onChange={handleChange} placeholder="Tell us about your project..." rows={4} className="rounded-sm border-slate-200" />
+                  <label className="text-xs font-semibold text-slate-600 uppercase tracking-wider block mb-2">{copy.messageLabel}</label>
+                  <Textarea data-testid="page-contact-description" name="description" value={form.description} onChange={handleChange} placeholder={copy.messagePlaceholder} rows={4} className="rounded-sm border-slate-200" />
                 </div>
                 {error && <p data-testid="page-contact-error" className="text-sm text-red-500">{error}</p>}
                 <Button data-testid="page-contact-submit" type="submit" disabled={loading} className="w-full bg-[#0B1B3D] text-white hover:bg-[#0B1B3D]/90 rounded-sm py-3 font-semibold text-sm">
-                  {loading ? "Submitting..." : <><span>Submit</span> <Send size={14} className="ml-2" /></>}
+                  {loading ? "Submitting..." : <><span>{copy.submitLabel}</span> <Send size={14} className="ml-2" /></>}
                 </Button>
               </form>
             )}

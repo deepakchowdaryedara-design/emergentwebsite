@@ -1,4 +1,4 @@
-/** Labels for industry tabs — keys must match `industries[].title`. */
+/** Labels for industry tabs; keys must match `industries[].title`. */
 const industryTabUseCases = {
   Healthcare: [
     "Health Monitoring & Alerts",

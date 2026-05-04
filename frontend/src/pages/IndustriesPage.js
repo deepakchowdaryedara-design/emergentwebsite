@@ -22,7 +22,7 @@ export default function IndustriesPage() {
         <PageHero
           label="Industries"
           title="Industry Programs Aligned to Regulation and Operations"
-          description="We align delivery to sector constraints—controls, data practices, and operating cadence—then define pilots sized to your governance and funding cycle."
+          description="We align delivery to sector constraints, controls, data practices, and operating cadence, then define pilots sized to your governance and funding cycle."
           primaryCTA={{ text: "Contact us", href: "#page-contact" }}
           secondaryCTA={{ text: "Browse industries", href: "#verticals" }}
           image={LISTING_PAGE_HERO_IMAGES.industries}
@@ -40,7 +40,7 @@ export default function IndustriesPage() {
                   Coverage Across <span className="opacity-30">industry programs</span>
                 </h2>
                 <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                  This coverage surfaces sectors where we scope pilots today—each overview ties constraints to delivery patterns and milestone checkpoints.
+                  This coverage surfaces sectors where we scope pilots today, each overview ties constraints to delivery patterns and milestone checkpoints.
                 </p>
               </div>
             </AnimatedSection>
@@ -75,7 +75,7 @@ export default function IndustriesPage() {
                     Outcomes for <span className="opacity-30">domain programs</span>
                   </h2>
                   <p className="text-base text-slate-500 leading-relaxed font-medium mb-10 max-w-sm">
-                    This outcomes framing links sector pilots to the dimensions executives actually fund—automation depth, signal latency, handling effort, and traceability—not generic AI hype.
+                    This outcomes framing links sector pilots to the dimensions executives actually fund, automation depth, signal latency, handling effort, and traceability, not generic AI hype.
                   </p>
                   <div className="flex items-center gap-4 py-8 border-t border-slate-200">
                     <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white font-black">AI</div>
@@ -133,7 +133,7 @@ export default function IndustriesPage() {
                   Coverage Across <span className="opacity-30">capability by vertical</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed max-w-2xl mb-6">
-                  This coverage matrix compares how capabilities land across sectors—use it to steer discovery questions, not as a guarantee of off-the-shelf parity.
+                  This coverage matrix compares how capabilities land across sectors, use it to steer discovery questions, not as a guarantee of off-the-shelf parity.
                 </p>
               </div>
             </AnimatedSection>
@@ -171,7 +171,7 @@ export default function IndustriesPage() {
                   Methodology for <span className="opacity-30">industry program phases</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
-                  This methodology moves from blueprint to pilot to expansion with explicit controls—so domain risk is addressed before throughput investments compound.
+                  This methodology moves from blueprint to pilot to expansion with explicit controls, so domain risk is addressed before throughput investments compound.
                 </p>
               </div>
             </AnimatedSection>
@@ -194,7 +194,7 @@ export default function IndustriesPage() {
           </div>
         </section>
 
-        <div id="page-contact">
+        <div>
           <PageContactForm context="Industries Page" />
         </div>
       </div>

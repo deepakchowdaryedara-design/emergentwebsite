@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import caseStudiesData from "../data/caseStudies";
+import { TRACEFOLD } from "../lib/tracefoldLabel";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 
 const slides = caseStudiesData.map((cs) => ({
@@ -45,12 +46,12 @@ export default function CaseStudies({ showLabel = true }) {
             <h2 className="text-3xl font-black tracking-tighter text-[#0B1B3D] sm:text-4xl lg:text-[2.65rem] lg:leading-[1.12]">
               Coverage Across
               <br />
-              <span className="text-[#0B1B3D]">illustrative scenarios</span>
+              <span className="text-[#0B1B3D]">{TRACEFOLD} scenarios</span>
             </h2>
           </div>
           <div className="max-w-md lg:ml-auto lg:text-right">
             <p className="mb-5 text-sm leading-relaxed text-slate-600 lg:text-base">
-              Illustrative patterns—not completed client projects. Use them to see how we think about problems like yours, then contact us to scope something concrete.
+              {TRACEFOLD} patterns are representative narratives, not completed client projects. Use them to see how we approach problems like yours, then contact us to scope something concrete.
             </p>
             <Link
               to="/case-studies"

@@ -16,7 +16,7 @@ const industries = [
       { title: "Dynamic Pricing", desc: "Real-time pricing optimization that maximizes margin while remaining competitive across channels." },
       { title: "Personalized Recommendations", desc: "AI-driven product recommendations that increase average order value by 25-40%." },
       { title: "Inventory Optimization", desc: "Smart inventory management that reduces overstock by 30% and stockouts by 50%." },
-      { title: "Visual Search", desc: "Let customers search your catalog by uploading photos—AI finds matching or similar products instantly." },
+      { title: "Visual Search", desc: "Let customers search your catalog by uploading photos, AI finds matching or similar products instantly." },
       { title: "Customer Sentiment Analysis", desc: "Monitor reviews, social media, and support tickets to understand customer sentiment in real-time." },
     ],
     process: [
@@ -42,7 +42,7 @@ const industries = [
     heroTitle: "AI Solutions for Healthcare",
     heroDesc: "Speed up patient care without compromising privacy. Our HIPAA-compliant AI solutions automate administrative tasks, support clinical decision-making, and improve hospital throughput by up to 45%.",
     heroImage: industryImages[1],
-    overview: "Healthcare faces unprecedented challenges: clinician burnout, administrative burden, rising costs, and growing patient volumes. NeuralTrix AI builds AI solutions purpose-designed for healthcare that automate documentation, assist with triage and diagnosis, optimize operations, and improve patient outcomes—all while maintaining strict HIPAA compliance and patient data privacy.",
+    overview: "Healthcare faces unprecedented challenges: clinician burnout, administrative burden, rising costs, and growing patient volumes. NeuralTrix AI builds AI solutions purpose-designed for healthcare that automate documentation, assist with triage and diagnosis, optimize operations, and improve patient outcomes, all while maintaining strict HIPAA compliance and patient data privacy.",
     features: [
       { title: "Clinical Documentation AI", desc: "Automated medical note generation from physician-patient conversations with structured output." },
       { title: "Diagnostic Decision Support", desc: "AI-assisted differential diagnosis and treatment recommendation systems for clinicians." },
@@ -74,14 +74,14 @@ const industries = [
     heroTitle: "AI Solutions for Fintech & Financial Services",
     heroDesc: "Our fintech AI solutions provide real-time fraud detection, automated compliance support, risk scoring, and personalized financial experiences for high-volume operations.",
     heroImage: industryImages[2],
-    overview: "Financial services are being transformed by AI—from fraud detection and risk management to personalized banking and automated compliance. NeuralTrix AI builds AI solutions for fintech companies that need to process millions of transactions in real-time, detect fraud before it happens, comply with evolving regulations, and deliver personalized financial experiences that build customer loyalty.",
+    overview: "Financial services are being transformed by AI, from fraud detection and risk management to personalized banking and automated compliance. NeuralTrix AI builds AI solutions for fintech companies that need to process millions of transactions in real-time, detect fraud before it happens, comply with evolving regulations, and deliver personalized financial experiences that build customer loyalty.",
     features: [
       { title: "Fraud Detection", desc: "Real-time transaction monitoring with ML models that detect fraud patterns 50% faster than traditional systems." },
       { title: "Risk Assessment", desc: "AI-powered credit scoring and risk models that improve accuracy while reducing bias in lending decisions." },
       { title: "Regulatory Compliance", desc: "Automated KYC/AML checks, transaction monitoring, and regulatory reporting that reduces compliance costs by 40%." },
       { title: "Algorithmic Trading", desc: "Build and backtest AI-driven trading strategies with real-time market data processing." },
       { title: "Customer Intelligence", desc: "Predict churn, lifetime value, and next-best-action for personalized financial product recommendations." },
-      { title: "Document Processing", desc: "Automate extraction and validation of financial documents—contracts, invoices, tax forms, and statements." },
+      { title: "Document Processing", desc: "Automate extraction and validation of financial documents, contracts, invoices, tax forms, and statements." },
     ],
     process: [
       { step: "Financial Assessment", desc: "Understand your regulatory environment, data landscape, and business objectives for AI implementation." },
@@ -138,14 +138,14 @@ const industries = [
       "Increase yield and reduce downtime with predictive maintenance, vision-based quality control, and shop-floor analytics tied to production KPIs.",
     heroTitle: "AI Solutions for Manufacturing & Industrial Operations",
     heroDesc:
-      "Deploy AI on the plant floor for defect detection, demand-aligned scheduling, and equipment health monitoring—integrated with MES, ERP, and IoT telemetry.",
+      "Deploy AI on the plant floor for defect detection, demand-aligned scheduling, and equipment health monitoring, integrated with MES, ERP, and IoT telemetry.",
     heroImage: industryImages[6],
     overview:
       "Manufacturers operate under constant pressure to improve quality, throughput, and safety while controlling cost. NeuralTrix AI delivers industrial AI that connects OT and IT data: computer vision for inspection, time-series models for predictive maintenance, digital twins for scenario planning, and workflow automation that supervisors can govern with clear thresholds and escalation paths.",
     features: [
       { title: "Predictive Maintenance", desc: "Sensor-driven models that estimate remaining useful life and recommend maintenance windows before unplanned stops." },
       { title: "Visual Quality Inspection", desc: "Automated defect detection on lines where manual inspection is inconsistent or too slow for throughput targets." },
-      { title: "Production Scheduling", desc: "Optimization under constraints—capacity, materials, labor, and customer priorities—with explainable trade-offs." },
+      { title: "Production Scheduling", desc: "Optimization under constraints, capacity, materials, labor, and customer priorities, with explainable trade-offs." },
       { title: "Yield & Scrap Analytics", desc: "Root-cause analysis across batches, equipment, and shifts to reduce scrap and rework." },
       { title: "Safety Monitoring", desc: "Vision and sensor assists for PPE, zone control, and incident prevention reporting aligned with site policies." },
       { title: "Supplier & Inventory Signals", desc: "Forecast inputs and risk signals linked to procurement so production plans reflect realistic availability." },
@@ -173,7 +173,7 @@ const industries = [
     heroTitle: "AI Solutions for Sports & Gaming",
     heroDesc: "Win the battle for fan attention with real-time AI intelligence. Turn game data into personalized experiences, predict player performance, and drive 2x higher audience retention with our specialized sports and gaming AI solutions.",
     heroImage: industryImages[4],
-    overview: "The sports and gaming industries generate massive amounts of data that most organizations barely utilize. NeuralTrix AI helps sports teams, leagues, gaming companies, and fantasy platforms transform this data into competitive advantages—from real-time performance analytics and player health monitoring to personalized fan experiences and predictive gaming features.",
+    overview: "The sports and gaming industries generate massive amounts of data that most organizations barely utilize. NeuralTrix AI helps sports teams, leagues, gaming companies, and fantasy platforms transform this data into competitive advantages, from real-time performance analytics and player health monitoring to personalized fan experiences and predictive gaming features.",
     features: [
       { title: "Performance Analytics", desc: "AI-powered player and team performance analysis using computer vision and sensor data." },
       { title: "Fan Engagement", desc: "Personalized content, real-time stats, and AI-driven interactive experiences for fans." },
@@ -183,7 +183,7 @@ const industries = [
       { title: "Content Generation", desc: "Automated highlights, commentary, and social media content from live game data." },
     ],
     process: [
-      { step: "Data Assessment", desc: "Evaluate available data sources—video feeds, sensor data, statistics APIs, and fan interaction data." },
+      { step: "Data Assessment", desc: "Evaluate available data sources, video feeds, sensor data, statistics APIs, and fan interaction data." },
       { step: "Use Case Prioritization", desc: "Identify the highest-impact AI applications for your specific sport, league, or gaming platform." },
       { step: "Model Development", desc: "Build specialized AI models for sports analytics, fan engagement, or gaming intelligence." },
       { step: "Real-Time Integration", desc: "Deploy models that process live data streams for real-time insights and experiences." },

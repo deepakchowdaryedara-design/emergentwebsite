@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "../components/ui/button";
 import services from "../data/services";
@@ -165,13 +166,7 @@ export default function Header() {
             asChild
             className="hidden lg:inline-flex bg-[#0B1B3D] text-white hover:bg-[#0B1B3D]/90 rounded-sm px-4 xl:px-5 py-2 text-sm font-semibold"
           >
-            <Link
-              to={
-                location.pathname === "/"
-                  ? "/#page-contact"
-                  : `${location.pathname}#page-contact`
-              }
-            >
+            <Link to={contactFormTo(location.pathname, CONTACT_TOPIC.CONTACT)}>
               Contact us
             </Link>
           </Button>
@@ -264,7 +259,10 @@ export default function Header() {
             asChild
             className="w-full mt-4 bg-[#0B1B3D] text-white hover:bg-[#0B1B3D]/90 rounded-sm text-sm font-semibold"
           >
-            <Link to="/#page-contact" onClick={() => setMobileOpen(false)}>
+            <Link
+              to={contactFormTo(location.pathname, CONTACT_TOPIC.CONTACT)}
+              onClick={() => setMobileOpen(false)}
+            >
               Contact us
             </Link>
           </Button>

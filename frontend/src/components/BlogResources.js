@@ -43,7 +43,7 @@ export default function BlogResources({ showLabel = true }) {
             Coverage Across <span className="text-[#0B1B3D]/30">delivery topics</span>
           </h2>
           <p className="text-base text-slate-600 leading-relaxed">
-            Technical notes on tools, models, and delivery practices—for teams evaluating AI engineering partners or internal build-outs.
+            Technical notes on tools, models, and delivery practices, for teams evaluating AI engineering partners or internal build-outs.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

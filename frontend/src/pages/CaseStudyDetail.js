@@ -8,6 +8,8 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import RelatedBlog from "../components/RelatedBlog";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import caseStudies from "../data/caseStudies";
+import TechStackLogoGrid from "../components/TechStackLogoGrid";
+import { TRACEFOLD } from "../lib/tracefoldLabel";
 
 export default function CaseStudyDetail() {
   const { slug } = useParams();
@@ -19,17 +21,17 @@ export default function CaseStudyDetail() {
 
   return (
     <div>
-      <PageHero label={cs.industry} title={cs.heroTitle} description={cs.heroDesc} primaryCTA={{ text: "Discuss this pattern", href: "#page-contact" }} secondaryCTA={{ text: "All scenarios", href: "/case-studies" }} image={cs.heroImage} />
+      <PageHero label={cs.industry} title={cs.heroTitle} description={cs.heroDesc} primaryCTA={{ text: "Discuss this pattern", href: "#page-contact" }} secondaryCTA={{ text: `All ${TRACEFOLD} narratives`, href: "/case-studies" }} image={cs.heroImage} />
 
       <div className="bg-amber-50 border-b border-amber-100">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-4 text-sm text-amber-950/90 leading-relaxed max-w-4xl">
-          <strong className="font-semibold">Illustrative scenario.</strong> This page describes a representative delivery pattern aligned with NeuralTrix services—not a claim about a specific completed customer program. Use it to compare your situation to our methodology; contact us to scope a pilot for your environment.
+          <strong className="font-semibold">{TRACEFOLD} pattern.</strong> This page describes a representative delivery narrative aligned with NeuralTrix services, not a claim about a specific completed customer program. Use it to compare your situation to our methodology; contact us to scope a pilot for your environment.
         </div>
       </div>
 
       <div className="bg-white border-b border-slate-200">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-4">
-          <Link to="/case-studies" data-testid="back-to-case-studies" className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#2563EB]"><ArrowLeft size={14} /> All delivery scenarios</Link>
+          <Link to="/case-studies" data-testid="back-to-case-studies" className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#2563EB]"><ArrowLeft size={14} /> All {TRACEFOLD} narratives</Link>
         </div>
       </div>
 
@@ -39,7 +41,7 @@ export default function CaseStudyDetail() {
           <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 mb-2">Methodology</p>
           <h2 className="text-2xl font-bold text-[#0B1B3D] tracking-tight">Methodology for scoping this scenario</h2>
           <p className="text-sm text-slate-600 mt-2 max-w-2xl">
-            These dimensions are planning lenses for a pilot—not guaranteed results from a prior engagement.
+            These dimensions are planning lenses for a pilot, not guaranteed results from a prior engagement.
           </p>
         </div>
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
@@ -90,19 +92,17 @@ export default function CaseStudyDetail() {
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
               <h2 className="mb-6" >Technology Stack</h2>
-              <div className="flex flex-wrap gap-3 mb-8">
-                {cs.techStack.map((t) => (<span key={t} className="text-sm px-4 py-2 bg-white border border-slate-200 text-slate-600 rounded-sm font-medium">{t}</span>))}
-              </div>
+              <TechStackLogoGrid items={cs.techStack} gridClassName="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-3" />
             </AnimatedSection>
           </div>
         </div>
       </section>
 
-      <CTASection title="Next Step for Your Roadmap" description="Share your constraints and timeline; we map this pattern—or an adjusted variant—to your systems, governance model, and success measures." />
+      <CTASection title="Next Step for Your Roadmap" description="Share your constraints and timeline; we map this pattern, or an adjusted variant, to your systems, governance model, and success measures." />
       <TestimonialsSection title="How we engage new partners" />
       <FAQSection faqs={cs.faqs} />
       <RelatedBlog />
-      <PageContactForm context={`Scenario: ${cs.title}`} />
+      <PageContactForm context={`${TRACEFOLD}: ${cs.title}`} />
     </div>
   );
 }

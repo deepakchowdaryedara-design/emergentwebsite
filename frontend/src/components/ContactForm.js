@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
@@ -6,6 +7,32 @@ import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
 import { openWhatsAppLead } from "../utils/whatsappLead";
 
 export default function ContactForm() {
+  const [searchParams] = useSearchParams();
+  const leadIntent =
+    searchParams.get("topic") === "consultation" ? "consultation" : "contact";
+  const copy = useMemo(() => {
+    if (leadIntent === "consultation") {
+      return {
+        eyebrow: "Consultation",
+        heading: "Request a consultation",
+        body: "Share objectives, constraints, and timing. We confirm fit and propose a focused discovery or scoping discussion aligned to your priorities.",
+        messageLabel: "Agenda *",
+        messagePlaceholder:
+          "Summarize the initiative, success criteria, stakeholders, and preferred meeting window.",
+        submitLabel: "Request consultation",
+      };
+    }
+    return {
+      eyebrow: "Get in Touch",
+      heading: "Contact NeuralTrix AI",
+      body: "Send a short message with your question, vendor inquiry, or partnership interest. We reply with clear next steps and a named point of contact.",
+      messageLabel: "Message *",
+      messagePlaceholder:
+        "Describe your inquiry, organization context, and how you prefer we follow up.",
+      submitLabel: "Send message",
+    };
+  }, [leadIntent]);
+
   const [form, setForm] = useState({
     first_name: "",
     last_name: "",
@@ -30,7 +57,7 @@ export default function ContactForm() {
     }
     setLoading(true);
     try {
-      openWhatsAppLead(form);
+      openWhatsAppLead({ ...form, leadIntent });
       setSubmitted(true);
       setForm({ first_name: "", last_name: "", email: "", phone: "", description: "" });
     } catch {
@@ -51,17 +78,17 @@ export default function ContactForm() {
           {/* Left side - Info */}
           <div className="p-10 sm:p-14 text-white" style={{ backgroundColor: "#0B1B3D" }}>
             <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-4">
-              Get in Touch
+              {copy.eyebrow}
             </p>
             <h2
               data-testid="contact-heading"
               className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-6"
 
             >
-              Ready to move forward?
+              {copy.heading}
             </h2>
             <p className="text-base text-slate-400 leading-relaxed mb-10">
-              Contact us today to learn more about our AI solutions and start your journey towards enhanced efficiency and growth.
+              {copy.body}
             </p>
             <div className="space-y-6">
               <div className="flex items-center gap-4">
@@ -170,14 +197,14 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <label className="text-xs font-semibold text-slate-600 uppercase tracking-wider block mb-2">
-                    Project Description *
+                    {copy.messageLabel}
                   </label>
                   <Textarea
                     data-testid="contact-description"
                     name="description"
                     value={form.description}
                     onChange={handleChange}
-                    placeholder="Tell us about your project..."
+                    placeholder={copy.messagePlaceholder}
                     rows={4}
                     className="rounded-sm border-slate-200 focus:border-[#2563EB] focus:ring-[#2563EB]"
                   />
@@ -192,7 +219,7 @@ export default function ContactForm() {
                   className="w-full bg-[#0B1B3D] text-white hover:bg-[#0B1B3D]/90 rounded-sm py-3 font-semibold text-sm"
                 >
                   {loading ? "Submitting..." : (
-                    <>Submit <Send size={14} className="ml-2" /></>
+                    <>{copy.submitLabel} <Send size={14} className="ml-2" /></>
                   )}
                 </Button>
               </form>

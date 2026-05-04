@@ -6,7 +6,7 @@ const engagementPrinciples = [
   {
     headline: "Pilot-scoped first",
     body:
-      "We align on problem statement, data access, and success measures before writing production code—so you can validate fit on a fixed timeline and budget.",
+      "We align on problem statement, data access, and success measures before writing production code, so you can validate fit on a fixed timeline and budget.",
     tag: "How we start",
   },
   {
@@ -18,13 +18,13 @@ const engagementPrinciples = [
   {
     headline: "Production-minded AI",
     body:
-      "Retrieval, evaluation, guardrails, and observability are planned from the first slice—not bolted on after a demo.",
+      "Retrieval, evaluation, guardrails, and observability are planned from the first slice, not bolted on after a demo.",
     tag: "Quality bar",
   },
   {
     headline: "Transparent handover",
     body:
-      "Repositories, runbooks, and acceptance tests are structured so your staff can operate and extend what we build—or we stay engaged under a clear support model.",
+      "Repositories, runbooks, and acceptance tests are structured so your staff can operate and extend what we build, or we stay engaged under a clear support model.",
     tag: "Ownership",
   },
   {

@@ -18,7 +18,7 @@ export default function BlogDetail() {
 
   return (
     <div>
-      {/* 1. Article Hero — full-bleed image (same treatment as site heroes) */}
+      {/* 1. Article Hero: full-bleed image (same treatment as site heroes) */}
       <section className="relative isolate overflow-hidden bg-[#0B1B3D] text-white">
         <div className="relative flex min-h-[50vh] flex-col justify-end">
           <HeroAnimatedBackdrop image={article.image} bgDark />

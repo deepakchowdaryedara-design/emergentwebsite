@@ -42,7 +42,7 @@ export default function SolutionsPage() {
       <PageHero
         label="Solutions"
         title="Solution Accelerators for Structured AI Rollouts"
-        description="Pre-architected modules for document intelligence, regulated workflows, talent operations, and adjacent domains—maintained with customer programs and internal delivery feedback."
+        description="Pre-architected modules for document intelligence, regulated workflows, talent operations, and adjacent domains, maintained with customer programs and internal delivery feedback."
         primaryCTA={{ text: "Review accelerators", href: "#solutions-list" }}
         image={LISTING_PAGE_HERO_IMAGES.solutions}
       />
@@ -57,7 +57,7 @@ export default function SolutionsPage() {
             Coverage Across <span className="opacity-40">solution accelerators</span>
           </h2>
           <p className="text-sm text-slate-600 leading-relaxed">
-            This coverage lists pre-architected modules you can brief against—each links to a full overview with scope boundaries and integration assumptions.
+            This coverage lists pre-architected modules you can brief against, each links to a full overview with scope boundaries and integration assumptions.
           </p>
         </div>
         <div className="w-full">

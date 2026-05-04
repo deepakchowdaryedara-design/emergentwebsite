@@ -48,7 +48,7 @@ export default function ServicesPage() {
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <ServicesShowcaseTabs
               services={services}
-              title="Methodology for service delivery"
+              title="Methodology For Service Delivery"
               description="Explore delivery tracks aligned to priority workflows; each track maintains engineering rigor proportionate to production risk."
             />
           </div>
@@ -131,7 +131,7 @@ export default function ServicesPage() {
                   Coverage Across <span className="opacity-40">collaboration models</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed">
-                  This coverage compares ways to engage NeuralTrix—advisory, pilot-to-production, or managed delivery—mapped to your internal capacity.
+                  This coverage compares ways to engage NeuralTrix, advisory, pilot-to-production, or managed delivery, mapped to your internal capacity.
                 </p>
               </div>
             </AnimatedSection>
@@ -203,7 +203,7 @@ export default function ServicesPage() {
                 >
                   Coverage Across <span className="opacity-40">the AI stack</span>
                 </h2>
-                <p className="text-base text-slate-500 max-w-2xl font-medium">This coverage names stack layers and example concerns—so technical reviews start from shared vocabulary, not slide-level abstraction.</p>
+                <p className="text-base text-slate-500 max-w-2xl font-medium">This coverage names stack layers and example concerns, so technical reviews start from shared vocabulary, not slide-level abstraction.</p>
               </div>
             </AnimatedSection>
 
@@ -280,7 +280,7 @@ export default function ServicesPage() {
                   Assurance for <span className="opacity-40">governance and quality</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed">
-                  This assurance model embeds security, observability, and release discipline into delivery milestones—not a separate paperwork phase.
+                  This assurance model embeds security, observability, and release discipline into delivery milestones, not a separate paperwork phase.
                 </p>
               </div>
             </AnimatedSection>
@@ -325,7 +325,7 @@ export default function ServicesPage() {
                   Outcomes for <span className="opacity-40">service engagements</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed">
-                  These outcomes are discussion ranges from comparable programs—your baselines and acceptance tests still define what counts as success.
+                  These outcomes are discussion ranges from comparable programs, your baselines and acceptance tests still define what counts as success.
                 </p>
               </div>
             </AnimatedSection>
@@ -376,7 +376,7 @@ export default function ServicesPage() {
                   Methodology for <span className="opacity-40">commercial engagement models</span>
                 </h2>
                 <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
-                  This methodology matches funding and staffing reality—project, embedded pod, or multi-workstream program—with cadence and governance spelled out up front.
+                  This methodology matches funding and staffing reality, project, embedded pod, or multi-workstream program, with cadence and governance spelled out up front.
                 </p>
               </div>
             </AnimatedSection>
@@ -422,6 +422,7 @@ export default function ServicesPage() {
           title="Convert Priorities into an Executable Delivery Plan"
           description="Share your current priorities and constraints. We will map service fit, delivery sequence, and expected business impact in a focused consultation."
           buttonText="Schedule Consultation"
+          contactIntent="consultation"
         />
       </div>
 
@@ -433,7 +434,7 @@ export default function ServicesPage() {
               <div className="text-left mb-8">
                 <h2 className="text-xl font-bold text-[#0B1B3D] mb-2">Assurance for <span className="opacity-40">enterprise expectations</span></h2>
                 <p className="text-sm text-slate-500">
-                  This assurance summary lists practices buyers commonly verify during procurement—not claims of certification unless separately contracted.
+                  This assurance summary lists practices buyers commonly verify during procurement, not claims of certification unless separately contracted.
                 </p>
               </div>
             </AnimatedSection>

@@ -63,18 +63,23 @@ module.exports = {
   					height: 'var(--radix-accordion-content-height)'
   				}
   			},
-  			'accordion-up': {
+  		'accordion-up': {
   				from: {
   					height: 'var(--radix-accordion-content-height)'
   				},
   				to: {
   					height: '0'
   				}
+  			},
+  			'marquee-ribbon': {
+  				'0%': { transform: 'translateX(0)' },
+  				'100%': { transform: 'translateX(-50%)' }
   			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'marquee-ribbon': 'marquee-ribbon 40s linear infinite'
   		}
   	}
   },

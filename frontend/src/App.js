@@ -1,5 +1,6 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import DevelopmentRibbon from "@/components/DevelopmentRibbon";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -25,6 +26,7 @@ import CareersPage from "@/pages/CareersPage";
 function PublicLayout({ children }) {
   return (
     <>
+      <DevelopmentRibbon />
       <Header />
       {children}
       <Footer />

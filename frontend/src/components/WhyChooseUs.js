@@ -56,10 +56,7 @@ export default function WhyChooseUs() {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
               {metrics.map((m) => (
                 <div key={m.label}>
-                  <span
-                    className="text-2xl font-extrabold text-[#0B1B3D] block"
-                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                  >
+                  <span className="text-2xl font-extrabold text-[#0B1B3D] block tabular-nums">
                     {m.value}
                   </span>
                   <span className="text-xs text-slate-500 mt-1">{m.label}</span>

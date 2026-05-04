@@ -112,9 +112,8 @@ export default function CareersPage() {
             {hiringProcess.map((h, i) => (
               <StaggerItem key={i}>
                 <div className="relative bg-white border border-slate-200 rounded-sm p-6">
-                  <span className="text-3xl font-extrabold text-slate-100 absolute top-3 right-3" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="mb-2 relative z-10">{h.step}</h3>
-                  <p className="text-xs text-slate-500 leading-relaxed relative z-10">{h.desc}</p>
+                  <h3 className="mb-2">{h.step}</h3>
+                  <p className="text-xs text-slate-500 leading-relaxed">{h.desc}</p>
                 </div>
               </StaggerItem>
             ))}

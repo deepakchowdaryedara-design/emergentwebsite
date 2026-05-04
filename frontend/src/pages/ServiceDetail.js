@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Check } from "lucide-react";
 import PageHero from "../components/PageHero";
 import CTASection from "../components/CTASection";
 import PageContactForm from "../components/PageContactForm";
@@ -83,8 +83,8 @@ export default function ServiceDetail() {
                   <StaggerItem key={i}>
                     <div data-testid={`process-step-${i}`} className="h-full relative border border-slate-200 rounded-2xl p-6 bg-white hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-500 hover:-translate-y-1 group">
                       <div className="flex items-center justify-between mb-6">
-                        <div className="w-10 h-10 rounded-full border-2 border-slate-100 bg-white flex items-center justify-center text-[#0B1B3D] font-bold group-hover:bg-[#2563EB] group-hover:border-[#2563EB] group-hover:text-white transition-all duration-500 shadow-sm relative z-10">
-                          <span className="text-[11px]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{String(i + 1).padStart(2, "0")}</span>
+                        <div className="w-10 h-10 rounded-full border-2 border-slate-100 bg-white flex items-center justify-center text-[#0B1B3D] group-hover:bg-[#2563EB] group-hover:border-[#2563EB] group-hover:text-white transition-all duration-500 shadow-sm relative z-10">
+                          <Check className="h-4 w-4" strokeWidth={2.5} aria-hidden />
                         </div>
                         <div className="h-px bg-slate-100 flex-1 ml-4 group-hover:bg-[#2563EB]/20 transition-colors" />
                       </div>
@@ -92,7 +92,7 @@ export default function ServiceDetail() {
                       <p className="text-[13px] text-slate-500 leading-relaxed font-medium">{p.desc}</p>
                       <div className="mt-6 pt-5 border-t border-slate-50 flex items-center gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-slate-200 group-hover:bg-[#2563EB] transition-colors" />
-                        <span className="text-[9px] font-bold text-slate-400 group-hover:text-[#2563EB] uppercase tracking-widest transition-colors">Phase {i + 1}</span>
+                        <div className="h-px flex-1 bg-slate-100 group-hover:bg-[#2563EB]/25 transition-colors" />
                       </div>
                     </div>
                   </StaggerItem>

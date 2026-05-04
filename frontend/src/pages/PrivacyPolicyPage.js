@@ -170,15 +170,12 @@ export default function PrivacyPolicyPage() {
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { step: "01", title: "Submit Request", desc: "Contact us with details of your privacy request and relevant context." },
-              { step: "02", title: "Verification", desc: "We verify request legitimacy before processing sensitive data actions." },
-              { step: "03", title: "Resolution", desc: "We respond within a reasonable timeframe, subject to legal obligations." },
+              { title: "Submit Request", desc: "Contact us with details of your privacy request and relevant context." },
+              { title: "Verification", desc: "We verify request legitimacy before processing sensitive data actions." },
+              { title: "Resolution", desc: "We respond within a reasonable timeframe, subject to legal obligations." },
             ].map((item) => (
-              <StaggerItem key={item.step}>
+              <StaggerItem key={item.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-white p-10 transition-all duration-500 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-900/5 group">
-                  <div className="text-[10px] font-black text-blue-500/30 group-hover:text-blue-500 transition-colors duration-500 mb-6" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-                    STEP {item.step}
-                  </div>
                   <h3 className="mb-3 tracking-tight" >{item.title}</h3>
                   <p className="text-sm text-slate-500 leading-relaxed font-medium">{item.desc}</p>
                 </div>

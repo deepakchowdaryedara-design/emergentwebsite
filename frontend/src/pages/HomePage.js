@@ -11,6 +11,7 @@ import BlogResources from "../components/BlogResources";
 import ContactForm from "../components/ContactForm";
 import NextStepCTA from "../components/NextStepCTA";
 import { motion } from "framer-motion";
+import { Check } from "lucide-react";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 
 export default function HomePage() {
@@ -66,12 +67,12 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 relative z-10">
               {[
-                { step: "01", title: "Discover", desc: "Prioritize use cases by ROI, feasibility, and operational readiness." },
-                { step: "02", title: "Architect", desc: "Design secure, scalable systems aligned to your enterprise stack." },
-                { step: "03", title: "Deploy", desc: "Launch rapidly with quality gates and measurable outcome tracking." },
-                { step: "04", title: "Scale", desc: "Expand adoption across teams with governance and optimization loops." },
+                { title: "Discover", desc: "Prioritize use cases by ROI, feasibility, and operational readiness." },
+                { title: "Architect", desc: "Design secure, scalable systems aligned to your enterprise stack." },
+                { title: "Deploy", desc: "Launch rapidly with quality gates and measurable outcome tracking." },
+                { title: "Scale", desc: "Expand adoption across teams with governance and optimization loops." },
               ].map((item, idx) => (
-                <div key={item.step} className="flex flex-col items-start text-left group">
+                <div key={item.title} className="flex flex-col items-start text-left group">
                   <motion.div
                     animate={{
                       borderColor: ["#f1f5f9", "#2563eb", "#2563eb", "#f1f5f9"],
@@ -93,9 +94,9 @@ export default function HomePage() {
                         repeat: Infinity,
                         delay: 0.5
                       }}
-                      className="text-xs font-black"
+                      className="flex items-center justify-center"
                     >
-                      {item.step}
+                      <Check className="h-5 w-5" strokeWidth={2.5} aria-hidden />
                     </motion.span>
 
                     {/* Ripple/Pulse on activation */}

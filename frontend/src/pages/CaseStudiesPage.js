@@ -119,16 +119,13 @@ export default function CaseStudiesPage() {
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { step: "01", title: "Context Audit", desc: "Map goals, constraints, and baseline metrics." },
-              { step: "02", title: "Architecture Fit", desc: "Select stack and design production-ready workflows." },
-              { step: "03", title: "Pilot Validation", desc: "Deploy focused use case and validate KPI movement." },
-              { step: "04", title: "Scale Program", desc: "Expand rollout with governance and optimization." },
+              { title: "Context Audit", desc: "Map goals, constraints, and baseline metrics." },
+              { title: "Architecture Fit", desc: "Select stack and design production-ready workflows." },
+              { title: "Pilot Validation", desc: "Deploy focused use case and validate KPI movement." },
+              { title: "Scale Program", desc: "Expand rollout with governance and optimization." },
             ].map((item) => (
-              <StaggerItem key={item.step}>
+              <StaggerItem key={item.title}>
                 <div className="rounded-sm border border-slate-200 bg-[#F8FAFC] p-6 h-full">
-                  <span className="inline-flex items-center rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 px-2.5 py-1 text-[11px] font-semibold tracking-wider text-[#2563EB] mb-4" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-                    STEP {item.step}
-                  </span>
                   <h3 className="text-lg font-bold text-[#0B1B3D] mb-2" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>

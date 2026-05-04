@@ -149,20 +149,6 @@ export default function ImpactStats({
               {displayStats.map((s, i) => (
                 <AnimatedSection key={i} delay={i * 0.05}>
                   <div className="group relative h-full overflow-hidden border-y border-r border-slate-100 border-l-transparent border-l-2 bg-[#F8FAFC]/50 p-6 transition-all duration-300 hover:border-l-blue-500 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 sm:p-8">
-                    <div className="pointer-events-none absolute -bottom-2 -right-2 select-none text-6xl font-black text-slate-200/20 transition-colors group-hover:text-blue-500/5">
-                      0{i + 1}
-                    </div>
-
-                    <div className="mb-4 flex items-center gap-2">
-                      <span
-                        className="text-[8px] font-black uppercase tracking-widest text-blue-500"
-                        style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                      >
-                        {String(i + 1).padStart(2, "0")} UNIT
-                      </span>
-                      <div className="h-px flex-1 bg-slate-200/50" />
-                    </div>
-
                     <div className="relative z-10">
                       <span className="mb-2 block text-3xl font-black tracking-tighter text-[#0B1B3D] transition-colors group-hover:text-blue-600 lg:text-4xl">
                         {s.value}

@@ -145,14 +145,6 @@ export default function SolutionDetail() {
               {solution.features.map((f, i) => (
                 <StaggerItem key={i}>
                   <div className="group h-full bg-white border-r border-b border-slate-100 p-8 sm:p-10 hover:bg-slate-50/50 transition-all duration-300 relative overflow-hidden">
-                    {/* Performance Marker */}
-                    <div className="flex items-center gap-3 mb-8">
-                      <span className="text-[10px] font-black text-blue-500 px-2 py-1 bg-blue-50 rounded-sm" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-                        DEV_UNIT_0{i + 1}
-                      </span>
-                      <div className="h-px flex-1 bg-slate-100" />
-                    </div>
-
                     <div className="relative z-10">
                       <h3 className="mb-4 tracking-tighter uppercase">
                         {f.title}
@@ -214,10 +206,7 @@ export default function SolutionDetail() {
                           <s.icon size={18} />
                         </div>
                         <div>
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="text-[9px] font-black text-blue-500/50 uppercase tracking-widest" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Step 0{i + 1}</span>
-                            <h3 className="tracking-tight uppercase">{s.step}</h3>
-                          </div>
+                          <h3 className="mb-1 tracking-tight uppercase">{s.step}</h3>
                           <p className="text-[11px] text-slate-500 leading-tight font-medium">{s.desc}</p>
                         </div>
                       </div>

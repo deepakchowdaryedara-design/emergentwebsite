@@ -95,7 +95,6 @@ export default function IndustriesPage() {
                   ].map((item, i) => (
                     <StaggerItem key={item.label}>
                       <div className="group h-full bg-white border border-slate-100 p-8 hover:border-blue-500/30 transition-all duration-300 relative overflow-hidden">
-                        <div className="absolute -bottom-4 -right-2 text-6xl font-black text-slate-50 group-hover:text-blue-500/5 transition-colors pointer-events-none">0{i + 1}</div>
                         <p className="text-4xl font-black text-[#0B1B3D] mb-3 tracking-tighter group-hover:text-blue-600 transition-colors">{item.value}</p>
                         <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-relaxed group-hover:text-slate-600 transition-colors">{item.label}</p>
                       </div>
@@ -178,7 +177,6 @@ export default function IndustriesPage() {
               ].map((item, i) => (
                 <StaggerItem key={item.title}>
                   <div className="group h-full bg-white border-r border-b border-slate-100 p-10 hover:bg-slate-50/50 transition-all duration-300 relative overflow-hidden">
-                    <span className="text-[10px] font-black text-blue-500 mb-6 block" style={{ fontFamily: "'JetBrains Mono', monospace" }}>PHASE :: 0{i + 1}</span>
                     <h3 className="mb-4 tracking-tighter uppercase">{item.title}</h3>
                     <p className="text-[13px] text-slate-500 leading-relaxed font-medium">{item.desc}</p>
                     <div className="w-8 h-0.5 bg-blue-500/20 group-hover:w-full transition-all duration-500 mt-8" />

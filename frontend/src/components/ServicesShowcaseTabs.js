@@ -2,10 +2,6 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
-function pad(index) {
-  return String(index + 1).padStart(2, "0");
-}
-
 export default function ServicesShowcaseTabs({
   services = [],
   title = "Transformative IT Solutions: Services",
@@ -56,7 +52,6 @@ export default function ServicesShowcaseTabs({
                     />
                   </div>
                   <div className="flex w-1/2 min-w-0 flex-col justify-center bg-white p-8 xl:p-10">
-                    <p className="mb-4 text-5xl font-light leading-none text-slate-500">{pad(index)}.</p>
                     <h4 className="mb-4 text-[28px] font-semibold leading-[1.08] tracking-tight xl:text-[32px]">{service.title}</h4>
                     <p className="mb-8 max-w-md text-sm leading-relaxed text-slate-600">{service.shortDesc}</p>
                     <Link
@@ -80,7 +75,7 @@ export default function ServicesShowcaseTabs({
                     className="text-[14px] font-normal tracking-tight text-slate-400 xl:text-[15px]"
                     style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
                   >
-                    {pad(index)}.{service.title}
+                    {service.title}
                   </span>
                 </button>
               )}
@@ -94,7 +89,6 @@ export default function ServicesShowcaseTabs({
           <img src={active.heroImage} alt={active.title} className="h-full w-full object-cover" />
         </div>
         <div className="border-b border-slate-200 p-6">
-          <p className="mb-2 text-4xl font-light text-slate-500">{pad(activeIndex)}.</p>
           <h4 className="mb-3 text-2xl font-bold tracking-tight">{active.title}</h4>
           <p className="mb-5 text-sm leading-relaxed text-slate-600">{active.shortDesc}</p>
           <Link to={`/services/${active.slug}`} className="inline-flex items-center gap-2 text-sm font-semibold text-[#0B1B3D]">
@@ -112,7 +106,7 @@ export default function ServicesShowcaseTabs({
                 index === activeIndex ? "bg-slate-100 font-semibold" : "bg-white text-slate-600"
               }`}
             >
-              {pad(index)}. {service.title}
+              {service.title}
             </button>
           ))}
         </div>

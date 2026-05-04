@@ -122,14 +122,6 @@ export default function IndustryDetail() {
               {industry.features.map((f, i) => (
                 <StaggerItem key={i}>
                   <div className="group h-full bg-white border-r border-b border-slate-100 p-8 sm:p-10 hover:bg-slate-50/50 transition-all duration-300 relative overflow-hidden">
-                    {/* Performance Marker */}
-                    <div className="flex items-center gap-3 mb-8">
-                      <span className="text-[10px] font-black text-blue-500 px-2 py-1 bg-blue-50 rounded-sm" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-                        UNIT_MOD_0{i + 1}
-                      </span>
-                      <div className="h-px flex-1 bg-slate-100" />
-                    </div>
-
                     <div className="relative z-10">
                       <h3 className="mb-4 tracking-tighter uppercase">
                         {f.title}
@@ -183,11 +175,10 @@ export default function IndustryDetail() {
               ].map((step, i) => (
                 <div key={i} className="group relative bg-white border-r border-b border-slate-100 p-8 hover:bg-blue-50/30 transition-all duration-300 min-h-[300px] flex flex-col justify-between">
                   <div>
-                    <div className="flex items-center justify-between mb-8">
+                    <div className="mb-8">
                       <div className="w-10 h-10 rounded-sm bg-[#0B1B3D] text-white flex items-center justify-center group-hover:bg-blue-600 transition-colors">
                         <step.icon size={20} />
                       </div>
-                      <span className="text-[10px] font-black text-slate-300" style={{ fontFamily: "'JetBrains Mono', monospace" }}>0{i + 1}</span>
                     </div>
 
                     <h3 className="mb-4 tracking-tighter uppercase">
@@ -245,11 +236,6 @@ export default function IndustryDetail() {
                         href={`/services/${s.slug}`}
                         className="group block p-6 bg-white border border-slate-100 rounded-xl hover:shadow-xl hover:border-blue-500/20 transition-all duration-300 relative overflow-hidden"
                       >
-                        <div className="flex items-center gap-2 mb-4">
-                          <div className="w-1 h-1 rounded-full bg-blue-500" />
-                          <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest" style={{ fontFamily: "'JetBrains Mono', monospace" }}>MOD_0{i + 1}</span>
-                        </div>
-
                         <h3 className="mb-2 tracking-tighter uppercase group-hover:text-blue-600 transition-colors">
                           {s.title}
                         </h3>
@@ -305,7 +291,9 @@ export default function IndustryDetail() {
                     { title: "Redundancy", val: "99.99% UP", desc: "High-availability clusters for mission-critical industrial use." },
                   ].map((item, i) => (
                     <div key={i} className="p-8 border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] transition-colors rounded-none">
-                      <span className="text-[10px] font-black text-blue-400 mb-4 block" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{item.val || `SEC_MOD_0${i + 1}`}</span>
+                      {item.val ? (
+                        <span className="text-[10px] font-black text-blue-400 mb-4 block" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{item.val}</span>
+                      ) : null}
                       <h3 className="mb-3 tracking-tighter uppercase">{item.title}</h3>
                       <p className="text-[12px] text-slate-400 leading-relaxed font-medium">{item.desc}</p>
                     </div>
@@ -347,7 +335,6 @@ export default function IndustryDetail() {
                   <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[350px]">
                     {/* Left: Category Label */}
                     <div className="lg:col-span-5 p-8 lg:p-12 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/5 bg-white/[0.02] text-white">
-                      <span className="text-[10px] font-black text-blue-400 uppercase tracking-[0.2em] mb-6">Module 0{i + 1}</span>
                       <h3 className="mb-6 text-white font-black tracking-tight uppercase">{c.cat}</h3>
                       <p className="text-sm text-blue-100/40 leading-relaxed font-medium">{c.desc}</p>
                     </div>

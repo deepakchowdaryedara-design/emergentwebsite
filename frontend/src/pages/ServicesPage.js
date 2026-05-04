@@ -100,19 +100,13 @@ export default function ServicesPage() {
             </AnimatedSection>
             <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { step: "01", title: "Assess", desc: "Evaluate current systems, data readiness, and operational bottlenecks." },
-                { step: "02", title: "Design", desc: "Define architecture, security controls, and phased delivery roadmap." },
-                { step: "03", title: "Build", desc: "Implement with rapid sprint cycles, quality checks, and stakeholder feedback." },
-                { step: "04", title: "Scale", desc: "Operationalize with monitoring, optimization, and cross-team adoption plans." },
+                { title: "Assess", desc: "Evaluate current systems, data readiness, and operational bottlenecks." },
+                { title: "Design", desc: "Define architecture, security controls, and phased delivery roadmap." },
+                { title: "Build", desc: "Implement with rapid sprint cycles, quality checks, and stakeholder feedback." },
+                { title: "Scale", desc: "Operationalize with monitoring, optimization, and cross-team adoption plans." },
               ].map((item) => (
-                <StaggerItem key={item.step}>
+                <StaggerItem key={item.title}>
                   <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
-                    <span
-                      className="inline-flex items-center rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 px-2.5 py-1 text-[11px] font-semibold tracking-wider text-[#2563EB] mb-4"
-                      style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                    >
-                      STEP {item.step}
-                    </span>
                     <h3
                       className="mb-2"
 
@@ -258,7 +252,7 @@ export default function ServicesPage() {
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[350px]">
                     <div className={`lg:col-span-4 p-8 lg:p-12 flex flex-col justify-center ${item.color} text-white`}>
-                      <span className="text-[10px] font-black uppercase tracking-[0.3em] mb-4 opacity-70">Capability Layer // 0{i + 1}</span>
+                      <span className="text-[10px] font-black uppercase tracking-[0.3em] mb-4 opacity-70">Capability layer</span>
                       <h3 className="mb-6" >{item.title}</h3>
                       <div className="w-12 h-1 bg-white/20 rounded-full" />
                     </div>

@@ -56,16 +56,13 @@ export default function SecurityPage() {
           </AnimatedSection>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { step: "01", title: "Assess", desc: "Threat modeling and environment risk analysis before implementation." },
-              { step: "02", title: "Design", desc: "Control architecture, access patterns, and policy enforcement design." },
-              { step: "03", title: "Implement", desc: "Secure coding practices, review workflows, and hardening controls." },
-              { step: "04", title: "Monitor", desc: "Observability, alerting, and governance checks in production." },
+              { title: "Assess", desc: "Threat modeling and environment risk analysis before implementation." },
+              { title: "Design", desc: "Control architecture, access patterns, and policy enforcement design." },
+              { title: "Implement", desc: "Secure coding practices, review workflows, and hardening controls." },
+              { title: "Monitor", desc: "Observability, alerting, and governance checks in production." },
             ].map((item) => (
-              <StaggerItem key={item.step}>
+              <StaggerItem key={item.title}>
                 <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
-                  <span className="inline-flex items-center rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 px-2.5 py-1 text-[11px] font-semibold tracking-wider text-[#2563EB] mb-4" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-                    STEP {item.step}
-                  </span>
                   <h3 className="mb-2" >{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>

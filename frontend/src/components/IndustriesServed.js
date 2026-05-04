@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Check } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import industries from "../data/industries";
 import industryTabUseCases from "../data/industryTabUseCases";
@@ -78,9 +79,7 @@ export default function IndustriesServed({ title }) {
                 >
                   <div className="flex items-center gap-5">
                     <div className="w-9 h-9 bg-[#0B1B3D] rounded-sm flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#0B1B3D]/15 transition-transform duration-500 group-hover:scale-110">
-                      <span className="text-[11px] text-white font-black" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
+                      <Check className="h-4 w-4 text-white" strokeWidth={2.5} aria-hidden />
                     </div>
                     <span className="text-base text-[#0B1B3D] font-bold leading-tight tracking-tight">
                       {uc}

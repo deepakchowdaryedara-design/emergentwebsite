@@ -1,3 +1,13 @@
 {
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "build": {
+    "env": {
+      "NODE_OPTIONS": "--max-old-space-size=6144",
+      "GENERATE_SOURCEMAP": "false",
+      "CI": "true"
+    }
+  },
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }

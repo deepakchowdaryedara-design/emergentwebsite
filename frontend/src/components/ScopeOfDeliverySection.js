@@ -260,11 +260,11 @@ export default function ScopeOfDeliverySection({ service }) {
   return (
     <section
       data-testid="subservices-section"
-      className="corp-pat-dots border-b border-slate-100 bg-[#fafbfc] pb-6 pt-8 sm:pb-8 sm:pt-10 md:pb-9 md:pt-12"
+      className="corp-pat-dots border-b border-slate-100 bg-[#fafbfc] pb-4 pt-6 sm:pb-6 sm:pt-8 md:pb-8 md:pt-10"
     >
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <AnimatedSection>
-          <div className="mb-7 max-w-2xl text-left lg:mb-8">
+          <div className="mb-5 max-w-2xl text-left lg:mb-6">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
               Scope of Delivery
             </p>
@@ -281,7 +281,7 @@ export default function ScopeOfDeliverySection({ service }) {
         <div className="flex min-h-0 flex-col gap-4 lg:flex-row lg:items-start lg:gap-5">
           {/* Left: nav panel grows when column stretches to match detail column */}
           <div className="flex w-full shrink-0 flex-col lg:h-full lg:min-h-0 lg:w-[min(100%,300px)] lg:gap-3 xl:w-[320px]">
-            <div className="corp-scope-panel flex min-h-0 flex-col overflow-hidden rounded-md border border-slate-200 bg-white shadow-[0_1px_3px_rgba(15,23,42,0.06)] lg:min-h-0 lg:flex-1">
+            <div className="corp-scope-panel flex min-h-0 flex-col overflow-hidden rounded-md border border-slate-200 bg-white shadow-[0_1px_3px_rgba(15,23,42,0.06)] lg:min-h-0">
               <nav
                 className="flex flex-col lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-y-contain lg:[scrollbar-width:thin]"
                 aria-label="Service modules menu"

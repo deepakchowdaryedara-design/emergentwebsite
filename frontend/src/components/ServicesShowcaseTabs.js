@@ -20,13 +20,13 @@ export default function ServicesShowcaseTabs({
 
   return (
     <div className="bg-[#020b2d] text-white rounded-sm overflow-hidden">
-      <div className="px-6 sm:px-10 lg:px-14 pt-8 sm:pt-10 pb-6 border-b border-white/10">
+      <div className="px-6 sm:px-10 lg:px-14 pt-6 sm:pt-8 pb-4 border-b border-white/10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           <div className="lg:col-span-8">
             <h3 className="text-3xl sm:text-4xl font-black tracking-tight max-w-2xl">{title}</h3>
           </div>
           <div className="lg:col-span-4">
-            <p className="text-sm text-slate-300 leading-relaxed mb-4">{description}</p>
+            <p className="text-sm text-slate-300 leading-relaxed mb-3">{description}</p>
             <Link to="/services" className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-blue-300 transition-colors">
               View All Services
               <ArrowRight size={15} />

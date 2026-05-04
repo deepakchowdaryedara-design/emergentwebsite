@@ -62,7 +62,7 @@ export default function ServiceDetail() {
 
       {/* 4. Methodology: phased execution roadmap */}
       <div className="relative z-10 bg-white shadow-[0_-10px_50px_rgba(0,0,0,0.05)]">
-        <section className="border-y border-slate-100 py-6 sm:py-8 md:py-10">
+        <section className="border-y border-slate-100 py-4 sm:py-6 md:py-8">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="mb-8 max-w-2xl text-left sm:mb-10">
@@ -110,7 +110,7 @@ export default function ServiceDetail() {
 
       {/* 6. Assurance & outcomes: rationale + proof metrics */}
       <div className="relative z-10 bg-white shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
-        <section className="border-y border-slate-100 bg-white py-6 sm:py-8 md:py-10">
+        <section className="border-y border-slate-100 bg-white py-4 sm:py-6 md:py-8">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-16">
               <div className="lg:col-span-6 xl:col-span-5">

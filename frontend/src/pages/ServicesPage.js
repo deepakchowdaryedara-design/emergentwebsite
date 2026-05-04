@@ -44,7 +44,7 @@ export default function ServicesPage() {
       </div>
 
       <div className="relative z-10 bg-white shadow-[0_-10px_50px_rgba(0,0,0,0.05)]">
-        <section className="py-6 sm:py-8 md:py-10 corp-pat-dots">
+        <section className="py-4 sm:py-6 md:py-8 corp-pat-dots">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <ServicesShowcaseTabs
               services={services}
@@ -53,10 +53,10 @@ export default function ServicesPage() {
             />
           </div>
         </section>
-        <section className="py-6 sm:py-8 md:py-10 bg-[#F8FAFC]">
+        <section className="py-4 sm:py-6 md:py-8 bg-[#F8FAFC]">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-2xl mb-8">
+              <div className="max-w-2xl mb-6">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Operating model</p>
                 <h2 className="mb-4">
                   Operational Reality
@@ -88,10 +88,10 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section className="py-6 sm:py-8 md:py-10 corp-pat-cross-dash">
+        <section className="py-4 sm:py-6 md:py-8 corp-pat-cross-dash">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-2xl mb-8">
+              <div className="max-w-2xl mb-6">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
                 <h2 className="mb-4">
                   Strategy to Scaled Ops
@@ -126,10 +126,10 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section className="py-6 sm:py-8 md:py-10 bg-white">
+        <section className="py-4 sm:py-6 md:py-8 bg-white">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-3xl mb-8">
+              <div className="max-w-3xl mb-6">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
                 <h2 className="mb-5">
                   Delivery Models
@@ -169,10 +169,10 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section className="py-6 sm:py-8 md:py-10 corp-pat-diag-dash">
+        <section className="py-4 sm:py-6 md:py-8 corp-pat-diag-dash">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-3xl mb-8">
+              <div className="max-w-3xl mb-6">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Coverage</p>
                 <h2 className="mb-5">
                   Services Adapted to Real Industry Constraints
@@ -198,10 +198,10 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section data-testid="technology-coverage-section" className="py-6 sm:py-8 md:py-10 bg-white relative">
+        <section data-testid="technology-coverage-section" className="py-4 sm:py-6 md:py-8 bg-white relative">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-3xl mb-8">
+              <div className="max-w-3xl mb-6">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">
                   Coverage
                 </p>
@@ -279,10 +279,10 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
-        <section className="py-6 sm:py-8 md:py-10 bg-[#F8FAFC]">
+        <section className="py-4 sm:py-6 md:py-8 bg-[#F8FAFC]">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-3xl mb-8">
+              <div className="max-w-3xl mb-6">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Assurance</p>
                 <h2 className="mb-5">
                   Governance, Security, and Quality Built Into Delivery
@@ -324,10 +324,10 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section className="py-6 sm:py-8 md:py-10 bg-white border-y border-slate-200/70">
+        <section className="py-4 sm:py-6 md:py-8 bg-white border-y border-slate-200/70">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-3xl mb-8">
+              <div className="max-w-3xl mb-6">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
                 <h2 className="mb-5">
                   What Teams Typically Improve After Engagement
@@ -376,10 +376,10 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section className="py-6 sm:py-8 md:py-10 corp-pat-dots">
+        <section className="py-4 sm:py-6 md:py-8 corp-pat-dots">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-3xl mb-8">
+              <div className="max-w-3xl mb-6">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</p>
                 <h2 className="mb-5">
                   Execution Rhythm Options
@@ -433,7 +433,7 @@ export default function ServicesPage() {
 
       {/* Surface Layer 2 */}
       <div className="relative z-10 bg-white shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
-        <section className="py-6 sm:py-8 md:py-10 bg-white border-y border-slate-200/70">
+        <section className="py-4 sm:py-6 md:py-8 bg-white border-y border-slate-200/70">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
               <div className="text-left mb-8">

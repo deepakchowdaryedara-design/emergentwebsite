@@ -1,7 +1,7 @@
 /**
  * Fixed top banner with horizontally scrolling notice text.
  */
-const MESSAGE = "This website is still under development";
+const MESSAGE = "This website is under development";
 
 function ScrollingTrack() {
   const chunk = (

@@ -4,28 +4,27 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import axios from "axios";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+import { API_BASE } from "../../apiConfig";
 
 export function TestimonialManager() {
   const [items, setItems] = useState([]);
   const [editing, setEditing] = useState(null);
   const [form, setForm] = useState({ name: "", role: "", text: "" });
 
-  const load = () => axios.get(`${API}/testimonials`, { withCredentials: true }).then(r => setItems(r.data));
+  const load = () => axios.get(`${API_BASE}/testimonials`, { withCredentials: true }).then(r => setItems(r.data));
   useEffect(() => { load(); }, []);
 
   const save = async () => {
     if (!form.name || !form.text) return;
     if (editing) {
-      await axios.put(`${API}/testimonials/${editing}`, form, { withCredentials: true });
+      await axios.put(`${API_BASE}/testimonials/${editing}`, form, { withCredentials: true });
     } else {
-      await axios.post(`${API}/testimonials`, form, { withCredentials: true });
+      await axios.post(`${API_BASE}/testimonials`, form, { withCredentials: true });
     }
     setForm({ name: "", role: "", text: "" }); setEditing(null); load();
   };
 
-  const del = async (id) => { if (window.confirm("Delete?")) { await axios.delete(`${API}/testimonials/${id}`, { withCredentials: true }); load(); } };
+  const del = async (id) => { if (window.confirm("Delete?")) { await axios.delete(`${API_BASE}/testimonials/${id}`, { withCredentials: true }); load(); } };
   const edit = (item) => { setEditing(item.id); setForm({ name: item.name, role: item.role, text: item.text }); };
 
   return (
@@ -64,21 +63,21 @@ export function JobManager() {
   const [editing, setEditing] = useState(null);
   const [form, setForm] = useState({ title: "", department: "", location: "", type: "Full-Time", experience: "", description: "", responsibilities: "", requirements: "", status: "active" });
 
-  const load = () => axios.get(`${API}/jobs`, { withCredentials: true }).then(r => setItems(r.data));
+  const load = () => axios.get(`${API_BASE}/jobs`, { withCredentials: true }).then(r => setItems(r.data));
   useEffect(() => { load(); }, []);
 
   const save = async () => {
     if (!form.title) return;
     const payload = { ...form, responsibilities: form.responsibilities.split("\n").filter(Boolean), requirements: form.requirements.split("\n").filter(Boolean) };
     if (editing) {
-      await axios.put(`${API}/jobs/${editing}`, payload, { withCredentials: true });
+      await axios.put(`${API_BASE}/jobs/${editing}`, payload, { withCredentials: true });
     } else {
-      await axios.post(`${API}/jobs`, payload, { withCredentials: true });
+      await axios.post(`${API_BASE}/jobs`, payload, { withCredentials: true });
     }
     setForm({ title: "", department: "", location: "", type: "Full-Time", experience: "", description: "", responsibilities: "", requirements: "", status: "active" }); setEditing(null); load();
   };
 
-  const del = async (id) => { if (window.confirm("Delete?")) { await axios.delete(`${API}/jobs/${id}`, { withCredentials: true }); load(); } };
+  const del = async (id) => { if (window.confirm("Delete?")) { await axios.delete(`${API_BASE}/jobs/${id}`, { withCredentials: true }); load(); } };
   const edit = (item) => { setEditing(item.id); setForm({ ...item, responsibilities: (item.responsibilities || []).join("\n"), requirements: (item.requirements || []).join("\n") }); };
 
   return (
@@ -126,7 +125,7 @@ export function JobManager() {
 
 export function ContactsList() {
   const [items, setItems] = useState([]);
-  useEffect(() => { axios.get(`${API}/contact`, { withCredentials: true }).then(r => setItems(r.data)).catch(() => {}); }, []);
+  useEffect(() => { axios.get(`${API_BASE}/contact`, { withCredentials: true }).then(r => setItems(r.data)).catch(() => {}); }, []);
 
   return (
     <div>
@@ -158,9 +157,9 @@ export function ContactsList() {
 
 export function CaseStudyManager() {
   const [items, setItems] = useState([]);
-  const load = () => axios.get(`${API}/case-studies`, { withCredentials: true }).then(r => setItems(r.data));
+  const load = () => axios.get(`${API_BASE}/case-studies`, { withCredentials: true }).then(r => setItems(r.data));
   useEffect(() => { load(); }, []);
-  const del = async (id) => { if (window.confirm("Delete?")) { await axios.delete(`${API}/case-studies/${id}`, { withCredentials: true }); load(); } };
+  const del = async (id) => { if (window.confirm("Delete?")) { await axios.delete(`${API_BASE}/case-studies/${id}`, { withCredentials: true }); load(); } };
 
   return (
     <div>

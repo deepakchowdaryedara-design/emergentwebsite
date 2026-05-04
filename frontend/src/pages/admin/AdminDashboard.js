@@ -2,16 +2,15 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FileText, Briefcase, MessageSquare, Users, Mail, Eye, TrendingUp } from "lucide-react";
 import axios from "axios";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+import { API_BASE } from "../../apiConfig";
 
 export default function AdminDashboard() {
   const [stats, setStats] = useState(null);
   const [topArticles, setTopArticles] = useState([]);
 
   useEffect(() => {
-    axios.get(`${API}/analytics/overview`, { withCredentials: true }).then(r => setStats(r.data)).catch(() => {});
-    axios.get(`${API}/analytics/top-articles`, { withCredentials: true }).then(r => setTopArticles(r.data)).catch(() => {});
+    axios.get(`${API_BASE}/analytics/overview`, { withCredentials: true }).then(r => setStats(r.data)).catch(() => {});
+    axios.get(`${API_BASE}/analytics/top-articles`, { withCredentials: true }).then(r => setTopArticles(r.data)).catch(() => {});
   }, []);
 
   const cards = stats ? [

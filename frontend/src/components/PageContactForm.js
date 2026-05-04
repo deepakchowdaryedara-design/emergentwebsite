@@ -4,9 +4,7 @@ import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
 import axios from "axios";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { API_BASE } from "../apiConfig";
 
 export default function PageContactForm({ context }) {
   const [form, setForm] = useState({ first_name: "", last_name: "", email: "", phone: "", description: "" });
@@ -25,7 +23,7 @@ export default function PageContactForm({ context }) {
     }
     setLoading(true);
     try {
-      await axios.post(`${API}/contact`, { ...form, description: context ? `[${context}] ${form.description}` : form.description });
+      await axios.post(`${API_BASE}/contact`, { ...form, description: context ? `[${context}] ${form.description}` : form.description });
       setSubmitted(true);
       setForm({ first_name: "", last_name: "", email: "", phone: "", description: "" });
     } catch {

@@ -677,8 +677,12 @@ async def delete_job(item_id: str, request: Request):
     return {"message": "Deleted"}
 
 
-UPLOAD_DIR = ROOT_DIR / "uploads"
-UPLOAD_DIR.mkdir(exist_ok=True)
+# Vercel: only /tmp is writable; uploads are per-instance and not durable without object storage.
+if os.environ.get("VERCEL"):
+    UPLOAD_DIR = Path("/tmp") / "uploads"
+else:
+    UPLOAD_DIR = ROOT_DIR / "uploads"
+UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 
 @api_router.post("/upload")
@@ -853,19 +857,36 @@ async def startup():
         except Exception as e:
             logger.error(f"Failed to seed admin user: {e}")
 
-    creds_dir = ROOT_DIR.parent / "memory"
-    creds_dir.mkdir(parents=True, exist_ok=True)
-    creds_path = creds_dir / "test_credentials.md"
-    creds_path.write_text(
-        f"# Test Credentials\n\n## Admin\n- Email: {admin_email}\n- Password: {admin_password}\n- Role: admin\n\n## Auth Endpoints\n- POST /api/auth/login\n- POST /api/auth/logout\n- GET /api/auth/me\n",
-        encoding="utf-8",
-    )
+    try:
+        creds_dir = ROOT_DIR.parent / "memory"
+        creds_dir.mkdir(parents=True, exist_ok=True)
+        creds_path = creds_dir / "test_credentials.md"
+        creds_path.write_text(
+            f"# Test Credentials\n\n## Admin\n- Email: {admin_email}\n- Password: {admin_password}\n- Role: admin\n\n## Auth Endpoints\n- POST /api/auth/login\n- POST /api/auth/logout\n- GET /api/auth/me\n",
+            encoding="utf-8",
+        )
+    except OSError:
+        logger.warning("Could not write test credentials file (filesystem may be read-only)")
 
 
 app.include_router(api_router)
 
-frontend_url = os.environ.get("FRONTEND_URL", os.environ.get("CORS_ORIGINS", "*"))
-origins = [frontend_url] if frontend_url != "*" else ["*"]
+
+def _cors_allow_origins() -> List[str]:
+    explicit = (os.environ.get("FRONTEND_URL") or os.environ.get("CORS_ORIGINS") or "").strip()
+    if explicit == "*":
+        return ["*"]
+    if explicit:
+        return [explicit.rstrip("/")]
+    # Vercel sets VERCEL_URL (hostname only) so credentialed same-project deploys work without FRONTEND_URL.
+    vercel_url = (os.environ.get("VERCEL_URL") or "").strip()
+    if vercel_url:
+        host = vercel_url.replace("https://", "").replace("http://", "").split("/")[0]
+        return [f"https://{host}"]
+    return ["*"]
+
+
+origins = _cors_allow_origins()
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,

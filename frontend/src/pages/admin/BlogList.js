@@ -4,19 +4,18 @@ import { Plus, Edit, Trash2, Eye, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import axios from "axios";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+import { API_BASE } from "../../apiConfig";
 
 export default function BlogList() {
   const [articles, setArticles] = useState([]);
   const [search, setSearch] = useState("");
 
-  const load = () => axios.get(`${API}/blog`, { withCredentials: true }).then(r => setArticles(r.data)).catch(() => {});
+  const load = () => axios.get(`${API_BASE}/blog`, { withCredentials: true }).then(r => setArticles(r.data)).catch(() => {});
   useEffect(() => { load(); }, []);
 
   const deleteArticle = async (id) => {
     if (!window.confirm("Delete this article?")) return;
-    await axios.delete(`${API}/blog/${id}`, { withCredentials: true });
+    await axios.delete(`${API_BASE}/blog/${id}`, { withCredentials: true });
     load();
   };
 

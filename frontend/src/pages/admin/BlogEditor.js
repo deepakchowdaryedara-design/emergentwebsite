@@ -5,8 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Plus, Trash2, ArrowUp, ArrowDown, Upload, Save } from "lucide-react";
 import axios from "axios";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+import { API_BASE } from "../../apiConfig";
 
 export default function BlogEditor() {
   const { id } = useParams();
@@ -21,7 +20,7 @@ export default function BlogEditor() {
 
   useEffect(() => {
     if (!isNew) {
-      axios.get(`${API}/blog`, { withCredentials: true }).then(r => {
+      axios.get(`${API_BASE}/blog`, { withCredentials: true }).then(r => {
         const article = r.data.find(a => a.id === id);
         if (article) {
           setForm({ title: article.title, slug: article.slug, category: article.category || "", excerpt: article.excerpt || "", read_time: article.read_time || "", status: article.status || "draft", scheduled_at: article.scheduled_at || "", image: article.image || "" });
@@ -54,7 +53,7 @@ export default function BlogEditor() {
     try {
       const fd = new FormData();
       fd.append("file", file);
-      const res = await axios.post(`${API}/upload`, fd, { withCredentials: true, headers: { "Content-Type": "multipart/form-data" } });
+      const res = await axios.post(`${API_BASE}/upload`, fd, { withCredentials: true, headers: { "Content-Type": "multipart/form-data" } });
       setForm(p => ({ ...p, image: res.data.url }));
     } catch { setError("Upload failed"); }
     finally { setUploading(false); }
@@ -67,9 +66,9 @@ export default function BlogEditor() {
     try {
       const payload = { ...form, content };
       if (isNew) {
-        await axios.post(`${API}/blog`, payload, { withCredentials: true });
+        await axios.post(`${API_BASE}/blog`, payload, { withCredentials: true });
       } else {
-        await axios.put(`${API}/blog/${id}`, payload, { withCredentials: true });
+        await axios.put(`${API_BASE}/blog/${id}`, payload, { withCredentials: true });
       }
       navigate("/admin/blog");
     } catch (err) {

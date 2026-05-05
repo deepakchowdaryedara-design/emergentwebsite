@@ -126,7 +126,7 @@ export default function Header() {
                     Company
                     <ChevronDown size={14} className="transition-transform group-hover:rotate-180" />
                   </button>
-                  <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute top-full left-0 mt-2 w-56 rounded-sm border border-slate-200 bg-white shadow-lg p-2 z-50">
+                  <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute top-full left-0 mt-2 w-56 rounded-sm border border-slate-200 bg-white shadow-lg p-2 z-50 max-h-[70vh] overflow-y-auto">
                     {companyLinks.map((link) => (
                       <Link
                         key={link.label}

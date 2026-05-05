@@ -41,31 +41,43 @@ def build_pdf(filename: str, title: str, subtitle: str, sections: list[tuple[str
 JURISDICTION_COMMON = [
     (
         "1. Purpose and Use",
-        "This template is a drafting baseline for master agreements and statements of work. It is intended for enterprise procurement, cross-border service delivery, and compliance-sensitive engagements. Replace bracketed fields before signature.",
+        "This template is a full drafting baseline for master service agreements and statements of work. It is designed for enterprise procurement, regulated workloads, and cross-border delivery models. Replace bracketed fields and align with commercial schedules before signature.",
     ),
     (
         "2. Governing Law and Jurisdiction Clause",
-        "Governing Law and Jurisdiction. This Agreement is governed by the laws of [Jurisdiction], excluding conflict-of-law principles. Subject to the dispute mechanism selected below, courts located in [Venue] have exclusive jurisdiction over disputes arising out of or in connection with this Agreement.",
+        "Governing Law and Jurisdiction. This Agreement, including any non-contractual obligations, is governed by the laws of [Jurisdiction], excluding conflict-of-law principles. Subject to Section 3 (Arbitration Option), courts located in [Venue] have exclusive jurisdiction over disputes arising out of or in connection with this Agreement.",
     ),
     (
         "3. Arbitration Option",
-        "Any dispute, controversy, or claim arising out of or in connection with this Agreement will be finally resolved by arbitration under [Arbitration Rules]. The seat of arbitration is [Seat], the language is English, and the tribunal will consist of [one/three] arbitrator(s).",
+        "Any dispute, controversy, or claim arising out of or in connection with this Agreement will be finally resolved by arbitration under [Arbitration Rules]. The seat is [Seat], language is English, and tribunal consists of [one/three] arbitrator(s). The award is final and binding and may be enforced in any court of competent jurisdiction.",
     ),
     (
-        "4. Interim and Injunctive Relief",
+        "4. Pre-Dispute Escalation and Cure Process",
+        "Before initiating formal proceedings, parties must escalate the dispute to designated commercial and legal contacts and participate in a good-faith resolution process for [30] days, unless urgent interim relief is required.",
+    ),
+    (
+        "5. Interim and Injunctive Relief",
         "Nothing in this clause prevents either party from seeking urgent interim, injunctive, or protective relief from a court of competent jurisdiction to prevent unauthorized disclosure, misuse of confidential information, or irreparable harm to intellectual property rights.",
     ),
     (
-        "5. Service of Process and Notices",
-        "Each party appoints an authorized notice address in writing. Formal legal notices, including service of process where permitted, will be sent to those addresses and deemed received under the notice mechanics set out in the Agreement.",
+        "6. Service of Process and Notices",
+        "Each party must appoint legal notice contacts in writing. Formal notices, including service of process where permitted, must be delivered under the notice mechanics in the Agreement and are effective on confirmed delivery events.",
     ),
     (
-        "6. Mandatory Law Savings",
+        "7. Class Action and Jury Trial Position (Optional)",
+        "To the extent permitted by law, parties may agree to waive jury trial rights and class or representative proceedings for contractual claims, while preserving rights that cannot be waived under mandatory law.",
+    ),
+    (
+        "8. Mandatory Law Savings",
         "If mandatory law in any applicable jurisdiction overrides part of this clause, only the non-compliant portion will be adjusted to the minimum extent required, and the remainder of this clause will continue in full force.",
     ),
     (
-        "7. Drafting Checklist",
-        "- Confirm enforceability with local counsel.\n- Align with liability, indemnity, and data transfer clauses.\n- Confirm whether arbitration, court venue, or hybrid model is preferred.\n- Ensure consistency with parent-company and affiliate contracting structure.",
+        "9. Enforcement and Survival",
+        "Dispute, governing law, confidentiality, limitation of liability, intellectual property, and payment obligations survive expiration or termination to the extent required for enforcement and legal closure.",
+    ),
+    (
+        "10. Drafting Checklist",
+        "- Confirm enforceability with local counsel.\n- Align with liability caps, indemnity scope, and limitation language.\n- Confirm arbitration, court venue, or hybrid enforcement model.\n- Verify entity naming, affiliate coverage, and parent guarantees.\n- Ensure consistency with data transfer and privacy appendices.",
     ),
 ]
 
@@ -73,52 +85,60 @@ JURISDICTION_COMMON = [
 PRIVACY_COMMON = [
     (
         "1. Purpose and Request Scope",
-        "Use this form to submit formal data-subject or consumer privacy requests. Requests can include access, correction, deletion/erasure, restriction, portability, objection, consent withdrawal, or other rights available under applicable law.",
+        "Use this form to submit formal data-subject or consumer privacy requests. Request types can include access, correction, deletion/erasure, restriction, portability, objection, opt-out rights, consent withdrawal, and complaint escalation rights where available under applicable law.",
     ),
     (
         "2. Requester Identity and Authority",
-        "Requester must provide full legal name, contact details, jurisdiction of residence, relationship to the data subject, and proof of authority where acting as an authorized agent or representative.",
+        "Requester must provide full legal name, contact details, jurisdiction of residence, and relationship to the data subject. Authorized agents must provide signed authorization and evidence reasonably required to validate authority.",
     ),
     (
         "3. Verification Requirements",
-        "The organization may request reasonable verification evidence before processing a request. Processing timelines begin after sufficient verification is completed. Incomplete or unverifiable requests may be rejected or paused where permitted by law.",
+        "The organization may request reasonable identity and authority evidence before processing. Processing timelines begin after verification is complete. Incomplete, unverifiable, or fraudulent requests may be rejected or paused where permitted by law.",
     ),
     (
         "4. Request Detail Requirements",
-        "Provide clear request type, relevant systems/services, date ranges, known identifiers, and expected outcome. Broad or unclear requests may require clarification before action is taken.",
+        "Provide clear request type, relevant systems or services, date ranges, known identifiers, and desired outcome. Broad or ambiguous requests may require clarification and may be scoped to ensure lawful and proportionate handling.",
     ),
     (
-        "5. Lawful Exceptions and Limitations",
+        "5. Lawful Exceptions, Limitations, and Refusal Grounds",
         "Requests may be denied, limited, or deferred where permitted by law, including legal privilege, security concerns, disproportionate burden, conflicting rights of others, fraud prevention obligations, or record-retention duties.",
     ),
     (
-        "6. Response Handling",
-        "Responses are issued within legal timelines applicable to the requester jurisdiction. Complex requests may require extensions where law permits. Final responses may include fulfillment, partial fulfillment, rejection basis, or appeal/escalation path.",
+        "6. Response Timelines and Extensions",
+        "Responses are issued within legally required timelines for the requester jurisdiction. Complex or multi-system requests may require lawful extension notices with reasons and revised completion dates.",
     ),
     (
-        "7. Request Template Block",
+        "7. Delivery, Security, and Evidence",
+        "Response packages may be delivered through secure channels and may be redacted where required by law. The organization may maintain request records, verification evidence, and response logs for compliance and legal defense.",
+    ),
+    (
+        "8. Appeal, Escalation, and Supervisory Authority",
+        "If a request is denied or partially fulfilled, the response should include lawful basis and available appeal or complaint path, including supervisory authority routes where applicable.",
+    ),
+    (
+        "9. Request Template Block",
         "To: Data Protection Officer / Privacy Team\nSubject: Privacy Rights Request\nRequest Type: [Specify]\nRequest Details: [Specify]\nIdentity and Contact Information: [Specify]\nVerification Attachments: [Specify]\nDeclaration: I confirm that this request is accurate and submitted in good faith.\nSignature and Date: [Specify]",
     ),
 ]
 
 
 JURISDICTION_ADDENDA = {
-    "india": "India Addendum: Consider arbitration seat and enforceability under Indian arbitration framework. Verify stamp duty, venue practicality, and governing law compatibility with procurement requirements.",
-    "uk": "UK Addendum: Confirm whether England and Wales courts or arbitration is preferred. Review non-contractual obligations language and consistency with UK data protection commitments.",
-    "eu": "EU Addendum: Select specific member-state law and venue. Validate compatibility with mandatory local procedural rules and cross-border data transfer obligations.",
-    "us-delaware": "US (Delaware) Addendum: Confirm federal/state court venue preference, jury trial waiver strategy, and class-action language alignment where legally appropriate.",
-    "singapore": "Singapore Addendum: Confirm SIAC framework, seat language, and emergency relief options. Validate consistency with regional enforcement strategy.",
-    "uae-difc": "UAE (DIFC) Addendum: Confirm DIFC court/arbitration preference and enforceability route for onshore and offshore counterparties.",
+    "india": "India Addendum: Validate enforceability under the Arbitration and Conciliation Act, 1996, seat/venue distinction, interim relief strategy, and stamp-duty implications for contract instruments.",
+    "uk": "UK Addendum: Confirm England and Wales law positioning, treatment of non-contractual obligations, and coordination with UK GDPR and sectoral regulatory obligations.",
+    "eu": "EU Addendum: Select member-state governing law explicitly, verify mandatory consumer or employment protections where relevant, and align with Brussels/Recast and local procedural rules.",
+    "us-delaware": "US (Delaware) Addendum: Confirm Delaware venue strategy (state/federal), arbitration enforceability under FAA, class action waiver compatibility, and emergency relief carve-outs.",
+    "singapore": "Singapore Addendum: Confirm SIAC options, emergency arbitrator access, and enforceability planning under New York Convention and Singapore procedural standards.",
+    "uae-difc": "UAE (DIFC) Addendum: Confirm DIFC law and court/arbitration route, including enforceability path between DIFC and onshore UAE courts where counterparties or assets are onshore.",
 }
 
 
 PRIVACY_ADDENDA = {
-    "india": "India Addendum: Map requests to Digital Personal Data Protection Act obligations where applicable, including consent withdrawal and grievance handling mechanics.",
-    "uk": "UK Addendum: Include UK GDPR rights framing and UK-specific response/complaint escalation to supervisory authority where relevant.",
-    "eu": "EU Addendum: Include GDPR article mapping and reference to supervisory authority complaint right in the relevant member state.",
-    "us": "US Addendum: Support state-specific rights (for example CCPA/CPRA), including access, deletion, correction, and opt-out/limitation rights where applicable.",
-    "singapore": "Singapore Addendum: Align request handling with PDPA access/correction obligations and lawful refusal conditions.",
-    "uae": "UAE Addendum: Align request handling to applicable UAE personal data frameworks and sector-specific requirements where relevant.",
+    "india": "India Addendum: Map requests to Digital Personal Data Protection Act obligations, including consent-manager pathways, correction/erasure handling, and grievance redress channels.",
+    "uk": "UK Addendum: Include UK GDPR data-subject rights framing, lawful refusal analysis, and ICO complaint pathway disclosures where required.",
+    "eu": "EU Addendum: Include GDPR article mappings, controller/processor role checks, and supervisory authority complaint rights in the relevant member state.",
+    "us": "US Addendum: Support CCPA/CPRA and state-specific rights, including know/access, deletion, correction, opt-out of sale/sharing, and sensitive PI limitation workflows where applicable.",
+    "singapore": "Singapore Addendum: Align request handling to PDPA access/correction obligations, verification steps, and lawful refusal conditions with response rationale.",
+    "uae": "UAE Addendum: Align request handling to applicable UAE federal and free-zone frameworks, including lawful basis checks and cross-border transfer considerations.",
 }
 
 
@@ -137,7 +157,12 @@ def main():
             filename,
             title,
             subtitle,
-            JURISDICTION_COMMON + [("8. Jurisdiction-Specific Guidance", JURISDICTION_ADDENDA[key]), ("9. Legal Validation", "This template is not legal advice. Final language must be validated by qualified legal counsel before execution.")],
+            JURISDICTION_COMMON
+            + [
+                ("11. Jurisdiction-Specific Guidance", JURISDICTION_ADDENDA[key]),
+                ("12. Optional Enterprise Clause Pack", "Include aligned clauses for confidentiality survival, liability cap mechanics, indemnity trigger standards, force majeure, sanctions compliance, and audit rights where contract model requires."),
+                ("13. Legal Validation", "This template is not legal advice. Final language must be validated by qualified legal counsel before execution."),
+            ],
         )
 
     privacy_files = [
@@ -154,7 +179,12 @@ def main():
             filename,
             title,
             subtitle,
-            PRIVACY_COMMON + [("8. Jurisdiction-Specific Guidance", PRIVACY_ADDENDA[key]), ("9. Legal Validation", "This template is not legal advice. Final handling and response determinations must follow applicable law and qualified legal counsel direction.")],
+            PRIVACY_COMMON
+            + [
+                ("10. Jurisdiction-Specific Guidance", PRIVACY_ADDENDA[key]),
+                ("11. Organization Internal Control Checklist", "Validate requester identity, confirm legal basis, check exemptions, route to legal for high-risk requests, and record final disposition in compliance logs."),
+                ("12. Legal Validation", "This template is not legal advice. Final handling and response determinations must follow applicable law and qualified legal counsel direction."),
+            ],
         )
 
     build_pdf(

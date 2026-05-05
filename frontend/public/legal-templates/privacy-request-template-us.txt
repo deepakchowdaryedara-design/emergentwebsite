@@ -1,0 +1,34 @@
+Privacy Request Template - United States (CCPA/CPRA and Applicable State Laws)
+
+Subject: Consumer Privacy Request
+
+To: Data Protection Officer / Privacy Team
+
+I am submitting a consumer privacy request concerning personal information processed by your organization.
+
+Request Type (select one or more):
+- Request to know / access
+- Request to delete
+- Request to correct
+- Request to opt out of sale or sharing (if applicable)
+- Request to limit use of sensitive personal information (if applicable)
+- Other: [Specify]
+
+Request Details:
+[Describe the request, services used, and relevant date range.]
+
+Identity and Contact Information:
+- Full name:
+- State of residence:
+- Email:
+- Phone:
+- Relationship to data subject (self / authorized agent):
+
+Verification Support:
+[Provide information required for identity and authorization verification.]
+
+Declaration:
+I confirm that this request is accurate and submitted in good faith.
+
+Signature (if required):
+Date:

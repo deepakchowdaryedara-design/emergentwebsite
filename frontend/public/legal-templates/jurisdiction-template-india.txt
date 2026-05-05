@@ -1,0 +1,16 @@
+Jurisdiction Selection Clause Template - India
+
+Use Case:
+Cross-border or domestic services where parties agree to India-focused governing law and venue.
+
+Template:
+Governing Law and Jurisdiction.
+This Agreement is governed by and construed in accordance with the laws of India, without regard to conflict of law principles. Subject to the arbitration clause (if selected), the courts at [City, India] have exclusive jurisdiction over any dispute arising out of or in connection with this Agreement.
+
+Optional Arbitration Variant:
+Any dispute, controversy, or claim arising out of or in connection with this Agreement will be referred to and finally resolved by arbitration under the [Arbitration Rules], seated in [City, India], with proceedings conducted in English.
+
+Drafting Notes:
+- Replace bracketed fields before signature.
+- Confirm enforceability with local legal counsel.
+- Align with the signed MSA, SOW, and procurement terms.

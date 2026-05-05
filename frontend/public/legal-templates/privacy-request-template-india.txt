@@ -1,0 +1,33 @@
+Privacy Request Template - India (DPDP-Oriented)
+
+Subject: Privacy Rights Request under Applicable Indian Data Protection Law
+
+To: Data Protection Officer / Privacy Team
+
+I am submitting a request regarding personal data processed by your organization.
+
+Request Type (select one or more):
+- Access to personal data
+- Correction / update of inaccurate data
+- Erasure of personal data
+- Withdrawal of consent
+- Other: [Specify]
+
+Request Details:
+[Provide clear details of your request, date range, and relevant service or account context.]
+
+Identity and Contact Information:
+- Full name:
+- Organization (if applicable):
+- Email:
+- Phone:
+- Relationship to data subject (self / authorized representative):
+
+Verification Support:
+[Provide reasonable identity verification details as requested.]
+
+Declaration:
+I confirm that this request is accurate and submitted in good faith.
+
+Signature (if required):
+Date:

@@ -1,0 +1,16 @@
+Jurisdiction Selection Clause Template - Singapore
+
+Use Case:
+Cross-border contracts using Singapore law and either court or arbitration route.
+
+Template:
+Governing Law and Jurisdiction.
+This Agreement is governed by the laws of Singapore. Subject to the arbitration clause (if selected), the courts of Singapore have exclusive jurisdiction over any dispute arising out of or in connection with this Agreement.
+
+Optional Arbitration Variant:
+Any dispute, controversy, or claim arising out of or in connection with this Agreement will be finally resolved by arbitration administered by SIAC under the SIAC Rules in force when the Notice of Arbitration is submitted. The seat of arbitration is Singapore, and the language is English.
+
+Drafting Notes:
+- Replace bracketed fields before signature.
+- Ensure alignment with confidentiality and data protection schedules.
+- Confirm consistency with payment and tax provisions.

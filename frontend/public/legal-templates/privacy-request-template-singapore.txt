@@ -1,0 +1,32 @@
+Privacy Request Template - Singapore (PDPA)
+
+Subject: Personal Data Access or Correction Request
+
+To: Data Protection Officer / Privacy Team
+
+I am submitting a personal data request under applicable Singapore data protection requirements.
+
+Request Type (select one or more):
+- Access request
+- Correction request
+- Withdrawal of consent
+- Other: [Specify]
+
+Request Details:
+[Provide request details, relevant service context, and date range.]
+
+Identity and Contact Information:
+- Full name:
+- Organization (if applicable):
+- Email:
+- Phone:
+- Relationship to data subject (self / authorized representative):
+
+Verification Support:
+[Provide reasonable identity verification details if requested.]
+
+Declaration:
+I confirm that this request is accurate and submitted in good faith.
+
+Signature (if required):
+Date:

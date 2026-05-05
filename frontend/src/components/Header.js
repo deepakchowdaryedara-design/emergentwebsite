@@ -24,7 +24,9 @@ const companyLinks = [
   { label: "Technology Partners", href: "/partners" },
   { label: "Security", href: "/security" },
   { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Career", href: "/careers" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
+  { label: "Legal Templates", href: "/legal-templates" },
+  { label: "Careers", href: "/careers" },
 ];
 
 export default function Header() {

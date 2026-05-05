@@ -1,0 +1,16 @@
+Jurisdiction Selection Clause Template - UAE (DIFC)
+
+Use Case:
+International commercial contracts selecting DIFC law and DIFC dispute routes.
+
+Template:
+Governing Law and Jurisdiction.
+This Agreement is governed by the laws of the Dubai International Financial Centre (DIFC). Subject to the arbitration clause (if selected), the DIFC Courts have exclusive jurisdiction over any dispute arising out of or in connection with this Agreement.
+
+Optional Arbitration Variant:
+Any dispute, controversy, or claim arising out of or in connection with this Agreement will be finally resolved by arbitration under the [Arbitration Rules], seated in the DIFC, Dubai, United Arab Emirates, and conducted in English.
+
+Drafting Notes:
+- Replace bracketed fields before signature.
+- Verify enforceability for onshore and offshore counterparty structures.
+- Check tax, sanctions, and data transfer implications for UAE-related projects.

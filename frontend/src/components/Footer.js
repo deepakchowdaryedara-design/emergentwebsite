@@ -29,6 +29,8 @@ const footerLinks = {
     { label: "Careers", href: "/careers" },
     { label: "Blog", href: "/blog" },
     { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms & Conditions", href: "/terms-and-conditions" },
+    { label: "Legal Templates", href: "/legal-templates" },
   ],
   Industries: [
     { label: "Commerce", href: "/industries/retail" },
@@ -86,9 +88,12 @@ export default function Footer() {
             <Link to="/privacy-policy" className="text-xs text-slate-500 hover:text-white cursor-pointer transition-colors">
               Privacy Policy
             </Link>
-            <span className="text-xs text-slate-500 hover:text-white cursor-pointer transition-colors">
-              Terms of Service
-            </span>
+            <Link to="/terms-and-conditions" className="text-xs text-slate-500 hover:text-white cursor-pointer transition-colors">
+              Terms & Conditions
+            </Link>
+            <Link to="/legal-templates" className="text-xs text-slate-500 hover:text-white cursor-pointer transition-colors">
+              Legal Templates
+            </Link>
             <button
               data-testid="scroll-to-top"
               onClick={scrollToTop}

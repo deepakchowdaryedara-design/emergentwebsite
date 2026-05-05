@@ -1,0 +1,35 @@
+Privacy Request Template - UAE
+
+Subject: Personal Data Rights Request
+
+To: Data Protection Officer / Privacy Team
+
+I am submitting a request concerning personal data processed by your organization in connection with services or website interactions.
+
+Request Type (select one or more):
+- Access to personal data
+- Correction / update
+- Deletion (where applicable)
+- Restriction or objection (where applicable)
+- Withdrawal of consent (where applicable)
+- Other: [Specify]
+
+Request Details:
+[Describe the request clearly, including service context and relevant date range.]
+
+Identity and Contact Information:
+- Full name:
+- Organization (if applicable):
+- Country / Emirate:
+- Email:
+- Phone:
+- Relationship to data subject (self / authorized representative):
+
+Verification Support:
+[Provide identity or authorization details reasonably required for verification.]
+
+Declaration:
+I confirm that this request is accurate and submitted in good faith.
+
+Signature (if required):
+Date:

@@ -1,0 +1,16 @@
+Jurisdiction Selection Clause Template - United States (Delaware)
+
+Use Case:
+Business contracts selecting Delaware law with state or federal venue in Delaware.
+
+Template:
+Governing Law and Jurisdiction.
+This Agreement is governed by the laws of the State of Delaware, without regard to conflict of law principles. Subject to the arbitration clause (if selected), each party irrevocably submits to the exclusive jurisdiction of the state and federal courts located in Delaware for any dispute arising out of or in connection with this Agreement.
+
+Optional Arbitration Variant:
+Any dispute, controversy, or claim arising out of or in connection with this Agreement will be finally resolved by arbitration under the [Arbitration Rules], seated in Wilmington, Delaware, and conducted in English.
+
+Drafting Notes:
+- Replace bracketed fields before signature.
+- Confirm whether jury trial waiver and class action waiver are required.
+- Align with indemnity, IP ownership, and limitation-of-liability terms.

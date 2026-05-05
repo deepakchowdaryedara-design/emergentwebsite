@@ -1,0 +1,39 @@
+Privacy Request Template - United Kingdom (UK GDPR)
+
+Subject: Data Subject Rights Request under UK GDPR
+
+To: Data Protection Officer / Privacy Team
+
+I am making a rights request concerning personal data processed by your organization.
+
+Request Type (select one or more):
+- Access (Subject Access Request)
+- Rectification
+- Erasure
+- Restriction of processing
+- Objection to processing
+- Data portability
+- Other: [Specify]
+
+Request Details:
+[Describe the request, relevant services, and any date range.]
+
+Identity and Contact Information:
+- Full name:
+- Organization (if applicable):
+- Email:
+- Phone:
+- Relationship to data subject (self / authorized representative):
+
+Verification Support:
+[Provide reasonable identity verification documentation if requested.]
+
+Preferred Response Method:
+- Email
+- Postal mail
+
+Declaration:
+I confirm that this request is accurate and submitted in good faith.
+
+Signature (if required):
+Date:

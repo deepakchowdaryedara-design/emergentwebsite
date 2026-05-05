@@ -1,0 +1,16 @@
+Jurisdiction Selection Clause Template - European Union
+
+Use Case:
+Commercial agreements where an EU member-state governing law and venue are selected by contract.
+
+Template:
+Governing Law and Jurisdiction.
+This Agreement is governed by the laws of [Member State], excluding its conflict of law rules. Subject to the arbitration clause (if selected), the courts of [City, Member State] have exclusive jurisdiction over any dispute arising out of or in connection with this Agreement.
+
+Optional Arbitration Variant:
+Any dispute, controversy, or claim arising out of or in connection with this Agreement will be finally resolved by arbitration under the [Arbitration Rules], with seat in [City, Member State], in the English language unless otherwise agreed in writing.
+
+Drafting Notes:
+- Replace bracketed fields before signature.
+- Confirm compatibility with mandatory EU and local member-state provisions.
+- Validate data transfer and data processing clauses alongside this section.

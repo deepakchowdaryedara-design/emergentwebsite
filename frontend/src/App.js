@@ -19,6 +19,8 @@ import TestimonialsPage from "@/pages/TestimonialsPage";
 import PartnersPage from "@/pages/PartnersPage";
 import SecurityPage from "@/pages/SecurityPage";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
+import TermsAndConditionsPage from "@/pages/TermsAndConditionsPage";
+import LegalTemplatesPage from "@/pages/LegalTemplatesPage";
 import BlogPage from "@/pages/BlogPage";
 import BlogDetail from "@/pages/BlogDetail";
 import CareersPage from "@/pages/CareersPage";
@@ -55,6 +57,8 @@ function App() {
           <Route path="/partners" element={<PublicLayout><PartnersPage /></PublicLayout>} />
           <Route path="/security" element={<PublicLayout><SecurityPage /></PublicLayout>} />
           <Route path="/privacy-policy" element={<PublicLayout><PrivacyPolicyPage /></PublicLayout>} />
+          <Route path="/terms-and-conditions" element={<PublicLayout><TermsAndConditionsPage /></PublicLayout>} />
+          <Route path="/legal-templates" element={<PublicLayout><LegalTemplatesPage /></PublicLayout>} />
           <Route path="/blog" element={<PublicLayout><BlogPage /></PublicLayout>} />
           <Route path="/blog/:slug" element={<PublicLayout><BlogDetail /></PublicLayout>} />
           <Route path="/careers" element={<PublicLayout><CareersPage /></PublicLayout>} />

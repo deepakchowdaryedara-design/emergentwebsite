@@ -1,0 +1,36 @@
+Privacy Request Template - European Union / EEA (GDPR)
+
+Subject: Data Subject Rights Request under GDPR
+
+To: Data Protection Officer / Privacy Team
+
+I am submitting a request regarding personal data processed under the GDPR.
+
+Request Type (select one or more):
+- Access (Article 15)
+- Rectification (Article 16)
+- Erasure (Article 17)
+- Restriction (Article 18)
+- Portability (Article 20)
+- Objection (Article 21)
+- Withdrawal of consent
+- Other: [Specify]
+
+Request Details:
+[Provide details of processing context, services used, and relevant date range.]
+
+Identity and Contact Information:
+- Full name:
+- Member State / Country:
+- Email:
+- Phone:
+- Relationship to data subject (self / authorized representative):
+
+Verification Support:
+[Provide information necessary for reasonable identity verification.]
+
+Declaration:
+I confirm that this request is accurate and submitted in good faith.
+
+Signature (if required):
+Date:

@@ -1,0 +1,16 @@
+Jurisdiction Selection Clause Template - United Kingdom
+
+Use Case:
+Service contracts using UK law and England and Wales venue.
+
+Template:
+Governing Law and Jurisdiction.
+This Agreement and any non-contractual obligations arising out of or in connection with it are governed by the laws of England and Wales. Subject to the arbitration clause (if selected), the courts of England and Wales have exclusive jurisdiction to settle any dispute arising out of or in connection with this Agreement.
+
+Optional Arbitration Variant:
+Any dispute, controversy, or claim arising out of or in connection with this Agreement will be finally resolved by arbitration under the [Arbitration Rules], seated in London, England, and conducted in English.
+
+Drafting Notes:
+- Replace bracketed fields before signature.
+- Check consumer or sector-specific mandatory rules where relevant.
+- Align this clause with insurance and limitation-of-liability provisions.

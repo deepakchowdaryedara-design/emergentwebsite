@@ -6,9 +6,9 @@ import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
 
 export default function HeroSection() {
   return (
-    <section id="hero" data-testid="hero-section" className="relative overflow-hidden bg-[#0B1B3D] text-white">
+    <section id="hero" data-testid="hero-section" className="sticky top-0 h-screen overflow-hidden bg-[#0B1B3D] text-white z-0">
       {/* Full-bleed hero: Refined centered design with high impact height */}
-      <div className="relative isolate flex min-h-[88vh] flex-col items-start justify-center text-left">
+      <div className="relative isolate flex h-full flex-col items-start justify-center text-left">
         <HeroAnimatedBackdrop video="/hero/Untitled.mp4" bgDark />
 
         {/* Left readability scrim: separates copy from bright mid-frame video detail */}
@@ -44,7 +44,7 @@ export default function HeroSection() {
               <Button
                 data-testid="hero-cta-primary"
                 asChild
-                className="bg-blue-600/80 hover:bg-blue-600 text-white backdrop-blur-sm rounded-full px-8 py-6 font-bold text-sm shadow-xl shadow-blue-500/10 transition-all hover:scale-105"
+                className="bg-[#2563EB] hover:bg-[#3B82F6] text-white rounded-full px-8 py-6 font-bold text-sm shadow-xl shadow-blue-500/20 transition-all hover:scale-105 active:scale-95"
               >
                 <Link to={contactFormTo("/", CONTACT_TOPIC.CONSULTATION)}>
                   Schedule a consultation <ArrowRight size={18} className="ml-2" />
@@ -54,14 +54,14 @@ export default function HeroSection() {
                 data-testid="hero-cta-secondary"
                 asChild
                 variant="outline"
-                className="bg-white/5 text-white/80 border-white/10 hover:bg-white/10 backdrop-blur-md rounded-full px-8 py-6 font-bold text-sm transition-all hover:scale-105"
+                className="bg-white/5 text-white border-white/20 hover:bg-white hover:text-[#0B1B3D] backdrop-blur-md rounded-full px-8 py-6 font-bold text-sm transition-all hover:scale-105 active:scale-95"
               >
                 <Link to={contactFormTo("/", CONTACT_TOPIC.CONTACT)}>Contact us</Link>
               </Button>
               <a
                 data-testid="hero-cta-explore"
                 href="#solutions"
-                className="text-sm font-semibold text-white/75 underline-offset-4 hover:text-white hover:underline sm:ml-1"
+                className="text-sm font-semibold text-white/80 underline-offset-8 hover:text-sky-300 hover:underline transition-colors sm:ml-2"
               >
                 Explore solutions
               </a>

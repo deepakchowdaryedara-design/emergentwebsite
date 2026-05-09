@@ -5,6 +5,7 @@ import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/Ani
 import FAQSection from "../components/FAQSection";
 import ServicesShowcaseTabs from "../components/ServicesShowcaseTabs";
 import services from "../data/services";
+import MethodologyPipeline from "../components/MethodologyPipeline";
 import { SERVICES_LANDING_HERO_IMAGE } from "../lib/heroImageThemes";
 
 export default function ServicesPage() {
@@ -100,26 +101,16 @@ export default function ServicesPage() {
                 </p>
               </div>
             </AnimatedSection>
-            <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { title: "Assess", desc: "Evaluate current systems, data readiness, and operational bottlenecks." },
-                { title: "Design", desc: "Define architecture, security controls, and phased delivery roadmap." },
-                { title: "Build", desc: "Implement with rapid sprint cycles, quality checks, and stakeholder feedback." },
-                { title: "Scale", desc: "Operationalize with monitoring, optimization, and cross-team adoption plans." },
-              ].map((item) => (
-                <StaggerItem key={item.title}>
-                  <div className="h-full rounded-sm border border-slate-200 bg-white p-6">
-                    <h3
-                      className="mb-2"
-
-                    >
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerChildren>
+            <div className="relative z-10">
+              <MethodologyPipeline 
+                steps={[
+                  { title: "Assess", desc: "Evaluate current systems, data readiness, and operational bottlenecks." },
+                  { title: "Design", desc: "Define architecture, security controls, and phased delivery roadmap." },
+                  { title: "Build", desc: "Implement with rapid sprint cycles, quality checks, and stakeholder feedback." },
+                  { title: "Scale", desc: "Operationalize with monitoring, optimization, and cross-team adoption plans." },
+                ]} 
+              />
+            </div>
           </div>
         </section>
         <section className="py-4 sm:py-6 md:py-8 bg-white">
@@ -316,52 +307,57 @@ export default function ServicesPage() {
             </StaggerChildren>
           </div>
         </section>
-        <section className="py-4 sm:py-6 md:py-8 bg-white border-y border-slate-200/70">
+        <section className="py-20 sm:py-24 bg-[#F8FAFC] border-y border-slate-200">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
             <AnimatedSection>
-              <div className="max-w-3xl mb-6">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Outcomes</p>
-                <h2 className="mb-5">
-                  Outcomes for <span className="corp-heading-secondary">service engagements</span>
+              <div className="max-w-3xl mb-16">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-6">
+                  <span className="text-[10px] font-black text-blue-700 uppercase tracking-widest">Outcomes</span>
+                </div>
+                <h2 className="mb-6 text-3xl font-black tracking-tighter text-[#0B1B3D] sm:text-4xl lg:text-[2.5rem] lg:leading-none uppercase">
+                  Outcomes for <span className="text-blue-600">service engagements</span>
                 </h2>
-                <p className="text-base text-slate-600 leading-relaxed">
+                <p className="text-base text-slate-500 font-medium leading-relaxed max-w-2xl">
                   These outcomes are discussion ranges from comparable programs, your baselines and acceptance tests still define what counts as success.
                 </p>
               </div>
             </AnimatedSection>
-            <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
                   title: "Operational efficiency",
                   metric: "Scoped",
                   desc: "Target relief on repetitive work once workflows are instrumented and acceptance criteria are explicit.",
+                  trend: "+25-40%"
                 },
                 {
                   title: "Decision velocity",
                   metric: "Measured",
                   desc: "Faster cycles when intelligence layers sit on governed data with clear escalation paths.",
+                  trend: "Real-time"
                 },
                 {
                   title: "Quality consistency",
                   metric: "Governed",
                   desc: "Lower variance when workflows, prompts, and evaluations are versioned with ownership.",
+                  trend: "99.9%"
                 },
               ].map((item) => (
                 <StaggerItem key={item.title}>
-                  <div className="h-full rounded-sm border border-slate-200 bg-[#F8FAFC] p-6">
-                    <p
-                      className="text-xs font-semibold text-[#2563EB] uppercase tracking-wider mb-2"
-                      style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                    >
-                      {item.title}
-                    </p>
-                    <p
-                      className="text-3xl font-bold text-[#0B1B3D] mb-2"
-
-                    >
+                  <div className="group h-full rounded-3xl border border-slate-200 bg-white p-8 shadow-[0_2px_4px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.08)] transition-all duration-500">
+                    <div className="flex justify-between items-start mb-8">
+                      <p className="text-[10px] font-black text-blue-600 uppercase tracking-[0.2em]">
+                        {item.title}
+                      </p>
+                      <span className="px-2 py-1 bg-green-50 text-green-700 text-[10px] font-bold rounded-md">
+                        {item.trend}
+                      </span>
+                    </div>
+                    <div className="w-12 h-1 bg-blue-600/10 group-hover:bg-blue-600 transition-all duration-500 mb-6 rounded-full" />
+                    <p className="text-4xl font-black text-[#0B1B3D] mb-4 tracking-tighter" >
                       {item.metric}
                     </p>
-                    <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                    <p className="text-sm text-slate-500 font-medium leading-relaxed">{item.desc}</p>
                   </div>
                 </StaggerItem>
               ))}

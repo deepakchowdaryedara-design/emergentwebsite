@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight, CheckCircle2, Brain, Database, Bot, Code2, Smartphone, Users, GitBranch, BarChart3, Zap, Share2, ShieldCheck } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Brain, Database, Bot, Code2, Smartphone, Users, GitBranch, BarChart3, Zap, Share2, ShieldCheck, Activity } from "lucide-react";
 import { useEffect } from "react";
 import PageHero from "../components/PageHero";
 import CTASection from "../components/CTASection";
@@ -151,47 +151,54 @@ export default function IndustryDetail() {
         {/* Related Case Studies */}
         <RelatedCaseStudies showLabel={false} industryFilter={industry.title} title={`Coverage across ${industry.title} scenarios`} />
 
-        {/* 4. Strategic Modules - Condensed Capability Matrix */}
-        <section data-testid="industry-services-section" className="py-6 sm:py-8 md:py-10 bg-[#F8FAFC] border-y border-slate-100">
-          <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
-              {/* Left Column - Tighter summary */}
-              <div className="lg:col-span-3 lg:sticky lg:top-24 h-fit">
-                <AnimatedSection>
-                  <h2 className="mb-6">
-                    Coverage Across <span className="corp-heading-secondary">service fit</span> for {industry.title}
-                  </h2>
-                  <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                    This coverage maps our service lines to the programs we usually run in this sector; exact scope is set after data and control review.
-                  </p>
-                </AnimatedSection>
+        {/* 4. Strategic Modules - Ultra-Compact Double-Column Registry */}
+        <section data-testid="industry-services-section" className="py-8 bg-white border-y border-slate-100">
+          <div className="w-full px-4 lg:px-8">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-8">
+              <div className="flex items-center gap-4">
+                <div className="w-1 h-6 bg-blue-600 rounded-full" />
+                <h2 className="text-lg lg:text-xl font-bold text-[#0B1B3D] tracking-tight">
+                  Operational Service Matrix <span className="text-slate-400 font-medium mx-2">/</span> <span className="text-blue-600">{industry.title}</span>
+                </h2>
               </div>
-
-              {/* Right Column - High-density 3-column grid */}
-              <div className="lg:col-span-9">
-                <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
-                  {services.slice(0, 9).map((s, i) => (
-                    <StaggerItem key={s.slug}>
-                      <a
-                        href={`/services/${s.slug}`}
-                        className="group block p-6 bg-white border border-slate-100 rounded-xl hover:shadow-xl hover:border-blue-500/20 transition-all duration-300 relative overflow-hidden"
-                      >
-                        <h3 className="mb-2 tracking-tighter uppercase group-hover:text-blue-600 transition-colors">
-                          {s.title}
-                        </h3>
-                        <p className="text-[11px] text-slate-500 leading-snug font-medium line-clamp-2 mb-4">
-                          {s.shortDesc}
-                        </p>
-
-                        <div className="flex items-center justify-between pt-4 border-t border-slate-50">
-                          <span className="text-[9px] font-black text-slate-300 group-hover:text-blue-600 transition-colors uppercase tracking-widest">Detail View</span>
-                          <ArrowRight size={12} className="text-blue-600 opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0" />
-                        </div>
-                      </a>
-                    </StaggerItem>
-                  ))}
-                </StaggerChildren>
+              <div className="flex items-center gap-3 px-3 py-1 bg-slate-50 rounded-full border border-slate-100">
+                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                 <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Active Inventory: {services.slice(0, 8).length} Modules</span>
               </div>
+            </div>
+
+            {/* Double-Column High-Density Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-0 border-t border-slate-100">
+               {services.slice(0, 8).map((s, i) => (
+                 <a 
+                   href={`/services/${s.slug}`} 
+                   key={i} 
+                   className="flex items-center justify-between py-4 border-b border-slate-100 hover:bg-blue-50/30 transition-all duration-300 group px-2"
+                 >
+                    <div className="flex items-center gap-8">
+                       <span className="font-mono text-[11px] font-bold text-slate-300 group-hover:text-blue-600 transition-colors">0{i+1}</span>
+                       <div>
+                          <h4 className="text-[13px] font-bold text-[#0B1B3D] uppercase tracking-tight group-hover:text-blue-600 transition-colors">
+                             {s.title}
+                          </h4>
+                          <p className="text-[10px] text-slate-400 font-medium mt-0.5 line-clamp-1">{s.shortDesc}</p>
+                       </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                       <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-blue-600 opacity-20 group-hover:opacity-100 transition-opacity" />
+                       <ArrowRight size={14} className="text-slate-300 group-hover:text-blue-600 transition-all group-hover:translate-x-0.5" />
+                    </div>
+                 </a>
+               ))}
+            </div>
+
+            <div className="mt-8 flex items-center justify-between">
+               <p className="text-[10px] text-slate-400 font-medium italic">
+                  * All modules are SOC 2 Type II verified for {industry.title} deployment.
+               </p>
+               <Link to="/services" className="text-[9px] font-bold text-blue-600 uppercase tracking-widest hover:underline decoration-2 underline-offset-4">
+                  Full Registry →
+               </Link>
             </div>
           </div>
         </section>

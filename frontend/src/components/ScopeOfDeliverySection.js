@@ -11,6 +11,7 @@ import {
   Brain,
   Building2,
   ChevronRight,
+  Check,
   ClipboardCheck,
   Cloud,
   Code2,
@@ -260,35 +261,33 @@ export default function ScopeOfDeliverySection({ service }) {
     };
   });
 
-  return (
-    <section
+  return (    <section
       data-testid="subservices-section"
-      className="corp-pat-dots border-b border-slate-100 bg-[#fafbfc] pb-4 pt-6 sm:pb-6 sm:pt-8 md:pb-8 md:pt-10"
+      className="relative overflow-hidden bg-[#F8FAFC] py-16 border-b border-slate-200"
     >
-      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
+      {/* Background Decorative Accents */}
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-100/15 rounded-full blur-[80px] -ml-48 -mt-48" />
+
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
         <AnimatedSection>
-          <div className="mb-5 max-w-2xl text-left lg:mb-6">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
-              Scope of Delivery
-            </p>
-            <h2 className="mb-3 text-3xl font-bold tracking-tight text-[#0B1B3D] sm:text-4xl">
-              Our {service.title} Services
+          <div className="mb-10 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-blue-50 border border-blue-100 mb-4">
+              <span className="text-[9px] font-black text-blue-700 uppercase tracking-widest">Scope of Delivery</span>
+            </div>
+            <h2 className="mb-4 text-3xl font-black tracking-tighter text-[#0B1B3D] sm:text-4xl lg:text-[2.2rem] lg:leading-none uppercase">
+              Applied <span className="text-blue-600">{service.title}</span> Services
             </h2>
-            <p className="text-[15px] leading-snug text-slate-600">
-              Service modules are structured to shorten time-to-value while keeping architecture
-              and operations maintainable.
+            <p className="text-sm text-slate-500 font-medium leading-relaxed">
+              Efficient service modules structured for rapid time-to-value.
             </p>
           </div>
         </AnimatedSection>
 
-        <div className="flex min-h-0 flex-col gap-4 lg:flex-row lg:items-start lg:gap-5">
-          {/* Left: nav panel grows when column stretches to match detail column */}
-          <div className="flex w-full shrink-0 flex-col lg:h-full lg:min-h-0 lg:w-[min(100%,300px)] lg:gap-3 xl:w-[320px]">
-            <div className="corp-scope-panel flex min-h-0 flex-col overflow-hidden rounded-md border border-slate-200 bg-white shadow-[0_1px_3px_rgba(15,23,42,0.06)] lg:min-h-0">
-              <nav
-                className="flex flex-col lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-y-contain lg:[scrollbar-width:thin]"
-                aria-label="Service modules menu"
-              >
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-8">
+          {/* Left: Sidebar Navigation */}
+          <div className="w-full lg:w-[280px] shrink-0 lg:sticky lg:top-24 lg:self-start space-y-4">
+            <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+              <nav className="flex flex-col" aria-label="Service modules menu">
                 {subs.map((s, i) => {
                   const isActive = active === i;
                   const ItemIcon = resolveSubserviceNavIcon(s);
@@ -296,27 +295,23 @@ export default function ScopeOfDeliverySection({ service }) {
                     <button
                       key={s.title}
                       type="button"
-                      data-testid={`scope-delivery-nav-${i}`}
                       onClick={() => setActive(i)}
-                      className={`flex w-full items-center gap-3 border-b border-slate-100 px-3 py-3 text-left transition-colors last:border-b-0 sm:px-4 ${isActive
-                          ? "border-l-[3px] border-l-[#0B1B3D] bg-slate-50 pl-[13px]"
-                          : "border-l-[3px] border-l-transparent hover:bg-slate-50/80"
+                      className={`group flex items-center gap-3 px-4 py-3 text-left transition-all duration-300 border-b border-slate-100 last:border-b-0 ${isActive
+                          ? "bg-[#0B1B3D] text-white"
+                          : "text-slate-600 hover:bg-blue-50/50 hover:text-blue-600"
                         }`}
                     >
-                      <ItemIcon
-                        className={`h-4 w-4 shrink-0 ${isActive ? "text-[#0B1B3D]" : "text-slate-400"}`}
-                        strokeWidth={2}
-                        aria-hidden
-                      />
-                      <span
-                        className={`flex-1 text-sm font-medium leading-snug ${isActive ? "text-[#0B1B3D]" : "text-slate-600"
-                          }`}
-                      >
+                      <div className={`p-1.5 rounded-lg transition-colors duration-300 ${isActive ? "bg-white/10" : "bg-slate-50 group-hover:bg-blue-100"}`}>
+                        <ItemIcon
+                          className={`h-3.5 w-3.5 shrink-0 ${isActive ? "text-white" : "text-slate-500 group-hover:text-blue-600"}`}
+                          strokeWidth={2.5}
+                        />
+                      </div>
+                      <span className={`flex-1 text-[11px] font-black uppercase tracking-tight ${isActive ? "text-white" : "text-slate-600"}`}>
                         {s.title}
                       </span>
                       <ChevronRight
-                        className={`h-4 w-4 shrink-0 ${isActive ? "text-slate-500" : "text-slate-300"}`}
-                        aria-hidden
+                        className={`h-3.5 w-3.5 shrink-0 transition-transform duration-300 ${isActive ? "text-white/40 translate-x-1" : "text-slate-300"}`}
                       />
                     </button>
                   );
@@ -324,92 +319,93 @@ export default function ScopeOfDeliverySection({ service }) {
               </nav>
             </div>
 
-            <div
-              className="corp-scope-panel shrink-0 rounded-md border border-slate-200 bg-white p-4 shadow-[0_1px_3px_rgba(15,23,42,0.06)] sm:p-5"
-              data-testid="scope-custom-scope-aside"
-            >
-              <div className="mb-2.5 flex h-9 w-9 items-center justify-center rounded-md border border-slate-200 bg-slate-50/80">
-                <Lightbulb className="h-4 w-4 text-slate-600" aria-hidden />
-              </div>
-              <h3 className="mb-1.5 text-sm font-semibold text-[#0B1B3D]">Custom scope</h3>
-              <p className="mb-4 text-sm leading-snug text-slate-600">
-                Discuss architecture, integration points, and delivery sequencing with our team.
+            <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm group">
+              <h3 className="mb-1 text-[11px] font-black text-[#0B1B3D] uppercase tracking-tight">Custom Scope</h3>
+              <p className="mb-4 text-[11px] text-slate-500 font-medium leading-relaxed">
+                Discuss integration points with our team.
               </p>
               <Link
                 to={contactFormTo(location.pathname, CONTACT_TOPIC.CONTACT)}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-[#0B1B3D] transition-colors hover:border-slate-400 hover:bg-slate-50"
+                className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-[#0B1B3D] text-white text-[10px] font-black uppercase tracking-widest hover:bg-blue-600 transition-all"
               >
-                Contact us
-                <ArrowRight className="h-4 w-4" aria-hidden />
+                Contact
+                <ArrowRight className="h-3.5 w-3.5" />
               </Link>
+            </div>
+
+            {/* Expert Support Card to fill space */}
+            <div className="bg-blue-50/50 border border-blue-100 rounded-2xl p-5 hidden lg:block">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
+                  <ShieldCheck className="h-4 w-4 text-white" />
+                </div>
+                <h4 className="text-[10px] font-black text-[#0B1B3D] uppercase tracking-widest">Institutional Support</h4>
+              </div>
+              <p className="text-[10px] text-slate-500 font-medium leading-relaxed">
+                Our engineering teams provide full-lifecycle support from deployment to optimization.
+              </p>
             </div>
           </div>
 
-          {/* Right: grows with content at zoom; scrolls only if needed (zoom-safe vs fixed vh + overflow clip) */}
+          {/* Right: Content Detail */}
           <div
             data-testid={`subservice-${active}`}
-            className="corp-scope-detail flex min-h-0 min-w-0 flex-1 flex-col overflow-y-auto overflow-x-hidden rounded-md border border-slate-200 border-t-[3px] border-t-[#0B1B3D] bg-white shadow-[0_2px_8px_rgba(15,23,42,0.06)] lg:min-h-0"
+            className="flex-1 min-w-0 bg-white border border-slate-200 rounded-3xl shadow-sm overflow-hidden"
           >
-            <div className="shrink-0 border-b border-slate-100 px-5 pb-4 pt-5 sm:px-6 sm:pb-5 sm:pt-6">
-              <h3 className="mb-2 text-xl font-semibold tracking-tight text-[#0B1B3D] sm:text-2xl">
-                {moduleTitle}
-              </h3>
-              <p className="mb-5 text-[15px] leading-snug text-slate-600">{moduleDesc}</p>
-              <p className="mb-1 text-xs font-semibold uppercase tracking-[0.12em] text-[#0B1B3D]/80">
-                Outcomes
+            {/* Header Content */}
+            <div className="p-6 lg:p-8 border-b border-slate-100">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-1 h-6 bg-blue-600 rounded-full" />
+                <h3 className="text-2xl font-black tracking-tighter text-[#0B1B3D] uppercase">
+                  {moduleTitle}
+                </h3>
+              </div>
+              <p className="text-[15px] text-slate-500 font-medium leading-relaxed mb-8">
+                {moduleDesc}
               </p>
-              <p className="mb-3 text-xs leading-snug text-slate-600">
-                This methodology emphasizes measurable delivery, integration discipline, and operational readiness.
-              </p>
-              <ul className="space-y-2 text-sm leading-snug text-slate-700">
-                {outcomeBullets.map((line) => (
-                  <li key={line} className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-sm bg-slate-400" aria-hidden />
-                    <span>{line}</span>
-                  </li>
-                ))}
-              </ul>
+              
+              <div className="space-y-4">
+                <div>
+                  <p className="text-[9px] font-black uppercase tracking-widest text-blue-600 mb-3">Outcomes</p>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {outcomeBullets.map((line, idx) => (
+                      <li key={idx} className="flex gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100/50">
+                        <div className="mt-0.5 w-4 h-4 rounded bg-blue-600 flex items-center justify-center shrink-0">
+                          <Check className="h-2.5 w-2.5 text-white" strokeWidth={4} />
+                        </div>
+                        <span className="text-[12px] text-slate-600 font-medium leading-relaxed">{line}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
 
-            <div className="flex min-h-0 flex-col border-t border-slate-100 bg-[#f4f6f9] lg:min-h-0">
-              <div className="shrink-0 border-b border-slate-100 px-5 pb-1.5 pt-2.5 sm:px-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#0B1B3D]/80">
-                  Core capabilities
-                </p>
-                <p className="mt-0.5 text-xs leading-snug text-slate-600">
-                  Updates when you change the module selection above.
-                </p>
+            {/* Capabilities Grid */}
+            <div className="bg-[#F8FAFC]/50 p-6 lg:p-8">
+              <div className="mb-6">
+                <p className="text-[9px] font-black uppercase tracking-widest text-blue-600 mb-1">Core Capabilities</p>
               </div>
-              <div
-                className="flex flex-col px-5 pb-2 pt-2 sm:px-6 sm:pb-2.5"
-                role="region"
-                aria-label="Core capabilities"
-              >
-                {capabilityItems.length > 0 ? (
-                  <div className="isolate grid grid-cols-1 items-start gap-1.5 sm:grid-cols-2 sm:gap-x-2 sm:gap-y-1.5 sm:auto-rows-auto">
-                    {capabilityItems.map((cap, i) => (
-                      <div
-                        key={`${cap.title}-${i}`}
-                        data-testid={`scope-delivery-cap-${i}`}
-                        className="corp-scope-cap relative isolate flex h-auto min-h-0 w-full flex-col gap-0.5 self-start rounded-md border border-slate-200 bg-white px-2.5 py-2 shadow-[0_1px_2px_rgba(15,23,42,0.05)] antialiased"
-                      >
-                        <div className="flex min-h-0 items-start gap-2">
-                          <ListChecks className="mt-0.5 h-4 w-4 shrink-0 text-[#0B1B3D]/45" aria-hidden />
-                          <span className="min-w-0 flex-1 break-words text-sm font-semibold leading-snug text-[#0B1B3D]">
-                            {cap.title}
-                          </span>
-                        </div>
-                        <p className="min-h-0 max-w-full break-words pl-6 text-xs leading-snug text-slate-600">
-                          {cap.desc}
-                        </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {capabilityItems.map((cap, i) => (
+                  <div
+                    key={`${cap.title}-${i}`}
+                    className="group relative bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:border-blue-300 transition-all duration-300 h-full flex flex-col"
+                  >
+                    <div className="flex items-start gap-3 mb-2">
+                      <div className="p-1.5 rounded-md bg-blue-50 group-hover:bg-blue-600 transition-colors duration-300">
+                        <ListChecks className="h-3 w-3 text-blue-600 group-hover:text-white" />
                       </div>
-                    ))}
+                      <h4 className="text-[12px] font-black text-[#0B1B3D] uppercase tracking-tight mt-0.5">
+                        {cap.title}
+                      </h4>
+                    </div>
+                    <p className="pl-9 text-[11px] text-slate-500 font-medium leading-relaxed flex-1">
+                      {cap.desc}
+                    </p>
                   </div>
-                ) : (
-                  <p className="py-4 text-sm text-slate-500">
-                    Capability detail is confirmed during discovery for this module.
-                  </p>
-                )}
+                ))}
               </div>
             </div>
           </div>

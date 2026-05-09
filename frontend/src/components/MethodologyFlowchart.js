@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 const MethodologyFlowchart = ({ steps }) => {
   return (
@@ -27,7 +27,7 @@ const MethodologyFlowchart = ({ steps }) => {
                   className="w-20 h-20 rounded-2xl bg-white border border-slate-100 shadow-sm flex items-center justify-center relative z-10 group-hover:border-blue-500 group-hover:shadow-blue-500/10 transition-all duration-300"
                 >
                   <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
-                    <step.icon size={24} className="text-[#0B1B3D] group-hover:text-blue-600 transition-colors" />
+                    {step.icon ? <step.icon size={24} className="text-[#0B1B3D] group-hover:text-blue-600 transition-colors" /> : <span className="text-xl font-bold">{i+1}</span>}
                   </div>
                 </motion.div>
                 
@@ -47,16 +47,17 @@ const MethodologyFlowchart = ({ steps }) => {
               {/* Content */}
               <div className="text-center px-4">
                 <h3 className="text-[13px] font-black uppercase tracking-widest mb-3 text-[#0B1B3D] group-hover:text-blue-600 transition-colors">
-                  {step.label}
+                  {step.label || step.step || step.title}
                 </h3>
+                {step.desc && <p className="text-[11px] text-slate-500 leading-relaxed max-w-[150px] mx-auto">{step.desc}</p>}
               </div>
             </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Tablet View (Grid with connecting arrows) */}
-      <div className="hidden md:grid xl:hidden grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8 px-4">
+      {/* Tablet View (Grid) */}
+      <div className="hidden md:grid xl:hidden grid-cols-2 lg:grid-cols-3 gap-8 px-4">
         {steps.map((step, i) => (
           <motion.div 
             key={i}
@@ -68,15 +69,16 @@ const MethodologyFlowchart = ({ steps }) => {
           >
             <div className="flex items-center gap-6 mb-6">
               <div className="w-14 h-14 rounded-xl bg-[#0B1B3D] text-white flex items-center justify-center shrink-0">
-                <step.icon size={24} />
+                {step.icon ? <step.icon size={24} /> : <span className="text-lg font-bold">{i+1}</span>}
               </div>
               <div>
                 <span className="text-[10px] font-black text-blue-500 uppercase tracking-[0.2em] mb-1 block">Phase {i + 1}</span>
                 <h3 className="text-sm font-black uppercase tracking-tight text-[#0B1B3D]">
-                  {step.label}
+                  {step.label || step.step || step.title}
                 </h3>
               </div>
             </div>
+            {step.desc && <p className="text-xs text-slate-500 leading-relaxed">{step.desc}</p>}
           </motion.div>
         ))}
       </div>
@@ -95,7 +97,7 @@ const MethodologyFlowchart = ({ steps }) => {
             {/* Step Marker & Vertical Line */}
             <div className="flex flex-col items-center shrink-0">
               <div className="w-12 h-12 rounded-xl bg-[#0B1B3D] text-white flex items-center justify-center relative z-10">
-                <step.icon size={20} />
+                {step.icon ? <step.icon size={20} /> : <span className="font-bold">{i+1}</span>}
               </div>
               {i < steps.length - 1 && (
                 <div className="w-0.5 h-16 bg-slate-100 my-2" />
@@ -106,8 +108,9 @@ const MethodologyFlowchart = ({ steps }) => {
             <div className="flex-1 pt-1">
               <span className="text-[10px] font-black text-blue-500 uppercase tracking-[0.2em] mb-1 block">Phase {i + 1}</span>
               <h3 className="text-sm font-black uppercase tracking-tight text-[#0B1B3D] mb-2">
-                {step.label}
+                {step.label || step.step || step.title}
               </h3>
+              {step.desc && <p className="text-xs text-slate-500 leading-relaxed">{step.desc}</p>}
             </div>
           </motion.div>
         ))}

@@ -89,24 +89,24 @@ export function CategorizedTechStackPanels({
 
   return (
     <div
-      className={cn("grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8", className)}
+      className={cn("grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-6", className)}
     >
       {cats.map((c) => (
         <article
           key={c.title}
-          className="flex flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.05)]"
+          className="group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_2px_4px_rgba(0,0,0,0.02)] transition-all hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.08)]"
         >
-          <div className="h-1 shrink-0 bg-[#0B1B3D]" aria-hidden />
-          <div className="border-b border-slate-100 bg-white px-5 py-4 sm:px-6 sm:py-5">
-            <h3 className="text-[13px] font-semibold uppercase tracking-[0.12em] text-[#0B1B3D]">
+          <div className="h-1 shrink-0 bg-[#0B1B3D] group-hover:bg-blue-600 transition-colors" aria-hidden />
+          <div className="border-b border-slate-100 bg-white px-4 py-4 sm:px-5 sm:py-5">
+            <h3 className="text-[12px] font-black uppercase tracking-[0.15em] text-[#0B1B3D]">
               {c.title}
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-slate-700">
+            <p className="mt-2 text-[11px] leading-relaxed text-slate-500 font-medium line-clamp-2">
               {c.description || DEFAULT_CATEGORY_DESC}
             </p>
           </div>
-          <div className="bg-[#F8FAFC] px-4 py-4 sm:px-5 sm:py-5">
-            <div className="overflow-hidden rounded-md border border-slate-200/90 bg-white p-3 shadow-inner">
+          <div className="bg-[#F8FAFC]/50 px-4 py-4 sm:px-5 sm:py-5">
+            <div className="relative rounded-2xl border border-slate-200/60 bg-white p-4 shadow-sm">
               <TechStackLogoGrid
                 items={c.techs}
                 compact

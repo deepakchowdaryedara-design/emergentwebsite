@@ -13,6 +13,7 @@ import ScopeOfDeliverySection from "../components/ScopeOfDeliverySection";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import services from "../data/services";
 import serviceCaseStudies from "../data/serviceCaseStudies";
+import MethodologyPipeline from "../components/MethodologyPipeline";
 import { TRACEFOLD } from "../lib/tracefoldLabel";
 
 export default function ServiceDetail() {
@@ -49,11 +50,11 @@ export default function ServiceDetail() {
       </div>
 
       {/* 3. Coverage: approved platforms & integration surfaces */}
-        <div className="sticky top-0 z-0 flex min-h-[600px] flex-col justify-center overflow-hidden bg-[#EFF3F8] lg:min-h-[min(100%,720px)] lg:py-8">
+      <div className="sticky top-0 z-0 h-[min(100vh,850px)] overflow-hidden flex flex-col justify-center bg-[#F8FAFC]">
         <TechnologyFoundationSection
           dataTestId="service-technology-foundation"
           label="Coverage"
-          description="Tooling choices prioritize reliability, integration fit, and lifecycle maintainability over short-term novelty."
+          description="Tooling choices prioritize reliability, integration fit, and maintainability."
           categories={service.techStack.map((c) => ({
             category: c.category,
             techs: c.techs,
@@ -77,28 +78,8 @@ export default function ServiceDetail() {
               </div>
             </AnimatedSection>
 
-            <div className="relative max-w-6xl mx-auto">
-              <div className="hidden lg:block absolute top-[100px] left-0 right-0 h-0.5 border-t-2 border-dashed border-slate-100 z-0" />
-              <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
-                {service.process.map((p, i) => (
-                  <StaggerItem key={i}>
-                    <div data-testid={`process-step-${i}`} className="h-full relative border border-slate-200 rounded-2xl p-6 bg-white hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-500 hover:-translate-y-1 group">
-                      <div className="flex items-center justify-between mb-6">
-                        <div className="w-10 h-10 rounded-full border-2 border-slate-100 bg-white flex items-center justify-center text-[#0B1B3D] group-hover:bg-[#2563EB] group-hover:border-[#2563EB] group-hover:text-white transition-all duration-500 shadow-sm relative z-10">
-                          <Check className="h-4 w-4" strokeWidth={2.5} aria-hidden />
-                        </div>
-                        <div className="h-px bg-slate-100 flex-1 ml-4 group-hover:bg-[#2563EB]/20 transition-colors" />
-                      </div>
-                      <h3 className="mb-3 tracking-tight" >{p.step}</h3>
-                      <p className="text-[13px] text-slate-500 leading-relaxed font-medium">{p.desc}</p>
-                      <div className="mt-6 pt-5 border-t border-slate-50 flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-slate-200 group-hover:bg-[#2563EB] transition-colors" />
-                        <div className="h-px flex-1 bg-slate-100 group-hover:bg-[#2563EB]/25 transition-colors" />
-                      </div>
-                    </div>
-                  </StaggerItem>
-                ))}
-              </StaggerChildren>
+            <div className="relative z-10">
+              <MethodologyPipeline steps={service.process} />
             </div>
           </div>
         </section>
@@ -108,39 +89,52 @@ export default function ServiceDetail() {
       <div className="sticky top-0 z-0 h-[60vh] flex flex-col justify-center bg-[#0B1B3D] text-white overflow-hidden">
         <CTASection title="Next Step for Scoping" description={`We can align ${service.title} to your systems, priorities, and timeline to define an actionable starting scope and governance boundary.`} />
       </div>
-
       {/* 6. Assurance & outcomes: rationale + proof metrics */}
-      <div className="relative z-10 bg-white text-[#0B1B3D] shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
-        <section className="border-y border-slate-100 bg-white py-4 sm:py-6 md:py-8">
+      <div className="relative z-10 bg-[#F8FAFC] border-y border-slate-200">
+        <section className="py-12 sm:py-16">
           <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-            <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-16">
-              <div className="lg:col-span-6 xl:col-span-5">
+            <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16">
+              <div className="lg:col-span-5 relative">
+                <div className="absolute -left-6 top-0 bottom-0 w-1 bg-blue-600/10 rounded-full hidden xl:block" />
                 <AnimatedSection>
-                  <div className="mb-6">
-                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Assurance</p>
-                    <h2 className="">
-                      Outcomes for Continued Engagement
+                  <div className="mb-8">
+                    <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-blue-50 border border-blue-100 mb-4">
+                      <span className="text-[9px] font-black text-blue-700 uppercase tracking-widest">Assurance</span>
+                    </div>
+                    <h2 className="text-2xl font-black tracking-tighter text-[#0B1B3D] sm:text-3xl lg:text-[2.25rem] lg:leading-[1.1] uppercase">
+                      Outcomes for <br/><span className="text-blue-600">Continued Engagement</span>
                     </h2>
                   </div>
                   <div className="space-y-6">
                     {service.whyChooseUs.map((w, i) => (
-                      <div key={i} className="border-l-2 border-[#2563EB] pl-6">
-                        <h3 className="mb-2" >{w.title}</h3>
-                        <p className="text-sm text-slate-600 leading-relaxed">{w.desc}</p>
+                      <div key={i} className="group relative pl-6 border-l-2 border-slate-200 hover:border-blue-600 transition-colors duration-300">
+                        <div className="absolute left-[-2px] top-0 h-0 group-hover:h-full w-[2px] bg-blue-600 transition-all duration-500" />
+                        <h3 className="text-sm font-black text-[#0B1B3D] uppercase tracking-tight mb-2" >{w.title}</h3>
+                        <p className="text-[12px] text-slate-500 font-medium leading-relaxed max-w-md">{w.desc}</p>
                       </div>
                     ))}
                   </div>
                 </AnimatedSection>
               </div>
-
-              <div className="lg:col-span-6 xl:col-span-7 lg:pt-0">
+ 
+              <div className="lg:col-span-7">
                 <AnimatedSection delay={0.2}>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 content-start">
-                    {[{ value: "2026", label: "Founded Jan 12" }, { value: "Senior-led", label: "Core delivery team" }, { value: "Weekly", label: "Typical milestone cadence" }, { value: "Pilot-ready", label: "Scoped first engagements" }, { value: "Remote-first", label: "Distributed delivery model" }, { value: "Measured", label: "KPI-linked acceptance gates" }].map((m) => (
-                      <div key={m.label} className="group border border-slate-100 rounded-xl p-6 bg-white hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300">
-                        <div className="w-8 h-1 bg-[#2563EB]/10 group-hover:bg-[#2563EB] transition-colors mb-4 rounded-full" />
-                        <span className="text-2xl font-bold text-[#0B1B3D] block tracking-tighter" >{m.value}</span>
-                        <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mt-2 block">{m.label}</span>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    {[
+                      { value: "2026", label: "Founded Jan 12", icon: "🗓️" },
+                      { value: "Senior-led", label: "Core delivery team", icon: "👤" },
+                      { value: "Weekly", label: "Typical cadence", icon: "⏱️" },
+                      { value: "Pilot-ready", label: "Scoped pilots", icon: "🚀" },
+                      { value: "Remote-first", label: "Global model", icon: "🌐" },
+                      { value: "Measured", label: "KPI gates", icon: "📈" }
+                    ].map((m) => (
+                      <div key={m.label} className="group relative border border-slate-200/60 rounded-2xl p-5 bg-white shadow-sm hover:border-blue-200 hover:shadow-md transition-all duration-300">
+                        <div className="absolute top-3 right-3 opacity-20 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all text-sm">
+                          {m.icon}
+                        </div>
+                        <div className="w-8 h-0.5 bg-blue-600/10 group-hover:bg-blue-600 transition-all duration-500 mb-4 rounded-full" />
+                        <span className="text-xl font-black text-[#0B1B3D] block tracking-tighter" >{m.value}</span>
+                        <span className="text-[9px] font-black text-slate-400 uppercase tracking-[0.15em] mt-2 block">{m.label}</span>
                       </div>
                     ))}
                   </div>

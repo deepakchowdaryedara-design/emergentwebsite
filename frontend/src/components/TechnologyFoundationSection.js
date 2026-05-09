@@ -26,34 +26,40 @@ export default function TechnologyFoundationSection({
     <section
       data-testid={dataTestId}
       className={cn(
-        "border-t border-slate-200 bg-[#EFF3F8] py-10 sm:py-12 md:py-14",
+        "relative border-t border-slate-200 bg-[#F8FAFC] py-10 lg:py-12 overflow-hidden",
         className
       )}
     >
-      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
+      {/* Mesh Gradient Background */}
+      <div className="absolute inset-0 opacity-[0.4] pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.06),transparent_50%)]" />
+      </div>
+
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
         <AnimatedSection>
-          <div className="mb-10 max-w-3xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-[#0B1B3D]/85">
-              {label}
-            </p>
-            <h2 className="mb-4 text-2xl font-bold tracking-tight text-[#0B1B3D] sm:text-3xl lg:text-[2.15rem] lg:leading-snug">
-              {title ? (
-                title
-              ) : (
-                <>
-                  {titleLead}{" "}
-                  <span className="corp-heading-secondary">{titleMuted}</span>
-                </>
-              )}
-            </h2>
-            {description ? (
-              <p className="mb-6 text-base leading-relaxed text-slate-700">
-                {description}
-              </p>
-            ) : null}
+          <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="max-w-3xl">
+                <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
+                  <span className="text-[10px] font-black text-blue-700 uppercase tracking-widest">{label}</span>
+                </div>
+                <h2 className="mb-3 text-2xl font-black tracking-tighter text-[#0B1B3D] sm:text-3xl lg:text-[2.25rem] lg:leading-none uppercase">
+                  {title ? (
+                    title
+                  ) : (
+                    <>
+                      {titleLead}{" "}
+                      <span className="text-slate-400">{titleMuted}</span>
+                    </>
+                  )}
+                </h2>
+                <p className="text-sm leading-relaxed text-slate-500 font-medium max-w-xl">
+                  {description || "Tooling choices prioritize reliability, integration fit, and maintainability."}
+                </p>
+            </div>
             <Link
               to={integrationsHref}
-              className="inline-flex items-center justify-center rounded-sm bg-[#2563eb] px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700"
+              className="inline-flex items-center justify-center rounded-xl bg-[#2563eb] px-6 py-3 text-[12px] font-black uppercase tracking-widest text-white shadow-lg shadow-blue-600/20 transition-all hover:bg-blue-700 hover:scale-[1.02] active:scale-[0.98] shrink-0"
             >
               {integrationsCta}
             </Link>
@@ -61,11 +67,16 @@ export default function TechnologyFoundationSection({
         </AnimatedSection>
 
         {hasCategories ? (
-          <CategorizedTechStackPanels categories={cats} />
+          <CategorizedTechStackPanels 
+            categories={cats} 
+            marqueeColumnHeightClassName="h-32 sm:h-36"
+          />
         ) : (
-          <p className="py-8 text-center text-sm text-slate-600">
-            No technologies listed.
-          </p>
+          <div className="py-12 text-center border-2 border-dashed border-slate-100 rounded-3xl">
+            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+              No technologies listed.
+            </p>
+          </div>
         )}
       </div>
     </section>

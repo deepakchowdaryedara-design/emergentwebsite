@@ -120,7 +120,7 @@ h4 {
     font-family: 'Cabinet Grotesk', 'Inter', ui-sans-serif, sans-serif;
     font-weight: 600;
     letter-spacing: -0.02em;
-    color: #ffffff;
+    color: inherit;
 }
 
 #hero h1 .hero-heading-accent {

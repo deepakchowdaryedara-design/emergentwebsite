@@ -39,9 +39,9 @@ export default function CaseStudies({ showLabel = true }) {
         <div className="mb-8 grid grid-cols-1 gap-8 lg:mb-10 lg:grid-cols-2 lg:items-end lg:gap-10 xl:gap-14">
           <div className="max-w-xl lg:max-w-none">
             {showLabel && (
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">
-              Coverage
-            </p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">
+                Coverage
+              </p>
             )}
             <h2 className="text-3xl font-black tracking-tighter text-[#0B1B3D] sm:text-4xl lg:text-[2.65rem] lg:leading-[1.12]">
               Coverage Across
@@ -87,7 +87,7 @@ export default function CaseStudies({ showLabel = true }) {
                         <img
                           src={cs.image}
                           alt=""
-                          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                          className="h-full w-full object-contain transition-all duration-700 ease-out"
                           loading="lazy"
                           draggable={false}
                         />

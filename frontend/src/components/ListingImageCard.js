@@ -82,7 +82,7 @@ export default function ListingImageCard({
       <img
         src={imgSrc}
         alt=""
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+        className="absolute inset-0 h-full w-full object-cover object-bottom transition-all duration-700 ease-out"
         loading="lazy"
         decoding="async"
         onError={() => setImgSrc(DEFAULT_PAGE_HERO_IMAGE)}

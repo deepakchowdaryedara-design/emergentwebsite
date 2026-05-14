@@ -70,7 +70,7 @@ export default function Header() {
   return (
     <header
       data-testid="header"
-      className="sticky top-9 z-50 backdrop-blur-xl bg-white/90 border-b border-slate-200"
+      className="sticky top-9 z-[100] backdrop-blur-xl bg-white border-b border-slate-200 shadow-sm"
     >
       <div className="relative flex items-center justify-between h-16 w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <Link

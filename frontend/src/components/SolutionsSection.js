@@ -83,7 +83,7 @@ function SolutionCard({ solution }) {
             key={`${solution.slug}-${tab}`}
             src={tabImage(solution, tab)}
             alt=""
-            className="h-full min-h-[220px] w-full object-cover sm:min-h-[260px] lg:absolute lg:inset-0 lg:min-h-0"
+            className="h-full min-h-[220px] w-full object-contain sm:min-h-[260px] lg:absolute lg:inset-0 lg:min-h-0"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#050816]/40 to-transparent" aria-hidden />
         </div>
@@ -153,7 +153,7 @@ export default function SolutionsSection({ showLabel = true }) {
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <header className="mb-8 max-w-3xl text-left sm:mb-10">
           {showLabel && (
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-300">Coverage</p>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-300">Coverage</p>
           )}
           <h2
             className="mb-4 text-white"

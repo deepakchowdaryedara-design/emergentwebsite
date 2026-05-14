@@ -7,6 +7,6 @@ export const FULL_BLEED_DARK_OVERLAY_STYLE = {
 /** Lighter wash when hero uses bgDark=false but still shows a photo */
 export const FULL_BLEED_LIGHT_OVERLAY_STYLE = {
   background:
-    "linear-gradient(90deg, rgba(248,250,252,0.96) 0%, rgba(248,250,252,0.85) 45%, rgba(248,250,252,0.4) 100%), linear-gradient(180deg, rgba(248,250,252,0.5) 0%, transparent 50%, rgba(248,250,252,0.92) 100%)",
+    "linear-gradient(90deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.2) 45%, transparent 100%), linear-gradient(180deg, rgba(255,255,255,0.3) 0%, transparent 50%, rgba(255,255,255,0.4) 100%)",
 };
 

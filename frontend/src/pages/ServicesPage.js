@@ -36,11 +36,9 @@ export default function ServicesPage() {
     <div>
       <div className="sticky top-0 z-0 h-[80vh] overflow-hidden">
         <PageHero
-          label="Services"
-          title="AI and Software Engineering Services for Defined Outcomes"
-          description="From discovery through production: scoped engagements, direct access to delivery leadership, and milestones tied to acceptance criteria and operational metrics."
-          primaryCTA={{ text: "Contact us", href: "#page-contact" }}
-          image={SERVICES_LANDING_HERO_IMAGE}
+          label=""
+          title=""
+          description=""
           video="/hero/services-hero.mp4"
         />
       </div>

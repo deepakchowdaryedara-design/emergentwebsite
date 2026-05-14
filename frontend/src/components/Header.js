@@ -76,10 +76,13 @@ export default function Header() {
         <Link
           to="/"
           data-testid="header-logo"
-          className="relative z-10 text-xl font-extrabold tracking-tighter truncate max-w-[45%] sm:max-w-none"
-          style={{ fontFamily: "'Cabinet Grotesk', sans-serif", color: "#0B1B3D" }}
+          className="relative z-10 flex items-center shrink-0"
         >
-          NeuralTrix AI
+          <img 
+            src="/neuraltrix-logo.jpeg" 
+            alt="NeuralTrix AI" 
+            className="h-8 w-auto object-contain"
+          />
         </Link>
 
         <nav

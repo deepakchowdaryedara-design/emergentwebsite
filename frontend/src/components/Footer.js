@@ -49,29 +49,44 @@ export default function Footer() {
   };
 
   return (
-    <footer data-testid="footer" className="bg-[#0B1B3D] text-white">
-      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-6 sm:py-8 md:py-10">
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-10 mb-10">
-          <div className="col-span-2 sm:col-span-4 lg:col-span-1">
-            <span
-              className="text-2xl font-extrabold text-white tracking-tighter block mb-4"
-              
-            >
-              NeuralTrix AI
-            </span>
-            <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
-              Applied AI engineering: product accelerators and custom delivery, operating since {COMPANY_FOUNDED_LABEL}.
+    <footer data-testid="footer" className="bg-[#0B1B3D] text-white border-t border-white/5">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-12 sm:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 mb-16">
+          <div className="col-span-2 lg:col-span-2">
+            <Link to="/" className="inline-block mb-6 group">
+              <img 
+                src="/neuraltrix-logo.jpeg" 
+                alt="NeuralTrix AI" 
+                className="h-9 w-auto object-contain rounded-sm"
+              />
+            </Link>
+            <p className="text-sm text-slate-400 leading-relaxed max-w-sm mb-8 font-medium">
+              NeuralTrix AI provides applied AI engineering and software delivery for organizations requiring accountable execution and production-grade systems.
             </p>
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">
+                <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                Registry Status: Active
+              </div>
+              <div className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">
+                Est. {COMPANY_FOUNDED_LABEL}
+              </div>
+            </div>
           </div>
+
           {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h4 className="text-xs font-semibold text-white uppercase tracking-wider mb-4">
+            <div key={category} className="col-span-1">
+              <h4 className="text-[10px] font-black text-white uppercase tracking-[0.3em] mb-6 opacity-50">
                 {category}
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <Link to={link.href} className="text-sm text-slate-500 hover:text-white cursor-pointer transition-colors">
+                    <Link 
+                      to={link.href} 
+                      className="text-xs text-slate-400 hover:text-blue-400 cursor-pointer transition-all duration-300 flex items-center group"
+                    >
+                      <span className="w-0 group-hover:w-2 h-[1px] bg-blue-400 mr-0 group-hover:mr-2 transition-all duration-300" />
                       {link.label}
                     </Link>
                   </li>
@@ -80,26 +95,38 @@ export default function Footer() {
             </div>
           ))}
         </div>
-        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-slate-500">
-            &copy; {new Date().getFullYear()} NeuralTrix AI. All rights reserved.
-          </p>
-          <div className="flex items-center gap-6">
-            <Link to="/privacy-policy" className="text-xs text-slate-500 hover:text-white cursor-pointer transition-colors">
-              Privacy Policy
-            </Link>
-            <Link to="/terms-and-conditions" className="text-xs text-slate-500 hover:text-white cursor-pointer transition-colors">
-              Terms & Conditions
-            </Link>
-            <Link to="/legal-templates" className="text-xs text-slate-500 hover:text-white cursor-pointer transition-colors">
-              Legal Templates
-            </Link>
+
+        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+              &copy; {new Date().getFullYear()} NeuralTrix AI
+            </p>
+            <div className="h-4 w-[1px] bg-white/10 hidden md:block" />
+            <div className="flex items-center gap-6">
+              <Link to="/privacy-policy" className="text-[10px] font-bold text-slate-500 hover:text-white uppercase tracking-widest transition-colors">
+                Privacy
+              </Link>
+              <Link to="/terms-and-conditions" className="text-[10px] font-bold text-slate-500 hover:text-white uppercase tracking-widest transition-colors">
+                Terms
+              </Link>
+              <Link to="/legal-templates" className="text-[10px] font-bold text-slate-500 hover:text-white uppercase tracking-widest transition-colors">
+                Legal
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+              <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">System Operational</span>
+            </div>
             <button
               data-testid="scroll-to-top"
               onClick={scrollToTop}
-              className="w-8 h-8 flex items-center justify-center border border-white/20 rounded-sm hover:bg-white/10 transition-colors"
+              className="w-10 h-10 flex items-center justify-center border border-white/10 rounded-full hover:bg-white/5 hover:border-white/20 transition-all duration-300 group"
+              aria-label="Scroll to top"
             >
-              <ArrowUp size={14} className="text-white" />
+              <ArrowUp size={16} className="text-slate-400 group-hover:text-white transition-colors" />
             </button>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { Button } from "./ui/button";
 import { CONTACT_TOPIC, contactFormTo } from "../lib/contactIntent";
 import {
   AppWindow,
@@ -261,33 +262,41 @@ export default function ScopeOfDeliverySection({ service }) {
     };
   });
 
-  return (    <section
+  return (
+    <section
       data-testid="subservices-section"
-      className="relative overflow-hidden bg-[#F8FAFC] py-16 border-b border-slate-200"
+      className="relative overflow-hidden bg-[#F8FAFC] py-10 border-b border-slate-200"
     >
-      {/* Background Decorative Accents */}
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-100/15 rounded-full blur-[80px] -ml-48 -mt-48" />
-
-      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
-        <AnimatedSection>
-          <div className="mb-10 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-blue-50 border border-blue-100 mb-4">
-              <span className="text-[9px] font-black text-blue-700 uppercase tracking-widest">Scope of Delivery</span>
-            </div>
-            <h2 className="mb-4 text-3xl font-black tracking-tighter text-[#0B1B3D] sm:text-4xl lg:text-[2.2rem] lg:leading-none uppercase">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header Section */}
+        <div className="mb-8 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+          <div className="flex-1">
+            <div className="text-[9px] font-black text-blue-600 uppercase tracking-[0.3em] mb-3">Scope of Delivery</div>
+            <h2 className="mb-2 text-3xl font-black tracking-tighter text-[#0B1B3D] lg:text-[2.8rem] lg:leading-[1] uppercase">
               Applied <span className="text-blue-600">{service.title}</span> Services
             </h2>
-            <p className="text-sm text-slate-500 font-medium leading-relaxed">
+            <p className="text-sm text-slate-500 font-medium max-w-xl opacity-90">
               Efficient service modules structured for rapid time-to-value.
             </p>
           </div>
-        </AnimatedSection>
+          
+          <div className="hidden lg:flex items-center gap-6">
+            <div className="grid grid-cols-4 gap-2 opacity-10">
+              {[...Array(12)].map((_, i) => (
+                <div key={i} className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+              ))}
+            </div>
+            <div className="relative w-72 h-36 overflow-hidden rounded-2xl border border-slate-200 shadow-xl">
+              <img src="/meeting-1.png" alt="" className="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
 
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-8">
-          {/* Left: Sidebar Navigation */}
-          <div className="w-full lg:w-[280px] shrink-0 lg:sticky lg:top-24 lg:self-start space-y-4">
-            <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-              <nav className="flex flex-col" aria-label="Service modules menu">
+        <div className="flex flex-col lg:flex-row lg:items-start gap-4">
+          {/* Sidebar - Tightened Spatial Density */}
+          <aside className="w-full lg:w-[260px] shrink-0 flex flex-col gap-4">
+            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <nav className="flex flex-col">
                 {subs.map((s, i) => {
                   const isActive = active === i;
                   const ItemIcon = resolveSubserviceNavIcon(s);
@@ -296,117 +305,130 @@ export default function ScopeOfDeliverySection({ service }) {
                       key={s.title}
                       type="button"
                       onClick={() => setActive(i)}
-                      className={`group flex items-center gap-3 px-4 py-3 text-left transition-all duration-300 border-b border-slate-100 last:border-b-0 ${isActive
-                          ? "bg-[#0B1B3D] text-white"
-                          : "text-slate-600 hover:bg-blue-50/50 hover:text-blue-600"
+                      className={`group flex items-center gap-2.5 px-3.5 py-2.5 text-left transition-all border-b border-slate-50 last:border-b-0 ${isActive
+                        ? "bg-slate-50 shadow-[inset_3px_0_0_0_#2563EB]"
+                        : "text-slate-500 hover:bg-slate-50"
                         }`}
                     >
-                      <div className={`p-1.5 rounded-lg transition-colors duration-300 ${isActive ? "bg-white/10" : "bg-slate-50 group-hover:bg-blue-100"}`}>
-                        <ItemIcon
-                          className={`h-3.5 w-3.5 shrink-0 ${isActive ? "text-white" : "text-slate-500 group-hover:text-blue-600"}`}
-                          strokeWidth={2.5}
-                        />
+                      <div className={`p-1 rounded-lg ${isActive ? "bg-blue-50 text-blue-600" : "bg-slate-50"}`}>
+                        <ItemIcon className="h-3.5 w-3.5" />
                       </div>
-                      <span className={`flex-1 text-[11px] font-black uppercase tracking-tight ${isActive ? "text-white" : "text-slate-600"}`}>
+                      <span className={`flex-1 text-[10px] font-black uppercase tracking-tight ${isActive ? "text-[#0B1B3D]" : "text-slate-500"}`}>
                         {s.title}
                       </span>
-                      <ChevronRight
-                        className={`h-3.5 w-3.5 shrink-0 transition-transform duration-300 ${isActive ? "text-white/40 translate-x-1" : "text-slate-300"}`}
-                      />
+                      <ChevronRight className={`h-3 w-3 ${isActive ? "text-blue-600" : "text-slate-300"}`} />
                     </button>
                   );
                 })}
               </nav>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm group">
-              <h3 className="mb-1 text-[11px] font-black text-[#0B1B3D] uppercase tracking-tight">Custom Scope</h3>
-              <p className="mb-4 text-[11px] text-slate-500 font-medium leading-relaxed">
-                Discuss integration points with our team.
-              </p>
-              <Link
-                to={contactFormTo(location.pathname, CONTACT_TOPIC.CONTACT)}
-                className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-[#0B1B3D] text-white text-[10px] font-black uppercase tracking-widest hover:bg-blue-600 transition-all"
-              >
-                Contact
-                <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
-            </div>
-
-            {/* Expert Support Card to fill space */}
-            <div className="bg-blue-50/50 border border-blue-100 rounded-2xl p-5 hidden lg:block">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
-                  <ShieldCheck className="h-4 w-4 text-white" />
-                </div>
-                <h4 className="text-[10px] font-black text-[#0B1B3D] uppercase tracking-widest">Institutional Support</h4>
+            <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+              <h4 className="text-[10px] font-black text-[#0B1B3D] uppercase tracking-[0.1em] mb-4">Solutions Portfolio</h4>
+              <div className="space-y-3">
+                {subs.slice(0, 4).map((s, i) => (
+                  <div key={i} className="flex items-start gap-3 border-b border-slate-50 last:border-0 pb-3 last:pb-0">
+                    <div className="p-1.5 rounded-lg bg-slate-50 text-slate-400">
+                      <LayoutGrid className="h-3.5 w-3.5" />
+                    </div>
+                    <div>
+                      <h4 className="text-[9px] font-black text-[#0B1B3D] uppercase tracking-tight">{s.title}</h4>
+                      <p className="text-[8px] text-slate-500 font-medium leading-tight">AI extraction of data.</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <p className="text-[10px] text-slate-500 font-medium leading-relaxed">
-                Our engineering teams provide full-lifecycle support from deployment to optimization.
-              </p>
             </div>
-          </div>
 
-          {/* Right: Content Detail */}
-          <div
-            data-testid={`subservice-${active}`}
-            className="flex-1 min-w-0 bg-white border border-slate-200 rounded-3xl shadow-sm overflow-hidden"
-          >
-            {/* Header Content */}
+            <div className="relative w-full h-36 overflow-hidden rounded-xl shadow-sm border border-slate-200">
+              <img src="/meeting-2.png" alt="" className="w-full h-full object-cover" />
+            </div>
+          </aside>
+
+          {/* Dashboard Area */}
+          <div className="flex-1 bg-white border border-slate-200 rounded-xl shadow-2xl overflow-hidden flex flex-col">
+            {/* Outcomes Section */}
             <div className="p-6 lg:p-8 border-b border-slate-100">
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-5">
                 <div className="w-1 h-6 bg-blue-600 rounded-full" />
-                <h3 className="text-2xl font-black tracking-tighter text-[#0B1B3D] uppercase">
-                  {moduleTitle}
-                </h3>
+                <h3 className="text-lg font-black text-[#0B1B3D] uppercase tracking-tight">Executive Outcomes</h3>
               </div>
-              <p className="text-[15px] text-slate-500 font-medium leading-relaxed mb-8">
+              <p className="text-[11px] text-slate-500 font-medium mb-8 max-w-2xl leading-relaxed">
                 {moduleDesc}
               </p>
               
-              <div className="space-y-4">
-                <div>
-                  <p className="text-[9px] font-black uppercase tracking-widest text-blue-600 mb-3">Outcomes</p>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {outcomeBullets.map((line, idx) => (
-                      <li key={idx} className="flex gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100/50">
-                        <div className="mt-0.5 w-4 h-4 rounded bg-blue-600 flex items-center justify-center shrink-0">
-                          <Check className="h-2.5 w-2.5 text-white" strokeWidth={4} />
-                        </div>
-                        <span className="text-[12px] text-slate-600 font-medium leading-relaxed">{line}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Capabilities Grid */}
-            <div className="bg-[#F8FAFC]/50 p-6 lg:p-8">
-              <div className="mb-6">
-                <p className="text-[9px] font-black uppercase tracking-widest text-blue-600 mb-1">Core Capabilities</p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {capabilityItems.map((cap, i) => (
-                  <div
-                    key={`${cap.title}-${i}`}
-                    className="group relative bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:border-blue-300 transition-all duration-300 h-full flex flex-col"
-                  >
-                    <div className="flex items-start gap-3 mb-2">
-                      <div className="p-1.5 rounded-md bg-blue-50 group-hover:bg-blue-600 transition-colors duration-300">
-                        <ListChecks className="h-3 w-3 text-blue-600 group-hover:text-white" />
-                      </div>
-                      <h4 className="text-[12px] font-black text-[#0B1B3D] uppercase tracking-tight mt-0.5">
-                        {cap.title}
-                      </h4>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {[
+                  { title: "Defined Scope for Progress", icon: Target },
+                  { title: "Operational Readiness", icon: Workflow },
+                  { title: "Governance Support", icon: ShieldCheck }
+                ].map((outcome, idx) => (
+                  <div key={idx} className="bg-white border border-slate-100 rounded-xl p-5 shadow-sm">
+                    <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center mb-5">
+                      <outcome.icon className="h-4.5 w-4.5 text-blue-600" />
                     </div>
-                    <p className="pl-9 text-[11px] text-slate-500 font-medium leading-relaxed flex-1">
-                      {cap.desc}
+                    <h4 className="text-[11px] font-black text-[#0B1B3D] uppercase tracking-tight mb-2 leading-tight">{outcome.title}</h4>
+                    <p className="text-[10px] text-slate-500 font-medium leading-relaxed">
+                      {outcomeBullets[idx % outcomeBullets.length].substring(0, 80)}...
                     </p>
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* Capabilities Tier */}
+            <div className="bg-[#F3F4F6]/70 p-6 lg:p-8 flex-1">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-8">
+                {[
+                  { category: "Knowledge & Research", start: 0, end: 2 },
+                  { category: "Security & Compliance", start: 2, end: 4 },
+                  { category: "Development & Flow", start: 4, end: 6 },
+                  { category: "Performance & Latency", start: 6, end: 8 }
+                ].map((group) => (
+                  <div key={group.category}>
+                    <h5 className="text-[9px] font-black text-[#0B1B3D] uppercase tracking-[0.2em] mb-6 border-b border-slate-200 pb-2">
+                      {group.category}
+                    </h5>
+                    <div className="space-y-3">
+                      {capabilityItems.slice(group.start, group.end).map((cap, i) => (
+                        <div key={i} className="bg-white border border-slate-100 rounded-xl p-4 shadow-sm group hover:border-blue-400 transition-all">
+                          <div className="flex items-start gap-4">
+                            <div className="w-11 h-11 bg-slate-50 rounded-lg flex items-center justify-center shrink-0 text-blue-600 font-black text-[10px] border border-slate-100 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                              {12 + group.start + i * 3}
+                            </div>
+                            <div>
+                              <h6 className="text-[10px] font-black text-[#0B1B3D] uppercase tracking-tight mb-1">
+                                {cap.title}
+                              </h6>
+                              <p className="text-[9px] text-slate-500 font-medium leading-relaxed">
+                                {cap.desc.substring(0, 100)}...
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Bottom Banner */}
+            <div className="p-6 bg-white border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#0B1B3D] flex items-center justify-center shadow-xl">
+                  <Network className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-[10px] font-black text-[#0B1B3D] uppercase tracking-tight mb-1">Connect & Scale</h4>
+                  <p className="text-[9px] text-slate-500 font-medium">Partnership for Success: Full-lifecycle support.</p>
+                </div>
+              </div>
+              <Button asChild className="bg-[#0B1B3D] text-white hover:bg-blue-600 rounded-sm px-8 font-black uppercase text-[9px] tracking-widest h-10 shadow-lg">
+                <Link to={contactFormTo(location.pathname, CONTACT_TOPIC.CONTACT)}>
+                  Request Custom Integration
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -414,3 +436,10 @@ export default function ScopeOfDeliverySection({ service }) {
     </section>
   );
 }
+
+
+
+
+
+
+

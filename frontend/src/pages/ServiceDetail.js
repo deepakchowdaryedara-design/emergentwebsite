@@ -8,7 +8,7 @@ import ServiceCaseStudies from "../components/ServiceCaseStudies";
 import TestimonialsSection from "../components/TestimonialsSection";
 import IndustriesServed from "../components/IndustriesServed";
 import RelatedBlog from "../components/RelatedBlog";
-import TechnologyFoundationSection from "../components/TechnologyFoundationSection";
+import ServiceTechStack from "../components/ServiceTechStack";
 import ScopeOfDeliverySection from "../components/ScopeOfDeliverySection";
 import AnimatedSection, { StaggerChildren, StaggerItem } from "../components/AnimatedSection";
 import services from "../data/services";
@@ -50,17 +50,9 @@ export default function ServiceDetail() {
         <ScopeOfDeliverySection service={service} />
       </div>
 
-      {/* 3. Coverage: approved platforms & integration surfaces */}
-      <div className="sticky top-0 z-0 h-[min(100vh,850px)] overflow-hidden flex flex-col justify-center bg-[#F8FAFC]">
-        <TechnologyFoundationSection
-          dataTestId="service-technology-foundation"
-          label="Coverage"
-          description="Tooling choices prioritize reliability, integration fit, and maintainability."
-          categories={service.techStack.map((c) => ({
-            category: c.category,
-            techs: c.techs,
-          }))}
-        />
+      {/* 3. Coverage: unified technology stack component (Service Variant) */}
+      <div className="relative z-10">
+        <ServiceTechStack />
       </div>
 
       {/* 4. Methodology: phased execution roadmap */}

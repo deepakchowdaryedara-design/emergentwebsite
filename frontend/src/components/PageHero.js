@@ -73,7 +73,7 @@ export default function PageHero({ label, title, description, primaryCTA, second
                   <Button
                     data-testid="page-hero-primary-cta"
                     asChild
-                    className="bg-[#2563EB] text-white hover:bg-[#2563EB]/90 rounded-sm px-8 py-4 font-bold text-sm shadow-xl shadow-blue-500/10 h-14 cursor-pointer"
+                    className="bg-[#2563EB] text-white hover:bg-[#2563EB]/90 rounded-full px-8 py-4 font-bold text-sm shadow-xl shadow-blue-500/10 h-14 cursor-pointer"
                   >
                     {primaryCTA.href === "#page-contact" ? (
                       <Link to={contactFormTo(location.pathname, contactTopicFor(primaryCTA))}>
@@ -99,7 +99,7 @@ export default function PageHero({ label, title, description, primaryCTA, second
                     data-testid="page-hero-secondary-cta"
                     asChild
                     variant="outline"
-                    className={`rounded-sm px-8 py-4 font-bold text-sm h-14 transition-all duration-300 cursor-pointer ${bgDark
+                    className={`rounded-full px-8 py-4 font-bold text-sm h-14 transition-all duration-300 cursor-pointer ${bgDark
                       ? "bg-white/5 text-white border-white/20 hover:bg-white/10 backdrop-blur-md"
                       : "bg-white/80 text-[#0B1B3D] border-[#0B1B3D]/15 hover:bg-white"
                       }`}

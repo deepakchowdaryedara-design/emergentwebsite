@@ -7,9 +7,7 @@ import services from "../data/services";
 import solutions from "../data/solutions";
 import industries from "../data/industries";
 
-const navLinks = [
-  { label: "Home", href: "/" },
-];
+
 
 const servicesLinks = services.map((s) => ({ label: s.title, href: `/services/${s.slug}` }));
 
@@ -40,12 +38,12 @@ export default function Header() {
         <button
           type="button"
           data-testid={`nav-link-${label.toLowerCase()}`}
-          className={`inline-flex items-center gap-1 text-sm font-medium transition-colors whitespace-nowrap ${
+          className={`inline-flex items-center gap-1 text-base font-medium transition-colors whitespace-nowrap ${
             isActive ? "text-[#2563EB]" : "text-slate-600 group-hover:text-[#0B1B3D]"
           }`}
         >
           {label}
-          <ChevronDown size={14} className="transition-transform group-hover:rotate-180" />
+          <ChevronDown size={16} className="transition-transform group-hover:rotate-180" />
         </button>
         <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute top-full left-0 mt-2 w-64 rounded-sm border border-slate-200 bg-white shadow-lg p-2 z-50 max-h-[70vh] overflow-y-auto">
           {links.map((link) => (
@@ -53,7 +51,7 @@ export default function Header() {
               key={link.label}
               to={link.href}
               data-testid={`${label.toLowerCase()}-dropdown-${link.label.toLowerCase().replace(/\s/g, "-")}`}
-              className={`block rounded-sm px-3 py-2 text-sm transition-colors ${
+              className={`block rounded-sm px-3 py-2 text-[15px] transition-colors ${
                 location.pathname === link.href
                   ? "text-[#2563EB] bg-blue-50"
                   : "text-slate-600 hover:text-[#0B1B3D] hover:bg-slate-50"
@@ -86,35 +84,14 @@ export default function Header() {
         </Link>
 
         <nav
-          className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 lg:flex lg:items-center lg:gap-4 xl:gap-6"
+          className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 lg:flex lg:items-center lg:gap-8 xl:gap-12"
           aria-label="Main"
         >
-          <div className="pointer-events-auto flex items-center gap-4 xl:gap-6">
-            {navLinks.map((l) => (
-              (() => {
-                const isActive = l.href === "/"
-                  ? location.pathname === "/"
-                  : location.pathname.startsWith(l.href);
+          <div className="pointer-events-auto flex items-center gap-8 xl:gap-12">
 
-                return (
-              <Link
-                key={l.label}
-                to={l.href}
-                data-testid={`nav-link-${l.label.toLowerCase().replace(/\s/g, "-")}`}
-                className={`text-sm font-medium transition-colors whitespace-nowrap ${
-                  isActive
-                    ? "text-[#2563EB]"
-                    : "text-slate-600 hover:text-[#0B1B3D]"
-                }`}
-              >
-                {l.label}
-              </Link>
-                );
-              })()
-            ))}
-            {renderDesktopDropdown("Services", servicesLinks, "/services")}
-            {renderDesktopDropdown("Solutions", solutionsLinks, "/solutions")}
-            {renderDesktopDropdown("Industries", industriesLinks, "/industries")}
+            {renderDesktopDropdown("Service Portfolio", servicesLinks, "/services")}
+            {renderDesktopDropdown("System Solutions", solutionsLinks, "/solutions")}
+            {renderDesktopDropdown("Industries Served", industriesLinks, "/industries")}
             {(() => {
               const companyActive = companyLinks.some((l) => location.pathname.startsWith(l.href));
               return (
@@ -122,20 +99,20 @@ export default function Header() {
                   <button
                     type="button"
                     data-testid="nav-link-company"
-                    className={`inline-flex items-center gap-1 text-sm font-medium transition-colors whitespace-nowrap ${
+                    className={`inline-flex items-center gap-1 text-base font-medium transition-colors whitespace-nowrap ${
                       companyActive ? "text-[#2563EB]" : "text-slate-600 group-hover:text-[#0B1B3D]"
                     }`}
                   >
-                    Company
-                    <ChevronDown size={14} className="transition-transform group-hover:rotate-180" />
+                    Corporate Identity
+                    <ChevronDown size={16} className="transition-transform group-hover:rotate-180" />
                   </button>
-                  <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute top-full left-0 mt-2 w-56 rounded-sm border border-slate-200 bg-white shadow-lg p-2 z-50 max-h-[70vh] overflow-y-auto">
+                  <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute top-full left-0 mt-2 w-64 rounded-sm border border-slate-200 bg-white shadow-lg p-2 z-50 max-h-[70vh] overflow-y-auto">
                     {companyLinks.map((link) => (
                       <Link
                         key={link.label}
                         to={link.href}
                         data-testid={`company-dropdown-${link.label.toLowerCase().replace(/\s/g, "-")}`}
-                        className={`block rounded-sm px-3 py-2 text-sm transition-colors ${
+                        className={`block rounded-sm px-3 py-2 text-[15px] transition-colors ${
                           location.pathname.startsWith(link.href)
                             ? "text-[#2563EB] bg-blue-50"
                             : "text-slate-600 hover:text-[#0B1B3D] hover:bg-slate-50"
@@ -154,24 +131,32 @@ export default function Header() {
                 <Link
                   to="/blog"
                   data-testid="nav-link-blog"
-                  className={`text-sm font-medium transition-colors whitespace-nowrap ${
+                  className={`text-base font-medium transition-colors whitespace-nowrap ${
                     isActive ? "text-[#2563EB]" : "text-slate-600 hover:text-[#0B1B3D]"
                   }`}
                 >
-                  Blog
+                  Technical Insights
                 </Link>
               );
             })()}
           </div>
         </nav>
 
-        <div className="relative z-10 flex items-center justify-end gap-2 shrink-0">
+        <div className="relative z-10 flex items-center justify-end gap-2 shrink-0 lg:mr-8 xl:mr-12">
           <Button
             data-testid="header-cta-button"
             asChild
-            className="hidden lg:inline-flex bg-[#0B1B3D] text-white hover:bg-[#0B1B3D]/90 rounded-sm px-4 xl:px-5 py-2 text-sm font-semibold"
+            className="hidden lg:inline-flex bg-[#2563EB] text-white hover:bg-[#2563EB]/90 rounded-full px-6 xl:px-8 py-2.5 text-base font-bold shadow-lg shadow-blue-500/20 transition-all hover:scale-105 active:scale-95"
           >
-            <Link to={contactFormTo(location.pathname, CONTACT_TOPIC.CONTACT)}>
+            <Link 
+              to="/#page-contact"
+              onClick={(e) => {
+                if (location.pathname === "/") {
+                  e.preventDefault();
+                  document.getElementById("page-contact")?.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
               Contact us
             </Link>
           </Button>
@@ -190,18 +175,9 @@ export default function Header() {
 
       {mobileOpen && (
         <div data-testid="mobile-menu" className="lg:hidden bg-white border-t border-slate-200 px-4 sm:px-6 lg:px-10 xl:px-14 pb-6">
-          {navLinks.map((l) => (
-            <Link
-              key={l.label}
-              to={l.href}
-              onClick={() => setMobileOpen(false)}
-              className="block py-3 text-sm font-medium text-slate-600 hover:text-[#0B1B3D] border-b border-slate-100"
-            >
-              {l.label}
-            </Link>
-          ))}
+
           <div className="pt-2">
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider py-2">Services</p>
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider py-2">Service Portfolio</p>
             {servicesLinks.map((link) => (
               <Link
                 key={link.label}
@@ -214,7 +190,7 @@ export default function Header() {
             ))}
           </div>
           <div className="pt-2">
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider py-2">Solutions</p>
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider py-2">System Solutions</p>
             {solutionsLinks.map((link) => (
               <Link
                 key={link.label}
@@ -227,7 +203,7 @@ export default function Header() {
             ))}
           </div>
           <div className="pt-2">
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider py-2">Industries</p>
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider py-2">Industries Served</p>
             {industriesLinks.map((link) => (
               <Link
                 key={link.label}
@@ -240,7 +216,7 @@ export default function Header() {
             ))}
           </div>
           <div className="pt-2">
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider py-2">Company</p>
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider py-2">Corporate Identity</p>
             {companyLinks.map((link) => (
               <Link
                 key={link.label}
@@ -257,17 +233,22 @@ export default function Header() {
             onClick={() => setMobileOpen(false)}
             className="block py-3 text-sm font-medium text-slate-600 hover:text-[#0B1B3D] border-b border-slate-100"
           >
-            Blog
+            Technical Insights
           </Link>
           <Button
             data-testid="mobile-cta-button"
             asChild
-            className="w-full mt-4 bg-[#0B1B3D] text-white hover:bg-[#0B1B3D]/90 rounded-sm text-sm font-semibold"
+            className="w-full mt-4 bg-[#2563EB] text-white hover:bg-[#2563EB]/90 rounded-full py-3 text-base font-bold shadow-lg shadow-blue-500/20"
           >
-            <Link
-              to={contactFormTo(location.pathname, CONTACT_TOPIC.CONTACT)}
-              onClick={() => setMobileOpen(false)}
-            >
+              <Link
+                to="/#page-contact"
+                onClick={() => {
+                  setMobileOpen(false);
+                  setTimeout(() => {
+                    document.getElementById("page-contact")?.scrollIntoView({ behavior: "smooth" });
+                  }, 100);
+                }}
+              >
               Contact us
             </Link>
           </Button>

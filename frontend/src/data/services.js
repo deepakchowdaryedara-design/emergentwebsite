@@ -10,7 +10,6 @@ const services = [
     heroTitle: "Applied ML",
     heroDesc: "Define baselines and acceptance tests, wire batch and real-time inference behind your APIs, and operate with monitoring, retraining triggers, and audit-friendly model lineage.",
     heroImage: heroImages[0],
-    heroVideo: "/hero/applied-ml-hero.mp4",
     overview: "End-to-end practice from feature and label readiness through training pipelines, model registry, canary and shadow deploys, and in-production monitoring tied to your risk and SLO profile.",
     subservices: [
       { title: "AI Strategy & Consulting", desc: "Quantify feasibility, data debt, and ROI before training: use-case decomposition, benchmark selection, and pilot scope frozen behind measurable exit criteria.", items: ["AI readiness assessment", "High-impact use case discovery", "ROI-driven AI roadmap", "Risk-aligned implementation strategy", "Stakeholder alignment workshops", "Compliance-oriented prioritization", "Technology landscape assessment", "Pilot boundary definition", "Executive decision traceability", "Pilot exit criteria and KPI gates"] },

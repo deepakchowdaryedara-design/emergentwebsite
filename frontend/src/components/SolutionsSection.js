@@ -35,17 +35,17 @@ function SolutionCard({ solution }) {
   const bullets = tabBullets(solution, tab);
 
   return (
-    <article className="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0c1224] text-white shadow-[0_24px_80px_-32px_rgba(0,0,0,0.65)]">
+    <article className="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white text-[#172B4D] shadow-[0_10px_35px_rgba(9,30,66,0.06)]">
       <div className="grid min-h-0 flex-1 grid-cols-1 gap-0 lg:grid-cols-2 lg:gap-0">
-        <div className="flex min-h-0 flex-col justify-between p-8 sm:p-10 lg:p-12 lg:pr-10">
+        <div className="flex min-h-0 flex-col justify-between p-8 sm:p-10 lg:p-12 lg:pr-10 bg-[#FAFBFC] border-r border-slate-100">
           <div className="min-h-0 flex-1 overflow-y-auto lg:overflow-visible">
-            <h3 className="mb-4 text-white">{solution.title}</h3>
-            <p className="mb-6 text-sm leading-snug text-slate-300 sm:text-base">{solution.shortDesc}</p>
+            <h3 className="mb-4 text-[#172B4D] text-2xl font-bold tracking-tight">{solution.title}</h3>
+            <p className="mb-6 text-sm leading-relaxed text-[#42526E] sm:text-base">{solution.shortDesc}</p>
             <ul className="space-y-3">
               {bullets.map((line) => (
-                <li key={line} className="flex gap-3 text-sm text-slate-200">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/10">
-                    <Check className="h-3 w-3 text-blue-400" strokeWidth={3} aria-hidden />
+                <li key={line} className="flex gap-3 text-sm text-[#42526E]">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0052CC]/10">
+                    <Check className="h-3 w-3 text-[#0052CC]" strokeWidth={3} aria-hidden />
                   </span>
                   <span>{line}</span>
                 </li>
@@ -53,7 +53,7 @@ function SolutionCard({ solution }) {
             </ul>
           </div>
 
-          <div className="mt-8 shrink-0 border-t border-white/[0.08] pt-6">
+          <div className="mt-8 shrink-0 border-t border-slate-200/80 pt-6">
             <div className="flex flex-wrap gap-2" role="tablist" aria-label={`${solution.title} focus areas`}>
               {TAB_LABELS.map((label, idx) => (
                 <button
@@ -62,8 +62,11 @@ function SolutionCard({ solution }) {
                   role="tab"
                   aria-selected={tab === idx}
                   onClick={() => setTab(idx)}
-                  className={`rounded-sm px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-colors sm:text-[13px] ${tab === idx ? "bg-white text-[#050816]" : "text-slate-400 hover:bg-white/5 hover:text-white"
-                    }`}
+                  className={`rounded-[4px] px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all sm:text-[13px] ${
+                    tab === idx 
+                      ? "bg-[#0052CC] text-white shadow-sm" 
+                      : "text-[#42526E] hover:bg-slate-200/60 hover:text-[#172B4D]"
+                  }`}
                 >
                   {label}
                 </button>
@@ -71,21 +74,20 @@ function SolutionCard({ solution }) {
             </div>
             <Link
               to={`/solutions/${solution.slug}`}
-              className="mt-6 inline-flex text-sm font-semibold text-blue-400 underline-offset-4 transition-colors hover:text-blue-300"
+              className="mt-6 inline-flex text-sm font-bold text-[#0052CC] hover:text-[#0065FF] underline underline-offset-4 decoration-[#0052CC]/30 hover:decoration-[#0065FF] transition-all"
             >
               View solution details →
             </Link>
           </div>
         </div>
 
-        <div className="relative min-h-[220px] shrink-0 bg-[#070b14] sm:min-h-[260px] lg:min-h-0 lg:h-full">
+        <div className="relative min-h-[220px] shrink-0 bg-white sm:min-h-[260px] lg:min-h-0 lg:h-full flex items-center justify-center p-6">
           <img
             key={`${solution.slug}-${tab}`}
             src={tabImage(solution, tab)}
             alt=""
-            className="h-full min-h-[220px] w-full object-contain sm:min-h-[260px] lg:absolute lg:inset-0 lg:min-h-0"
+            className="h-full max-h-[350px] w-full object-contain lg:absolute lg:inset-0 lg:max-h-none lg:p-8"
           />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#050816]/40 to-transparent" aria-hidden />
         </div>
       </div>
     </article>
@@ -149,18 +151,18 @@ export default function SolutionsSection({ showLabel = true }) {
   };
 
   return (
-    <section id="solutions" data-testid="solutions-section" className="overflow-hidden bg-[#050816] py-6 sm:py-8 md:py-10 text-white">
+    <section id="solutions" data-testid="solutions-section" className="overflow-hidden bg-white py-16 sm:py-20 md:py-24 text-slate-900 border-b border-slate-100">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         <header className="mb-8 max-w-3xl text-left sm:mb-10">
           {showLabel && (
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-300">Coverage</p>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-[#0052CC]">Coverage</p>
           )}
           <h2
-            className="mb-4 text-white"
+            className="mb-4 text-[#172B4D] text-3xl sm:text-4xl font-bold tracking-tight"
           >
-            Coverage Across <span className="corp-heading-secondary-on-dark">solution accelerators</span>
+            Coverage Across <span className="text-[#0052CC]">solution accelerators</span>
           </h2>
-          <p className="mb-8 max-w-2xl text-sm leading-relaxed text-slate-300">
+          <p className="mb-8 max-w-2xl text-base leading-relaxed text-[#42526E]">
             These accelerators package repeatable integration and governance patterns for prioritized domains; scope and roadmap align with each customer program.
           </p>
         </header>
@@ -171,7 +173,7 @@ export default function SolutionsSection({ showLabel = true }) {
           onMouseLeave={() => setPauseHover(false)}
         >
           <div
-            className="relative overflow-hidden rounded-2xl border border-white/[0.06] bg-[#070b14] shadow-[0_32px_90px_-40px_rgba(0,0,0,0.75)]"
+            className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_20px_50px_rgba(9,30,66,0.08)]"
             style={{ height: slideHeight }}
             onTouchStart={onTouchStart}
             onTouchEnd={onTouchEnd}
@@ -197,7 +199,7 @@ export default function SolutionsSection({ showLabel = true }) {
             <button
               type="button"
               onClick={() => go(-1)}
-              className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-[#0c1224]/90 text-white shadow-lg backdrop-blur-sm transition-colors hover:border-white/30 hover:bg-[#0c1224]"
+              className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-[#172B4D] shadow-md hover:bg-slate-50 transition-all active:scale-95"
               aria-label="Previous solution"
             >
               <ChevronUp className="h-5 w-5" aria-hidden />
@@ -205,7 +207,7 @@ export default function SolutionsSection({ showLabel = true }) {
             <button
               type="button"
               onClick={() => go(1)}
-              className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-[#0c1224]/90 text-white shadow-lg backdrop-blur-sm transition-colors hover:border-white/30 hover:bg-[#0c1224]"
+              className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-[#172B4D] shadow-md hover:bg-slate-50 transition-all active:scale-95"
               aria-label="Next solution"
             >
               <ChevronDown className="h-5 w-5" aria-hidden />
@@ -221,8 +223,9 @@ export default function SolutionsSection({ showLabel = true }) {
                   aria-label={`Show ${s.title}`}
                   aria-current={active === i}
                   onClick={() => setActive(i)}
-                  className={`h-2.5 rounded-full transition-all duration-300 ${active === i ? "w-8 bg-blue-400" : "w-2.5 bg-white/25 hover:bg-white/40"
-                    }`}
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
+                    active === i ? "w-8 bg-[#0052CC]" : "w-2.5 bg-slate-200 hover:bg-slate-300"
+                  }`}
                 />
               ))}
             </div>
@@ -230,7 +233,7 @@ export default function SolutionsSection({ showLabel = true }) {
               <button
                 type="button"
                 onClick={() => go(-1)}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-[#0c1224] text-white"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-[#172B4D]"
                 aria-label="Previous solution"
               >
                 <ChevronUp className="h-5 w-5" aria-hidden />
@@ -238,7 +241,7 @@ export default function SolutionsSection({ showLabel = true }) {
               <button
                 type="button"
                 onClick={() => go(1)}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-[#0c1224] text-white"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-[#172B4D]"
                 aria-label="Next solution"
               >
                 <ChevronDown className="h-5 w-5" aria-hidden />

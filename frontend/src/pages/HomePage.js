@@ -33,18 +33,22 @@ export default function HomePage() {
         <AnimatedSection><BlogResources showLabel={false} /></AnimatedSection>
         
         {/* Methodology Section */}
-        <section className="py-16 lg:py-24 bg-white border-y border-slate-100 overflow-hidden">
-          <div className="w-full px-6 lg:px-10 xl:px-14">
+        <section className="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-br from-[#F4F5F7] via-[#FFFFFF] to-[#E9F0FC] border-y border-slate-100">
+          {/* Decorative High-Tech Background Glows */}
+          <div className="absolute right-[-100px] top-[-50px] w-[450px] h-[450px] rounded-full bg-blue-300/15 blur-[120px] -z-10 pointer-events-none" />
+          <div className="absolute left-[-150px] bottom-[-50px] w-[500px] h-[500px] rounded-full bg-indigo-200/15 blur-[135px] -z-10 pointer-events-none" />
+
+          <div className="w-full px-6 lg:px-10 xl:px-14 z-10 relative">
             <AnimatedSection>
               <div className="max-w-3xl mb-12">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Methodology</span>
+                  <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#0052CC]">Methodology</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0B1B3D] tracking-tight mb-6 leading-tight">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#172B4D] tracking-tight mb-6 leading-tight">
                   Methodology for <br />
-                  <span className="text-blue-600">Enterprise AI Delivery</span>
+                  <span className="text-[#0052CC]">Enterprise AI Delivery</span>
                 </h2>
-                <p className="text-base sm:text-lg text-slate-500 leading-relaxed max-w-2xl font-medium">
+                <p className="text-base sm:text-lg text-[#42526E] leading-relaxed max-w-2xl font-normal">
                   This methodology keeps scope controlled, releases on a predictable cadence, and places decisions with the delivery team so working software is visible early.
                 </p>
               </div>
@@ -54,7 +58,7 @@ export default function HomePage() {
               {/* INFINITE PROGRESS LINES (Desktop) */}
               <div className="hidden lg:flex absolute top-[30px] left-[10%] right-[10%] justify-between z-0">
                 {[0, 1, 2].map((i) => (
-                  <div key={i} className="flex-1 h-[1px] bg-slate-100 relative mx-2">
+                  <div key={i} className="flex-1 h-[1px] bg-slate-200/60 relative mx-2">
                     <motion.div
                       initial={{ width: "0%" }}
                       animate={{ width: ["0%", "100%", "100%", "0%"] }}
@@ -65,7 +69,7 @@ export default function HomePage() {
                         ease: "linear",
                         delay: 0.5
                       }}
-                      className="absolute inset-y-0 left-0 bg-blue-600 shadow-[0_0_10px_rgba(37,99,235,0.3)]"
+                      className="absolute inset-y-0 left-0 bg-[#0052CC] shadow-[0_0_10px_rgba(0,82,204,0.3)]"
                     />
                   </div>
                 ))}
@@ -81,8 +85,8 @@ export default function HomePage() {
                   <div key={item.title} className="flex flex-col items-start text-left group">
                     <motion.div
                       animate={{
-                        borderColor: ["#f1f5f9", "#2563eb", "#2563eb", "#f1f5f9"],
-                        backgroundColor: ["#ffffff", "#2563eb", "#2563eb", "#ffffff"],
+                        borderColor: ["#dfe1e6", "#0052CC", "#0052CC", "#dfe1e6"],
+                        backgroundColor: ["#ffffff", "#0052CC", "#0052CC", "#ffffff"],
                       }}
                       transition={{
                         duration: 5,
@@ -93,7 +97,7 @@ export default function HomePage() {
                       className="w-[60px] h-[60px] rounded-full border flex items-center justify-center mb-10 relative shadow-sm"
                     >
                       <motion.span
-                        animate={{ color: ["#94a3b8", "#ffffff", "#ffffff", "#94a3b8"] }}
+                        animate={{ color: ["#7a869a", "#ffffff", "#ffffff", "#7a869a"] }}
                         transition={{
                           duration: 5,
                           times: [idx * 0.2, (idx * 0.2 + 0.1), (0.8 + idx * 0.05), (0.8 + idx * 0.05 + 0.1)],
@@ -116,7 +120,7 @@ export default function HomePage() {
                           repeatDelay: 4,
                           delay: 0.5 + (idx * 1.0)
                         }}
-                        className="absolute inset-0 rounded-full bg-blue-500"
+                        className="absolute inset-0 rounded-full bg-[#0052CC]"
                       />
                     </motion.div>
 
@@ -126,10 +130,10 @@ export default function HomePage() {
                       viewport={{ once: true }}
                       transition={{ delay: idx * 0.2 }}
                     >
-                      <h3 className="text-xl font-bold mb-4 text-[#0B1B3D] tracking-tight">
+                      <h3 className="text-xl font-bold mb-4 text-[#172B4D] tracking-tight">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-slate-500 leading-relaxed max-w-[260px] font-medium">
+                      <p className="text-sm text-[#42526E] leading-relaxed max-w-[260px] font-normal">
                         {item.desc}
                       </p>
                     </motion.div>
